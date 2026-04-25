@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harine Management — Healthcare Data Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --crimson:      #B83030;
+  --crimson-dark: #8F2020;
+  --crimson-deep: #6B1818;
+  --terra:        #C4543A;
+  --terra-mid:    #D4664C;
+  --terra-light:  #E07A5F;
+  --terra-pale:   #F2B5A4;
+  --ink:          #1C1412;
+  --ink-mid:      #3A2E2C;
+  --ink-muted:    #6B5E5C;
+  --ink-faint:    #9E918F;
+  --stone:        #EDE8E6;
+  --stone-light:  #F5F2F0;
+  --white:        #FFFFFF;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --mono:  'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── UTILITIES ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+.eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson); }
+.eyebrow-rule { width: 24px; height: 1.5px; background: currentColor; flex-shrink: 0; }
+.eyebrow.terra { color: var(--terra); }
+.eyebrow.faint { color: var(--ink-faint); }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--crimson);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+}
+.nav-logo-text {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.nav-logo-tag {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  display: block;
+  margin-top: 1px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.15s;
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  letter-spacing: 0.03em;
+}
+.nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--stone-light);
+  padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-blob1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  background: var(--crimson);
+  opacity: 0.07;
+  top: -120px; right: -100px;
+  pointer-events: none;
+}
+.hero-blob2 {
+  position: absolute;
+  width: 350px; height: 350px;
+  border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
+  background: var(--terra);
+  opacity: 0.06;
+  bottom: -80px; left: -60px;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 48px;
+}
+.hero-label { margin-bottom: 24px; }
+.hero-title {
+  font-family: var(--serif);
+  font-size: 60px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.hero-title em { font-style: italic; color: var(--crimson); }
+.hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: transform 0.15s, opacity 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.btn-primary { background: var(--crimson); color: var(--white); font-size: 14px; padding: 14px 32px; }
+.btn-secondary { background: transparent; color: var(--crimson); border: 1.5px solid var(--crimson); font-size: 13px; padding: 13px 24px; }
+.btn-terra { background: var(--terra); color: var(--white); font-size: 14px; padding: 14px 28px; }
+.btn-ghost { background: transparent; color: var(--ink-mid); border: 1px solid var(--stone); font-size: 13px; padding: 12px 24px; }
+
+/* Hero visual */
+.hero-visual { position: relative; }
+.dashboard-mock {
+  background: var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(28,20,18,0.22), 0 4px 16px rgba(28,20,18,0.1);
+}
+.dash-topbar {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+.dash-brandbar {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+.dash-body { padding: 24px 20px; }
+.dash-title-row { margin-bottom: 20px; }
+.dash-greeting {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 4px;
+}
+.dash-heading {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+}
+.kpi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
+.kpi-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 14px 14px 12px;
+}
+.kpi-label { font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 6px; }
+.kpi-value { font-size: 22px; font-weight: 600; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.kpi-delta { font-size: 10px; color: var(--terra-light); font-weight: 500; }
+.kpi-delta.neutral { color: rgba(255,255,255,0.3); }
+.chart-row { display: flex; gap: 10px; }
+.chart-area {
+  flex: 2;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 14px;
+  height: 110px;
+  position: relative;
+  overflow: hidden;
+}
+.chart-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 10px; }
+.chart-bars { display: flex; align-items: flex-end; gap: 5px; height: 64px; }
+.bar { border-radius: 2px 2px 0 0; flex: 1; }
+.spark-area {
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 14px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+}
+.spark-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 6px; }
+.spark-val { font-size: 20px; font-weight: 600; color: var(--terra-light); }
+.spark-sub { font-size: 9px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+.spark-line { margin-top: auto; }
+
+/* Hero badge */
+.hero-badge {
+  position: absolute;
+  bottom: -16px;
+  left: -24px;
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 32px rgba(28,20,18,0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+.badge-icon {
+  width: 36px; height: 36px;
+  background: rgba(184,48,48,0.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.badge-text { font-size: 12px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.badge-sub { font-size: 10px; font-weight: 400; color: var(--ink-muted); margin-top: 2px; }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--crimson);
+  padding: 48px 0;
+}
+.trust-inner {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.trust-item {
+  text-align: center;
+  padding: 0 32px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.trust-item:last-child { border-right: none; }
+.trust-value {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.trust-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* ── SECTION SHARED ── */
+section { padding: 100px 0; }
+section.alt { background: var(--stone-light); }
+.section-header { margin-bottom: 64px; }
+.section-header .eyebrow { margin-bottom: 18px; }
+.section-title {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.section-title em { font-style: italic; color: var(--crimson); }
+.section-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* ── SERVICES ── */
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-top: 3px solid transparent;
+  border-radius: 10px;
+  padding: 36px 32px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(28,20,18,0.1); }
+.service-card.featured { border-top-color: var(--crimson); }
+.service-card.secondary { border-top-color: var(--terra); }
+.service-card.tertiary { border-top-color: var(--ink-faint); }
+.service-icon {
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+.service-icon.crimson { background: rgba(184,48,48,0.08); }
+.service-icon.terra { background: rgba(196,84,58,0.08); }
+.service-icon.ink { background: rgba(28,20,18,0.06); }
+.service-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.service-tag.crimson { color: var(--crimson); }
+.service-tag.terra { color: var(--terra); }
+.service-tag.ink { color: var(--ink-faint); }
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.service-card p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.service-list li {
+  font-size: 13px;
+  color: var(--ink-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.service-list li::before { content: '→'; color: var(--crimson); flex-shrink: 0; margin-top: 1px; font-size: 12px; }
+.service-list.terra li::before { color: var(--terra); }
+.service-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--crimson);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(184,48,48,0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+}
+.service-link:hover { border-color: var(--crimson); }
+.service-link.terra { color: var(--terra); border-color: rgba(196,84,58,0.25); }
+.service-link.terra:hover { border-color: var(--terra); }
+
+/* ── SPLIT SECTIONS ── */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.split.reverse { direction: rtl; }
+.split.reverse > * { direction: ltr; }
+
+/* Practice mockup */
+.practice-visual {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(28,20,18,0.09);
+}
+.practice-topbar {
+  background: var(--stone-light);
+  border-bottom: 1px solid var(--stone);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.practice-tb-brand { font-size: 11px; font-weight: 600; color: var(--ink-mid); letter-spacing: 0.08em; text-transform: uppercase; }
+.practice-tb-tag {
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(184,48,48,0.08);
+  color: var(--crimson);
+  border: 1px solid rgba(184,48,48,0.15);
+  border-radius: 20px;
+  padding: 3px 10px;
+  letter-spacing: 0.06em;
+}
+.practice-body { padding: 24px 20px; }
+.practice-kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.p-kpi {
+  background: var(--stone-light);
+  border: 1px solid var(--stone);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.p-kpi-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
+.p-kpi-val { font-size: 24px; font-weight: 600; color: var(--ink); line-height: 1; }
+.p-kpi-del { font-size: 10px; color: var(--crimson); font-weight: 500; margin-top: 3px; }
+.provider-table { border: 1px solid var(--stone); border-radius: 8px; overflow: hidden; }
+.pt-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; background: var(--stone-light); padding: 8px 14px; }
+.pt-header span { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.pt-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; padding: 10px 14px; border-top: 1px solid var(--stone); }
+.pt-row span { font-size: 12px; color: var(--ink-mid); display: flex; align-items: center; }
+.pt-row .name { font-weight: 500; color: var(--ink); }
+.pt-row .delta { font-size: 10px; color: var(--crimson); }
+
+/* PE/Investor visual */
+.investor-visual {
+  background: var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 60px rgba(28,20,18,0.25);
+  padding: 28px;
+}
+.inv-header { margin-bottom: 20px; }
+.inv-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 6px; }
+.inv-title { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--white); line-height: 1.3; }
+.inv-title em { font-style: italic; color: var(--terra-light); }
+.inv-metrics { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.inv-metric {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inv-metric-name { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 400; }
+.inv-metric-val { font-size: 16px; font-weight: 600; color: var(--white); }
+.inv-metric-flag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.flag-ok { background: rgba(45,122,79,0.2); color: #4EAD7A; }
+.flag-warn { background: rgba(184,120,32,0.2); color: #D4973A; }
+.flag-risk { background: rgba(184,48,48,0.2); color: var(--terra-light); }
+.inv-footer { font-size: 10px; color: rgba(255,255,255,0.2); border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px; font-family: var(--mono); }
+
+/* ── HOW IT WORKS ── */
+.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 24px; left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: var(--stone);
+}
+.step { padding: 0 20px; text-align: center; position: relative; }
+.step-num {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--crimson);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
+.step h4 { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
+.step p { font-size: 13px; font-weight: 300; color: var(--ink-muted); line-height: 1.7; }
+
+/* ── QUOTE ── */
+.quote-section {
+  background: var(--crimson);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.quote-blob {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 60% 40% 55% 45%;
+  background: var(--terra);
+  opacity: 0.3;
+  top: -120px; right: -80px;
+  pointer-events: none;
+}
+.quote-blob2 {
+  position: absolute;
+  width: 240px; height: 240px;
+  border-radius: 40% 60% 45% 55%;
+  background: var(--terra-mid);
+  opacity: 0.2;
+  bottom: -60px; left: -40px;
+  pointer-events: none;
+}
+.quote-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 0 48px; text-align: center; }
+.quote-mark { font-family: var(--serif); font-size: 80px; color: rgba(255,255,255,0.15); line-height: 0.5; margin-bottom: 24px; display: block; }
+.quote-text { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--white); line-height: 1.45; font-style: italic; margin-bottom: 32px; }
+.quote-attr { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+
+/* ── CTA ── */
+.cta-section { background: var(--stone-light); padding: 100px 0; }
+.cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.cta-left {}
+.cta-left .eyebrow { margin-bottom: 20px; }
+.cta-title { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--ink); line-height: 1.1; margin-bottom: 20px; }
+.cta-title em { font-style: italic; color: var(--crimson); }
+.cta-sub { font-size: 15px; font-weight: 300; color: var(--ink-muted); line-height: 1.75; margin-bottom: 36px; }
+.cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.cta-right { display: flex; flex-direction: column; gap: 16px; }
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-radius: 10px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.contact-icon.crimson { background: rgba(184,48,48,0.08); }
+.contact-icon.terra { background: rgba(196,84,58,0.08); }
+.contact-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
+.contact-value { font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; }
+.contact-value:hover { color: var(--crimson); }
+.contact-note { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  padding: 60px 0 40px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand { }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; text-decoration: none; }
+.footer-logo-text { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--white); }
+.footer-logo-tag { font-size: 9px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-top: 1px; }
+.footer-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 280px; }
+.footer-col h5 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; }
+.footer-col ul a:hover { color: rgba(255,255,255,0.85); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); font-family: var(--mono); }
+.footer-contact { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-contact a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── LOGO MARK (CSS) ── */
+.logo-mark { position: relative; width: 36px; height: 36px; flex-shrink: 0; }
+.blob-top {
+  position: absolute;
+  width: 28px; height: 28px;
+  border-radius: 50% 40% 50% 40%;
+  top: 0; left: 0;
+  background: var(--terra);
+  opacity: 0.9;
+}
+.blob-bot {
+  position: absolute;
+  width: 18px; height: 18px;
+  border-radius: 40% 50% 40% 60%;
+  bottom: 0; right: 0;
+  background: var(--terra-mid);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .nav-inner { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; padding: 80px 24px 64px; gap: 48px; }
+  .hero-title { font-size: 42px; }
+  .hero-visual { display: none; }
+  .trust-inner { grid-template-columns: repeat(2,1fr); row-gap: 32px; padding: 0 24px; }
+  .trust-item:nth-child(2) { border-right: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .split, .split.reverse { grid-template-columns: 1fr; direction: ltr; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .steps::before { display: none; }
+  .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .section-title { font-size: 34px; }
+}
+
+@media (max-width: 640px) {
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-title { font-size: 36px; }
+  section { padding: 72px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="brand-assets/logo.png" alt="Harine Management" class="nav-logo-img">
+      <div>
+        <div class="nav-logo-text">Harine</div>
+        <div class="nav-logo-tag">Management</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#practices">For Practices</a></li>
+      <li><a href="#investors">For Investors</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Schedule a Call</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label eyebrow">
+        <span class="eyebrow-rule"></span>
+        Healthcare Data Analytics
+      </div>
+      <h1 class="hero-title">Analytics built<br>for <em>decisions,</em><br>not just reports.</h1>
+      <p class="hero-sub">We take your EHR data and build dashboards your leadership actually opens every morning. Real-time visibility into volume, revenue, and provider performance — without the manual exports.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="#investors" class="btn btn-secondary">For PE &amp; Investors →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="dashboard-mock">
+        <div class="dash-topbar">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+          <div class="dash-brandbar">Harine · Practice Dashboard</div>
+        </div>
+        <div class="dash-body">
+          <div class="dash-title-row">
+            <div class="dash-greeting">Good Morning — Week 17</div>
+            <div class="dash-heading">Practice Performance</div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Volume MTD</div>
+              <div class="kpi-value">2,847</div>
+              <div class="kpi-delta">↑ 12.4% vs prior</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">wRVU / Provider</div>
+              <div class="kpi-value">342.6</div>
+              <div class="kpi-delta">↑ 8.1% YoY</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Collection Rate</div>
+              <div class="kpi-value">94.2%</div>
+              <div class="kpi-delta neutral">Stable</div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-area">
+              <div class="chart-lbl">Daily Volume — Last 14 Days</div>
+              <div class="chart-bars">
+                <div class="bar" style="height:55%;background:var(--terra-mid);opacity:0.5;"></div>
+                <div class="bar" style="height:70%;background:var(--terra);opacity:0.6;"></div>
+                <div class="bar" style="height:60%;background:var(--terra-mid);opacity:0.5;"></div>
+                <div class="bar" style="height:80%;background:var(--crimson);opacity:0.75;"></div>
+                <div class="bar" style="height:65%;background:var(--terra);opacity:0.6;"></div>
+                <div class="bar" style="height:90%;background:var(--crimson);opacity:0.85;"></div>
+                <div class="bar" style="height:75%;background:var(--terra);opacity:0.65;"></div>
+                <div class="bar" style="height:88%;background:var(--crimson);opacity:0.8;"></div>
+                <div class="bar" style="height:70%;background:var(--terra-mid);opacity:0.55;"></div>
+                <div class="bar" style="height:95%;background:var(--crimson);opacity:0.9;"></div>
+                <div class="bar" style="height:82%;background:var(--terra);opacity:0.7;"></div>
+                <div class="bar" style="height:78%;background:var(--terra-mid);opacity:0.6;"></div>
+                <div class="bar" style="height:100%;background:var(--crimson);opacity:0.95;"></div>
+                <div class="bar" style="height:88%;background:var(--terra);opacity:0.75;"></div>
+              </div>
+            </div>
+            <div class="spark-area">
+              <div class="spark-lbl">AR Aging &lt;30d</div>
+              <div class="spark-val">78.3%</div>
+              <div class="spark-sub">↑ 3.2% vs last qtr</div>
+              <div class="spark-line">
+                <svg viewBox="0 0 80 30" fill="none" width="100%">
+                  <path d="M0 25 L12 20 L24 22 L36 14 L48 16 L60 8 L72 10 L80 4" stroke="var(--terra-light)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                  <path d="M0 25 L12 20 L24 22 L36 14 L48 16 L60 8 L72 10 L80 4 L80 30 L0 30Z" fill="var(--terra-light)" opacity="0.08"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-icon">⚡</div>
+        <div>
+          <div class="badge-text">0 manual exports</div>
+          <div class="badge-sub">Data refreshes automatically</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-value">0</div>
+      <div class="trust-label">Manual exports after<br>going live</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">14</div>
+      <div class="trust-label">Days to first<br>live dashboard</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">94%</div>
+      <div class="trust-label">Average collection<br>rate across clients</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">+18%</div>
+      <div class="trust-label">Average MoM volume<br>visibility improvement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow"><span class="eyebrow-rule"></span>What We Build</div>
+      <h2 class="section-title">Intelligence systems for<br><em>medical practices.</em></h2>
+      <p class="section-sub">We don't sell software. We build the data infrastructure your practice needs to run like the business it actually is — and we maintain it.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card featured">
+        <div class="service-icon crimson">📊</div>
+        <div class="service-tag crimson">Flagship Product</div>
+        <h3>Practice Analytics System</h3>
+        <p>End-to-end analytics infrastructure from your EHR to executive dashboards. Volume, revenue, provider performance, and trend data — in one place, updated daily.</p>
+        <ul class="service-list">
+          <li>Daily patient volume by provider, location &amp; visit type</li>
+          <li>wRVU tracking and provider productivity benchmarks</li>
+          <li>MoM and YoY trend analysis built in</li>
+          <li>Executive summary view for leadership</li>
+        </ul>
+        <a href="#contact" class="service-link">See how it works →</a>
+      </div>
+
+      <div class="service-card secondary">
+        <div class="service-icon terra">💰</div>
+        <div class="service-tag terra">Revenue Intelligence</div>
+        <h3>Revenue Cycle Analytics</h3>
+        <p>Collection rates, AR aging, denial patterns, and payer mix — all the financial signals that tell you if the revenue is real before you feel it in your bank account.</p>
+        <ul class="service-list service-list terra">
+          <li>AR aging buckets with provider-level drill-down</li>
+          <li>Payer mix analysis and reimbursement rate tracking</li>
+          <li>Denial pattern identification and trend alerts</li>
+          <li>Net revenue per visit by payer and CPT code</li>
+        </ul>
+        <a href="#contact" class="service-link terra">Learn more →</a>
+      </div>
+
+      <div class="service-card tertiary">
+        <div class="service-icon ink">🔍</div>
+        <div class="service-tag ink">For PE &amp; Investors</div>
+        <h3>Acquisition Due Diligence</h3>
+        <p>Before you close, you need to know if the revenue is real. We find out. Fast, structured data analysis of target practices — the kind that holds up in a data room.</p>
+        <ul class="service-list">
+          <li>Historical volume and revenue trend analysis</li>
+          <li>Provider concentration and key-person risk</li>
+          <li>Payer mix quality and reimbursement trajectory</li>
+          <li>Operational benchmarking vs. comparable practices</li>
+        </ul>
+        <a href="#investors" class="service-link">Built for investors →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR PRACTICES ── -->
+<section class="alt" id="practices">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="eyebrow" style="margin-bottom:20px;"><span class="eyebrow-rule"></span>For Medical Practices</div>
+        <h2 class="section-title">Your leadership deserves<br>a dashboard they<br><em>actually open.</em></h2>
+        <p style="font-size:16px;font-weight:300;color:var(--ink-muted);line-height:1.75;margin-bottom:28px;">Most practices are running on Excel exports, weekly email reports, and gut feel. Your EHR has the data. We just connect it to a dashboard your CMO checks before their first meeting of the day.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--crimson);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Works with your existing EHR — no rip-and-replace</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--crimson);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Up and running in 14 days, not 14 weeks</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--crimson);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>We manage it — you open it</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--crimson);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Priced for multi-site medical groups, not enterprise health systems</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+      </div>
+
+      <div>
+        <div class="practice-visual">
+          <div class="practice-topbar">
+            <div class="practice-tb-brand">Practice Overview</div>
+            <div class="practice-tb-tag">Live · Updated daily</div>
+          </div>
+          <div class="practice-body">
+            <div class="practice-kpi-row">
+              <div class="p-kpi">
+                <div class="p-kpi-lbl">Visits This Month</div>
+                <div class="p-kpi-val">2,847</div>
+                <div class="p-kpi-del">↑ 12.4% vs prior month</div>
+              </div>
+              <div class="p-kpi">
+                <div class="p-kpi-lbl">Avg wRVU / Day</div>
+                <div class="p-kpi-val">48.2</div>
+                <div class="p-kpi-del">↑ 5.1% vs last year</div>
+              </div>
+            </div>
+            <div class="provider-table">
+              <div class="pt-header">
+                <span>Provider</span>
+                <span>Visits</span>
+                <span>wRVU</span>
+                <span>vs Goal</span>
+              </div>
+              <div class="pt-row">
+                <span class="name">Dr. Patel, A.</span>
+                <span>312</span>
+                <span>387.4</span>
+                <span class="delta">+14%</span>
+              </div>
+              <div class="pt-row">
+                <span class="name">Dr. Nguyen, T.</span>
+                <span>288</span>
+                <span>342.1</span>
+                <span class="delta">+8%</span>
+              </div>
+              <div class="pt-row">
+                <span class="name">Dr. Williams, K.</span>
+                <span>264</span>
+                <span>298.6</span>
+                <span style="font-size:10px;color:var(--ink-faint);">−2%</span>
+              </div>
+              <div class="pt-row">
+                <span class="name">Dr. Chen, R.</span>
+                <span>241</span>
+                <span>311.8</span>
+                <span class="delta">+5%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR INVESTORS ── -->
+<section id="investors">
+  <div class="container">
+    <div class="split reverse">
+      <div>
+        <div class="eyebrow terra" style="margin-bottom:20px;"><span class="eyebrow-rule"></span>For PE &amp; Investors</div>
+        <h2 class="section-title">Before you close,<br>know if the <em>revenue<br>is real.</em></h2>
+        <p style="font-size:16px;font-weight:300;color:var(--ink-muted);line-height:1.75;margin-bottom:28px;">We've run healthcare businesses. We know what due diligence misses and what a management team can hide in a spreadsheet. Our diligence analytics surface the signals that determine if a practice is worth the price.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--terra);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>EHR-level data extraction — not just what management provides</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--terra);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Provider concentration and single-point-of-failure analysis</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--terra);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Payer mix quality scoring and reimbursement trend projection</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink-mid);line-height:1.6;"><span style="color:var(--terra);font-weight:600;flex-shrink:0;margin-top:1px;">→</span>Deliverable-ready output that holds up in a data room</li>
+        </ul>
+        <a href="#contact" class="btn btn-terra">Talk to Our Team →</a>
+      </div>
+
+      <div>
+        <div class="investor-visual">
+          <div class="inv-header">
+            <div class="inv-eyebrow">Due Diligence Report · Target Practice</div>
+            <div class="inv-title">Revenue integrity <em>before</em><br>you sign the LOI.</div>
+          </div>
+          <div class="inv-metrics">
+            <div class="inv-metric">
+              <span class="inv-metric-name">3-Year Revenue Trend</span>
+              <span class="inv-metric-val">+22.4%</span>
+              <span class="inv-metric-flag flag-ok">Healthy</span>
+            </div>
+            <div class="inv-metric">
+              <span class="inv-metric-name">Provider Concentration (Top 1)</span>
+              <span class="inv-metric-val">41%</span>
+              <span class="inv-metric-flag flag-warn">Review</span>
+            </div>
+            <div class="inv-metric">
+              <span class="inv-metric-name">Medicare/Medicaid Mix</span>
+              <span class="inv-metric-val">68%</span>
+              <span class="inv-metric-flag flag-ok">Acceptable</span>
+            </div>
+            <div class="inv-metric">
+              <span class="inv-metric-name">AR Aging &gt;90 Days</span>
+              <span class="inv-metric-val">18.3%</span>
+              <span class="inv-metric-flag flag-risk">Elevated</span>
+            </div>
+            <div class="inv-metric">
+              <span class="inv-metric-name">Avg Net Revenue / Visit</span>
+              <span class="inv-metric-val">$214</span>
+              <span class="inv-metric-flag flag-ok">At Market</span>
+            </div>
+          </div>
+          <div class="inv-footer">Harine Management LLC · Confidential Diligence Output · April 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="alt" id="how-it-works">
+  <div class="container">
+    <div class="section-header" style="text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">
+      <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-rule"></span>The Process<span class="eyebrow-rule"></span></div>
+      <h2 class="section-title">From EHR to<br><em>live dashboard</em><br>in 14 days.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Discovery Call</h4>
+        <p>We learn your EHR stack, what metrics matter to your leadership, and what decisions the data needs to support. No sales deck — just the right questions.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Data Access & Extraction</h4>
+        <p>We connect to your EHR through approved export pipelines. No disruption to clinical operations, no PHI stored on our end. HIPAA-compliant from day one.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Build & Configure</h4>
+        <p>We build your dashboard in your environment — typically Tableau, Power BI, or Looker depending on what your team already uses. You own the output.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Go Live & Maintain</h4>
+        <p>We train your team, hand off the dashboard, and maintain the data pipeline. When something breaks or you need a new view, you call us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE ── -->
+<div class="quote-section">
+  <div class="quote-blob"></div>
+  <div class="quote-blob2"></div>
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">The data was there. We just couldn't see it. Now our leadership team makes decisions in the Monday standup that used to take three days of back-and-forth with our billing team.</p>
+    <div class="quote-attr">CMO, Multi-Site Medical Group · Georgia</div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <div class="eyebrow" style="margin-bottom:20px;"><span class="eyebrow-rule"></span>Let's Talk</div>
+        <h2 class="cta-title">We've run healthcare businesses.<br>We built the data systems<br>we <em>wished we had.</em></h2>
+        <p class="cta-sub">Now we build them for you. If you're a medical group that needs real-time visibility into your practice, or a PE firm that needs to know what you're buying — let's have a 30-minute call. No pitch. Just the right conversation.</p>
+        <div class="cta-actions">
+          <a href="mailto:dev@harinemanagement.com" class="btn btn-primary">Book a Discovery Call</a>
+          <a href="mailto:dev@harinemanagement.com" class="btn btn-ghost">Send Us a Note</a>
+        </div>
+      </div>
+
+      <div class="cta-right">
+        <div class="contact-card">
+          <div class="contact-icon crimson">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:dev@harinemanagement.com" class="contact-value">dev@harinemanagement.com</a>
+            <div class="contact-note">Replies within one business day</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon terra">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <a href="tel:6822563389" class="contact-value">682-256-3389</a>
+            <div class="contact-note">Available Mon–Fri, 9am–6pm ET</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon crimson">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value" style="font-size:14px;">Atlanta, Georgia</div>
+            <div class="contact-note">Serving practices across the Southeast</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="footer-logo">
+          <div class="logo-mark">
+            <div class="blob-top"></div>
+            <div class="blob-bot"></div>
+          </div>
+          <div>
+            <div class="footer-logo-text">Harine</div>
+            <div class="footer-logo-tag">Management</div>
+          </div>
+        </a>
+        <p class="footer-desc">Healthcare data analytics for medical practices and the investors who evaluate them. We turn raw EHR data into real-time executive visibility.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Practice Analytics</a></li>
+          <li><a href="#services">Revenue Intelligence</a></li>
+          <li><a href="#investors">Due Diligence</a></li>
+          <li><a href="#contact">Custom Engagements</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Who We Serve</h5>
+        <ul>
+          <li><a href="#practices">Medical Groups</a></li>
+          <li><a href="#practices">Multi-Site Practices</a></li>
+          <li><a href="#investors">PE &amp; Private Equity</a></li>
+          <li><a href="#investors">Healthcare Investors</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:dev@harinemanagement.com">dev@harinemanagement.com</a></li>
+          <li><a href="tel:6822563389">682-256-3389</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Harine Management LLC · Atlanta, GA</div>
+      <div class="footer-contact">
+        <a href="mailto:dev@harinemanagement.com">dev@harinemanagement.com</a>
+        &nbsp;·&nbsp;
+        <a href="tel:6822563389">682-256-3389</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

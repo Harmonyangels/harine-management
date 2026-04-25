@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harine Management — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Brand primaries — extracted from logo */
+  --crimson:      #B83030;
+  --crimson-dark: #8F2020;
+  --crimson-deep: #6B1818;
+  --terra:        #C4543A;
+  --terra-mid:    #D4664C;
+  --terra-light:  #E07A5F;
+  --terra-pale:   #F2B5A4;
+
+  /* Neutral system */
+  --ink:          #1C1412;
+  --ink-mid:      #3A2E2C;
+  --ink-muted:    #6B5E5C;
+  --ink-faint:    #9E918F;
+  --stone:        #EDE8E6;
+  --stone-light:  #F5F2F0;
+  --white:        #FFFFFF;
+
+  /* Functional */
+  --success:      #2D7A4F;
+  --warning:      #B87A20;
+  --info:         #2A5A8C;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --mono:  'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── LAYOUT ── */
+.page { max-width: 1100px; margin: 0 auto; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--crimson);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+  overflow: hidden;
+}
+.cover-blob1 {
+  position: absolute;
+  width: 520px; height: 520px;
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  background: var(--terra);
+  opacity: 0.55;
+  top: -80px; right: -60px;
+}
+.cover-blob2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
+  background: var(--terra-mid);
+  opacity: 0.35;
+  bottom: 100px; left: -60px;
+}
+.cover-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cover-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+}
+.cover-title {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.cover-title em { font-style: italic; opacity: 0.7; }
+.cover-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+}
+.cover-footer {
+  position: relative;
+  z-index: 1;
+  padding: 32px 80px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cover-footer-brand {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cover-footer-version {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--mono);
+}
+
+/* ── SECTION ── */
+.section {
+  padding: 80px;
+  border-bottom: 1px solid var(--stone);
+}
+.section:last-child { border-bottom: none; }
+.section-header { margin-bottom: 52px; }
+.section-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--crimson);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  display: block;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.section-title em { font-style: italic; color: var(--crimson); }
+.section-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.75;
+  max-width: 560px;
+  margin-top: 12px;
+}
+
+/* ── LOGO SECTION ── */
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 40px;
+}
+.logo-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.logo-swatch.on-crimson { background: var(--crimson); }
+.logo-swatch.on-white { background: var(--white); border: 1px solid var(--stone); }
+.logo-swatch.on-dark { background: var(--ink); }
+.logo-swatch.on-stone { background: var(--stone-light); border: 1px solid var(--stone); }
+.logo-swatch-label {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.on-crimson .logo-swatch-label,
+.on-dark .logo-swatch-label { color: rgba(255,255,255,0.35); }
+.on-white .logo-swatch-label,
+.on-stone .logo-swatch-label { color: var(--ink-faint); }
+
+/* SVG Logo Render */
+.logo-render { display: flex; align-items: center; gap: 14px; }
+.logo-mark { position: relative; width: 48px; height: 48px; }
+.blob-top {
+  position: absolute;
+  width: 36px; height: 36px;
+  border-radius: 50% 40% 50% 40%;
+  top: 0; left: 0;
+}
+.blob-bot {
+  position: absolute;
+  width: 24px; height: 24px;
+  border-radius: 40% 50% 40% 60%;
+  bottom: 0; right: 0;
+}
+.logo-wordmark {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+}
+.logo-tag {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1px;
+}
+.on-crimson .blob-top { background: var(--terra); }
+.on-crimson .blob-bot { background: var(--terra-mid); }
+.on-crimson .logo-wordmark { color: var(--white); }
+.on-crimson .logo-tag { color: rgba(255,255,255,0.4); }
+.on-white .blob-top { background: var(--crimson); }
+.on-white .blob-bot { background: var(--terra); }
+.on-white .logo-wordmark { color: var(--ink); }
+.on-white .logo-tag { color: var(--ink-muted); }
+.on-dark .blob-top { background: var(--terra); opacity: 0.9; }
+.on-dark .blob-bot { background: var(--terra-mid); opacity: 0.9; }
+.on-dark .logo-wordmark { color: var(--white); }
+.on-dark .logo-tag { color: rgba(255,255,255,0.4); }
+.on-stone .blob-top { background: var(--crimson); }
+.on-stone .blob-bot { background: var(--terra); }
+.on-stone .logo-wordmark { color: var(--ink); }
+.on-stone .logo-tag { color: var(--ink-muted); }
+
+.logo-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.rule-card {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--stone);
+}
+.rule-card.do { border-top: 3px solid var(--success); }
+.rule-card.dont { border-top: 3px solid var(--crimson); }
+.rule-card-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.rule-card.do .rule-card-label { color: var(--success); }
+.rule-card.dont .rule-card-label { color: var(--crimson); }
+.rule-item {
+  font-size: 13px;
+  color: var(--ink-muted);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--stone);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.rule-item:last-child { border-bottom: none; }
+.rule-item::before { flex-shrink: 0; margin-top: 1px; font-size: 12px; }
+.rule-card.do .rule-item::before { content: '✓'; color: var(--success); }
+.rule-card.dont .rule-item::before { content: '✕'; color: var(--crimson); }
+
+/* Clearspace */
+.clearspace-demo {
+  background: var(--stone-light);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 28px 0;
+  border: 1px solid var(--stone);
+}
+.clearspace-inner {
+  border: 1.5px dashed var(--terra-light);
+  padding: 28px 36px;
+  position: relative;
+  border-radius: 4px;
+}
+.clearspace-x {
+  position: absolute;
+  font-size: 9px;
+  font-family: var(--mono);
+  color: var(--terra);
+  font-weight: 500;
+}
+.cs-top    { top: -18px; left: 50%; transform: translateX(-50%); }
+.cs-bottom { bottom: -18px; left: 50%; transform: translateX(-50%); }
+.cs-left   { left: -28px; top: 50%; transform: translateY(-50%); }
+.cs-right  { right: -28px; top: 50%; transform: translateY(-50%); }
+
+/* ── COLORS ── */
+.color-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; margin-bottom: 36px; }
+.color-chip { border-radius: 6px; overflow: hidden; }
+.color-fill { height: 80px; }
+.color-info { padding: 10px 12px; background: var(--stone-light); border: 1px solid var(--stone); border-top: none; border-radius: 0 0 6px 6px; }
+.color-name { font-size: 11px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.color-hex { font-size: 10px; font-family: var(--mono); color: var(--ink-muted); }
+
+.color-pairings { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+.pair-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--stone); }
+.pair-bg { height: 80px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
+.pair-info { padding: 12px 14px; }
+.pair-name { font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.pair-use { font-size: 11px; color: var(--ink-muted); line-height: 1.5; }
+
+/* ── TYPOGRAPHY ── */
+.type-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.type-specimen { }
+.type-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px; display: block; }
+.type-display-lg { font-family: var(--serif); font-size: 52px; font-weight: 400; color: var(--ink); line-height: 1.05; }
+.type-display-sm { font-family: var(--serif); font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1.15; }
+.type-display-it { font-family: var(--serif); font-size: 32px; font-style: italic; font-weight: 400; color: var(--crimson); line-height: 1.15; }
+.type-body-lg { font-family: var(--sans); font-size: 16px; font-weight: 300; color: var(--ink-muted); line-height: 1.75; }
+.type-body-md { font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--ink-mid); line-height: 1.65; }
+.type-label-sm { font-family: var(--sans); font-size: 11px; font-weight: 500; color: var(--crimson); letter-spacing: 0.16em; text-transform: uppercase; }
+.type-mono { font-family: var(--mono); font-size: 12px; color: var(--ink-mid); }
+
+.type-scale { display: flex; flex-direction: column; gap: 20px; padding: 32px; background: var(--stone-light); border-radius: 8px; border: 1px solid var(--stone); }
+.scale-row { display: flex; align-items: baseline; gap: 20px; }
+.scale-meta { width: 90px; flex-shrink: 0; font-size: 10px; font-family: var(--mono); color: var(--ink-faint); }
+.scale-sample { color: var(--ink); }
+
+/* ── VOICE & TONE ── */
+.voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 36px; }
+.voice-card { padding: 24px; border-radius: 8px; border: 1px solid var(--stone); }
+.voice-icon { font-size: 24px; margin-bottom: 12px; }
+.voice-name { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+.voice-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.65; }
+.voice-active { border-top: 3px solid var(--crimson); }
+
+.voice-examples { display: flex; flex-direction: column; gap: 16px; }
+.voice-ex { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--stone); }
+.voice-ex-wrong { padding: 18px 20px; background: #FDF5F5; }
+.voice-ex-right { padding: 18px 20px; background: #F5FAF6; }
+.voice-ex-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+.voice-ex-wrong .voice-ex-label { color: #C0392B; }
+.voice-ex-right .voice-ex-label { color: var(--success); }
+.voice-ex-text { font-size: 13px; color: var(--ink-mid); line-height: 1.6; font-style: italic; }
+
+/* ── IMAGERY ── */
+.imagery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.imagery-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--stone); }
+.imagery-preview {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  position: relative;
+  overflow: hidden;
+}
+.imagery-info { padding: 16px; }
+.imagery-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.imagery-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.55; }
+
+/* ── UI COMPONENTS ── */
+.components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.component-group { display: flex; flex-direction: column; gap: 16px; }
+.component-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-weight: 500; border-radius: 4px; cursor: pointer; border: none; text-decoration: none; letter-spacing: 0.03em; }
+.btn-xl { font-size: 15px; padding: 14px 32px; }
+.btn-lg { font-size: 13px; padding: 11px 24px; }
+.btn-sm { font-size: 12px; padding: 8px 16px; }
+
+.btn-primary-brand { background: var(--crimson); color: var(--white); }
+.btn-secondary-brand { background: transparent; color: var(--crimson); border: 1.5px solid var(--crimson); }
+.btn-terra { background: var(--terra); color: var(--white); }
+.btn-dark { background: var(--ink); color: var(--white); }
+.btn-ghost-brand { background: transparent; color: var(--ink-mid); border: 1px solid var(--stone); }
+
+/* Cards */
+.card-demo { background: var(--white); border: 1px solid var(--stone); border-radius: 8px; padding: 24px; }
+.card-demo-accent { background: var(--white); border: 1px solid var(--stone); border-top: 3px solid var(--crimson); border-radius: 8px; padding: 24px; }
+.card-dark-demo { background: var(--ink); border-radius: 8px; padding: 24px; }
+.card-title { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+.card-dark-demo .card-title { color: var(--white); }
+.card-text { font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+.card-dark-demo .card-text { color: rgba(255,255,255,0.45); }
+
+/* Tags */
+.tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 20px; }
+.tag-primary { background: rgba(184,48,48,0.1); color: var(--crimson); border: 1px solid rgba(184,48,48,0.2); }
+.tag-terra { background: rgba(196,84,58,0.1); color: var(--terra); border: 1px solid rgba(196,84,58,0.2); }
+.tag-dark { background: rgba(28,20,18,0.07); color: var(--ink-mid); border: 1px solid var(--stone); }
+.tag-success { background: rgba(45,122,79,0.1); color: var(--success); border: 1px solid rgba(45,122,79,0.2); }
+
+/* Eyebrow */
+.eyebrow-demo { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--crimson); }
+.eyebrow-rule { width: 24px; height: 1.5px; background: var(--crimson); }
+
+/* ── BRAND APPLICATION ── */
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.app-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--stone); }
+.app-card-preview { padding: 32px; }
+.app-card-label { padding: 12px 20px; background: var(--stone-light); border-top: 1px solid var(--stone); font-size: 11px; font-weight: 500; color: var(--ink-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Email header preview */
+.email-prev { background: var(--crimson); padding: 28px 32px; }
+.email-nav-brand { font-size: 14px; font-weight: 500; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+.email-h { font-family: var(--serif); font-size: 22px; color: var(--white); font-weight: 400; line-height: 1.3; margin-bottom: 8px; }
+.email-sub { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* Proposal header */
+.proposal-prev { background: var(--stone-light); padding: 28px 32px; }
+.proposal-blob { width: 40px; height: 40px; border-radius: 50% 40% 50% 40%; background: var(--crimson); margin-bottom: 16px; position: relative; }
+.proposal-blob::after { content: ''; position: absolute; width: 22px; height: 22px; border-radius: 40% 50% 40% 60%; background: var(--terra); bottom: -6px; right: -6px; }
+.proposal-h { font-family: var(--serif); font-size: 20px; color: var(--ink); font-weight: 400; line-height: 1.3; margin-bottom: 6px; }
+.proposal-meta { font-size: 11px; color: var(--ink-faint); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Dashboard header */
+.dash-prev { background: var(--ink); padding: 20px 24px; }
+.dash-nav-brand { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+.dash-kpi-row { display: flex; gap: 16px; }
+.dash-kpi-m { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 10px 14px; flex: 1; }
+.dash-kpi-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+.dash-kpi-val { font-size: 18px; font-weight: 600; color: var(--white); }
+.dash-kpi-delta { font-size: 10px; color: var(--terra-light); margin-top: 2px; }
+
+/* Slide header */
+.slide-prev { background: var(--crimson); padding: 28px 32px; position: relative; overflow: hidden; }
+.slide-blob-bg { position: absolute; width: 180px; height: 180px; border-radius: 60% 40%; background: var(--terra); opacity: 0.3; right: -40px; top: -40px; }
+.slide-content { position: relative; z-index: 1; }
+.slide-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
+.slide-h { font-family: var(--serif); font-size: 24px; color: var(--white); font-weight: 400; line-height: 1.2; }
+.slide-h em { font-style: italic; opacity: 0.75; }
+
+/* ── NOTES SECTION ── */
+.note-box { background: rgba(184,48,48,0.05); border: 1px solid rgba(184,48,48,0.15); border-left: 4px solid var(--crimson); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 32px 0; }
+.note-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 8px; }
+.note-text { font-size: 13px; color: var(--ink-mid); line-height: 1.7; }
+
+/* ── SPACING ── */
+.spacing-scale { display: flex; align-items: flex-end; gap: 20px; padding: 28px; background: var(--stone-light); border-radius: 8px; border: 1px solid var(--stone); }
+.space-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.space-block { background: var(--crimson); border-radius: 2px; width: 32px; }
+.space-label { font-size: 10px; font-family: var(--mono); color: var(--ink-muted); text-align: center; }
+
+/* ── TABLE OF CONTENTS ── */
+.toc { padding: 60px 80px; background: var(--stone-light); border-bottom: 1px solid var(--stone); }
+.toc-title { font-family: var(--serif); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 32px; }
+.toc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 6px; text-decoration: none; transition: background 0.15s; }
+.toc-item:hover { background: var(--stone); }
+.toc-num { font-family: var(--mono); font-size: 11px; color: var(--crimson); width: 24px; flex-shrink: 0; }
+.toc-name { font-size: 13px; font-weight: 500; color: var(--ink-mid); }
+
+@media print {
+  .section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-blob1"></div>
+  <div class="cover-blob2"></div>
+  <div class="cover-inner">
+    <div class="cover-label">Brand Identity System</div>
+    <div class="cover-title">Harine<br><em>Management</em></div>
+    <div class="cover-sub">Healthcare Data Analytics</div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-brand">Harine Management LLC</div>
+    <div class="cover-footer-version">v1.0 — April 2026</div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <div class="toc-grid">
+    <a href="#logo" class="toc-item"><span class="toc-num">01</span><span class="toc-name">Logo & Mark</span></a>
+    <a href="#color" class="toc-item"><span class="toc-num">02</span><span class="toc-name">Color Palette</span></a>
+    <a href="#type" class="toc-item"><span class="toc-num">03</span><span class="toc-name">Typography</span></a>
+    <a href="#voice" class="toc-item"><span class="toc-num">04</span><span class="toc-name">Voice & Tone</span></a>
+    <a href="#components" class="toc-item"><span class="toc-num">05</span><span class="toc-name">UI Components</span></a>
+    <a href="#imagery" class="toc-item"><span class="toc-num">06</span><span class="toc-name">Imagery & Illustration</span></a>
+    <a href="#applications" class="toc-item"><span class="toc-num">07</span><span class="toc-name">Brand Applications</span></a>
+    <a href="#spacing" class="toc-item"><span class="toc-num">08</span><span class="toc-name">Spacing & Layout</span></a>
+  </div>
+</div>
+
+<!-- 01 LOGO -->
+<div id="logo" class="section page">
+  <div class="section-header">
+    <span class="section-num">01 — Logo & Mark</span>
+    <div class="section-title">The Harine <em>Identity</em></div>
+    <p class="section-sub">The logo is built from two overlapping organic forms — a larger circle and a smaller teardrop — that together suggest connection, continuity, and transformation. The magic wand icon within the lower form signals the AI intelligence layer at the core of Harine's work.</p>
+  </div>
+
+  <!-- Logo on backgrounds -->
+  <div class="logo-showcase">
+    <div class="logo-swatch on-crimson">
+      <div class="logo-render">
+        <div class="logo-mark">
+          <div class="blob-top" style="background:var(--terra);opacity:0.85;"></div>
+          <div class="blob-bot" style="background:var(--terra-mid);opacity:0.9;right:2px;bottom:2px;"></div>
+        </div>
+        <div><div class="logo-wordmark" style="color:white;">Harine</div><div class="logo-tag" style="color:rgba(255,255,255,0.4)">Management</div></div>
+      </div>
+      <div class="logo-swatch-label">Primary — On Crimson</div>
+    </div>
+    <div class="logo-swatch on-white">
+      <div class="logo-render">
+        <div class="logo-mark">
+          <div class="blob-top" style="background:var(--crimson);opacity:0.9;"></div>
+          <div class="blob-bot" style="background:var(--terra);right:2px;bottom:2px;"></div>
+        </div>
+        <div><div class="logo-wordmark" style="color:var(--ink);">Harine</div><div class="logo-tag" style="color:var(--ink-muted)">Management</div></div>
+      </div>
+      <div class="logo-swatch-label">Secondary — On White</div>
+    </div>
+    <div class="logo-swatch on-dark">
+      <div class="logo-render">
+        <div class="logo-mark">
+          <div class="blob-top" style="background:var(--terra);opacity:0.85;"></div>
+          <div class="blob-bot" style="background:var(--terra-light);opacity:0.7;right:2px;bottom:2px;"></div>
+        </div>
+        <div><div class="logo-wordmark" style="color:white;">Harine</div><div class="logo-tag" style="color:rgba(255,255,255,0.4)">Management</div></div>
+      </div>
+      <div class="logo-swatch-label">On Dark / Ink</div>
+    </div>
+    <div class="logo-swatch on-stone">
+      <div class="logo-render">
+        <div class="logo-mark">
+          <div class="blob-top" style="background:var(--crimson);opacity:0.9;"></div>
+          <div class="blob-bot" style="background:var(--terra);right:2px;bottom:2px;"></div>
+        </div>
+        <div><div class="logo-wordmark" style="color:var(--ink);">Harine</div><div class="logo-tag" style="color:var(--ink-muted)">Management</div></div>
+      </div>
+      <div class="logo-swatch-label">On Stone / Cream</div>
+    </div>
+  </div>
+
+  <!-- Clearspace -->
+  <h3 style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px;">Clearspace</h3>
+  <p style="font-size:13px;color:var(--ink-muted);margin-bottom:16px;">Always maintain a minimum clearspace equal to the height of the "H" in the wordmark on all four sides. This is called the X unit.</p>
+  <div class="clearspace-demo">
+    <div class="clearspace-inner">
+      <span class="clearspace-x cs-top">1x</span>
+      <span class="clearspace-x cs-bottom">1x</span>
+      <span class="clearspace-x cs-left">1x</span>
+      <span class="clearspace-x cs-right">1x</span>
+      <div class="logo-render">
+        <div class="logo-mark">
+          <div class="blob-top" style="background:var(--crimson);opacity:0.9;"></div>
+          <div class="blob-bot" style="background:var(--terra);right:2px;bottom:2px;"></div>
+        </div>
+        <div><div class="logo-wordmark" style="color:var(--ink);">Harine</div><div class="logo-tag" style="color:var(--ink-muted)">Management</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Do / Don't -->
+  <div class="logo-rules">
+    <div class="rule-card do">
+      <div class="rule-card-label">Do</div>
+      <div class="rule-item">Use the logo on the four approved backgrounds</div>
+      <div class="rule-item">Maintain clearspace at all sizes</div>
+      <div class="rule-item">Use the full lockup (mark + wordmark) at most sizes</div>
+      <div class="rule-item">Use the mark alone only at small sizes (&lt;24px) or as an icon</div>
+      <div class="rule-item">Use the tagline "Management" in subdued weight below the wordmark</div>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-card-label">Don't</div>
+      <div class="rule-item">Stretch, skew, or distort any part of the logo</div>
+      <div class="rule-item">Recolor the blobs to non-brand colors</div>
+      <div class="rule-item">Place on busy photography without a color backing</div>
+      <div class="rule-item">Add drop shadows, glows, or outer strokes</div>
+      <div class="rule-item">Use on backgrounds with insufficient contrast</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 COLOR -->
+<div id="color" class="section page">
+  <div class="section-header">
+    <span class="section-num">02 — Color Palette</span>
+    <div class="section-title">A warm, <em>confident</em> palette</div>
+    <p class="section-sub">Extracted directly from the logo. Crimson is the primary brand color — authoritative and memorable in the healthcare B2B space where blues dominate. Terracotta provides warmth. Deep ink grounds everything.</p>
+  </div>
+
+  <h3 style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">Primary Palette</h3>
+  <div class="color-grid">
+    <div class="color-chip">
+      <div class="color-fill" style="background:#B83030;"></div>
+      <div class="color-info"><div class="color-name">Crimson</div><div class="color-hex">#B83030</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#8F2020;"></div>
+      <div class="color-info"><div class="color-name">Crimson Dark</div><div class="color-hex">#8F2020</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#6B1818;"></div>
+      <div class="color-info"><div class="color-name">Crimson Deep</div><div class="color-hex">#6B1818</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#C4543A;"></div>
+      <div class="color-info"><div class="color-name">Terra</div><div class="color-hex">#C4543A</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#D4664C;"></div>
+      <div class="color-info"><div class="color-name">Terra Mid</div><div class="color-hex">#D4664C</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#E07A5F;"></div>
+      <div class="color-info"><div class="color-name">Terra Light</div><div class="color-hex">#E07A5F</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#F2B5A4;"></div>
+      <div class="color-info"><div class="color-name">Terra Pale</div><div class="color-hex">#F2B5A4</div></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;">Neutral Palette</h3>
+  <div class="color-grid">
+    <div class="color-chip">
+      <div class="color-fill" style="background:#1C1412;"></div>
+      <div class="color-info"><div class="color-name">Ink</div><div class="color-hex">#1C1412</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#3A2E2C;"></div>
+      <div class="color-info"><div class="color-name">Ink Mid</div><div class="color-hex">#3A2E2C</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#6B5E5C;"></div>
+      <div class="color-info"><div class="color-name">Ink Muted</div><div class="color-hex">#6B5E5C</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#9E918F;"></div>
+      <div class="color-info"><div class="color-name">Ink Faint</div><div class="color-hex">#9E918F</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#EDE8E6;border:1px solid #ddd;"></div>
+      <div class="color-info"><div class="color-name">Stone</div><div class="color-hex">#EDE8E6</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#F5F2F0;border:1px solid #ddd;"></div>
+      <div class="color-info"><div class="color-name">Stone Light</div><div class="color-hex">#F5F2F0</div></div>
+    </div>
+    <div class="color-chip">
+      <div class="color-fill" style="background:#FFFFFF;border:1px solid #ddd;"></div>
+      <div class="color-info"><div class="color-name">White</div><div class="color-hex">#FFFFFF</div></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">Strategic Note on Color</div>
+    <div class="note-text">Healthcare analytics is dominated by navy and teal. Harine's crimson-terracotta palette is a deliberate differentiator — it signals confidence and conviction rather than blending in with the sea of blue dashboards. For executive-facing materials (proposals, presentations), use crimson as the dominant color. For dashboards and data-heavy interfaces, use the ink neutrals as the dominant with crimson as an accent.</div>
+  </div>
+
+  <h3 style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Approved Color Pairings</h3>
+  <div class="color-pairings">
+    <div class="pair-card">
+      <div class="pair-bg" style="background:var(--crimson);color:white;">Crimson + White</div>
+      <div class="pair-info"><div class="pair-name">Primary Brand</div><div class="pair-use">Headers, nav, hero sections, cover pages, CTAs</div></div>
+    </div>
+    <div class="pair-card">
+      <div class="pair-bg" style="background:var(--ink);color:white;">Ink + Terra Light</div>
+      <div class="pair-info"><div class="pair-name">Dashboard Dark</div><div class="pair-use">Data interfaces, dark dashboards, executive reports</div></div>
+    </div>
+    <div class="pair-card">
+      <div class="pair-bg" style="background:var(--stone-light);color:var(--ink);border:1px solid var(--stone);">Stone + Crimson</div>
+      <div class="pair-info"><div class="pair-name">Document / Editorial</div><div class="pair-use">Proposals, case studies, long-form content</div></div>
+    </div>
+    <div class="pair-card">
+      <div class="pair-bg" style="background:var(--terra);color:white;">Terra + White</div>
+      <div class="pair-info"><div class="pair-name">Secondary Accent</div><div class="pair-use">Callouts, highlights, supporting elements</div></div>
+    </div>
+    <div class="pair-card">
+      <div class="pair-bg" style="background:var(--crimson-deep);color:var(--terra-pale);">Crimson Deep + Terra Pale</div>
+      <div class="pair-info"><div class="pair-name">Sophisticated Dark</div><div class="pair-use">Premium materials, investor-facing documents</div></div>
+    </div>
+    <div class="pair-card">
+      <div class="pair-bg" style="background:white;color:var(--ink);border:1px solid var(--stone);">White + Ink</div>
+      <div class="pair-info"><div class="pair-name">Clean Neutral</div><div class="pair-use">Body content, long-form reading, cards</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 TYPOGRAPHY -->
+<div id="type" class="section page">
+  <div class="section-header">
+    <span class="section-num">03 — Typography</span>
+    <div class="section-title">Serif confidence,<br><em>sans-serif clarity</em></div>
+    <p class="section-sub">Playfair Display brings authority and intelligence to headlines — the italic variant is especially powerful for emotional emphasis. DM Sans provides clean, modern readability for body text and UI elements.</p>
+  </div>
+
+  <div class="type-pair">
+    <div>
+      <span class="type-label">Display Font — Playfair Display</span>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="type-display-lg">Aa</div>
+        <div class="type-display-sm">Analytics built for decisions</div>
+        <div class="type-display-it">not just reports.</div>
+      </div>
+      <div style="margin-top:20px;font-size:13px;color:var(--ink-muted);line-height:1.7;">Use for: Page titles, section headers, pull quotes, hero headlines, proposal headings. The italic variant creates emotional resonance — use it for the most important phrase in any headline.</div>
+    </div>
+    <div>
+      <span class="type-label">Body Font — DM Sans</span>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="font-family:var(--sans);font-size:28px;font-weight:600;color:var(--ink);">ABCDEFGHIJKLM</div>
+        <div style="font-family:var(--sans);font-size:28px;font-weight:300;color:var(--ink-mid);">abcdefghijklm</div>
+        <div style="font-family:var(--sans);font-size:14px;font-weight:400;color:var(--ink-muted);line-height:1.7;">We build intelligence systems for medical practices and the investors who evaluate them — turning raw EHR data into real-time executive visibility.</div>
+      </div>
+      <div style="margin-top:20px;font-size:13px;color:var(--ink-muted);line-height:1.7;">Use for: Body copy, UI labels, navigation, captions, data labels, button text. Weight 300 for long-form body text; 400–500 for UI; 600 for emphasis only.</div>
+    </div>
+  </div>
+
+  <span class="type-label">Type Scale</span>
+  <div class="type-scale">
+    <div class="scale-row"><div class="scale-meta">Display / 52px</div><div class="scale-sample" style="font-family:var(--serif);font-size:52px;font-weight:400;line-height:1;">Healthcare</div></div>
+    <div class="scale-row"><div class="scale-meta">H1 / 40px</div><div class="scale-sample" style="font-family:var(--serif);font-size:40px;font-weight:400;line-height:1.1;">Practice Analytics</div></div>
+    <div class="scale-row"><div class="scale-meta">H2 / 28px</div><div class="scale-sample" style="font-family:var(--serif);font-size:28px;font-weight:400;">Revenue Intelligence</div></div>
+    <div class="scale-row"><div class="scale-meta">H3 / 20px</div><div class="scale-sample" style="font-family:var(--sans);font-size:20px;font-weight:500;">Volume Dashboard</div></div>
+    <div class="scale-row"><div class="scale-meta">Body LG / 16px</div><div class="scale-sample" style="font-family:var(--sans);font-size:16px;font-weight:300;color:var(--ink-muted);">We turn raw EHR data into real-time executive visibility.</div></div>
+    <div class="scale-row"><div class="scale-meta">Body / 14px</div><div class="scale-sample" style="font-family:var(--sans);font-size:14px;font-weight:400;color:var(--ink-mid);">Patient volume by provider, location, and visit type</div></div>
+    <div class="scale-row"><div class="scale-meta">Label / 11px</div><div class="scale-sample" style="font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--crimson);">Healthcare Data Analytics</div></div>
+    <div class="scale-row"><div class="scale-meta">Mono / 12px</div><div class="scale-sample" style="font-family:var(--mono);font-size:12px;color:var(--ink-mid);">wRVU · Collection Rate · AR Aging</div></div>
+  </div>
+</div>
+
+<!-- 04 VOICE & TONE -->
+<div id="voice" class="section page">
+  <div class="section-header">
+    <span class="section-num">04 — Voice & Tone</span>
+    <div class="section-title">The operator who<br><em>speaks data.</em></div>
+    <p class="section-sub">Harine's voice comes from a position of lived experience — not theory. We've run healthcare businesses. We know what matters to a CMO on a Monday morning and what a PE associate needs in a data room.</p>
+  </div>
+
+  <div class="voice-grid">
+    <div class="voice-card voice-active">
+      <div class="voice-icon">🎯</div>
+      <div class="voice-name">Direct</div>
+      <div class="voice-desc">We say what we mean. No jargon for jargon's sake. If a sentence can be shorter, it should be. Executives respect brevity.</div>
+    </div>
+    <div class="voice-card voice-active">
+      <div class="voice-icon">🏗️</div>
+      <div class="voice-name">Grounded</div>
+      <div class="voice-desc">Our credibility comes from having built real things. We reference real problems — manual exports, reconciling reports, provider comparisons in spreadsheets.</div>
+    </div>
+    <div class="voice-card voice-active">
+      <div class="voice-icon">⚡</div>
+      <div class="voice-name">Confident</div>
+      <div class="voice-desc">We know the answer. No hedging. "We help" not "we try to help." "You'll see" not "you might see." Own the outcome.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon">🚫</div>
+      <div class="voice-name">Not Salesy</div>
+      <div class="voice-desc">We don't oversell. The work speaks. Testimonials and case study outcomes do more than adjectives like "world-class" or "cutting-edge."</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon">🚫</div>
+      <div class="voice-name">Not Academic</div>
+      <div class="voice-desc">We have the engineering background but we don't lead with it. Plain language first. Technical depth is available on request.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon">🚫</div>
+      <div class="voice-name">Not Buzzword-Heavy</div>
+      <div class="voice-desc">Words like "synergy," "leverage," "holistic," "empower" are banned. Describe the actual thing, not a vague version of it.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin:40px 0 20px;">Voice in Practice</h3>
+  <div class="voice-examples">
+    <div class="voice-ex">
+      <div class="voice-ex-wrong"><div class="voice-ex-label">✕ Don't write this</div><div class="voice-ex-text">"We leverage cutting-edge AI-powered solutions to transform your healthcare data ecosystem into actionable insights that empower leadership."</div></div>
+      <div class="voice-ex-right"><div class="voice-ex-label">✓ Write this instead</div><div class="voice-ex-text">"We take your EHR data and build dashboards your leadership actually opens every morning."</div></div>
+    </div>
+    <div class="voice-ex">
+      <div class="voice-ex-wrong"><div class="voice-ex-label">✕ Don't write this</div><div class="voice-ex-text">"Our comprehensive due diligence analytics offering provides holistic visibility into target practice performance metrics."</div></div>
+      <div class="voice-ex-right"><div class="voice-ex-label">✓ Write this instead</div><div class="voice-ex-text">"Before you close, you need to know if the revenue is real. We find out."</div></div>
+    </div>
+    <div class="voice-ex">
+      <div class="voice-ex-wrong"><div class="voice-ex-label">✕ Don't write this</div><div class="voice-ex-text">"Harine Management is a premier provider of world-class healthcare data analytics consulting services."</div></div>
+      <div class="voice-ex-right"><div class="voice-ex-label">✓ Write this instead</div><div class="voice-ex-text">"We've run healthcare businesses. We built the data systems we wished we had. Now we build them for you."</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 UI COMPONENTS -->
+<div id="components" class="section page">
+  <div class="section-header">
+    <span class="section-num">05 — UI Components</span>
+    <div class="section-title">The <em>building blocks</em><br>of every touchpoint</div>
+    <p class="section-sub">These component patterns apply to the website, client portals, dashboards, proposal documents, and any digital material. Consistency here is what makes the brand feel cohesive across contexts.</p>
+  </div>
+
+  <div class="components-grid">
+    <div>
+      <div class="component-label">Buttons</div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+        <button class="btn btn-xl btn-primary-brand">Book a Discovery Call</button>
+        <button class="btn btn-lg btn-primary-brand">See How It Works</button>
+        <button class="btn btn-lg btn-secondary-brand">For PE & Investors →</button>
+        <button class="btn btn-lg btn-terra">View Case Study</button>
+        <button class="btn btn-lg btn-dark">Schedule a Call</button>
+        <button class="btn btn-sm btn-ghost-brand">Learn More</button>
+      </div>
+
+      <div style="margin-top:32px;">
+        <div class="component-label">Eyebrow Labels</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="eyebrow-demo"><div class="eyebrow-rule"></div>Healthcare Data Analytics</div>
+          <div class="eyebrow-demo" style="color:var(--terra);"><div class="eyebrow-rule" style="background:var(--terra);"></div>For PE & Investors</div>
+          <div class="eyebrow-demo" style="color:var(--ink-faint);"><div class="eyebrow-rule" style="background:var(--ink-faint);"></div>Case Study</div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <div class="component-label">Tags & Pills</div>
+        <div class="tags-row">
+          <span class="tag tag-primary">Practice Analytics</span>
+          <span class="tag tag-terra">Due Diligence</span>
+          <span class="tag tag-dark">Revenue Cycle</span>
+          <span class="tag tag-success">Active Client</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="component-label">Cards</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card-demo">
+          <div class="card-title">Volume Analytics</div>
+          <div class="card-text">Daily patient volume tracking by provider, location, and visit type. MoM and YoY trends included.</div>
+        </div>
+        <div class="card-demo-accent">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--crimson);margin-bottom:8px;">Flagship Product</div>
+          <div class="card-title">Practice Analytics System</div>
+          <div class="card-text">End-to-end analytics infrastructure from your EHR to executive dashboards.</div>
+        </div>
+        <div class="card-dark-demo">
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px;">Dashboard Metric</div>
+          <div class="card-title">Collection Rate</div>
+          <div style="font-size:28px;font-weight:600;color:var(--terra-light);margin:4px 0;">94.2%</div>
+          <div class="card-text">↑ 2.1% vs prior period</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 IMAGERY -->
+<div id="imagery" class="section page">
+  <div class="section-header">
+    <span class="section-num">06 — Imagery & Illustration</span>
+    <div class="section-title">What we show<br><em>and how.</em></div>
+    <p class="section-sub">Harine is a data company. Our visuals should reflect precision, clarity, and real work — not generic stock photography of smiling doctors or glowing blue dashboards.</p>
+  </div>
+
+  <div class="imagery-grid">
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:var(--ink);">
+        <div style="display:flex;flex-direction:column;gap:6px;padding:20px;">
+          <div style="height:8px;background:var(--terra-light);border-radius:2px;width:80%;opacity:0.6;"></div>
+          <div style="height:8px;background:var(--terra);border-radius:2px;width:60%;opacity:0.5;"></div>
+          <div style="height:8px;background:var(--crimson);border-radius:2px;width:90%;opacity:0.7;"></div>
+          <div style="height:8px;background:var(--terra-light);border-radius:2px;width:45%;opacity:0.4;"></div>
+          <div style="height:8px;background:var(--terra-mid);border-radius:2px;width:70%;opacity:0.5;"></div>
+        </div>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✓ Dashboard Screenshots</div>
+        <div class="imagery-desc">Real deliverables. Actual dashboards from live engagements (anonymized). This is what trust looks like.</div>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:var(--stone-light);">
+        <div style="font-family:var(--serif);font-size:18px;color:var(--ink);text-align:center;padding:20px;line-height:1.5;">"The data was there. We just couldn't see it."</div>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✓ Client Quotes & Pull Quotes</div>
+        <div class="imagery-desc">Testimonials and outcome statements over generic photos. Always attribute to role, never full name without permission.</div>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:var(--crimson);">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:40px;font-weight:400;color:white;">0</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;">manual exports after</div>
+        </div>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✓ Outcome Statistics</div>
+        <div class="imagery-desc">Specific, credible numbers displayed prominently. Real results — never made-up superlatives.</div>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:#ddd;position:relative;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(184,48,48,0.15);">
+          <span style="font-size:32px;">🚫</span>
+        </div>
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#a0c4ff,#bdb2ff);opacity:0.6;"></div>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✕ Generic Stock Photography</div>
+        <div class="imagery-desc">No smiling doctors in stethoscopes, no glowing blue holograms, no stock "teamwork" imagery. These undermine credibility.</div>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:var(--crimson);position:relative;overflow:hidden;">
+        <div style="position:absolute;width:120px;height:120px;border-radius:50% 40%;background:var(--terra);opacity:0.5;top:-20px;right:-20px;"></div>
+        <div style="position:absolute;width:70px;height:70px;border-radius:40% 60%;background:var(--terra-mid);opacity:0.4;bottom:10px;left:10px;"></div>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✓ Brand Blob Illustrations</div>
+        <div class="imagery-desc">The organic blob motif from the logo can be used as decorative backgrounds, dividers, and section accents throughout materials.</div>
+      </div>
+    </div>
+    <div class="imagery-card">
+      <div class="imagery-preview" style="background:var(--stone-light);">
+        <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="120" height="80">
+          <rect x="10" y="50" width="12" height="25" fill="#B83030" opacity="0.7"/>
+          <rect x="30" y="35" width="12" height="40" fill="#C4543A" opacity="0.7"/>
+          <rect x="50" y="20" width="12" height="55" fill="#B83030" opacity="0.9"/>
+          <rect x="70" y="40" width="12" height="35" fill="#D4664C" opacity="0.6"/>
+          <rect x="90" y="28" width="12" height="47" fill="#B83030" opacity="0.8"/>
+          <path d="M16 48 L36 33 L56 18 L76 38 L96 26" stroke="#6B1818" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="imagery-info">
+        <div class="imagery-name">✓ Data Visualizations in Brand Colors</div>
+        <div class="imagery-desc">Charts and graphs should use the brand color palette — crimson as primary data series, terra as secondary, ink neutrals for axes and labels.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 07 APPLICATIONS -->
+<div id="applications" class="section page">
+  <div class="section-header">
+    <span class="section-num">07 — Brand Applications</span>
+    <div class="section-title">The brand <em>in the wild</em></div>
+    <p class="section-sub">How the identity looks across the four most common touchpoints — website, client proposals, dashboards, and presentation decks.</p>
+  </div>
+
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-card-preview" style="background:var(--stone-light);padding:0;overflow:hidden;">
+        <!-- Website nav simulation -->
+        <div style="background:var(--crimson);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:12px;font-weight:500;color:white;letter-spacing:0.1em;text-transform:uppercase;">Harine Management</div>
+          <div style="display:flex;gap:14px;"><span style="font-size:10px;color:rgba(255,255,255,0.5)">Services</span><span style="font-size:10px;color:rgba(255,255,255,0.5)">About</span><div style="font-size:10px;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);padding:3px 10px;border-radius:3px;">Schedule Call</div></div>
+        </div>
+        <div style="padding:24px 20px;background:var(--stone-light);">
+          <div style="font-size:9px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--crimson);margin-bottom:8px;display:flex;align-items:center;gap:6px;"><div style="width:16px;height:1px;background:var(--crimson);"></div>Healthcare Analytics</div>
+          <div style="font-family:var(--serif);font-size:22px;color:var(--ink);line-height:1.2;margin-bottom:8px;">Analytics built for<br><em style="font-style:italic;color:var(--crimson)">decisions.</em></div>
+          <div style="font-size:11px;color:var(--ink-muted);line-height:1.6;margin-bottom:14px;">Turn raw EHR data into executive intelligence.</div>
+          <div style="display:flex;gap:8px;"><div style="font-size:10px;background:var(--crimson);color:white;padding:6px 14px;border-radius:3px;">See How It Works</div><div style="font-size:10px;color:var(--crimson);border-bottom:1px solid var(--crimson);padding-bottom:1px;">For Investors →</div></div>
+        </div>
+      </div>
+      <div class="app-card-label">Website — Hero Section</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-preview" style="padding:0;overflow:hidden;">
+        <div class="email-prev">
+          <div class="email-nav-brand">Harine Management</div>
+          <div class="email-h">Practice Analytics<br><em>Proposal</em></div>
+          <div class="email-sub">Prepared for: [Client Practice Name]<br>Prepared by: Devanshu Patel · Harine LLC</div>
+        </div>
+        <div style="padding:20px 24px;background:var(--stone-light);">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;">Project Overview</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:white;border:1px solid var(--stone);border-radius:4px;padding:10px 12px;font-size:11px;color:var(--ink-mid);">Phase 1 — Volume Dashboard · $10,300</div>
+            <div style="background:white;border:1px solid var(--stone);border-radius:4px;padding:10px 12px;font-size:11px;color:var(--ink-faint);">Phase 2 — Revenue Intelligence · Optional</div>
+          </div>
+        </div>
+      </div>
+      <div class="app-card-label">Client Proposal Template</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-preview" style="padding:0;overflow:hidden;">
+        <div class="dash-prev">
+          <div class="dash-nav-brand">Harine · Practice Dashboard</div>
+          <div class="dash-kpi-row">
+            <div class="dash-kpi-m"><div class="dash-kpi-lbl">Volume MTD</div><div class="dash-kpi-val">2,847</div><div class="dash-kpi-delta">↑ 12.4%</div></div>
+            <div class="dash-kpi-m"><div class="dash-kpi-lbl">wRVU / Provider</div><div class="dash-kpi-val">342.6</div><div class="dash-kpi-delta">↑ 8.1% YoY</div></div>
+            <div class="dash-kpi-m"><div class="dash-kpi-lbl">Collection</div><div class="dash-kpi-val">94.2%</div><div class="dash-kpi-delta" style="color:rgba(255,255,255,0.3);">Stable</div></div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;background:var(--stone-light);font-size:11px;color:var(--ink-muted);">Data refreshed daily · Powered by Harine Management</div>
+      </div>
+      <div class="app-card-label">Analytics Dashboard Interface</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-preview" style="padding:0;overflow:hidden;">
+        <div class="slide-prev">
+          <div class="slide-blob-bg"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">Practice Analytics System · Phase 1 Results</div>
+            <div class="slide-h">Volume Intelligence:<br><em>What the data revealed.</em></div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;background:var(--stone-light);display:flex;gap:16px;">
+          <div style="flex:1;background:white;border-radius:4px;padding:10px 12px;border:1px solid var(--stone);"><div style="font-size:18px;font-weight:600;color:var(--crimson);">+18%</div><div style="font-size:10px;color:var(--ink-muted);">Visit volume MoM</div></div>
+          <div style="flex:1;background:white;border-radius:4px;padding:10px 12px;border:1px solid var(--stone);"><div style="font-size:18px;font-weight:600;color:var(--terra);">0</div><div style="font-size:10px;color:var(--ink-muted);">Manual exports</div></div>
+        </div>
+      </div>
+      <div class="app-card-label">Presentation / Slide Deck</div>
+    </div>
+  </div>
+</div>
+
+<!-- 08 SPACING -->
+<div id="spacing" class="section page">
+  <div class="section-header">
+    <span class="section-num">08 — Spacing & Layout</span>
+    <div class="section-title">Generous space.<br><em>Deliberate density.</em></div>
+    <p class="section-sub">Harine materials should feel unhurried and executive. Dense layouts undermine the premium positioning. When in doubt, add more whitespace.</p>
+  </div>
+
+  <div class="component-label" style="margin-bottom:16px;">Spacing Scale</div>
+  <div class="spacing-scale">
+    <div class="space-item"><div class="space-block" style="height:4px;"></div><div class="space-label">4px<br>xs</div></div>
+    <div class="space-item"><div class="space-block" style="height:8px;"></div><div class="space-label">8px<br>sm</div></div>
+    <div class="space-item"><div class="space-block" style="height:16px;"></div><div class="space-label">16px<br>md</div></div>
+    <div class="space-item"><div class="space-block" style="height:24px;"></div><div class="space-label">24px<br>lg</div></div>
+    <div class="space-item"><div class="space-block" style="height:32px;"></div><div class="space-label">32px<br>xl</div></div>
+    <div class="space-item"><div class="space-block" style="height:48px;"></div><div class="space-label">48px<br>2xl</div></div>
+    <div class="space-item"><div class="space-block" style="height:64px;"></div><div class="space-label">64px<br>3xl</div></div>
+    <div class="space-item"><div class="space-block" style="height:80px;"></div><div class="space-label">80px<br>4xl</div></div>
+    <div class="space-item"><div class="space-block" style="height:100px;"></div><div class="space-label">100px<br>section</div></div>
+  </div>
+
+  <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="rule-card do">
+      <div class="rule-card-label">Layout Rules</div>
+      <div class="rule-item">Section padding: minimum 80px top/bottom on desktop</div>
+      <div class="rule-item">Max content width: 1200px, centered</div>
+      <div class="rule-item">Page-level horizontal padding: 48px desktop, 24px mobile</div>
+      <div class="rule-item">Card internal padding: 24–32px</div>
+      <div class="rule-item">Body text max-width: 640px for readability</div>
+    </div>
+    <div class="rule-card do" style="border-top-color: var(--terra);">
+      <div class="rule-card-label" style="color:var(--terra);">Responsive Breakpoints</div>
+      <div class="rule-item">Mobile: &lt; 640px · single column, 24px gutters</div>
+      <div class="rule-item">Tablet: 640–900px · max 2 columns</div>
+      <div class="rule-item">Desktop: 900–1200px · full grid layouts</div>
+      <div class="rule-item">Wide: &gt; 1200px · content capped, background fills</div>
+      <div class="rule-item">Nav always fixed; collapsible on mobile</div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:40px;">
+    <div class="note-label">A Note on Logo vs. Website Color</div>
+    <div class="note-text">Your logo uses crimson and terracotta. The initial website mockup used forest green — a deliberate "executive trust" choice. Both work. The recommended approach: use crimson/terracotta as the <strong>brand identity color</strong> (logo, proposals, slides, email headers) and allow the website to use the warmer neutral palette (stone, cream, ink) with crimson accents. This prevents the site from feeling like "just a red website" while keeping the logo as the bold, memorable identity anchor it is.</div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="cover" style="min-height:40vh;">
+  <div class="cover-blob1" style="width:300px;height:300px;top:-60px;right:-40px;"></div>
+  <div class="cover-inner" style="justify-content:center;">
+    <div class="cover-label" style="margin-bottom:12px;">Questions about these guidelines?</div>
+    <div style="font-family:var(--serif);font-size:28px;color:white;font-weight:400;">dev@harinemanagement.com</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-top:8px;">682-256-3389 · Atlanta, GA</div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-brand">Harine Management LLC</div>
+    <div class="cover-footer-version">Brand Guidelines v1.0 — Confidential</div>
+  </div>
+</div>
+
+</body>
+</html>
