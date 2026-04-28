@@ -1,0 +1,81 @@
+---
+title: "How to Build a Provider Productivity Dashboard Your CMO Will Actually Use"
+date: "2026-03-05"
+slug: "how-to-build-provider-productivity-dashboard"
+description: "Most provider productivity dashboards fail because they were built for data teams, not physicians and medical directors. Here's what a CMO actually needs to see — and how to build an analytics layer that gets opened every morning."
+category: "practice-analytics"
+tags: ["provider productivity", "wRVU", "dashboard", "CMO", "analytics", "MGMA"]
+author: "Devanshu Patel"
+readingTime: "8 min read"
+---
+
+## Quick Answer
+
+A provider productivity dashboard that a CMO will actually use has four properties: it updates automatically every morning without anyone running a report; it shows wRVU production against goal and MGMA benchmark in a single view; it gives each provider access to their own numbers without exposing colleagues' data; and it surfaces underperformance trends early enough to address them before they become compensation conversations. Dashboards that don't have all four of these properties get checked once and forgotten.
+
+## Why Most Productivity Dashboards Fail
+
+The most common version of a provider productivity dashboard is a spreadsheet that a practice administrator updates monthly by pulling a report from the EHR and pasting it into a template. This version fails for a predictable set of reasons.
+
+**Monthly cadence eliminates the ability to intervene.** If a provider is tracking to produce 30% fewer wRVUs than their annual goal — because they took unexpected time off, their patient panel shifted toward lower-complexity visits, or their schedule is being filled less efficiently — a monthly report tells you this 30 days after it started. At that point, the compensation shortfall is already partially baked and the window for corrective action is half-closed. Daily wRVU data gives a leadership team a 5-7 day detection window instead of a 30-day one.
+
+**Aggregate numbers hide individual problems.** A practice where total wRVU production is on track can have two providers running above goal and two running significantly below. The aggregate number looks fine. The compensation conversation for the two underperforming providers, and the underlying reasons for their underperformance, are invisible until the spreadsheet is broken out to the individual level — which most practices don't do monthly and almost none do weekly.
+
+**No provider has access to their own numbers.** The most powerful version of productivity tracking gives each physician a view of their own data — their daily wRVU count, their pace against their annual goal, their MGMA percentile. This is not primarily a management transparency initiative; it is a performance management tool. Providers who can see their own numbers in real time are meaningfully more engaged with hitting their productivity targets than providers who receive a quarterly summary they didn't ask for.
+
+**The MGMA context is missing.** Telling a physician they produced 4,600 wRVUs last year means nothing without context. Is that excellent? Adequate? Underperforming? Against the MGMA national specialty benchmark at the 50th, 75th, and 90th percentile, 4,600 wRVUs for a family medicine physician is the 55th percentile — above median, below strong. For a hospitalist it might be exceptional. Without the benchmark, the number is an abstraction.
+
+## What Belongs in a CMO-Calibrated Dashboard
+
+### The Executive View: Practice in 60 Seconds
+
+The first view a CMO should see when they open the dashboard is a practice-level summary — total wRVU production for the current month vs. the prior month and the same month last year, total encounters for the same periods, and a traffic-light indicator for each provider showing whether they're on track (green), within 10% of target (yellow), or materially behind (red).
+
+This view should answer the question "is the practice on track?" in under 60 seconds. If the CMO has to navigate or calculate anything to get to that answer, the design has failed.
+
+### The Provider Cohort View: Department-Level Visibility
+
+The second view is the department head or medical director view — all providers in a specialty or department, showing monthly wRVU production, percentage of annual goal achieved, and MGMA percentile rank. The purpose of this view is comparative: who in the cohort is performing well, who needs attention, and is any individual trending in a direction that warrants a conversation?
+
+This view should be available to department heads and medical directors, not to individual providers — seeing colleagues' productivity numbers is appropriate for supervisory roles, not lateral peers. Role-level access control is not optional; without it, you will not get physician buy-in for the dashboard and you will face internal political challenges every time someone notices another provider's numbers.
+
+### The Individual Provider View: Self-Service Transparency
+
+The third view is the individual provider view — secured so each physician sees only their own data. This view should show daily wRVU production for the current month, a progress bar toward the annual goal, a trend line of monthly production for the rolling 12 months, and MGMA benchmarking at the 25th, 50th, 75th, and 90th percentile for their specialty.
+
+This is the view that changes behavior. When providers can see their own pace against goal every morning, they engage differently with scheduling decisions, documentation completion, and visit complexity coding. The operational changes are not dramatic — a provider who sees they're tracking to 94% of annual goal in month 7 might add one additional clinic day over the next 60 days — but they aggregate meaningfully at the practice level.
+
+[Harine Management's Provider Productivity Analytics service](https://harinemanagement.com/services/provider-productivity-analytics) configures exactly this three-tier access structure using Power BI row-level security — each provider gets their view, department heads get their cohort view, and CMOs get the practice summary. No one sees data they shouldn't, and no one lacks access to data they need.
+
+## The Data Infrastructure That Makes This Possible
+
+The dashboard described above requires four things from the underlying data infrastructure.
+
+**Daily CPT-level EHR extraction.** wRVU is calculated from CPT codes — the procedures and visit types documented at each encounter. Getting this data out of an EHR daily, without human intervention, requires either an API connection or a scheduled report export that runs automatically. Most EHRs support both; the setup complexity varies significantly by platform.
+
+**CMS wRVU schedule application.** Once CPT codes are extracted, each code needs to be multiplied by its CMS wRVU value to calculate production. The CMS wRVU schedule is a public document updated annually. Maintaining an accurate mapping table and updating it when CMS publishes revisions is pipeline maintenance that needs to be planned for.
+
+**MGMA benchmark integration.** MGMA specialty benchmarks need to be incorporated as reference data, queryable by specialty, to calculate percentile ranks. This is reference data maintenance that requires annual updates when the new MGMA Physician Compensation and Production Report is published.
+
+**Goal-setting and tracking logic.** The dashboard needs to know each provider's annual wRVU goal, prorated by the portion of the year elapsed, to calculate pacing. This requires a data input mechanism for goal changes and a calculation that accounts for part-time providers, leave periods, and mid-year target adjustments.
+
+This infrastructure is not technically exotic — it's well within the capability of Power BI or any modern BI tool. What makes it take months instead of weeks when built internally is the combination of EHR data access negotiation, pipeline maintenance discipline, and MGMA licensing. [Building the practice analytics system](https://harinemanagement.com/services/practice-analytics-system) from scratch internally is a 3-6 month project for a practice that hasn't done it before.
+
+## What the Dashboard Should Not Include
+
+Brevity is as important as completeness. A productivity dashboard that includes 40 metrics is not a dashboard — it's a data dump. CMOs and medical directors do not have time to review 40 metrics daily; they will skim the first few, lose confidence that they're seeing what matters, and stop opening it.
+
+The dashboard should not include claims data, billing detail, or financial accounting — those belong in a [revenue cycle](https://harinemanagement.com/services/revenue-cycle-analytics) dashboard. It should not include patient satisfaction scores or quality metrics — those belong in a quality dashboard. Provider productivity is specifically wRVU production, encounter volume, visit type mix, and goal attainment. Everything else dilutes the signal.
+
+The goal is for a CMO to open the dashboard, confirm that the practice is on track, flag any individual providers that warrant attention, and close it — in under four minutes. If the daily review takes longer than that, the dashboard is too complex.
+
+**Want to see what a properly structured provider productivity dashboard looks like?** [Schedule a discovery call](https://harinemanagement.com/#contact) and we'll walk through a working example built from a practice's EHR data.
+
+## Key Takeaways
+
+- **Monthly productivity reporting is too slow for intervention**: by the time a monthly wRVU report surfaces underperformance, the compensation shortfall is already partially baked and the correction window is narrow.
+- **Three-tier access structure is the design standard**: individual providers see their own numbers, department heads see their cohort, CMOs see the practice summary — without role-level security, physician buy-in will not survive the first political incident.
+- **MGMA benchmarking converts a number into an answer**: 4,600 wRVUs means nothing without knowing whether that's the 25th or 75th percentile for the specialty.
+- **Individual provider access to their own data changes behavior**: providers who see their daily pace against goal adjust scheduling and coding decisions in ways that aggregate meaningfully at the practice level.
+- **The underlying data pipeline requires four components**: daily CPT extraction from the EHR, CMS wRVU schedule application, MGMA benchmark integration, and goal-tracking logic — each of which requires maintenance discipline.
+- **Brevity matters as much as completeness**: a 40-metric dashboard is a data dump; a CMO-calibrated productivity view has fewer than 10 metrics and answers "are we on track?" in under 60 seconds.

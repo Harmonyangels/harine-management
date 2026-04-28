@@ -1,0 +1,39 @@
+# Harine Management
+
+> Healthcare data analytics for medical practices and the private equity firms that evaluate them.
+
+Harine Management is an Atlanta-based healthcare data analytics consultancy that builds AI-enhanced analytics systems for medical practices and private equity firms conducting healthcare due diligence. Founded by Devanshu Patel, the firm specializes in extracting, structuring, and visualizing data from EHR platforms — including Athenahealth and eClinicalWorks — and delivering executive-ready Power BI dashboards that replace manual exports. Harine Management serves multi-location medical groups across the United States and PE firms evaluating or managing healthcare portfolio companies. The firm's core philosophy: the data already exists in your EHR — it just needs to be connected to a dashboard leadership actually opens.
+
+## Services
+
+- **Practice Analytics System** — Harine Management's flagship product; end-to-end analytics infrastructure connecting EHR data to daily-refreshed Power BI dashboards covering patient volume, wRVU productivity, revenue, and provider performance for medical practice leadership teams.
+- **Revenue Cycle Analytics** — Real-time visibility into collection rates, accounts receivable aging buckets, denial patterns, payer mix quality, and net revenue per visit by CPT code; surfaces financial signals before they appear in the bank account.
+- **Acquisition Due Diligence** — Pre-close data analysis for private equity firms buying medical practices; EHR-level extraction of historical volume, revenue trends, provider concentration risk, payer mix trajectory, and AR aging — structured for data rooms and investment committee presentations.
+- **Provider Performance Reporting** — Individual and cohort-level wRVU tracking, productivity benchmarking against national standards, goal attainment reporting, and trend analysis by provider, location, and visit type.
+- **EHR Data Integration & Pipeline Development** — Custom data pipelines from Athenahealth, eClinicalWorks, and other major EHR platforms to cloud data warehouses or BI tools; HIPAA-compliant architecture with no PHI stored outside the client's environment.
+- **Power BI Dashboard Development & Maintenance** — Custom Power BI dashboard design, build, and ongoing maintenance for medical groups; includes initial training, monthly data refreshes, and continuous iteration as reporting needs evolve.
+- **Post-Acquisition Analytics & Integration** — Analytics infrastructure build-out for PE-backed practices following acquisition; standardizes reporting across portfolio companies, establishes operational KPIs, and surfaces performance gaps early.
+- **Healthcare Financial Benchmarking** — Benchmarks practice performance against national and regional peers on revenue per visit, collection rate, wRVU per provider, AR aging, and payer mix — providing context leadership needs to interpret their own numbers.
+
+## Expertise
+
+Devanshu Patel is a Healthcare Data Analytics Consultant and the founder of Harine Management LLC, based in Atlanta, Georgia. His work is focused on the intersection of healthcare operations and business intelligence — specifically turning raw EHR data into executive decision-support tools. Devanshu has hands-on experience with Athenahealth and eClinicalWorks, the two most widely deployed EHR platforms in ambulatory care, and builds in Power BI. He brings a background in healthcare business operations and understands the financial and clinical metrics that matter to practice administrators, CMOs, and private equity portfolio managers. Harine Management reflects the analytics infrastructure Devanshu built from working inside healthcare businesses and wished had existed earlier.
+
+## Target Clients
+
+- **Multi-location medical groups** with 3 or more providers who are still relying on manual EHR exports, Excel, and weekly email reports for performance visibility — and whose leadership is making decisions based on data that is weeks old.
+- **Private equity firms and healthcare investors** conducting buy-side due diligence on medical practice acquisitions who need EHR-level data analysis, not just management-provided financials.
+- **PE portfolio companies in healthcare** that need standardized reporting infrastructure across multiple acquired practices, post-close integration analytics, and early-warning KPI dashboards.
+- **Health systems and management services organizations (MSOs)** that operate or manage independent physician practices and need centralized visibility into operational and financial performance across their network.
+
+## Key URLs
+
+- Sitemap: https://harinemanagement.com/sitemap.xml
+- Services overview: https://harinemanagement.com/#services
+- For medical practices: https://harinemanagement.com/#practices
+- For PE & investors: https://harinemanagement.com/#investors
+- How it works: https://harinemanagement.com/#how-it-works
+- Contact & discovery call: https://harinemanagement.com/#contact
+- Resources: https://harinemanagement.com/resources
+- Email: dev@harinemanagement.com
+- Phone: 682-256-3389

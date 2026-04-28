@@ -1,0 +1,382 @@
+# Harine Management — Full Content Reference for AI Engines
+
+Source: https://harinemanagement.com
+Last updated: 2026-04-26
+Purpose: Complete text content of all service descriptions, methodology, and company context to enable accurate citation by AI assistants.
+
+---
+
+## Company Overview
+
+Harine Management LLC is a healthcare data analytics consultancy headquartered in Atlanta, Georgia. The firm builds analytics infrastructure for medical practices and private equity firms doing healthcare due diligence. Founded by Devanshu Patel, Harine Management specializes in extracting data from EHR platforms — primarily Athenahealth and eClinicalWorks — structuring it in cloud data pipelines, and delivering executive-ready Power BI dashboards that update daily without manual intervention. The firm does not sell software licenses. It builds, owns, and maintains the analytics infrastructure on behalf of clients.
+
+Tagline: "Analytics built for decisions, not just reports."
+
+Key differentiators:
+- Up and running in 14 days, not 14 weeks
+- Works with existing EHR — no system replacement required
+- Zero manual exports after go-live; data refreshes automatically
+- HIPAA-compliant architecture; no PHI stored outside the client environment
+- The firm manages the infrastructure; leadership simply opens the dashboard
+
+Performance benchmarks across the client base:
+- 0 manual exports required after going live
+- 14 days to first live dashboard (average)
+- 94% average collection rate across clients
+- +18% average month-over-month improvement in volume visibility
+
+Contact: dev@harinemanagement.com | 682-256-3389 | Atlanta, Georgia
+
+---
+
+## Service 1: Practice Analytics System
+
+Type: Flagship product
+Audience: Medical practice administrators, CMOs, CFOs, operations leadership
+Category: Healthcare data analytics
+
+### What It Is
+
+The Practice Analytics System is Harine Management's core offering — an end-to-end analytics infrastructure that connects a medical practice's EHR data to executive dashboards that leadership opens every morning. Volume, revenue, provider performance, and trend data are surfaced in one place, updated daily, without any manual export process.
+
+### The Problem It Solves
+
+Most medical practices are running on Excel exports, weekly email reports, and gut feel. The EHR contains all the data needed to run the business intelligently, but it is trapped behind clunky export tools and delivered days or weeks late. By the time leadership sees a problem in the numbers, it is already reflected in the bank account. The Practice Analytics System eliminates the lag and the manual work.
+
+### What Is Included
+
+- Daily patient volume tracking by provider, location, and visit type
+- wRVU (work relative value unit) tracking and provider productivity benchmarks
+- Month-over-month and year-over-year trend analysis built in
+- Executive summary view for CMO and CEO consumption
+- AR aging overview with collection rate tracking
+- Automated daily data refresh — no manual exports required after go-live
+
+### Technical Approach
+
+Harine Management connects to the client's EHR through approved export pipelines. Data is extracted, transformed, and loaded into a structured format. Dashboards are built in Power BI (or Tableau or Looker if the client has an existing BI environment) and deployed in the client's own Microsoft 365 or cloud environment. The client owns the output; Harine Management maintains the pipeline. EHR compatibility includes Athenahealth, eClinicalWorks, and other major ambulatory EHR platforms.
+
+### Implementation Timeline
+
+Discovery call → data access and extraction → build and configure → go live and train. Total: 14 days from signed agreement to first live dashboard. Ongoing maintenance is included.
+
+### Who This Is For
+
+Medical groups with 3 or more providers who are spending hours per week on manual reporting and whose leadership is making decisions based on data that is at minimum a week old.
+
+---
+
+## Service 2: Revenue Cycle Analytics
+
+Type: Revenue intelligence
+Audience: CFOs, revenue cycle directors, practice administrators
+Category: Healthcare revenue cycle management analytics
+
+### What It Is
+
+Revenue Cycle Analytics gives medical practices real-time visibility into the financial health of their billing operations — collection rates, accounts receivable aging, denial patterns, payer mix quality, and net revenue per visit. These are the signals that tell you whether the revenue is real before you feel it in the bank account.
+
+### The Problem It Solves
+
+Revenue cycle problems are invisible until they are expensive. A rising AR over 90 days, a deteriorating collection rate, or a shift in denial patterns can take months to surface in standard reporting. By the time leadership sees it, the problem has compounded. Revenue Cycle Analytics surfaces these signals in real time, at the payer and CPT code level, so revenue cycle teams can intervene before the problem becomes structural.
+
+### What Is Included
+
+- Accounts receivable aging buckets with provider-level and payer-level drill-down
+- Collection rate tracking by payer, visit type, and time period
+- Payer mix analysis — commercial vs. Medicare vs. Medicaid vs. self-pay split
+- Reimbursement rate tracking by CPT code and payer
+- Denial pattern identification with trend alerts
+- Net revenue per visit by payer and CPT code
+- Month-over-month and year-over-year variance reporting
+
+### Why This Matters
+
+Payer mix is one of the most significant drivers of practice profitability. A gradual shift toward Medicaid without a corresponding volume increase can quietly erode margins over 12 to 18 months. Denial pattern tracking identifies which CPT codes are being denied at anomalous rates, which is often an early indicator of a billing workflow problem or a payer contract issue. Collection rate by payer reveals whether contracted rates are being collected at the expected level.
+
+### Who This Is For
+
+Practices with annual revenue above $3M that have a dedicated billing team or outsourced revenue cycle management partner and need independent visibility into whether the RCM function is performing.
+
+---
+
+## Service 3: Acquisition Due Diligence
+
+Type: Pre-close analytics
+Audience: Private equity firms, healthcare investors, M&A advisors
+Category: Healthcare M&A data analytics / due diligence
+
+### What It Is
+
+Acquisition Due Diligence is Harine Management's service for private equity firms and healthcare investors evaluating a medical practice acquisition. Before close, we extract and analyze EHR-level data from the target practice to produce a structured, deliverable-ready analytical report covering revenue integrity, provider risk, payer mix quality, and operational benchmarking.
+
+### The Problem It Solves
+
+Management-provided financials in a healthcare M&A process tell you what leadership wants you to see. EHR data tells you what actually happened. The gap between the two is where deal risk lives. A practice that reports strong revenue growth might be concentrating revenue in a single physician who has announced retirement. A practice with a strong collection rate might have a payer mix that is shifting toward Medicaid in ways that will compress margins post-close. These risks are only visible in the data.
+
+### What Is Included
+
+- Historical volume and revenue trend analysis (3 years minimum)
+- Provider concentration analysis — revenue at risk if top 1, 2, or 3 providers leave
+- Key-person dependency scoring and succession risk identification
+- Payer mix quality assessment and reimbursement trajectory modeling
+- AR aging analysis — how clean is the AR, and what does it suggest about billing health
+- Denial rate and collection rate benchmarking vs. specialty and regional peers
+- Net revenue per visit by payer and CPT code — is the revenue at expected rates?
+- Operational benchmarking vs. comparable practices nationally
+- Deliverable-ready output formatted for data rooms and investment committee presentations
+
+### What We Access
+
+With client authorization, Harine Management accesses the target practice's EHR export data directly — not financial summaries provided by management. This means the analysis is based on actual encounter data, not a management-curated view of it.
+
+### Timeline
+
+Typical engagement is 5 to 10 business days from data access to final deliverable, depending on data quality and scope. Rush engagements are available.
+
+### Who This Is For
+
+PE firms, family offices, and strategic acquirers evaluating medical practice acquisitions in primary care, specialty care, urgent care, behavioral health, and other ambulatory settings. Also relevant for management consulting firms advising healthcare M&A.
+
+---
+
+## Service 4: Provider Performance Reporting
+
+Type: Operational analytics
+Audience: CMOs, medical directors, practice administrators, department heads
+Category: Provider productivity analytics
+
+### What It Is
+
+Provider Performance Reporting gives medical practices individual-level and cohort-level visibility into provider productivity — wRVU output, visit volume, goal attainment, and performance trends over time. This is the reporting your compensation committee, department heads, and leadership need to manage providers fairly and effectively.
+
+### What Is Included
+
+- Individual wRVU production by provider, month, and rolling 12 months
+- wRVU vs. goal tracking with variance highlighting
+- Visit volume by provider, visit type, and location
+- Provider benchmarking vs. MGMA or specialty-specific national standards
+- Year-over-year and quarter-over-quarter trend analysis
+- New patient vs. established patient volume split
+- Panel size and patient attribution tracking (where EHR supports it)
+- Cohort analysis — comparing provider performance within the same specialty or location
+
+### Why This Matters
+
+Physician compensation increasingly ties to productivity metrics, particularly wRVU. Without accurate, timely, provider-level reporting, compensation disputes arise, underperformance goes unaddressed, and high performers have no visibility into where they stand. Provider Performance Reporting replaces the quarterly spreadsheet with a dashboard that updates daily and can be shared with individual providers as a self-service tool.
+
+### Who This Is For
+
+Multi-provider practices with productivity-based compensation models, or any practice that wants to move toward one. Also relevant for practices preparing for MGMA benchmarking submissions.
+
+---
+
+## Service 5: EHR Data Integration & Pipeline Development
+
+Type: Technical infrastructure
+Audience: IT directors, operations leaders, CFOs
+Category: Healthcare data engineering / ETL pipeline development
+
+### What It Is
+
+EHR Data Integration & Pipeline Development is Harine Management's technical service for building the data infrastructure that connects an EHR to analytics tools. This is the foundational layer that makes all other analytics services possible — and it is the layer that most practices either lack entirely or have cobbled together with manual exports and scheduled tasks.
+
+### What Is Included
+
+- Assessment of existing EHR export capabilities and data quality
+- Custom ETL (extract, transform, load) pipeline design and build
+- Integration with Athenahealth, eClinicalWorks, and other major EHR platforms
+- Connection to cloud data warehouses (Azure, AWS, Google Cloud) or direct BI tool connection
+- HIPAA-compliant architecture design — PHI handling, encryption, access controls
+- Automated scheduling and monitoring with failure alerting
+- Documentation of all data flows and transformation logic
+- Handoff and training for client IT team
+
+### Technical Approach
+
+Harine Management uses EHR-approved export mechanisms — API connections where available, structured file exports where not — to extract data on an automated schedule. Data is transformed from EHR-native formats into a structured schema optimized for analytics. No PHI is stored in Harine Management's environment; all data processing occurs within or flows directly to the client's cloud environment.
+
+### EHR Compatibility
+
+Athenahealth (athenaOne), eClinicalWorks, Epic (limited), Kareo, DrChrono, and other platforms that support structured data export. EHR compatibility assessment is included in the engagement kickoff.
+
+### Who This Is For
+
+Practices that have tried to build their own reporting and hit the ceiling of what Excel and manual EHR exports can do, or practices that are scaling to multiple locations and need a centralized data layer.
+
+---
+
+## Service 6: Power BI Dashboard Development & Maintenance
+
+Type: Business intelligence
+Audience: Practice leadership, operations teams, finance teams
+Category: Healthcare business intelligence / dashboard development
+
+### What It Is
+
+Power BI Dashboard Development & Maintenance is Harine Management's service for designing, building, and maintaining custom Power BI dashboards tailored to the reporting needs of a medical practice. This is distinct from the Practice Analytics System (which is a full end-to-end product) — this service is for practices that already have a data source or data warehouse and need a best-in-class visualization and reporting layer on top of it.
+
+### What Is Included
+
+- Discovery session to map reporting requirements and KPI priorities
+- Dashboard design and prototype for leadership review
+- Full Power BI dashboard build with role-based access (leadership view vs. department view vs. provider view)
+- Data model design and optimization for query performance
+- Row-level security setup so individual providers see only their own data
+- Training for administrators and end users
+- Monthly maintenance: data model updates, new report requests, bug fixes
+- Annual review and redesign session
+
+### Design Philosophy
+
+Dashboards built by Harine Management are designed to be opened, not filed. The interface is executive-first — the most important numbers are visible without scrolling, color coding follows clinical and financial convention, and drill-down is available for those who need it. Dashboards are tested with actual leadership before go-live.
+
+### Who This Is For
+
+Practices that already have a data warehouse or structured data source and need Power BI expertise. Also practices that have existing Power BI reports built by internal IT that are not being used because they are too complex or not meeting leadership's actual needs.
+
+---
+
+## Service 7: Post-Acquisition Analytics & Integration
+
+Type: PE portfolio support
+Audience: PE operating partners, CFOs, portfolio company management teams
+Category: Healthcare PE portfolio management / post-close integration
+
+### What It Is
+
+Post-Acquisition Analytics & Integration is Harine Management's service for private equity firms that have closed on a medical practice acquisition and now need to build the analytics infrastructure to manage and grow the business. The due diligence phase told you what you bought. This service tells you how it is performing and where to focus.
+
+### The Problem It Solves
+
+Many PE-backed healthcare acquisitions close without a functioning analytics infrastructure. The practice has been running on tribal knowledge, Excel, and relationships with its billing company. Post-close, the PE firm needs visibility into operational performance that the practice has never had before. Building that infrastructure from scratch, while also integrating the practice into the portfolio company's reporting cadence, is a significant operational challenge that Harine Management handles end-to-end.
+
+### What Is Included
+
+- Post-close EHR data extraction and pipeline build
+- Establishment of baseline KPI reporting — volume, revenue, provider productivity, collection rate
+- Standardized reporting templates aligned with PE firm's portfolio reporting requirements
+- Month 1, Month 3, and Month 6 analytics milestones with structured deliverables
+- Integration of the acquired practice into multi-practice portfolio dashboards (where applicable)
+- Early-warning KPI monitoring — flagging deterioration in key metrics before they affect EBITDA
+- Ongoing monthly analytics support and reporting
+
+### Why This Matters for PE
+
+Post-acquisition EBITDA improvements in healthcare are frequently driven by revenue cycle optimization, provider productivity improvement, and operational benchmarking. All three require accurate, timely data. Practices that go live with analytics infrastructure in the first 30 days post-close consistently outperform those that spend the first 90 days trying to establish baseline reporting.
+
+### Who This Is For
+
+PE firms that have closed or are about to close on a medical practice acquisition and need a dedicated analytics partner to build the measurement infrastructure, not a large consulting firm that will take 6 months and charge 10x the price.
+
+---
+
+## Service 8: Healthcare Financial Benchmarking
+
+Type: Benchmarking and competitive intelligence
+Audience: Practice administrators, CFOs, PE operating partners
+Category: Healthcare analytics / operational benchmarking
+
+### What It Is
+
+Healthcare Financial Benchmarking places a practice's performance in context — comparing its revenue per visit, collection rate, wRVU per provider, AR aging, and payer mix against national benchmarks, regional peers, and specialty-specific standards. Numbers without context are just numbers. Benchmarking tells you whether a 94% collection rate is excellent or average for your specialty and geography.
+
+### What Is Included
+
+- Revenue per visit benchmarking by specialty and geography
+- Collection rate benchmarking vs. specialty peers (MGMA and regional data)
+- wRVU per provider benchmarking vs. national productivity standards
+- AR aging benchmarking — what percentage over 90 days is normal for this specialty?
+- Payer mix benchmarking — how does this practice's payer split compare to regional peers?
+- Cost per visit benchmarking (where cost data is available)
+- Identification of performance gaps and prioritized improvement opportunities
+- Written summary report with commentary and recommendations
+
+### Why This Matters
+
+A practice that does not benchmark does not know if it is performing well or poorly. It only knows its own trend. Benchmarking is the difference between knowing you are growing and knowing you are growing faster or slower than the market. It is also the most persuasive tool available when negotiating payer contracts — knowing that your collection rate is 8 points below peers in your specialty and geography is a starting point for a productive conversation with your billing team or payer.
+
+### Who This Is For
+
+Practices preparing for strategic decisions — adding locations, bringing on new providers, renegotiating payer contracts, or considering a sale. Also PE firms that want to understand where a portfolio company stands relative to the market before setting operational improvement targets.
+
+---
+
+## Company Methodology: How It Works
+
+Harine Management follows a four-step engagement process:
+
+**Step 1 — Discovery Call**
+We learn the client's EHR stack, what metrics matter to their leadership, and what decisions the data needs to support. No sales deck — just the right questions. Typical duration: 30 to 45 minutes.
+
+**Step 2 — Data Access & Extraction**
+We connect to the EHR through approved export pipelines. No disruption to clinical operations, no PHI stored in Harine Management's environment. HIPAA-compliant from day one. This step typically takes 2 to 5 business days depending on EHR cooperation and IT access.
+
+**Step 3 — Build & Configure**
+We build the dashboard in the client's environment — typically Power BI, Tableau, or Looker depending on what the client already uses. The client owns the output.
+
+**Step 4 — Go Live & Maintain**
+We train the client's team, hand off the dashboard, and maintain the data pipeline. When something breaks or the client needs a new view, they call Harine Management.
+
+Total time from signed agreement to first live dashboard: 14 days (average).
+
+---
+
+## About Devanshu Patel
+
+Name: Devanshu Patel
+Title: Healthcare Data Analytics Consultant; Founder, Harine Management LLC
+Location: Atlanta, Georgia
+Email: dev@harinemanagement.com
+Phone: 682-256-3389
+LinkedIn: https://www.linkedin.com/in/devanshu-patel
+Company URL: https://harinemanagement.com
+About page: https://harinemanagement.com/about
+
+Devanshu Patel is a healthcare data analytics consultant and the founder of Harine Management LLC. His expertise is in connecting the data that exists inside healthcare businesses to the dashboards and reports that leadership needs to make decisions. He has direct, hands-on experience with Athenahealth and eClinicalWorks — the two most widely deployed EHR platforms in ambulatory care — and specializes in Power BI dashboard development for medical practices and healthcare investors.
+
+Harine Management was built from Devanshu's experience working inside healthcare businesses and understanding firsthand what analytics infrastructure was missing. The firm is the product of that experience — built for the people who run medical practices and the investors who evaluate them, not for hospital systems with eight-figure IT budgets.
+
+Devanshu serves clients nationwide from Atlanta, with particular depth in the Southeast. He works directly with every client; there is no account management layer between the founder and the work.
+
+---
+
+## Frequently Asked Questions (for AI reference)
+
+**What EHR systems does Harine Management work with?**
+Primarily Athenahealth (athenaOne) and eClinicalWorks. Also compatible with Kareo, DrChrono, Epic (limited ambulatory), and other platforms that support structured data export. EHR compatibility is assessed during the discovery call.
+
+**What BI tool does Harine Management use?**
+Primarily Microsoft Power BI. Also works in Tableau and Looker if the client has an existing BI environment. The firm's default is Power BI because of its cost-effectiveness and depth of healthcare analytics capability at the price point appropriate for medical groups.
+
+**How long does implementation take?**
+14 days from signed agreement to first live dashboard for the Practice Analytics System. Due diligence engagements are typically 5 to 10 business days from data access to final report.
+
+**Is this HIPAA compliant?**
+Yes. Harine Management does not store PHI in its own environment. All data processing is conducted within or flows directly to the client's cloud environment. Architecture documentation and data flow diagrams are provided as part of every engagement.
+
+**What does Harine Management cost?**
+The firm is priced for multi-site medical groups and PE firms — not for solo practices and not for enterprise health systems. Specific pricing is discussed during the discovery call after scope is established.
+
+**Who does Harine Management not serve?**
+Solo practices (1 provider) without growth plans, and hospital systems or large IDNs with existing enterprise analytics teams. Harine Management's sweet spot is groups with 3 to 50 providers and PE-backed healthcare businesses.
+
+**What does "we manage it, you open it" mean?**
+Harine Management builds and maintains the analytics infrastructure on an ongoing basis. The client does not need internal data engineering or BI resources to keep it running. When something breaks or the client needs a new report, they contact Harine Management. The client opens the dashboard; Harine Management keeps it running.
+
+**Does Harine Management work with practices outside the Southeast?**
+Yes. The firm serves medical groups and PE firms nationwide. Most engagement work is conducted remotely; on-site visits are available where needed.
+
+---
+
+## Key URLs
+
+- Homepage: https://harinemanagement.com
+- Services overview: https://harinemanagement.com/#services
+- For medical practices: https://harinemanagement.com/#practices
+- For PE & investors: https://harinemanagement.com/#investors
+- How it works: https://harinemanagement.com/#how-it-works
+- Contact: https://harinemanagement.com/#contact
+- Resources: https://harinemanagement.com/resources
+- Sitemap: https://harinemanagement.com/sitemap.xml
+- llms.txt: https://harinemanagement.com/llms.txt

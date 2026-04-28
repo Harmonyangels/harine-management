@@ -1,0 +1,81 @@
+---
+title: "Multi-Location Practice Analytics: How to Compare Performance Across Sites"
+date: "2026-02-05"
+slug: "multi-location-practice-analytics"
+description: "Managing a multi-site practice without location-level analytics means managing by exception — and only the exceptions loud enough to demand attention. Here's how to build a performance comparison framework that works across sites."
+category: "operations"
+tags: ["multi-location", "practice analytics", "site performance", "operations", "dashboards"]
+author: "Devanshu Patel"
+readingTime: "8 min read"
+---
+
+## Quick Answer
+
+Comparing performance across multiple practice locations requires a common data model that normalizes for provider mix, payer mix, and visit type composition before site-level comparisons are meaningful. Raw volume or revenue comparisons between a suburban primary care site and an urban specialty site describe different businesses, not the same business performing differently. The right [multi-location](https://harinemanagement.com/specialties/multi-location-practice-analytics) analytics framework benchmarks each site against its own historical performance first, and against peer sites second — with location-level breakdowns of volume, productivity, [revenue cycle](https://harinemanagement.com/services/revenue-cycle-analytics) health, and capacity utilization that roll up cleanly to a practice-level summary.
+
+## Why Multi-Site Visibility Is Harder Than It Looks
+
+A practice with four locations doesn't have four times the reporting complexity of a single-location practice — it has something closer to sixteen times the complexity, because every dimension of performance can now be sliced by location: volume by location, wRVU by provider by location, collection rate by payer by location, AR aging by location. Each cross-section that was meaningful at a single-site level becomes meaningful at the location level too.
+
+Most multi-location practices manage this in one of two ways, neither of which is adequate. Either they look at aggregate practice-level metrics and trust that problems will surface eventually — which they do, but slowly and by the time they're impossible to miss. Or they look at location-level reports one site at a time, without a unified view that lets them compare sites against each other or identify patterns that cross locations.
+
+The third option — a unified analytics layer with location as a dimension — is what makes multi-site management analytical rather than reactive.
+
+## The Normalization Problem You Have to Solve First
+
+Before any cross-site comparison is meaningful, you have to normalize for the factors that make sites inherently different.
+
+**Provider mix.** A site staffed primarily by senior physicians with established patient panels and high E/M coding complexity will show higher wRVU per encounter than a site staffed by newer providers building their practices. Comparing raw wRVU totals between these two sites tells you more about provider tenure than about site performance.
+
+**Payer mix.** A site located near a large employer with commercial insurance coverage will show different revenue per encounter than a site serving a predominantly Medicare or Medicaid population. A revenue-per-visit comparison between these two sites is essentially a payer mix comparison, not a site performance comparison.
+
+**Visit type composition.** A site that does a high volume of procedure visits will show different metrics than one that is primarily evaluation and management. Comparing denial rates between a procedure-heavy site and an E/M-only site without accounting for visit type mix conflates reimbursement complexity with billing quality.
+
+The normalization approach is not to strip out these factors and pretend all sites are identical. It is to make them visible as context when comparing across sites, so leadership is interpreting like against like rather than different practice models against each other. The question is not "why does Site A produce more revenue per visit than Site B?" — it is "given Site A's and Site B's different payer mix and visit type composition, is each site performing well within its context?"
+
+## The Four Dimensions of Multi-Location Analytics
+
+### Dimension 1: Volume by Location, Provider, and Visit Type
+
+[Volume Analytics](https://harinemanagement.com/services/volume-analytics) at the multi-site level requires encounter counts by location, broken down by provider within location and by visit type within provider. The purpose is not only to know that Site C saw 340 patients this week — it's to know that Site C is running 15% below its prior 4-week average because one provider had unplanned absences and the schedule wasn't filled, while the other two providers at the site are performing normally.
+
+That diagnostic granularity — site, provider, visit type, time period — requires the data to be structured correctly at the pipeline layer. If the EHR doesn't tag each encounter with a location identifier and the analytics layer doesn't preserve it, you can't get it back analytically.
+
+Capacity utilization belongs in this dimension too: template slots filled as a percentage of available capacity by site and provider. A site that is 95% full and turning away patients has a different set of decisions facing it than one that is 60% full with provider schedules that have significant white space.
+
+### Dimension 2: Provider Productivity Across Sites
+
+[Provider productivity](https://harinemanagement.com/services/provider-productivity-analytics) in a multi-location practice requires visibility into providers who work across sites — which is common in multi-location models where providers rotate across locations on different days of the week.
+
+A provider who works three days at Site A and two days at Site B needs their wRVU production tracked at both the provider level (their total production) and the site level (their contribution to each site's performance). A dashboard that only reports site-level productivity doesn't allow assessment of the provider; one that only reports provider-level productivity doesn't allow assessment of the site.
+
+The right model tracks both simultaneously: provider wRVU production rolled up to the practice total, with location-level breakdowns available for any provider who works across sites. This model also surfaces location-specific productivity patterns — a provider who is consistently more productive at Site A than Site B, for example, may be telling you something about scheduling support, EMR configuration, patient population fit, or physical plant that isn't obvious from any other data source.
+
+### Dimension 3: Revenue Cycle Performance by Location
+
+Revenue cycle performance should be tracked at the site level because the causes of revenue cycle problems are often site-specific. A billing workflow breakdown at one site, a new front-desk staff member who isn't confirming insurance accurately, a payer contract that covers patients predominantly from one geographic area served by one site — all of these produce site-specific revenue cycle signals that aggregate practice-level metrics obscure.
+
+The metrics that matter at the site level are the same ones that matter at the practice level: collection rate by payer, AR aging distribution, denial rate by CPT code, and first-pass acceptance rate. Each of these can be calculated per site from EHR and billing system data where location is tagged at the encounter level. The [practice analytics infrastructure](https://harinemanagement.com/services/practice-analytics-system) needs to preserve location as a dimension through the billing data pipeline, not just the clinical encounter data.
+
+### Dimension 4: The Cross-Site Rollup
+
+The practice-level summary that pulls all four sites together is the view that practice leadership uses for aggregate performance management. This view is straightforward to build once the site-level infrastructure is in place — it's an aggregation of the metrics described above. Total encounters across all sites. Total wRVU production. Total collected revenue. Practice-level AR aging.
+
+The value of the rollup is not that it adds analytical power over the site-level views — it's that it reduces cognitive load for leadership doing daily review. A CMO checking whether the practice is on track for the month shouldn't have to mentally add up four site-level numbers. The rollup view does that automatically and flags whether any individual site is pulling the aggregate in a direction it shouldn't be.
+
+## The Reporting Cadence That Matches Multi-Site Complexity
+
+A single-location practice can be managed reasonably well with weekly reporting. A four-location practice with providers rotating across sites needs a daily data feed, because the capacity and volume decisions that need to be made — add a provider to a site, open additional slots at a location running below capacity, investigate a billing quality issue at a specific site — have shorter decision windows than a weekly reporting cycle supports.
+
+Daily reporting from a multi-location practice requires a data pipeline that runs every night without human intervention, pulling location-tagged encounter data from every site's EHR configuration and delivering it into a unified analytics layer. The technical lift is material but not unusual — what makes it hard in practice is ensuring consistent location tagging across all sites in the EHR, particularly for practices that use different scheduling templates or EHR configurations at different sites.
+
+**Managing multiple locations and ready to see them in one dashboard?** [Schedule a discovery call](https://harinemanagement.com/#contact) to discuss what a multi-site analytics build looks like for your specific EHR configuration.
+
+## Key Takeaways
+
+- **Multi-site analytics complexity scales non-linearly**: every meaningful metric dimension now has a location dimension, multiplying the number of analytically useful combinations significantly.
+- **Cross-site comparison requires normalization before it's meaningful**: provider mix, payer mix, and visit type composition must be understood as context before comparing site performance — raw comparisons describe different business models, not the same model performing differently.
+- **Location must be tagged at the EHR encounter level to be recoverable analytically**: if the pipeline doesn't preserve location as a dimension through billing data, you can't disaggregate by site after the fact.
+- **Providers who rotate across sites need dual tracking**: wRVU at the provider level for performance management, and wRVU attributed to each site for site-level productivity assessment.
+- **Revenue cycle problems are frequently site-specific**: billing workflow issues, front-desk accuracy gaps, and payer coverage patterns are location-level phenomena that aggregate metrics obscure until they're large enough to be visible in the practice total.
+- **Daily data is the minimum cadence for actionable multi-site management**: weekly reporting gives a 5-7 day lag that's workable for a single site and inadequate for managing capacity decisions across multiple locations.

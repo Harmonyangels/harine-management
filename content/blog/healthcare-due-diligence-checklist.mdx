@@ -1,0 +1,110 @@
+---
+title: "Healthcare Due Diligence Checklist: 12 Data Points PE Firms Miss"
+date: "2026-03-18"
+slug: "healthcare-due-diligence-checklist"
+description: "The standard healthcare due diligence checklist covers financials, compliance, and payer contracts. It almost never covers the 12 operational data points that predict whether current performance is durable."
+category: "due-diligence"
+tags: ["due diligence", "private equity", "healthcare M&A", "checklist", "practice analytics"]
+author: "Devanshu Patel"
+readingTime: "10 min read"
+---
+
+## Quick Answer
+
+Standard healthcare due diligence checks financials, payer contracts, credentialing, malpractice history, and compliance status. The 12 data points most commonly missed are all operational and clinical in nature — they live in the EHR and billing system, not the data room — and they describe the mechanisms by which current financial performance was produced and whether those mechanisms will survive a change of ownership. Missing them doesn't make you wrong; it makes you surprised eighteen months post-close.
+
+## Why Standard Checklists Miss the Operational Layer
+
+The standard healthcare M&A due diligence checklist was built by lawyers and accountants. It is excellent at surfacing legal exposure, historical earnings quality, and contractual obligation. It is structurally unable to surface operational risk, because operational data lives in systems — the EHR, the billing platform, the scheduling system — that produce no documents suitable for a data room.
+
+The 12 items below are not in any data room. They exist as queryable data in systems that the seller controls. Getting them requires requesting structured data exports, not documents — and knowing what to do with the output.
+
+## The 12 Data Points
+
+### 1. wRVU Production by Provider, Monthly, 36 Months
+
+This is the foundational productivity dataset. Total practice revenue tells you what happened. [wRVU](https://harinemanagement.com/services/provider-productivity-analytics) by provider tells you *who made it happen* and whether the work is growing, stable, or declining at the individual level. Without this, you are underwriting the practice as an undifferentiated entity when it is actually a collection of individuals with different productivity levels, trends, and departure risk profiles.
+
+Request: encounter-level CPT data, extractable from the EHR's reporting module or API, joined to provider identifiers. The calculation is straightforward once the data is clean.
+
+### 2. Provider Tenure and Age Distribution
+
+Revenue concentration in senior providers is common in healthcare practices. The combination of high wRVU concentration *and* advanced provider age is the single most common post-close surprise. A physician at the 85th MGMA percentile in productivity who is 61 years old with no employment agreement beyond 18 months is a specific kind of risk that needs specific modeling.
+
+Request: provider roster with hire date and date of birth, cross-referenced against wRVU production. This exists in HR records, not the data room.
+
+### 3. Referral Network Source Trend
+
+For specialty practices, the inbound referral network is the growth engine. It either grows, holds, or erodes — and it moves slowly enough that a three-year trend is the minimum readable signal. A referral network that peaked 24 months ago and has declined 15% since is a different asset than one growing 10% year over year, even if current-year financials look similar.
+
+Request: referring provider identifier data from the EHR, aggregated by referring source and trended quarterly over 36 months. Most EHRs capture this and can export it in structured form.
+
+### 4. Payer Realization Rate by CPT Code, Trended
+
+Payer mix percentages show composition. Payer realization rates show whether the composition is paying what it should. A practice where Medicaid is 20% of volume but the realization rate on Medicaid claims has declined 12% over 24 months — because the state fee schedule was cut and the practice hasn't adjusted its workflow assumptions — has a revenue trajectory problem that payer mix percentages obscure entirely.
+
+Request: billing system export of claims adjudicated, with billed amount, allowed amount, and collected amount by payer and CPT code, trended monthly.
+
+### 5. Documentation Lag by Provider
+
+Documentation lag — the gap between encounter date and note finalization — is one of the best available proxies for provider operational discipline and [revenue cycle](https://harinemanagement.com/services/revenue-cycle-analytics) efficiency. Providers who routinely close notes same-day create fewer coding queries, generate fewer prior auth delays, and give the billing team clean data to work from. Chronic documentation delay is a billing efficiency problem that compounds into a denial rate problem.
+
+Request: note finalization timestamp vs. encounter date, aggregated by provider. Available from most EHRs' audit log or encounter metadata.
+
+### 6. Denial Rate by Payer and CPT Code, 24 Months
+
+A denial rate that looks stable in aggregate can be concealing a significant problem with a specific payer or procedure line. A 7% overall denial rate that is driven by 22% denial rate on the practice's highest-volume CPT code from its second-largest commercial payer is a denial rate with a very specific cause — and a specific recovery path or deterioration risk.
+
+Request: claim denial data from the billing system, with denial reason code, payer, CPT code, and denial date. This is available from any billing platform.
+
+### 7. Accounts Receivable Aging Beyond 90 Days as a Percentage of Total AR
+
+The headline AR balance is less informative than its age composition. AR concentrated in the 0-30 day bucket reflects a healthy billing cycle. AR concentrated in the 90+ day bucket reflects claims that are unlikely to be collected at full value and may have already been written off internally in ways that don't appear on the income statement. The ratio of 90+ day AR to total AR is a single number that tells you more about billing health than the AR balance itself.
+
+Request: AR aging report from the billing system, segmented into standard buckets. Every billing system produces this. What's unusual is requesting it for multiple historical periods to see the trend, not just the current snapshot.
+
+[Harine Management's due diligence analytics service](https://harinemanagement.com/services/due-diligence-analytics) benchmarks AR aging against specialty and regional peers specifically because the raw number is only meaningful in context.
+
+### 8. No-Show and Cancellation Rate by Location and Visit Type
+
+No-show and cancellation rates directly affect realized volume relative to scheduled capacity. A practice with a 25% no-show rate on new patient appointments is generating revenue at a fraction of its scheduling capacity — but the financial statements reflect only completed encounters, not the capacity that wasn't filled. Understanding the no-show and cancellation rate tells you both whether the practice has operational capacity headroom and whether that headroom is structurally difficult to capture.
+
+Request: scheduling data from the EHR — scheduled vs. completed encounters by provider, location, and visit type.
+
+### 9. New-to-Established Patient Ratio, Trended
+
+This ratio describes the practice's patient acquisition trajectory. A practice where new patients as a percentage of total visits has been declining for 24 months is not growing its patient base — it's drawing down. A declining new-patient ratio is consistent with a practice that has closed its referral network to new sources, where established patients are aging out faster than new ones are onboarded, or where the community's awareness of the practice has faded.
+
+Request: visit type data from the EHR's encounter records — most systems code new vs. established patient at the CPT level (992X1 vs. 992X2 and 992X3-992X5).
+
+### 10. E/M Code Distribution vs. Specialty Benchmark
+
+The distribution of evaluation and management codes billed by each provider should cluster within a predictable range for their specialty, patient population, and practice setting. A provider billing 99215 (highest-complexity established visit) on 80% of encounters when the specialty average is 35% is either serving an unusually complex patient population or is a compliance risk. A provider billing 99212 on 60% of encounters when the average is 15% may be under-documenting — leaving wRVU and revenue on the table.
+
+Both are material. One is a compliance exposure that a payer audit will eventually find. The other is a revenue recovery opportunity. Neither is visible without the CPT distribution data.
+
+Request: CPT code volume by provider for E/M codes (99202-99215 for established and new patient office visits), with encounter volume.
+
+### 11. Scheduling Capacity Utilization
+
+How full are provider schedules relative to their template capacity? A practice reporting strong revenue growth may be running providers at 115% of template capacity — which is unsustainable and a departure risk — or may have 30% template vacancy that it's filling with urgent same-day slots that don't show up in the standard scheduling report. Both are operationally important and neither is in the financial statements.
+
+Request: scheduling template data vs. filled slots by provider and location. Some EHRs track this well; others require calculation from appointment records.
+
+### 12. Data Infrastructure Audit
+
+This last point is not a financial or clinical metric — it is an integration readiness assessment. What analytics infrastructure does the practice currently have? Who built it? Who maintains it? What does it cost? What happens to it post-close?
+
+The answer to this question determines the first 90 days of integration cost and timeline. A practice with no analytics infrastructure will require [a post-acquisition build from scratch](https://harinemanagement.com/services/post-acquisition-intelligence). A practice with a functioning data pipeline built on systems the buyer's operations team can inherit is weeks from being reporting-ready under new ownership. The difference is months of EBITDA improvement opportunity.
+
+**Building your healthcare due diligence process?** [Schedule a discovery call](https://harinemanagement.com/#contact) to discuss how EHR-level data analysis closes the gap between what the data room shows and what the practice actually is.
+
+## Key Takeaways
+
+- **The standard due diligence checklist was built for legal and financial risk** — it cannot surface operational risk because operational data lives in EHR and billing systems, not data rooms.
+- **wRVU by provider over 36 months is the most important dataset not in the data room**: it reveals concentration, trend, and departure risk at the individual provider level.
+- **Provider tenure + age + wRVU concentration is the highest-risk combination**: modeling revenue at risk from physician departure should be explicit in the acquisition model, not assumed away.
+- **Referral network trend data tells you whether growth is sustainable**: a 3-year referral source analysis shows trajectory that current-year financials can't see.
+- **Payer realization rate variance is more informative than payer mix percentage**: actual collections per CPT code by payer reveals contract erosion and billing quality problems that composition percentages obscure.
+- **E/M code distribution is both a compliance signal and a revenue recovery opportunity**: outlier billing in either direction deserves investigation before close, not after.
+- **Data infrastructure readiness should be scored as part of diligence**: the integration timeline and cost are materially different for analytics-ready practices versus those building from scratch post-close.
