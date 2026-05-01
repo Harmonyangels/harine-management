@@ -1,5 +1,8 @@
 # *
 User-agent: *
+Disallow: /prize/
+Disallow: /index.php
+Disallow: /*?prize*
 Allow: /
 
 # Googlebot
