@@ -31,12 +31,17 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // Canonical domain — redirect Vercel preview URL to production
       {
         source: "/:path*",
         has: [{ type: "host", value: "harine-management.vercel.app" }],
         destination: "https://harinemanagement.com/:path*",
         permanent: true,
       },
+
+      // Legacy WordPress entry points — 301 permanent redirect to home
+      { source: "/index.php",        destination: "/", statusCode: 301 },
+      { source: "/index.php/:path*", destination: "/", statusCode: 301 },
     ];
   },
 };
