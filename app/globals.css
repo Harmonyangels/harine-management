@@ -1247,3 +1247,6 @@ footer {
   .glossary-alpha-nav { gap: 6px; }
   .glossary-alpha-link { width: 40px; height: 40px; }
 }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
