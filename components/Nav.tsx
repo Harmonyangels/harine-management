@@ -25,6 +25,7 @@ export default function Nav() {
           <li><Link href="/for/investors">For Investors</Link></li>
           <li><Link href="/#how-it-works">How It Works</Link></li>
         </ul>
+        <Link href="/score" className="nav-score-cta">Practice Health Check</Link>
         <Link href="/#contact" className="nav-cta">Schedule a Call</Link>
       </div>
     </nav>
