@@ -201,6 +201,8 @@ nav {
 .btn-terra { background: var(--terra); color: var(--white); font-size: 14px; padding: 14px 28px; }
 .btn-ghost { background: transparent; color: var(--ink-mid); border: 1px solid var(--stone); font-size: 13px; padding: 12px 24px; }
 .btn-white { background: var(--white); color: var(--crimson); font-size: 14px; padding: 14px 32px; }
+.btn-score { background: linear-gradient(135deg, #1a6fa8, #23c6a0); color: var(--white); font-size: 13px; padding: 13px 26px; }
+.service-cta-actions { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
 
 /* Hero visual */
 .hero-visual { position: relative; }

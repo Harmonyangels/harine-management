@@ -113,6 +113,7 @@ export default function Home() {
             <div className="hero-actions">
               <a href="#contact" className="btn btn-primary">Book a Discovery Call</a>
               <a href="#investors" className="btn btn-secondary">For PE &amp; Investors →</a>
+              <a href="/score" className="btn btn-score">Check Your Practice Health Score — Free, 3-minute assessment →</a>
             </div>
           </div>
 

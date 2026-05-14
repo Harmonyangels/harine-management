@@ -184,7 +184,10 @@ export default async function ServicePage({
           <p>
             Every engagement starts with a 30-minute discovery call. No commitments — just a clear look at what&apos;s possible with your data.
           </p>
-          <a href="/#contact" className="btn btn-white">Schedule a Discovery Call</a>
+          <div className="service-cta-actions">
+            <a href="/#contact" className="btn btn-white">Schedule a Discovery Call</a>
+            <a href="/score" className="btn btn-score">Check Your Practice Health Score →</a>
+          </div>
         </div>
       </section>
 
