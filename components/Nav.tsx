@@ -26,7 +26,7 @@ export default function Nav() {
           <li><Link href="/#how-it-works">How It Works</Link></li>
         </ul>
         <Link href="/score" className="nav-score-cta">Practice Health Check</Link>
-        <Link href="/#contact" className="nav-cta">Schedule a Call</Link>
+        <Link href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="nav-cta">Schedule a Call</Link>
       </div>
     </nav>
   );

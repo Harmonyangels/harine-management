@@ -109,7 +109,7 @@ export default function ServicesPage() {
           <p>
             Most engagements start with a 30-minute discovery call. We&apos;ll look at what&apos;s in your EHR and tell you exactly what&apos;s possible before any commitment.
           </p>
-          <a href="/#contact" className="btn btn-white">Schedule a Discovery Call</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Schedule a Discovery Call</a>
         </div>
       </section>
 

@@ -111,7 +111,7 @@ export default function Home() {
               We take your EHR data and build dashboards your leadership actually opens every morning. Real-time visibility into volume, revenue, and provider performance — without the manual exports.
             </p>
             <div className="hero-actions">
-              <a href="#contact" className="btn btn-primary">Book a Discovery Call</a>
+              <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Book a Discovery Call</a>
               <a href="#investors" className="btn btn-secondary">For PE &amp; Investors →</a>
               <a href="/score" className="btn btn-score">Check Your Practice Health Score — Free, 3-minute assessment →</a>
             </div>
@@ -302,7 +302,7 @@ export default function Home() {
                   Priced for multi-site medical groups, not enterprise health systems
                 </li>
               </ul>
-              <a href="#contact" className="btn btn-primary">Book a Discovery Call</a>
+              <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Book a Discovery Call</a>
             </div>
 
             <div>
@@ -395,7 +395,7 @@ export default function Home() {
                   Deliverable-ready output that holds up in a data room
                 </li>
               </ul>
-              <a href="#contact" className="btn btn-terra">Talk to Our Team →</a>
+              <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-terra">Talk to Our Team →</a>
             </div>
 
             <div>
@@ -498,8 +498,8 @@ export default function Home() {
                 Now we build them for you. If you&apos;re a medical group that needs real-time visibility into your practice, or a PE firm that needs to know what you&apos;re buying — let&apos;s have a 30-minute call. No pitch. Just the right conversation.
               </p>
               <div className="cta-actions">
-                <a href="mailto:dev@harinemanagement.com" className="btn btn-primary">Book a Discovery Call</a>
-                <a href="mailto:dev@harinemanagement.com" className="btn btn-ghost">Send Us a Note</a>
+                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Book a Discovery Call</a>
+                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Book a Free Call</a>
               </div>
             </div>
 

@@ -384,7 +384,7 @@ export default function AboutPage() {
             Every engagement begins with a 30-minute call — no commitments, just a clear
             look at what your EHR data already contains and what&apos;s possible with it.
           </p>
-          <a href="/#contact" className="btn btn-white">
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
             Schedule a Discovery Call
           </a>
         </div>

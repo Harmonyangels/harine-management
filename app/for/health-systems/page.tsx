@@ -236,7 +236,7 @@ export default function ForHealthSystemsPage() {
           <p>
             Every engagement starts with a conversation about the network — how many practices, which EHR platforms, and what leadership actually needs to see. We&apos;ll tell you exactly what&apos;s possible before any commitment.
           </p>
-          <a href="/#contact" className="btn btn-white">Schedule a Discovery Call</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Schedule a Discovery Call</a>
         </div>
       </section>
 

@@ -250,7 +250,7 @@ export default function ForInvestorsPage() {
           <p>
             Most engagements begin with a 20-minute conversation about the target and the timeline. We will tell you exactly what can be extracted and what the analysis will show before any engagement is confirmed.
           </p>
-          <a href="/#contact" className="btn btn-white">Start the Conversation</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Start the Conversation</a>
         </div>
       </section>
 

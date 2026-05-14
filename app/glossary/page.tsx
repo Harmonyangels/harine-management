@@ -119,7 +119,7 @@ export default function GlossaryPage() {
           <p>
             Every engagement starts with a 30-minute discovery call — we&apos;ll look at your EHR data and show you exactly where the gaps are.
           </p>
-          <a href="/#contact" className="btn btn-white">
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
             Schedule a Discovery Call
           </a>
         </div>

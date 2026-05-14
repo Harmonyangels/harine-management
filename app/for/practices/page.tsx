@@ -195,7 +195,7 @@ export default function ForPracticesPage() {
           <p>
             Every engagement starts with a 30-minute discovery call. We&apos;ll look at what&apos;s in your EHR and show you exactly what a live dashboard would look like for your practice before any commitment.
           </p>
-          <a href="/#contact" className="btn btn-white">Book a Discovery Call</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a Discovery Call</a>
         </div>
       </section>
 

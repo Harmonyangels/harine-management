@@ -232,7 +232,7 @@ export default async function PostPage({
             commitments, just a clear look at what&apos;s possible with your
             data.
           </p>
-          <a href="/#contact" className="btn btn-white">
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
             Schedule a Discovery Call
           </a>
         </div>
