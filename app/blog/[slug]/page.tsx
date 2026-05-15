@@ -57,77 +57,79 @@ export default async function BlogPostPage({
   return (
     <>
       <Nav />
-      <main style={{ background: "#0b1623", color: "#e8edf2", minHeight: "100vh" }}>
+      <main style={{ background: "var(--white)", minHeight: "100vh" }}>
+
+        {/* Post header */}
         <header
           style={{
-            paddingTop: "100px",
-            paddingBottom: "48px",
-            borderBottom: "1px solid #1a2d42",
+            background: "var(--stone-light)",
+            paddingTop: "64px",
+            borderBottom: "1px solid var(--stone)",
           }}
         >
-          <div style={{ maxWidth: "780px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ maxWidth: "780px", margin: "0 auto", padding: "64px 48px 48px" }}>
             <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                marginBottom: "20px",
-              }}
+              className="eyebrow"
+              style={{ marginBottom: "20px" }}
             >
-              <span
-                style={{
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: "#23c6a0",
-                }}
-              >
-                {post.frontmatter.category}
-              </span>
-              <span style={{ color: "rgba(232,237,242,0.3)" }}>·</span>
-              <span style={{ fontSize: "12px", color: "rgba(232,237,242,0.45)" }}>
-                {post.frontmatter.readTime}
+              <span className="eyebrow-rule"></span>
+              {post.frontmatter.category}
+              <span style={{
+                color: "var(--ink-faint)",
+                fontWeight: 400,
+                letterSpacing: "0.01em",
+                textTransform: "none",
+                fontSize: "12px",
+              }}>
+                · {post.frontmatter.readTime}
               </span>
             </div>
             <h1
               style={{
                 fontFamily: "var(--serif)",
                 fontSize: "clamp(28px, 4vw, 44px)",
-                fontWeight: 600,
-                color: "#ffffff",
-                lineHeight: 1.2,
+                fontWeight: 400,
+                color: "var(--ink)",
+                lineHeight: 1.15,
                 marginBottom: "24px",
               }}
             >
               {post.frontmatter.title}
             </h1>
-            <p style={{ fontSize: "13px", color: "rgba(232,237,242,0.45)" }}>
+            <p style={{
+              fontSize: "13px",
+              color: "var(--ink-faint)",
+              fontWeight: 400,
+              letterSpacing: "0.01em",
+            }}>
               Devanshu Patel · Harine Management · {formattedDate}
             </p>
           </div>
         </header>
 
+        {/* Article body */}
         <article style={{ maxWidth: "780px", margin: "0 auto", padding: "48px 48px 0" }}>
           <div className="blog-prose">
             <MDXRemote source={post.content} components={mdxComponents} />
           </div>
         </article>
 
+        {/* Related reading */}
         {related.length > 0 && (
           <section
             style={{
               maxWidth: "780px",
               margin: "48px auto 0",
               padding: "48px 48px 0",
-              borderTop: "1px solid #1a2d42",
+              borderTop: "1px solid var(--stone)",
             }}
           >
             <h2
               style={{
-                fontSize: "18px",
-                fontWeight: 700,
-                color: "#e8edf2",
+                fontFamily: "var(--serif)",
+                fontSize: "22px",
+                fontWeight: 500,
+                color: "var(--ink)",
                 marginBottom: "24px",
               }}
             >
@@ -144,63 +146,42 @@ export default async function BlogPostPage({
                 <Link
                   key={r.slug}
                   href={`/blog/${r.slug}`}
-                  style={{
-                    textDecoration: "none",
-                    background: "#0f1e2e",
-                    border: "1px solid #1a2d42",
-                    borderRadius: "10px",
-                    padding: "20px 24px",
-                    display: "block",
-                  }}
+                  className="blog-related-card"
                 >
-                  <span
-                    style={{
-                      fontSize: "10px",
-                      fontWeight: 700,
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      color: "#23c6a0",
-                      display: "block",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    {r.category}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "15px",
-                      fontWeight: 600,
-                      color: "#e8edf2",
-                      lineHeight: 1.35,
-                      display: "block",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    {r.title}
-                  </span>
-                  <span style={{ fontSize: "12px", color: "#23c6a0" }}>Read more →</span>
+                  <span className="blog-related-tag">{r.category}</span>
+                  <span className="blog-related-title">{r.title}</span>
+                  <span className="service-link">Read more →</span>
                 </Link>
               ))}
             </div>
           </section>
         )}
 
+        {/* Bottom CTA */}
         <section style={{ maxWidth: "780px", margin: "48px auto 0", padding: "0 48px 80px" }}>
           <div
             style={{
-              background: "linear-gradient(135deg, #0d2340, #0f2a1e)",
-              border: "1px solid #1a3d56",
-              borderRadius: "12px",
+              background: "var(--white)",
+              borderLeft: "1px solid var(--stone)",
+              borderRight: "1px solid var(--stone)",
+              borderBottom: "1px solid var(--stone)",
+              borderTop: "3px solid var(--crimson)",
+              borderRadius: "10px",
               padding: "36px 40px",
             }}
           >
+            <div className="eyebrow" style={{ marginBottom: "16px" }}>
+              <span className="eyebrow-rule"></span>
+              Let&apos;s Talk
+            </div>
             <h2
               style={{
-                fontSize: "22px",
-                fontWeight: 700,
-                color: "#ffffff",
+                fontFamily: "var(--serif)",
+                fontSize: "clamp(20px, 3vw, 26px)",
+                fontWeight: 400,
+                color: "var(--ink)",
+                lineHeight: 1.25,
                 marginBottom: "12px",
-                lineHeight: 1.3,
               }}
             >
               Ready to see what your EHR data can actually do?
@@ -208,9 +189,10 @@ export default async function BlogPostPage({
             <p
               style={{
                 fontSize: "15px",
-                color: "rgba(255,255,255,0.7)",
-                lineHeight: 1.6,
-                marginBottom: "22px",
+                color: "var(--ink-muted)",
+                lineHeight: 1.7,
+                marginBottom: "24px",
+                maxWidth: "520px",
               }}
             >
               Book a free 30-minute discovery call. We&apos;ll look at your specific EHR
@@ -220,21 +202,13 @@ export default async function BlogPostPage({
               href="https://calendly.com/dev-harinemanagement/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                background: "linear-gradient(135deg, #1a6fa8, #23c6a0)",
-                color: "#ffffff",
-                fontWeight: 600,
-                fontSize: "15px",
-                padding: "12px 24px",
-                borderRadius: "8px",
-                textDecoration: "none",
-              }}
+              className="btn btn-primary"
             >
               Book a Free 30-Min Call →
             </a>
           </div>
         </section>
+
       </main>
       <SiteFooter />
     </>
