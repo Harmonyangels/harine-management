@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "@/components/Nav";
+import SiteFooter from "@/components/SiteFooter";
 import {
   QUALIFIERS,
   QUESTIONS,
@@ -47,11 +49,9 @@ function OptionButton({
           textAlign: "left",
           padding: "14px 18px",
           borderRadius: "10px",
-          border: selected ? "1.5px solid #23c6a0" : "1.5px solid #1a2d42",
-          background: selected
-            ? "linear-gradient(135deg, rgba(26,111,168,0.18), rgba(35,198,160,0.18))"
-            : "transparent",
-          color: selected ? "#e8edf2" : "#8ba5bc",
+          border: selected ? "1.5px solid var(--crimson)" : "1.5px solid var(--stone)",
+          background: selected ? "rgba(184,48,48,0.05)" : "var(--white)",
+          color: selected ? "var(--ink)" : "var(--ink-mid)",
           fontSize: "15px",
           fontFamily: "inherit",
           cursor: "pointer",
@@ -67,7 +67,7 @@ function OptionButton({
             margin: "0 0 0 4px",
             fontSize: "12px",
             fontStyle: "italic",
-            color: "#23c6a0",
+            color: "var(--terra)",
             opacity: 0.85,
           }}
         >
@@ -104,7 +104,7 @@ function ScoreRing({
         cy="60"
         r={RING_R}
         fill="none"
-        stroke="#1a2d42"
+        stroke="#EDE8E6"
         strokeWidth="8"
       />
       {/* Progress */}
@@ -126,7 +126,7 @@ function ScoreRing({
         x="60"
         y="56"
         textAnchor="middle"
-        fill="#e8edf2"
+        style={{ fill: "#1C1412" }}
         fontSize="26"
         fontWeight="700"
         fontFamily="inherit"
@@ -137,7 +137,7 @@ function ScoreRing({
         x="60"
         y="72"
         textAnchor="middle"
-        fill="#8ba5bc"
+        style={{ fill: "#6B5E5C" }}
         fontSize="10"
         fontFamily="inherit"
       >
@@ -263,7 +263,7 @@ export default function ScorePage() {
             alignItems: "center",
             justifyContent: "center",
             gap: "12px",
-            marginBottom: "36px",
+            marginBottom: "32px",
           }}
         >
           <Image
@@ -274,37 +274,36 @@ export default function ScorePage() {
             style={{ borderRadius: "8px" }}
           />
           <div style={{ textAlign: "left", lineHeight: 1.2 }}>
-            <div
-              style={{
-                color: "#e8edf2",
-                fontSize: "16px",
-                fontWeight: 600,
-                letterSpacing: "0.2px",
-              }}
-            >
+            <div style={{ color: "var(--ink)", fontSize: "16px", fontWeight: 600, letterSpacing: "0.2px" }}>
               Harine
             </div>
-            <div style={{ color: "#8ba5bc", fontSize: "12px" }}>
-              Management
-            </div>
+            <div style={{ color: "var(--ink-muted)", fontSize: "12px" }}>Management</div>
           </div>
+        </div>
+
+        <div className="eyebrow" style={{ justifyContent: "center", marginBottom: "20px" }}>
+          <span className="eyebrow-rule"></span>
+          Practice Health Check
+          <span className="eyebrow-rule"></span>
         </div>
 
         <h1
           style={{
-            color: "#e8edf2",
-            fontSize: "clamp(22px, 4vw, 30px)",
-            fontWeight: 700,
+            fontFamily: "var(--serif)",
+            color: "var(--ink)",
+            fontSize: "clamp(22px, 4vw, 32px)",
+            fontWeight: 400,
             margin: "0 0 16px",
-            lineHeight: 1.25,
+            lineHeight: 1.2,
           }}
         >
-          Get Your Free Practice Health Score
+          Get Your Free<br />
+          <em style={{ fontStyle: "italic", color: "var(--crimson)" }}>Practice Health Score</em>
         </h1>
 
         <p
           style={{
-            color: "#8ba5bc",
+            color: "var(--ink-muted)",
             fontSize: "16px",
             lineHeight: 1.7,
             margin: "0 0 40px",
@@ -320,24 +319,13 @@ export default function ScorePage() {
         <button
           type="button"
           onClick={goForward}
-          style={{
-            display: "inline-block",
-            background: "linear-gradient(135deg, #1a6fa8, #23c6a0)",
-            color: "#fff",
-            fontFamily: "inherit",
-            fontSize: "16px",
-            fontWeight: 700,
-            padding: "16px 44px",
-            borderRadius: "10px",
-            border: "none",
-            cursor: "pointer",
-            letterSpacing: "0.2px",
-          }}
+          className="btn btn-primary"
+          style={{ fontSize: "16px", padding: "16px 44px" }}
         >
           Begin Assessment →
         </button>
 
-        <p style={{ color: "#4a6878", fontSize: "13px", marginTop: "20px" }}>
+        <p style={{ color: "var(--ink-faint)", fontSize: "13px", marginTop: "20px" }}>
           Free · No credit card required · Results delivered by email
         </p>
       </div>
@@ -348,25 +336,18 @@ export default function ScorePage() {
     const qualifier = QUALIFIERS[stepIndex];
     return (
       <div>
-        <p
-          style={{
-            color: "#23c6a0",
-            fontSize: "11px",
-            fontWeight: 600,
-            textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            margin: "0 0 12px",
-          }}
-        >
+        <div className="eyebrow" style={{ marginBottom: "14px" }}>
+          <span className="eyebrow-rule"></span>
           Practice Profile
-        </p>
+        </div>
         <h2
           style={{
-            color: "#e8edf2",
-            fontSize: "clamp(18px, 3vw, 22px)",
-            fontWeight: 600,
+            fontFamily: "var(--serif)",
+            color: "var(--ink)",
+            fontSize: "clamp(18px, 3vw, 24px)",
+            fontWeight: 400,
             margin: "0 0 28px",
-            lineHeight: 1.35,
+            lineHeight: 1.3,
           }}
         >
           {qualifier.question}
@@ -394,25 +375,18 @@ export default function ScorePage() {
     const question = QUESTIONS[stepIndex];
     return (
       <div>
-        <p
-          style={{
-            color: "#23c6a0",
-            fontSize: "11px",
-            fontWeight: 600,
-            textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            margin: "0 0 10px",
-          }}
-        >
+        <div className="eyebrow" style={{ marginBottom: "10px" }}>
+          <span className="eyebrow-rule"></span>
           {question.category}
-        </p>
+        </div>
         <h2
           style={{
-            color: "#e8edf2",
-            fontSize: "clamp(18px, 3vw, 22px)",
-            fontWeight: 600,
+            fontFamily: "var(--serif)",
+            color: "var(--ink)",
+            fontSize: "clamp(18px, 3vw, 24px)",
+            fontWeight: 400,
             margin: "0 0 28px",
-            lineHeight: 1.35,
+            lineHeight: 1.3,
           }}
         >
           {question.question}
@@ -442,9 +416,9 @@ export default function ScorePage() {
       width: "100%",
       padding: "13px 16px",
       borderRadius: "9px",
-      border: "1.5px solid #1a2d42",
-      background: "#0b1623",
-      color: "#e8edf2",
+      border: "1.5px solid var(--stone)",
+      background: "var(--stone-light)",
+      color: "var(--ink)",
       fontSize: "15px",
       fontFamily: "inherit",
       outline: "none",
@@ -452,7 +426,7 @@ export default function ScorePage() {
     };
     const labelStyle: React.CSSProperties = {
       display: "block",
-      color: "#8ba5bc",
+      color: "var(--ink-mid)",
       fontSize: "13px",
       fontWeight: 500,
       marginBottom: "7px",
@@ -460,32 +434,25 @@ export default function ScorePage() {
 
     return (
       <div>
-        <p
-          style={{
-            color: "#23c6a0",
-            fontSize: "11px",
-            fontWeight: 600,
-            textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            margin: "0 0 12px",
-          }}
-        >
+        <div className="eyebrow" style={{ marginBottom: "14px" }}>
+          <span className="eyebrow-rule"></span>
           Almost There
-        </p>
+        </div>
         <h2
           style={{
-            color: "#e8edf2",
-            fontSize: "clamp(18px, 3vw, 22px)",
-            fontWeight: 600,
+            fontFamily: "var(--serif)",
+            color: "var(--ink)",
+            fontSize: "clamp(18px, 3vw, 24px)",
+            fontWeight: 400,
             margin: "0 0 8px",
-            lineHeight: 1.35,
+            lineHeight: 1.3,
           }}
         >
           Where should we send your report?
         </h2>
         <p
           style={{
-            color: "#8ba5bc",
+            color: "var(--ink-muted)",
             fontSize: "14px",
             margin: "0 0 28px",
             lineHeight: 1.6,
@@ -498,11 +465,11 @@ export default function ScorePage() {
         {apiError && (
           <div
             style={{
-              background: "rgba(192,57,43,0.15)",
-              border: "1px solid rgba(192,57,43,0.4)",
+              background: "rgba(184,48,48,0.06)",
+              border: "1px solid rgba(184,48,48,0.25)",
               borderRadius: "8px",
               padding: "12px 16px",
-              color: "#e8705a",
+              color: "var(--crimson)",
               fontSize: "14px",
               marginBottom: "20px",
             }}
@@ -514,7 +481,7 @@ export default function ScorePage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div>
             <label style={labelStyle}>
-              Full Name <span style={{ color: "#e05c2a" }}>*</span>
+              Full Name <span style={{ color: "var(--crimson)" }}>*</span>
             </label>
             <input
               type="text"
@@ -528,7 +495,7 @@ export default function ScorePage() {
           </div>
           <div>
             <label style={labelStyle}>
-              Practice Name <span style={{ color: "#e05c2a" }}>*</span>
+              Practice Name <span style={{ color: "var(--crimson)" }}>*</span>
             </label>
             <input
               type="text"
@@ -542,7 +509,7 @@ export default function ScorePage() {
           </div>
           <div>
             <label style={labelStyle}>
-              Email Address <span style={{ color: "#e05c2a" }}>*</span>
+              Email Address <span style={{ color: "var(--crimson)" }}>*</span>
             </label>
             <input
               type="email"
@@ -588,14 +555,14 @@ export default function ScorePage() {
             width: "56px",
             height: "56px",
             borderRadius: "50%",
-            border: "4px solid #1a2d42",
-            borderTopColor: "#23c6a0",
+            border: "4px solid var(--stone)",
+            borderTopColor: "var(--crimson)",
             animation: "spin 0.85s linear infinite",
           }}
         />
         <p
           style={{
-            color: "#8ba5bc",
+            color: "var(--ink-muted)",
             fontSize: "16px",
             margin: 0,
             textAlign: "center",
@@ -646,12 +613,13 @@ export default function ScorePage() {
 
         {/* AI-generated report */}
         <div
+          className="score-report"
           style={{
-            background: "#0b1623",
+            background: "var(--stone-light)",
             borderRadius: "12px",
             padding: "24px 28px",
             marginBottom: "28px",
-            border: "1px solid #1a2d42",
+            border: "1px solid var(--stone)",
           }}
           dangerouslySetInnerHTML={{ __html: reportHtml }}
         />
@@ -659,8 +627,8 @@ export default function ScorePage() {
         {/* CTA card */}
         <div
           style={{
-            background: "linear-gradient(135deg, rgba(26,111,168,0.15), rgba(35,198,160,0.15))",
-            border: "1.5px solid rgba(35,198,160,0.3)",
+            background: "rgba(184,48,48,0.04)",
+            border: "1.5px solid rgba(184,48,48,0.18)",
             borderRadius: "14px",
             padding: "28px 32px",
             textAlign: "center",
@@ -668,9 +636,10 @@ export default function ScorePage() {
         >
           <h3
             style={{
-              color: "#e8edf2",
-              fontSize: "18px",
-              fontWeight: 600,
+              fontFamily: "var(--serif)",
+              color: "var(--ink)",
+              fontSize: "20px",
+              fontWeight: 400,
               margin: "0 0 12px",
               lineHeight: 1.4,
             }}
@@ -679,7 +648,7 @@ export default function ScorePage() {
           </h3>
           <p
             style={{
-              color: "#8ba5bc",
+              color: "var(--ink-muted)",
               fontSize: "14px",
               margin: "0 0 24px",
               lineHeight: 1.6,
@@ -692,17 +661,8 @@ export default function ScorePage() {
             href="https://calendly.com/dev-harinemanagement/30min"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              background: "linear-gradient(135deg, #1a6fa8, #23c6a0)",
-              color: "#fff",
-              fontWeight: 700,
-              fontSize: "15px",
-              padding: "15px 36px",
-              borderRadius: "10px",
-              textDecoration: "none",
-              letterSpacing: "0.2px",
-            }}
+            className="btn btn-primary"
+            style={{ fontSize: "15px", padding: "15px 36px" }}
           >
             Book a Free 30-Min Call
           </Link>
@@ -734,128 +694,135 @@ export default function ScorePage() {
   // ── render ───────────────────────────────────────────────────────────────────
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#0b1623",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        paddingBottom: "80px",
-      }}
-    >
-      {/* Progress bar */}
-      {showProgress && (
-        <div
-          style={{
-            width: "100%",
-            maxWidth: "600px",
-            padding: "20px 0 0",
-          }}
-        >
+    <>
+      <Nav />
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "var(--stone-light)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          paddingTop: "80px",
+          paddingBottom: "80px",
+          paddingLeft: "16px",
+          paddingRight: "16px",
+        }}
+      >
+        {/* Progress bar */}
+        {showProgress && (
           <div
             style={{
-              height: "3px",
-              background: "#1a2d42",
-              borderRadius: "2px",
-              overflow: "hidden",
+              width: "100%",
+              maxWidth: "600px",
+              padding: "20px 0 0",
             }}
           >
             <div
               style={{
-                height: "100%",
-                width: `${progressPct}%`,
-                background: "linear-gradient(90deg, #1a6fa8, #23c6a0)",
+                height: "3px",
+                background: "var(--stone)",
                 borderRadius: "2px",
-                transition: "width 0.35s ease",
+                overflow: "hidden",
               }}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Card */}
-      <div
-        style={{
-          background: "#0f1e2e",
-          border: "1px solid #1a2d42",
-          borderRadius: "16px",
-          padding: "clamp(28px, 5vw, 44px) clamp(20px, 5vw, 40px)",
-          width: "100%",
-          maxWidth: "600px",
-          marginTop: showProgress ? "20px" : "40px",
-        }}
-      >
-        {renderStep()}
-
-        {/* In-card navigation */}
-        {(showBack || showForward) && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: showBack ? "space-between" : "flex-end",
-              alignItems: "center",
-              marginTop: "32px",
-              paddingTop: "24px",
-              borderTop: "1px solid #1a2d42",
-            }}
-          >
-            {showBack && (
-              <button
-                type="button"
-                onClick={goBack}
+            >
+              <div
                 style={{
-                  background: "transparent",
-                  border: "1.5px solid #1a2d42",
-                  color: "#8ba5bc",
-                  fontSize: "14px",
-                  fontFamily: "inherit",
-                  padding: "10px 20px",
-                  borderRadius: "8px",
-                  cursor: "pointer",
+                  height: "100%",
+                  width: `${progressPct}%`,
+                  background: "var(--crimson)",
+                  borderRadius: "2px",
+                  transition: "width 0.35s ease",
                 }}
-              >
-                ← Back
-              </button>
-            )}
-            {showForward && (
-              <button
-                type="button"
-                onClick={goForward}
-                disabled={!canGoForward()}
-                style={{
-                  background: canGoForward()
-                    ? "linear-gradient(135deg, #1a6fa8, #23c6a0)"
-                    : "#1a2d42",
-                  color: canGoForward() ? "#fff" : "#4a6878",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  fontFamily: "inherit",
-                  padding: "11px 28px",
-                  borderRadius: "8px",
-                  border: "none",
-                  cursor: canGoForward() ? "pointer" : "not-allowed",
-                  transition: "all 0.15s ease",
-                }}
-              >
-                {forwardLabel}
-              </button>
-            )}
+              />
+            </div>
           </div>
         )}
-      </div>
 
-      {/* Footer link */}
-      {currentStep !== 16 && (
-        <p style={{ color: "#2d4459", fontSize: "12px", marginTop: "28px" }}>
-          <Link
-            href="/"
-            style={{ color: "#2d4459", textDecoration: "none" }}
-          >
-            harinemanagement.com
-          </Link>
-        </p>
-      )}
-    </div>
+        {/* Card */}
+        <div
+          style={{
+            background: "var(--white)",
+            border: "1px solid var(--stone)",
+            borderRadius: "16px",
+            padding: "clamp(28px, 5vw, 44px) clamp(20px, 5vw, 40px)",
+            width: "100%",
+            maxWidth: "600px",
+            marginTop: showProgress ? "20px" : "40px",
+            boxShadow: "0 4px 24px rgba(28,20,18,0.07)",
+          }}
+        >
+          {renderStep()}
+
+          {/* In-card navigation */}
+          {(showBack || showForward) && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: showBack ? "space-between" : "flex-end",
+                alignItems: "center",
+                marginTop: "32px",
+                paddingTop: "24px",
+                borderTop: "1px solid var(--stone)",
+              }}
+            >
+              {showBack && (
+                <button
+                  type="button"
+                  onClick={goBack}
+                  style={{
+                    background: "transparent",
+                    border: "1.5px solid var(--stone)",
+                    color: "var(--ink-mid)",
+                    fontSize: "14px",
+                    fontFamily: "inherit",
+                    padding: "10px 20px",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    transition: "border-color 0.15s",
+                  }}
+                >
+                  ← Back
+                </button>
+              )}
+              {showForward && (
+                <button
+                  type="button"
+                  onClick={goForward}
+                  disabled={!canGoForward()}
+                  style={{
+                    background: canGoForward() ? "var(--crimson)" : "var(--stone)",
+                    color: canGoForward() ? "var(--white)" : "var(--ink-faint)",
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    fontFamily: "inherit",
+                    padding: "11px 28px",
+                    borderRadius: "8px",
+                    border: "none",
+                    cursor: canGoForward() ? "pointer" : "not-allowed",
+                    transition: "all 0.15s ease",
+                  }}
+                >
+                  {forwardLabel}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Footer link */}
+        {currentStep !== 16 && (
+          <p style={{ color: "var(--ink-faint)", fontSize: "12px", marginTop: "28px" }}>
+            <Link
+              href="/"
+              style={{ color: "var(--ink-faint)", textDecoration: "none" }}
+            >
+              harinemanagement.com
+            </Link>
+          </p>
+        )}
+      </div>
+      <SiteFooter />
+    </>
   );
 }
