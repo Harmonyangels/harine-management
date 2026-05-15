@@ -36,11 +36,13 @@ const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
 export function getAllLegacyPosts(): Post[] {
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
-  const posts = files.map((file) => {
-    const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
-    const { data } = matter(raw);
-    return data as Post;
-  });
+  const posts = files
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
+      const { data } = matter(raw);
+      return data as Post;
+    })
+    .filter((p) => Array.isArray(p.tags)); // exclude new-schema posts (no tags field)
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );

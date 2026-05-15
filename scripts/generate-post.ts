@@ -75,11 +75,9 @@ async function main(): Promise<void> {
   }
   const sitemap: Sitemap = JSON.parse(fs.readFileSync(sitemapPath, "utf-8"));
 
-  const slug = slugify(topic);
   const today = new Date().toISOString().split("T")[0];
 
   console.log(`\nGenerating blog post: "${topic}"`);
-  console.log(`Slug: ${slug}`);
   console.log(`Date: ${today}\n`);
 
   const linkContext = sitemap.pages
@@ -107,7 +105,7 @@ title: "<SEO-optimized title containing the target keyword>"
 description: "<150-160 characters, includes target keyword, ends with a benefit statement>"
 date: "${today}"
 category: "<exactly one of: Billing & RCM, Volume & Operations, Revenue Intelligence, PE & Investors, Athena Health>"
-slug: "${slug}"
+slug: "<short SEO slug, 3-6 hyphenated words, target keyword first, omit stop words like what/is/a/for/the/how>"
 published: true
 targetKeyword: "<primary SEO keyword phrase>"
 readTime: "<e.g., 6 min read>"
@@ -136,7 +134,15 @@ Do not output any explanation or commentary. Output only the MDX file content.`,
   if (!rawPost) {
     throw new Error("Post generation returned empty content.");
   }
-  console.log("✓ MDX post generated.\n");
+
+  // Extract Claude-generated slug from frontmatter (fallback: slugify topic)
+  let slug = slugify(topic);
+  const fmMatch = rawPost.match(/^---[\r\n]+([\s\S]*?)[\r\n]+---/);
+  if (fmMatch) {
+    const slugLine = fmMatch[1].match(/^slug:\s*["']?([a-z0-9][a-z0-9-]*)["']?\s*$/m);
+    if (slugLine) slug = slugLine[1];
+  }
+  console.log(`✓ MDX post generated. Slug: ${slug}\n`);
 
   // ── Step 2: Generate SVG infographic ──────────────────────────────
   console.log("Step 2/2 — Generating SVG infographic...");

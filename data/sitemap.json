@@ -46,5 +46,12 @@
       "topics": ["private equity healthcare", "healthcare investment analytics", "practice acquisition due diligence"]
     }
   ],
-  "blog": []
+  "blog": [
+    {
+      "url": "/blog/net-collection-rate-primary-care",
+      "title": "What is a Good Net Collection Rate for a Primary Care Practice",
+      "slug": "net-collection-rate-primary-care",
+      "date": "2026-05-15"
+    }
+  ]
 }
