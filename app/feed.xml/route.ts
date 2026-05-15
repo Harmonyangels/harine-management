@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllLegacyPosts } from "@/lib/blog";
 
 const SITE_URL = "https://harinemanagement.com";
 const FEED_URL = `${SITE_URL}/feed.xml`;
@@ -13,7 +13,7 @@ function xmlEscape(str: string): string {
 }
 
 function buildRSS(): string {
-  const posts = getAllPosts();
+  const posts = getAllLegacyPosts();
 
   const items = posts
     .map((post) => {

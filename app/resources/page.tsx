@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
-import { getAllPosts } from "@/lib/blog";
+import { getAllLegacyPosts } from "@/lib/blog";
 import type { PostCategory } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ const webPageSchema = {
 };
 
 export default function ResourcesPage() {
-  const posts = getAllPosts();
+  const posts = getAllLegacyPosts();
 
   return (
     <>

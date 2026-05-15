@@ -5,9 +5,9 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import {
-  getAllPosts,
-  getPostBySlug,
-  getRelatedPosts,
+  getAllLegacyPosts,
+  getLegacyPostBySlug,
+  getRelatedLegacyPosts,
   getRelatedServices,
   CATEGORY_LABELS,
 } from "@/lib/blog";
@@ -17,7 +17,7 @@ import { POST_FAQS } from "@/data/postFaqs";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  return getAllLegacyPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -26,7 +26,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getLegacyPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -54,7 +54,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getLegacyPostBySlug(slug);
 
   if (!post) notFound();
 
@@ -62,7 +62,7 @@ export default async function PostPage({
     `@/content/blog/${slug}.mdx`
   );
 
-  const related = getRelatedPosts(slug, post.tags, 3);
+  const related = getRelatedLegacyPosts(slug, post.tags, 3);
   const relatedServices = getRelatedServices(slug);
   const faqItems = POST_FAQS[slug] ?? null;
 

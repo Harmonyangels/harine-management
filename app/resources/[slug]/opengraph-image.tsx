@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
-import { getAllPosts, getPostBySlug, CATEGORY_LABELS } from "@/lib/blog";
+import { getAllLegacyPosts, getLegacyPostBySlug, CATEGORY_LABELS } from "@/lib/blog";
 
 export const alt = "Harine Management — Healthcare Data Analytics";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  return getAllLegacyPosts().map((post) => ({ slug: post.slug }));
 }
 
 const CRIMSON = "#8B1A2B";
@@ -19,7 +19,7 @@ export default async function Image({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getLegacyPostBySlug(slug);
 
   const title = post?.title ?? "Harine Management";
   const category = post ? CATEGORY_LABELS[post.category] : "Healthcare Analytics";

@@ -1268,3 +1268,24 @@ footer {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ── BLOG PROSE (dark theme, used by /blog/[slug]) ── */
+.blog-prose h2 { font-size: 1.45rem; font-weight: 700; color: #e8edf2; margin: 2.5rem 0 1rem; line-height: 1.3; }
+.blog-prose h3 { font-size: 1.15rem; font-weight: 700; color: #e8edf2; margin: 2rem 0 0.75rem; line-height: 1.35; }
+.blog-prose p { color: rgba(232,237,242,0.82); font-size: 1rem; line-height: 1.8; margin: 0 0 1.25rem; }
+.blog-prose ul, .blog-prose ol { color: rgba(232,237,242,0.82); margin: 0 0 1.25rem 1.5rem; line-height: 1.8; }
+.blog-prose li { margin-bottom: 0.5rem; }
+.blog-prose strong { color: #e8edf2; font-weight: 700; }
+.blog-prose a { color: #23c6a0; text-decoration: underline; text-underline-offset: 3px; }
+.blog-prose a:hover { color: #1aa88a; }
+.blog-prose blockquote { border-left: 3px solid #1a6fa8; padding-left: 1.25rem; margin: 1.5rem 0; color: rgba(232,237,242,0.6); font-style: italic; }
+.blog-prose code { background: #0f1e2e; color: #23c6a0; padding: 2px 6px; border-radius: 4px; font-size: 0.875em; font-family: var(--mono); }
+.blog-prose pre { background: #0f1e2e; border: 1px solid #1a2d42; border-radius: 8px; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0; }
+.blog-prose pre code { background: none; padding: 0; color: #e8edf2; }
+.blog-prose hr { border: none; border-top: 1px solid #1a2d42; margin: 2.5rem 0; }
+.blog-prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+.blog-prose th { background: #0f1e2e; color: #e8edf2; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #1a2d42; }
+.blog-prose td { padding: 10px 14px; color: rgba(232,237,242,0.75); border-bottom: 1px solid #1a2d42; }
+@media (max-width: 640px) {
+  .blog-prose h2 { font-size: 1.25rem; }
+}

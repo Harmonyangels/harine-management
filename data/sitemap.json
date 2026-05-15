@@ -1,0 +1,50 @@
+{
+  "pages": [
+    {
+      "url": "/",
+      "title": "Home",
+      "topics": ["healthcare analytics", "medical practice dashboard", "EHR analytics", "Harine Management"]
+    },
+    {
+      "url": "/score",
+      "title": "Practice Health Score",
+      "topics": ["practice health assessment", "billing benchmark", "free practice assessment", "medical practice score"]
+    },
+    {
+      "url": "/services",
+      "title": "All Services",
+      "topics": ["healthcare consulting services", "analytics services", "dashboard services"]
+    },
+    {
+      "url": "/services/practice-analytics-system",
+      "title": "Practice Analytics System",
+      "topics": ["practice analytics", "EHR dashboard", "Power BI medical practice", "athenahealth dashboard", "daily dashboard"]
+    },
+    {
+      "url": "/services/revenue-cycle-analytics",
+      "title": "Revenue Cycle Analytics",
+      "topics": ["revenue cycle", "RCM analytics", "AR aging", "denial rate", "collection rate dashboard", "payer mix"]
+    },
+    {
+      "url": "/services/due-diligence-analytics",
+      "title": "Due Diligence Analytics",
+      "topics": ["healthcare due diligence", "PE analytics", "practice acquisition", "medical practice valuation"]
+    },
+    {
+      "url": "/services/provider-productivity-analytics",
+      "title": "Provider Productivity Analytics",
+      "topics": ["wRVU tracking", "provider productivity", "MGMA benchmark", "provider performance dashboard"]
+    },
+    {
+      "url": "/for/practices",
+      "title": "For Medical Practices",
+      "topics": ["medical practice analytics", "practice management", "small practice dashboard"]
+    },
+    {
+      "url": "/for/investors",
+      "title": "For PE & Investors",
+      "topics": ["private equity healthcare", "healthcare investment analytics", "practice acquisition due diligence"]
+    }
+  ],
+  "blog": []
+}
