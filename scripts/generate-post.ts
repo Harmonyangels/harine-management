@@ -102,7 +102,7 @@ ${linkContext}
 Output ONLY valid MDX starting with the frontmatter block. Use these exact required frontmatter fields:
 ---
 title: "<SEO-optimized title containing the target keyword>"
-description: "<150-160 characters, includes target keyword, ends with a benefit statement>"
+description: "<output only the meta description text — no word counts, no annotations; aim for 150-160 characters, must include target keyword, must end with a benefit statement>"
 date: "${today}"
 category: "<exactly one of: Billing & RCM, Volume & Operations, Revenue Intelligence, PE & Investors, Athena Health>"
 slug: "<short SEO slug, 3-6 hyphenated words, target keyword first, omit stop words like what/is/a/for/the/how>"
@@ -126,10 +126,18 @@ Do not output any explanation or commentary. Output only the MDX file content.`,
     ],
   });
 
-  const rawPost =
+  let rawPost =
     postMessage.content[0].type === "text"
       ? postMessage.content[0].text.trim()
       : "";
+
+  // Strip outer markdown code fences — Claude sometimes wraps MDX in ```mdx...```
+  if (rawPost.startsWith("```")) {
+    rawPost = rawPost
+      .replace(/^```(?:mdx|markdown|yaml)?\s*/i, "")
+      .replace(/\s*```\s*$/, "")
+      .trim();
+  }
 
   if (!rawPost) {
     throw new Error("Post generation returned empty content.");
