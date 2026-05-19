@@ -222,6 +222,11 @@ Output ONLY the raw SVG element. No explanation, no markdown fences, no wrapper 
     }
   }
 
+  // Strip HTML comments and non-JSX HTML tags that MDX cannot parse
+  finalMdx = finalMdx.replace(/<!--[\s\S]*?-->/g, "");
+  finalMdx = finalMdx.replace(/<!DOCTYPE[^>]*>/gi, "");
+  finalMdx = finalMdx.replace(/<\/?(html|head|body)\b[^>]*>/gi, "");
+
   // ── Write MDX file ─────────────────────────────────────────────────
   const outputPath = path.join(ROOT, "content", "blog", `${slug}.mdx`);
   fs.writeFileSync(outputPath, finalMdx, "utf-8");
