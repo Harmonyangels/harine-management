@@ -31,13 +31,7 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // Canonical domain — redirect www and Vercel preview URL to production
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.harinemanagement.com" }],
-        destination: "https://harinemanagement.com/:path*",
-        permanent: true,
-      },
+      // Redirect Vercel preview URL to production — www is handled at the DNS/Vercel level
       {
         source: "/:path*",
         has: [{ type: "host", value: "harine-management.vercel.app" }],
