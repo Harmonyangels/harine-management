@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
+import Script from "next/script";
 import JsonLd from "@/components/JsonLd";
 import "./globals.css";
+
+const GA_ID = "G-8TQ4ZMDRV0";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -126,6 +129,19 @@ export default function RootLayout({
         <JsonLd schema={localBusinessSchema} />
         <JsonLd schema={personSchema} />
         {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+          async
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
