@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description:
     "Harine Management builds AI-enhanced analytics systems for medical practices and private equity firms doing healthcare due diligence. Based in Atlanta, serving practices nationwide.",
   alternates: {
-    canonical: "https://harinemanagement.com",
+    canonical: "/",
   },
   openGraph: {
     type: "website",

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Explore Harine Management's full suite of healthcare data analytics services for medical practices and private equity firms — from EHR pipelines to acquisition due diligence.",
   alternates: {
-    canonical: "https://harinemanagement.com/services",
+    canonical: "/services",
   },
   openGraph: {
     title: "Healthcare Analytics Services | Harine Management",

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Practical perspectives on healthcare data analytics, revenue cycle management, PE due diligence, and AI in clinical operations — from the team at Harine Management.",
   alternates: {
-    canonical: "https://harinemanagement.com/resources",
+    canonical: "/resources",
   },
   openGraph: {
     title: "Resources | Harine Management",

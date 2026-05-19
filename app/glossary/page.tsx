@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Plain-language definitions of 20 healthcare analytics terms — wRVU, AR aging, payer mix, collection rate, EBITDA normalization, and more — written for practice leaders and healthcare investors.",
   alternates: {
-    canonical: "https://harinemanagement.com/glossary",
+    canonical: "/glossary",
   },
   openGraph: {
     title: "Healthcare Analytics Glossary | Harine Management",

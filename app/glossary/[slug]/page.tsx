@@ -30,7 +30,7 @@ export async function generateMetadata({
     title: `What Is ${term.term}? | Healthcare Analytics Glossary`,
     description: term.shortDefinition,
     alternates: {
-      canonical: `https://harinemanagement.com/glossary/${slug}`,
+      canonical: `/glossary/${slug}`,
     },
     openGraph: {
       title: `${term.term} — Healthcare Analytics Glossary | Harine Management`,

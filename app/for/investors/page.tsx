@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Private equity healthcare analytics from Harine Management — EHR-level due diligence surfacing provider risk, payer mix trajectory, and revenue integrity.",
   alternates: {
-    canonical: "https://harinemanagement.com/for/investors",
+    canonical: "/for/investors",
   },
   openGraph: {
     title: "Private Equity Healthcare Analytics | Harine Management",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Devanshu Patel is the founder of Harine Management, a healthcare data analytics firm that builds EHR-connected analytics systems for medical practices and private equity firms across the United States.",
   alternates: {
-    canonical: "https://harinemanagement.com/about",
+    canonical: "/about",
   },
   openGraph: {
     title: "About Devanshu Patel | Harine Management",

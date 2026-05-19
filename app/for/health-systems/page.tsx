@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Analytics infrastructure for health systems and MSOs managing physician practice networks — standardized dashboards across every affiliated practice, updated daily.",
   alternates: {
-    canonical: "https://harinemanagement.com/for/health-systems",
+    canonical: "/for/health-systems",
   },
   openGraph: {
     title: "Health System Analytics Consulting | Harine Management",

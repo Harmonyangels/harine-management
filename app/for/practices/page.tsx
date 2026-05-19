@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Daily EHR-to-Power BI dashboards for medical practices — patient volume, revenue cycle, provider productivity, and payer mix. No manual exports. No IT staff needed.",
   alternates: {
-    canonical: "https://harinemanagement.com/for/practices",
+    canonical: "/for/practices",
   },
   openGraph: {
     title: "Healthcare Data Analytics for Medical Practices | Harine Management",

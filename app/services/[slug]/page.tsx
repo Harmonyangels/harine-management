@@ -23,7 +23,7 @@ export async function generateMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: {
-      canonical: `https://harinemanagement.com/services/${slug}`,
+      canonical: `/services/${slug}`,
     },
     openGraph: {
       title: service.metaTitle,

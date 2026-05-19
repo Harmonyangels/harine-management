@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${post.frontmatter.title} | Harine Management`,
     description: post.frontmatter.description,
     alternates: {
-      canonical: `https://harinemanagement.com/blog/${slug}`,
+      canonical: `/blog/${slug}`,
     },
     openGraph: {
       title: `${post.frontmatter.title} | Harine Management`,

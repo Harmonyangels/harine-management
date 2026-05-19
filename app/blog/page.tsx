@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Practice Intelligence Blog | Harine Management",
   description:
     "Benchmarks, billing analytics, and operational intelligence for medical practice owners and healthcare investors.",
-  alternates: { canonical: "https://harinemanagement.com/blog" },
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Practice Intelligence Blog | Harine Management",
     description:
