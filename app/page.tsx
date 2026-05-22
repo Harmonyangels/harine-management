@@ -105,14 +105,15 @@ export default function Home() {
               Healthcare Data Analytics
             </div>
             <h1 className="hero-title">
-              Analytics built<br />for <em>decisions,</em><br />not just reports.
+              Your practice runs better when the right data meets the <em>right operator.</em>
             </h1>
             <p className="hero-sub">
-              We take your EHR data and build dashboards your leadership actually opens every morning. Real-time visibility into volume, revenue, and provider performance — without the manual exports.
+              Harine Management combines hands-on healthcare operations expertise with enterprise-grade analytics — so we don&apos;t just show you what&apos;s wrong, we help you fix it. Built for independent practices, startups, and healthcare investors.
             </p>
             <div className="hero-actions">
               <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Book a Discovery Call</a>
               <a href="#investors" className="btn btn-secondary">For PE &amp; Investors →</a>
+              <a href="/services" className="btn btn-secondary">See Our Services →</a>
               <a href="/score" className="btn btn-score">Check Your Practice Health Score — Free, 3-minute assessment →</a>
             </div>
           </div>
@@ -210,6 +211,19 @@ export default function Home() {
           <div className="trust-item">
             <div className="trust-value">+18%</div>
             <div className="trust-label">Average MoM volume<br />visibility improvement</div>
+          </div>
+        </div>
+      </div>
+
+      {/* CREDIBILITY STRIP */}
+      <div style={{ background: 'var(--stone)', borderTop: '1px solid rgba(28,20,18,0.06)', borderBottom: '1px solid rgba(28,20,18,0.06)', padding: '20px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--ink-faint)', whiteSpace: 'nowrap' }}>Deep operational expertise in:</span>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>eClinicalWorks (ECW)</span>
+            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Athena Health / AthenaOne</span>
+            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Power BI</span>
+            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Snowflake</span>
           </div>
         </div>
       </div>
