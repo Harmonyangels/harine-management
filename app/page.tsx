@@ -280,6 +280,30 @@ export default function Home() {
               <a href="#investors" className="service-link">Built for investors →</a>
             </div>
 
+            <div className="service-card featured">
+              <div className="service-icon crimson">🔧</div>
+              <div className="service-tag crimson">Operations</div>
+              <h3>Practice Operational Diagnostic</h3>
+              <p>Not sure where your revenue is leaking? We pull your existing reports, identify what&apos;s broken, and give you a prioritized fix list — without a full analytics build. Fast, scoped, and actionable in under a week.</p>
+              <a href="/score" className="service-link">Start with a Diagnostic →</a>
+            </div>
+
+            <div className="service-card secondary">
+              <div className="service-icon terra">🏥</div>
+              <div className="service-tag terra">Practice Startup</div>
+              <h3>Turnkey Practice Launch</h3>
+              <p>Opening a new practice or new location? We handle the operational infrastructure — EMR setup, payer credentialing, hiring templates, billing workflows, and inventory — so you can focus on patients from day one.</p>
+              <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="service-link terra">Talk to Us →</a>
+            </div>
+
+            <div className="service-card tertiary">
+              <div className="service-icon ink">💊</div>
+              <div className="service-tag ink">RCM</div>
+              <h3>RCM Fix &amp; Revenue Recovery</h3>
+              <p>High denial rates, slow collections, credentialing gaps — we identify the root cause and fix it. Our billing specialists have hands-on experience in eClinicalWorks and Athena Health environments.</p>
+              <a href="/score" className="service-link">See If We Can Help →</a>
+            </div>
+
           </div>
         </div>
       </section>

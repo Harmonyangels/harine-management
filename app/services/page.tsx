@@ -67,6 +67,38 @@ export default function ServicesPage() {
 
       <div className="services-index-body">
         <div className="services-index-inner">
+
+          <div className="services-audience-group">
+            <div className="services-audience-label">Operations &amp; Advisory</div>
+            <div className="services-index-grid">
+
+              <div className="services-index-card">
+                <div className="services-index-card-title">Practice Operational Diagnostic</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '6px 0 14px', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)' }}>$1,500–$3,000 flat</span>
+                  <span style={{ fontSize: '10px', fontWeight: 500, background: 'rgba(184,48,48,0.08)', color: 'var(--crimson)', border: '1px solid rgba(184,48,48,0.15)', borderRadius: '20px', padding: '3px 10px', letterSpacing: '0.06em' }}>3–5 day turnaround</span>
+                </div>
+                <div className="services-index-card-desc">We review your existing reports, identify revenue leakage, flag workflow problems, and hand you a written findings summary with prioritized next steps. No dashboard required.</div>
+                <a href="/score" className="services-index-card-link">Learn more →</a>
+              </div>
+
+              <div className="services-index-card">
+                <div className="services-index-card-title">RCM Fix &amp; Revenue Recovery</div>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$3,000–$8,000</div>
+                <div className="services-index-card-desc">Hands-on denial analysis, credentialing gap review, payer contract assessment, and remediation support. Delivered by billing specialists with direct eClinicalWorks and Athena Health experience.</div>
+                <a href="/score" className="services-index-card-link">Learn more →</a>
+              </div>
+
+              <div className="services-index-card">
+                <div className="services-index-card-title">Turnkey Practice Startup</div>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$10,000–$25,000</div>
+                <div className="services-index-card-desc">Full operational launch package for new practices or new locations. Covers EMR configuration, payer credentialing, hiring templates, billing workflow build, and staff training framework.</div>
+                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Learn more →</a>
+              </div>
+
+            </div>
+          </div>
+
           <div className="services-audience-group">
             <div className="services-audience-label">For Medical Practices</div>
             <div className="services-index-grid">
