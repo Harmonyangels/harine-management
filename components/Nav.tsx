@@ -29,6 +29,7 @@ export default function Nav() {
           <li><Link href="/services">Services</Link></li>
           <li><Link href="/for/practices">For Practices</Link></li>
           <li><Link href="/for/investors">For Investors</Link></li>
+          <li><Link href="/team">Team</Link></li>
           <li><Link href="/#how-it-works">How It Works</Link></li>
           <li><Link href="/blog">Blog</Link></li>
         </ul>
@@ -60,6 +61,7 @@ export default function Nav() {
         <Link href="/services" className="nav-mobile-link" onClick={closeMenu}>Services</Link>
         <Link href="/for/practices" className="nav-mobile-link" onClick={closeMenu}>For Practices</Link>
         <Link href="/for/investors" className="nav-mobile-link" onClick={closeMenu}>For Investors</Link>
+        <Link href="/team" className="nav-mobile-link" onClick={closeMenu}>Team</Link>
         <Link href="/#how-it-works" className="nav-mobile-link" onClick={closeMenu}>How It Works</Link>
         <Link href="/blog" className="nav-mobile-link" onClick={closeMenu}>Blog</Link>
         <div className="nav-mobile-ctas">

@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </div>
             </Link>
             <p className="footer-desc">
-              Healthcare data analytics for medical practices and the investors who evaluate them. We turn raw EHR data into real-time executive visibility.
+              Healthcare operations and analytics consulting for independent practices, practice startups, and the investors who evaluate them.
             </p>
           </div>
 
@@ -36,6 +36,7 @@ export default function SiteFooter() {
             <ul>
               <li><Link href="/#practices">Medical Groups</Link></li>
               <li><Link href="/#practices">Multi-Site Practices</Link></li>
+              <li><Link href="/services">New Practice Startups</Link></li>
               <li><Link href="/#investors">PE &amp; Private Equity</Link></li>
               <li><Link href="/#investors">Healthcare Investors</Link></li>
             </ul>
