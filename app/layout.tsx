@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       "Healthcare Data Analytics for Medical Practices & Investors | Harine Management",
   },
   description:
-    "Harine Management builds AI-enhanced analytics systems for medical practices and private equity firms doing healthcare due diligence. Based in Atlanta, serving practices nationwide.",
+    "Harine Management is a healthcare operations and analytics consultancy serving independent practices, practice startups, and PE investors. Deep expertise in eClinicalWorks and Athena Health. Based in Atlanta, serving nationwide.",
   alternates: {
     canonical: "/",
   },

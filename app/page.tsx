@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
+
+export const metadata: Metadata = {
+  description:
+    "Harine Management is a healthcare operations and analytics consultancy serving independent practices, practice startups, and PE investors. Deep expertise in eClinicalWorks and Athena Health. Based in Atlanta, serving nationwide.",
+  openGraph: {
+    description:
+      "Harine Management is a healthcare operations and analytics consultancy serving independent practices, practice startups, and PE investors. Deep expertise in eClinicalWorks and Athena Health. Based in Atlanta, serving nationwide.",
+  },
+};
 
 const webPageSchema = {
   "@context": "https://schema.org",
