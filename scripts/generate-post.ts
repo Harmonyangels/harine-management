@@ -19,6 +19,72 @@ const ROOT = process.cwd();
   }
 })();
 
+// This sanitization step exists because Claude API responses sometimes contain
+// MDX-invalid syntax and must be cleaned before writing.
+function sanitizeMdx(content: string): string {
+  // 1. Strip HTML comments
+  content = content.replace(/<!--[\s\S]*?-->/g, "");
+
+  // 2. Remove DOCTYPE/html/head/body tags
+  content = content.replace(/<!DOCTYPE[^>]*>/gi, "");
+  content = content.replace(/<\/?(html|head|body)\b[^>]*>/gi, "");
+
+  // 3. Close unclosed SVG blocks — Claude sometimes hits max_tokens mid-element,
+  //    leaving the SVG open so MDX mis-parses subsequent headings as inside the tag.
+  const svgOpenCount = (content.match(/<svg[\s>]/gi) || []).length;
+  const svgCloseCount = (content.match(/<\/svg>/gi) || []).length;
+  if (svgOpenCount > svgCloseCount) {
+    // Remove any trailing truncated tag (a < that never reaches its closing >)
+    content = content.trimEnd().replace(/\n\s*<[^>\n]*$/, "");
+    content = content.trimEnd() + "\n</svg>\n";
+  }
+
+  // 4. Ensure a blank line before and after every markdown heading
+  content = content.replace(/([^\n])\n(#{1,6} )/g, "$1\n\n$2");
+  content = content.replace(/(#{1,6} [^\n]+)\n([^\n])/g, "$1\n\n$2");
+
+  // 5. In prose lines (outside HTML/SVG blocks, not starting with <),
+  //    escape bare < that would confuse the MDX parser, and escape
+  //    unbalanced { } that MDX would interpret as broken JSX expressions.
+  const lines = content.split("\n");
+  let blockDepth = 0;
+  let inFrontmatter = false;
+  const out: string[] = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trimStart();
+
+    if (i === 0 && trimmed === "---") { inFrontmatter = true; out.push(line); continue; }
+    if (inFrontmatter) {
+      out.push(line);
+      if (trimmed === "---") inFrontmatter = false;
+      continue;
+    }
+
+    const tagOpens = (trimmed.match(/<(?:svg|div|section|article|header|footer|nav|table)\b/gi) || []).length;
+    const tagCloses = (trimmed.match(/<\/(?:svg|div|section|article|header|footer|nav|table)>/gi) || []).length;
+    blockDepth = Math.max(0, blockDepth + tagOpens - tagCloses);
+
+    if (blockDepth === 0 && !trimmed.startsWith("<") && trimmed !== "") {
+      let prose = line;
+      // Escape bare < not starting an HTML/JSX/MDX tag
+      prose = prose.replace(/<(?![a-zA-Z/!])/g, "&lt;");
+      // Escape unbalanced { } (MDX treats them as JSX expression boundaries)
+      const braceOpens = (prose.match(/\{/g) || []).length;
+      const braceCloses = (prose.match(/\}/g) || []).length;
+      if (braceOpens !== braceCloses) {
+        prose = prose.replace(/\{/g, "&#123;").replace(/\}/g, "&#125;");
+      }
+      out.push(prose);
+    } else {
+      out.push(line);
+    }
+  }
+
+  return out.join("\n");
+}
+
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -222,10 +288,7 @@ Output ONLY the raw SVG element. No explanation, no markdown fences, no wrapper 
     }
   }
 
-  // Strip HTML comments and non-JSX HTML tags that MDX cannot parse
-  finalMdx = finalMdx.replace(/<!--[\s\S]*?-->/g, "");
-  finalMdx = finalMdx.replace(/<!DOCTYPE[^>]*>/gi, "");
-  finalMdx = finalMdx.replace(/<\/?(html|head|body)\b[^>]*>/gi, "");
+  finalMdx = sanitizeMdx(finalMdx);
 
   // ── Write MDX file ─────────────────────────────────────────────────
   const outputPath = path.join(ROOT, "content", "blog", `${slug}.mdx`);
