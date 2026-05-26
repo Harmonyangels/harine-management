@@ -32,6 +32,7 @@ export default function Nav() {
           <li><Link href="/team">Team</Link></li>
           <li><Link href="/#how-it-works">How It Works</Link></li>
           <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/tools">Free Tools</Link></li>
         </ul>
         <button
           className="nav-hamburger"
@@ -64,6 +65,7 @@ export default function Nav() {
         <Link href="/team" className="nav-mobile-link" onClick={closeMenu}>Team</Link>
         <Link href="/#how-it-works" className="nav-mobile-link" onClick={closeMenu}>How It Works</Link>
         <Link href="/blog" className="nav-mobile-link" onClick={closeMenu}>Blog</Link>
+        <Link href="/tools" className="nav-mobile-link" onClick={closeMenu}>Free Tools</Link>
         <div className="nav-mobile-ctas">
           <Link href="/score" className="nav-score-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
             Practice Health Check
