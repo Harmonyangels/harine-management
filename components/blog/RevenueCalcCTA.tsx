@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ScoreCTA() {
+export default function RevenueCalcCTA() {
   return (
     <aside
       style={{
@@ -36,7 +36,7 @@ export default function ScoreCTA() {
             flexShrink: 0,
           }}
         />
-        Practice Health Check
+        Free Calculator
       </p>
       <h3
         style={{
@@ -48,7 +48,7 @@ export default function ScoreCTA() {
           marginBottom: "10px",
         }}
       >
-        How does your practice compare on this metric?
+        Find out how much revenue your practice is losing
       </h3>
       <p
         style={{
@@ -58,10 +58,14 @@ export default function ScoreCTA() {
           marginBottom: "22px",
         }}
       >
-        Get your free Practice Health Score — 10 questions, instant benchmarked report, no commitment.
+        Enter 4 numbers from your billing reports and get an instant dollar estimate of your monthly revenue leakage — benchmarked against MGMA standards.
       </p>
-      <Link href="/score" className="btn btn-primary" style={{ fontSize: "14px", padding: "12px 24px", color: "#ffffff", fontWeight: 600 }}>
-        Get My Free Score →
+      <Link
+        href="/tools/revenue-leakage-calculator"
+        className="btn btn-primary"
+        style={{ fontSize: "14px", padding: "12px 24px", color: "#ffffff", fontWeight: 600 }}
+      >
+        Calculate My Revenue Leakage →
       </Link>
     </aside>
   );

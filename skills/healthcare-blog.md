@@ -19,10 +19,16 @@ Primary: Medical practice owners, CMOs, practice administrators, and office mana
 2. The Problem (2–3 paragraphs) — describe the specific operational or financial problem. Be concrete. Name the pain. No solutions yet.
 3. The Benchmark (1–2 paragraphs + infographic) — state the industry benchmark, cite the source, explain what it means practically. Place [Infographic] component here.
 4. What Good Looks Like (2–3 paragraphs) — describe a well-run practice on this metric. Use ranges not single numbers. Acknowledge specialty matters.
-5. Mid-Post CTA — insert <ScoreCTA /> component exactly, do not write as prose.
+5. Mid-Post CTA — Choose the most relevant CTA component based on the post topic. For billing and RCM topics use <RCMScorecardCTA />. For revenue and financial topics use <RevenueCalcCTA />. For general practice health or operations topics use <ScoreCTA />. Always use exactly one mid-post CTA component.
 6. How to Improve (3–5 points) — numbered list, bold title, 2 sentences each. No vague advice.
 7. The Analytics Angle (1–2 paragraphs) — connect topic back to data visibility. Bridge to bottom CTA.
 8. Bottom CTA — insert <DiscoveryCTA /> component exactly, do not write as prose.
+
+## AVAILABLE TOOLS AND LEAD MAGNETS
+- /score — Practice Health Check — use for general practice health, operations, and strategic topics
+- /tools/revenue-leakage-calculator — Revenue Leakage Calculator — use for billing performance, collections, net collection rate, and financial topics
+- /tools/rcm-scorecard — RCM Benchmarking Scorecard — use for denial rate, days in A/R, clean claim rate, payer mix, and RCM topics
+- /tools — Free Tools Hub — always link here at least once per post as an inline contextual link
 
 ## INTERNAL LINKING RULES
 - Include 3–5 internal links per post minimum
@@ -30,6 +36,7 @@ Primary: Medical practice owners, CMOs, practice administrators, and office mana
 - Always link to /score at least once in body text
 - Link to a relevant service page when topic is directly covered there
 - Link to other blog posts when a concept is introduced that another post covers
+- Always include at least one inline text link to a relevant tool from the AVAILABLE TOOLS list — not just the CTA component. Example: link the phrase days in A/R to /tools/rcm-scorecard naturally within a sentence.
 
 ## BENCHMARK SOURCES
 Always cite one of these — do not make up statistics: MGMA, HFMA, AAPC, CMS, AMA.
@@ -44,7 +51,7 @@ Billing & RCM, Volume & Operations, Revenue Intelligence, PE & Investors, Athena
 
 ## EVERY POST MUST INCLUDE
 - A benchmark stat with source in the first paragraph
-- The <ScoreCTA /> component mid-post
+- One mid-post CTA component chosen based on topic relevance — ScoreCTA, RevenueCalcCTA, or RCMScorecardCTA
 - The <DiscoveryCTA /> component at the bottom
 - At least one link to /score in body text
 - At least one link to a relevant service page

@@ -165,6 +165,8 @@ async function main(): Promise<void> {
 Available internal pages to link to:
 ${linkContext}
 
+Available lead magnet tools — include the most relevant one as a mid-post CTA component and link to at least one inline in the body text: /score (Practice Health Check — general practice health and operations), /tools/revenue-leakage-calculator (Revenue Leakage Calculator — billing performance and financial topics), /tools/rcm-scorecard (RCM Benchmarking Scorecard — denial rate, days in A/R, RCM metrics), /tools (Free Tools Hub — link here inline at least once). Choose the single most relevant tool for the mid-post CTA based on the post topic.
+
 Output ONLY valid MDX starting with the frontmatter block. Use these exact required frontmatter fields:
 ---
 title: "<SEO-optimized title containing the target keyword>"
@@ -182,7 +184,7 @@ Follow the POST STRUCTURE from the skill file exactly:
 2. The Problem (2–3 paragraphs)
 3. The Benchmark section (1–2 paragraphs) — place the exact text [INFOGRAPHIC] on its own line at the end of this section
 4. What Good Looks Like (2–3 paragraphs)
-5. <ScoreCTA /> on its own line (no surrounding text)
+5. One mid-post CTA component on its own line (no surrounding text) — use <RCMScorecardCTA /> for billing/RCM topics, <RevenueCalcCTA /> for revenue/financial topics, or <ScoreCTA /> for general practice health/operations topics
 6. How to Improve — numbered list, 3–5 items, bold title, 2 sentences each
 7. The Analytics Angle (1–2 paragraphs)
 8. <DiscoveryCTA /> on its own line (no surrounding text)

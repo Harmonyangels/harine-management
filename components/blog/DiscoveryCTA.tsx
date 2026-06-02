@@ -65,8 +65,8 @@ export default function DiscoveryCTA() {
           href="https://calendly.com/dev-harinemanagement/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-white"
-          style={{ fontSize: "15px", padding: "13px 28px" }}
+          className="btn btn-score"
+          style={{ fontSize: "15px", padding: "13px 28px", color: "#ffffff", fontWeight: 600 }}
         >
           Book a Free 30-Min Call →
         </a>

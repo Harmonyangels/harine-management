@@ -6,9 +6,11 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import ScoreCTA from "@/components/blog/ScoreCTA";
 import DiscoveryCTA from "@/components/blog/DiscoveryCTA";
+import RevenueCalcCTA from "@/components/blog/RevenueCalcCTA";
+import RCMScorecardCTA from "@/components/blog/RCMScorecardCTA";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 
-const mdxComponents = { ScoreCTA, DiscoveryCTA };
+const mdxComponents = { ScoreCTA, DiscoveryCTA, RevenueCalcCTA, RCMScorecardCTA };
 
 export const dynamicParams = false;
 
