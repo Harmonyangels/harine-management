@@ -113,7 +113,7 @@ export async function POST(request: Request) {
     </div>
 
     <div style="text-align:center;">
-      <a href="https://calendly.com/dev-harinemanagement/30min" style="display:inline-block;background:#23c6a0;color:#0b1520;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Book Follow-Up Call</a>
+      <a href="https://calendly.com/dev-harinemanagement/30min" style="display:inline-block;background:#23c6a0;color:#0b1520;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Book a 30-minute call</a>
     </div>
 
   </div>
@@ -226,11 +226,11 @@ export async function POST(request: Request) {
       <p style="color:#c8dde8;font-size:16px;font-weight:600;margin:0 0 10px;">Ready to recover this revenue?</p>
       <p style="color:#8aa8bb;font-size:14px;margin:0 0 24px;line-height:1.7;">
         This calculator is an estimate from the numbers you entered. It is not a review of your reports.
-        The paid diagnostic is $2,500 and finished in under a week. Email to book a 20-minute call.
+        The paid diagnostic is $2,500 and finished in under a week. Book a 30-minute call below.
       </p>
-      <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
+      <a href="https://calendly.com/dev-harinemanagement/30min"
          style="display:inline-block;background:#B83030;color:#ffffff;font-weight:700;font-size:16px;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;">
-        Book a 20-minute call →
+        Book a 30-minute call →
       </a>
     </div>
 

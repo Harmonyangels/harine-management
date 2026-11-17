@@ -196,15 +196,15 @@ export default async function BlogPostPage({
                 maxWidth: "520px",
               }}
             >
-              Book a 20-minute call. The practice entry offer is a $2,500 diagnostic, finished in under a week.
+              Book a 30-minute call. The practice entry offer is a $2,500 diagnostic, finished in under a week.
             </p>
             <a
-              href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
+              href="https://calendly.com/dev-harinemanagement/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
             >
-              Book a 20-minute call →
+              Book a 30-minute call →
             </a>
           </div>
         </section>

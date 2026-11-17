@@ -208,10 +208,10 @@ export default async function GlossaryTermPage({
         <div className="service-cta-inner">
           <h2>See these metrics in your own data.</h2>
           <p>
-            Book a 20-minute call at dev@harinemanagement.com.
+            Book a 30-minute call at dev@harinemanagement.com.
           </p>
-          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Book a 20-minute call
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
+            Book a 30-minute call
           </a>
         </div>
       </section>

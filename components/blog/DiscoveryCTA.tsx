@@ -61,10 +61,12 @@ export default function DiscoveryCTA() {
             maxWidth: "480px",
           }}
         >
-          The diagnostic is $2,500 and finished in under a week. You get a findings report and a prioritized fix plan. Or book a 20-minute call first.
+          The diagnostic is $2,500 and finished in under a week. You get a findings report and a prioritized fix plan. Or book a 30-minute call first.
         </p>
         <a
           href={BOOK_CALL_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn btn-score"
           style={{ fontSize: "15px", padding: "13px 28px", color: "#ffffff", fontWeight: 600, marginRight: "12px" }}
         >

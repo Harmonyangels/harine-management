@@ -581,7 +581,7 @@ export default function ScorePage() {
 
     const ctaHeadline = peLead
       ? "You're considering a transaction — let's talk deal readiness."
-      : "Book a 20-minute call.";
+      : "Book a 30-minute call.";
 
     return (
       <div>
@@ -657,13 +657,13 @@ export default function ScorePage() {
             Email dev@harinemanagement.com. This score is a self-check. The paid diagnostic is $2,500 and finished in under a week.
           </p>
           <Link
-            href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
+            href="https://calendly.com/dev-harinemanagement/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
             style={{ fontSize: "15px", padding: "15px 36px" }}
           >
-            Book a 20-minute call
+            Book a 30-minute call
           </Link>
         </div>
       </div>

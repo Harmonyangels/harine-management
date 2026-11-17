@@ -141,7 +141,7 @@ Do not include a score summary or page title — those are rendered separately. 
     </div>
 
     <div style="text-align:center;">
-      <a href="https://calendly.com/dev-harinemanagement/30min" style="display:inline-block;background:#23c6a0;color:#0b1520;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Book Follow-Up Call</a>
+      <a href="https://calendly.com/dev-harinemanagement/30min" style="display:inline-block;background:#23c6a0;color:#0b1520;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Book a 30-minute call</a>
     </div>
 
   </div>
@@ -177,7 +177,7 @@ Do not include a score summary or page title — those are rendered separately. 
     </div>
 
     <div style="text-align:center;margin-bottom:44px;">
-      <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" style="display:inline-block;background:linear-gradient(135deg,#23c6a0 0%,#1a9e80 100%);color:#ffffff;font-weight:700;font-size:16px;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;">Book a 20-minute call</a>
+      <a href="https://calendly.com/dev-harinemanagement/30min" style="display:inline-block;background:linear-gradient(135deg,#23c6a0 0%,#1a9e80 100%);color:#ffffff;font-weight:700;font-size:16px;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;">Book a 30-minute call</a>
       <p style="color:#8aa8bb;font-size:13px;margin:14px 0 0;line-height:1.6;">The practice entry offer is a $2,500 diagnostic, finished in under a week.<br>This score is not that diagnostic.</p>
     </div>
 

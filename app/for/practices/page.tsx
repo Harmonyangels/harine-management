@@ -192,9 +192,9 @@ export default function ForPracticesPage() {
         <div className="service-cta-inner">
           <h2>See what your EHR data can do.</h2>
           <p>
-            Book a 20-minute call. If the reporting is the problem, the $2,500 diagnostic is a written findings report and a prioritized fix plan, finished in under a week.
+            Book a 30-minute call. If the reporting is the problem, the $2,500 diagnostic is a written findings report and a prioritized fix plan, finished in under a week.
           </p>
-          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 20-minute call</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
         </div>
       </section>
 

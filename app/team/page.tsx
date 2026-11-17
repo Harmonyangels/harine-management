@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
     name: "Devanshu Patel",
     title: "Founder & Principal Consultant",
     initials: "DP",
-    bio: "Devanshu brings a decade of healthcare operations and management experience to every engagement. He has worked in eClinicalWorks and athenahealth environments, including practice operations, revenue cycle management, and analytics builds for independent practices. Harine Management is the solo practice he runs from Atlanta. He does the work himself.",
+    bio: "Devanshu has about 5 years of healthcare operations and analytics experience. He has worked in eClinicalWorks and athenahealth environments, including practice operations, revenue cycle management, and analytics builds for independent practices. Harine Management is the solo practice he runs from Atlanta. He does the work himself.",
     email: "dev@harinemanagement.com",
     phone: "682-256-3389",
   },
@@ -187,18 +187,18 @@ export default function TeamPage() {
       {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>Book a 20-minute call.</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
             Email dev@harinemanagement.com. For practices, the usual first step is the $2,500 diagnostic.
           </p>
           <div className="service-cta-actions">
             <a
-              href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
+              href="https://calendly.com/dev-harinemanagement/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-white"
             >
-              Book a 20-minute call
+              Book a 30-minute call
             </a>
           </div>
         </div>

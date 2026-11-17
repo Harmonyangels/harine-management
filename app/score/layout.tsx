@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Free Practice Health Check",
   description:
-    "A short self-assessment for medical practice reporting and revenue cycle. Atlanta healthcare consulting follow-up is a 20-minute call, not a sales sequence.",
+    "A short self-assessment for medical practice reporting and revenue cycle. Atlanta healthcare consulting follow-up is a 30-minute call, not a sales sequence.",
   alternates: {
     canonical: "/score",
   },

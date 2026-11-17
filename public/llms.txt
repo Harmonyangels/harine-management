@@ -18,7 +18,7 @@ Harine Management is an Atlanta-based healthcare data analytics consultancy that
 
 ## Expertise
 
-Devanshu Patel is a Healthcare Data Analytics Consultant and the founder of Harine Management LLC, based in Atlanta, Georgia. His work is focused on the intersection of healthcare operations and business intelligence — specifically turning raw EHR data into executive decision-support tools. Devanshu has hands-on experience with Athenahealth and eClinicalWorks, the two most widely deployed EHR platforms in ambulatory care, and builds in Power BI. He brings a background in healthcare business operations and understands the financial and clinical metrics that matter to practice administrators, CMOs, and private equity portfolio managers. Harine Management reflects the analytics infrastructure Devanshu built from working inside healthcare businesses and wished had existed earlier.
+Devanshu Patel is a Healthcare Data Analytics Consultant and the founder of Harine Management LLC, based in Atlanta, Georgia. His work is focused on the intersection of healthcare operations and business intelligence — specifically turning raw EHR data into executive decision-support tools. Devanshu has about 5 years of healthcare operations and analytics experience, with hands-on time in Athenahealth and eClinicalWorks, and builds in Power BI. He understands the financial and clinical metrics that matter to practice administrators, CMOs, and private equity portfolio managers. Harine Management reflects the analytics infrastructure Devanshu built from working inside healthcare businesses and wished had existed earlier.
 
 ## Target Clients
 

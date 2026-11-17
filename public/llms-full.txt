@@ -57,7 +57,7 @@ Harine Management connects to the client's EHR through approved export pipelines
 
 ### Implementation Timeline
 
-20-minute call → agree the scope in writing → data access limited to what the work needs → build or review → hand off the output. Timing is set in the scope. It is not a 14-day promise. Ongoing maintenance applies when a pipeline is part of the engagement.
+30-minute call → agree the scope in writing → data access limited to what the work needs → build or review → hand off the output. Timing is set in the scope. It is not a 14-day promise. Ongoing maintenance applies when a pipeline is part of the engagement.
 
 ### Who This Is For
 
@@ -332,7 +332,7 @@ LinkedIn: https://www.linkedin.com/in/devanshu-patel
 Company URL: https://harinemanagement.com
 About page: https://harinemanagement.com/about
 
-Devanshu Patel is a healthcare data analytics consultant and the founder of Harine Management LLC. His expertise is in connecting the data that exists inside healthcare businesses to the dashboards and reports that leadership needs to make decisions. He has direct, hands-on experience with Athenahealth and eClinicalWorks — the two most widely deployed EHR platforms in ambulatory care — and specializes in Power BI dashboard development for medical practices and healthcare investors.
+Devanshu Patel is a healthcare data analytics consultant and the founder of Harine Management LLC. He has about 5 years of healthcare operations and analytics experience. His expertise is in connecting the data that exists inside healthcare businesses to the dashboards and reports that leadership needs to make decisions. He has direct, hands-on experience with Athenahealth and eClinicalWorks — the two most widely deployed EHR platforms in ambulatory care — and specializes in Power BI dashboard development for medical practices and healthcare investors.
 
 Harine Management was built from Devanshu's experience working inside healthcare businesses and understanding firsthand what analytics infrastructure was missing. The firm is the product of that experience — built for the people who run medical practices and the investors who evaluate them, not for hospital systems with eight-figure IT budgets.
 
@@ -355,7 +355,7 @@ The Practice Operational Diagnostic is completed in under a week. Dashboard and 
 Harine Management does not claim a HIPAA certification. Engagements can be done under a business associate agreement, and data access follows a minimum-necessary standard.
 
 **What does Harine Management cost?**
-The practice entry offer is a Practice Operational Diagnostic at $2,500, finished in under a week. Other services are priced when they are scoped. The site also lists ranges for RCM repair and practice launch that should be confirmed with Devanshu before they are quoted.
+The practice entry offer is a Practice Operational Diagnostic at $2,500, finished in under a week. RCM repair is a fixed quote after the diagnostic. Other services are priced when they are scoped. Practice launch is not offered on the site right now. Devanshu Patel has about 5 years of healthcare operations and analytics experience.
 
 **Who does Harine Management not serve?**
 Solo practices (1 provider) without growth plans, and hospital systems or large IDNs with existing enterprise analytics teams. Harine Management's sweet spot is groups with 3 to 50 providers and PE-backed healthcare businesses.

@@ -180,14 +180,14 @@ export default async function ServicePage({
       {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>{service.slug === "practice-operational-diagnostic" ? "Book the 20-minute call." : "Start with the diagnostic, or book a call."}</h2>
+          <h2>{service.slug === "practice-operational-diagnostic" ? "Book the 30-minute call." : "Start with the diagnostic, or book a call."}</h2>
           <p>
             {service.slug === "practice-operational-diagnostic"
               ? "The diagnostic is $2,500 and finished in under a week. Email dev@harinemanagement.com and we will confirm scope before any data is shared."
               : "The Practice Operational Diagnostic is $2,500 and finished in under a week: a written findings report and a prioritized fix plan. Larger work is scoped after that, or on the call."}
           </p>
           <div className="service-cta-actions">
-            <a href={BOOK_CALL_HREF} className="btn btn-white">{BOOK_CALL_LABEL}</a>
+            <a href={BOOK_CALL_HREF} className="btn btn-white" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
             {service.slug !== "practice-operational-diagnostic" && (
               <Link href={DIAGNOSTIC_PATH} className="btn btn-score">See the diagnostic →</Link>
             )}

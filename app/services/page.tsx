@@ -85,16 +85,9 @@ export default function ServicesPage() {
 
               <div className="services-index-card">
                 <div className="services-index-card-title">RCM Fix &amp; Revenue Recovery</div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$3,000–$8,000</div>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>Fixed quote after the diagnostic</div>
                 <div className="services-index-card-desc">Denial review, credentialing gaps, and payer contract questions, worked in eClinicalWorks and athenahealth. Scope and price are confirmed on the call.</div>
-                <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" className="services-index-card-link">Book a 20-minute call →</a>
-              </div>
-
-              <div className="services-index-card">
-                <div className="services-index-card-title">Turnkey Practice Startup</div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$10,000–$25,000</div>
-                <div className="services-index-card-desc">Full operational launch package for new practices or new locations. Covers EMR configuration, payer credentialing, hiring templates, billing workflow build, and staff training framework.</div>
-                <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Learn more →</a>
+                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Book a 30-minute call →</a>
               </div>
 
             </div>
@@ -140,9 +133,9 @@ export default function ServicesPage() {
         <div className="service-cta-inner">
           <h2>Not sure which service fits?</h2>
           <p>
-            Book a 20-minute call at dev@harinemanagement.com. The diagnostic is $2,500 and finished in under a week.
+            Book a 30-minute call at dev@harinemanagement.com. The diagnostic is $2,500 and finished in under a week.
           </p>
-          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 20-minute call</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
         </div>
       </section>
 

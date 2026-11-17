@@ -754,7 +754,7 @@ export default function RevenueLeakageCalculator() {
 
         {/* CTA */}
         <Link
-          href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
+          href="https://calendly.com/dev-harinemanagement/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"
@@ -765,7 +765,7 @@ export default function RevenueLeakageCalculator() {
             padding: "16px 32px",
           }}
         >
-          Book a Free 15-Min RCM Review →
+          Book a 30-minute call →
         </Link>
       </div>
     );

@@ -55,7 +55,7 @@ export default function Nav() {
           )}
         </button>
         <Link href="/services/practice-operational-diagnostic" className="nav-score-cta nav-cta-desktop">$2,500 diagnostic</Link>
-        <Link href={BOOK_CALL_HREF} className="nav-cta nav-cta-desktop">{BOOK_CALL_LABEL}</Link>
+        <Link href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer" className="nav-cta nav-cta-desktop">{BOOK_CALL_LABEL}</Link>
       </div>
 
       {/* Mobile dropdown */}
@@ -71,7 +71,7 @@ export default function Nav() {
           <Link href="/services/practice-operational-diagnostic" className="nav-score-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
             $2,500 diagnostic
           </Link>
-          <Link href={BOOK_CALL_HREF} className="nav-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
+          <Link href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
             {BOOK_CALL_LABEL}
           </Link>
         </div>

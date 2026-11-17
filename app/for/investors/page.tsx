@@ -247,9 +247,9 @@ export default function ForInvestorsPage() {
         <div className="service-cta-inner">
           <h2>Running a process? Let&apos;s talk data.</h2>
           <p>
-            Email dev@harinemanagement.com to book a 20-minute call about the target and the timeline. We will say what can be extracted from the EHR and what the written report will cover.
+            Email dev@harinemanagement.com to book a 30-minute call about the target and the timeline. We will say what can be extracted from the EHR and what the written report will cover.
           </p>
-          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Start the Conversation</a>
+          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
         </div>
       </section>
 

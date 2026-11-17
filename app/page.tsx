@@ -129,7 +129,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link href={DIAGNOSTIC_PATH} className="btn btn-primary">Start with the $2,500 diagnostic</Link>
-              <a href={BOOK_CALL_HREF} className="btn btn-secondary">{BOOK_CALL_LABEL}</a>
+              <a href={BOOK_CALL_HREF} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
             </div>
             <p className="hero-note">
               The diagnostic is a fixed-price review of your reporting, revenue cycle, and operations data. Written findings and a prioritized fix plan, in under a week.
@@ -242,7 +242,7 @@ export default function Home() {
           <div className="section-header">
             <div className="eyebrow"><span className="eyebrow-rule"></span>What we do</div>
             <h2 className="section-title">Start with a diagnostic.<br /><em>Then decide.</em></h2>
-            <p className="section-sub">The diagnostic is the way in. Dashboards, revenue cycle work, diligence, a practice launch, and RCM repair are still here if the findings call for them.</p>
+            <p className="section-sub">The diagnostic is the way in. Dashboards, revenue cycle work, diligence, and RCM repair are still here if the findings call for them.</p>
           </div>
           <div className="services-grid">
 
@@ -302,20 +302,12 @@ export default function Home() {
               <Link href="/services/due-diligence-analytics" className="service-link">See diligence analytics →</Link>
             </div>
 
-            <div className="service-card secondary">
-              <div className="service-icon terra">05</div>
-              <div className="service-tag terra">Practice launch</div>
-              <h3>Turnkey Practice Launch</h3>
-              <p>Opening a practice or a new location. Operational setup — EHR configuration, payer credentialing, hiring templates, and billing workflow — so day one is not a scramble.</p>
-              <a href={BOOK_CALL_HREF} className="service-link terra">{BOOK_CALL_LABEL} →</a>
-            </div>
-
             <div className="service-card tertiary">
-              <div className="service-icon ink">06</div>
+              <div className="service-icon ink">05</div>
               <div className="service-tag ink">RCM</div>
               <h3>RCM Fix &amp; Revenue Recovery</h3>
-              <p>Denials, slow collections, and credentialing gaps. We look for the cause in the eClinicalWorks or athenahealth workflow and work the fix with you.</p>
-              <a href={BOOK_CALL_HREF} className="service-link">{BOOK_CALL_LABEL} →</a>
+              <p>Denials, slow collections, and credentialing gaps. We look for the cause in the eClinicalWorks or athenahealth workflow and work the fix with you. Price is a fixed quote after the diagnostic.</p>
+              <a href={BOOK_CALL_HREF} className="service-link" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL} →</a>
             </div>
 
           </div>
@@ -354,7 +346,7 @@ export default function Home() {
                   Priced for independent and multi-site groups, not a health-system IT project
                 </li>
               </ul>
-              <a href={BOOK_CALL_HREF} className="btn btn-primary">{BOOK_CALL_LABEL}</a>
+              <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
             </div>
 
             <div>
@@ -447,7 +439,7 @@ export default function Home() {
                   Deliverable-ready output that holds up in a data room
                 </li>
               </ul>
-              <a href={BOOK_CALL_HREF} className="btn btn-terra">{BOOK_CALL_LABEL}</a>
+              <a href={BOOK_CALL_HREF} className="btn btn-terra" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
             </div>
 
             <div>
@@ -502,7 +494,7 @@ export default function Home() {
           <div className="steps">
             <div className="step">
               <div className="step-num">01</div>
-              <h4>20-minute call</h4>
+              <h4>30-minute call</h4>
               <p>Which EHR you use, what gets rebuilt in Excel, and which decision is stuck. If a diagnostic is the wrong first step, we&apos;ll say so.</p>
             </div>
             <div className="step">
@@ -543,13 +535,13 @@ export default function Home() {
                 <span className="eyebrow-rule"></span>Let&apos;s Talk
               </div>
               <h2 className="cta-title">
-                Book a 20-minute call.<br />Or start with the<br /><em>$2,500 diagnostic.</em>
+                Book a 30-minute call.<br />Or start with the<br /><em>$2,500 diagnostic.</em>
               </h2>
               <p className="cta-sub">
                 Tell us how reporting works today. The diagnostic covers reporting, revenue cycle, and operations data, and ends with a written findings report and a prioritized fix plan, in under a week.
               </p>
               <div className="cta-actions">
-                <a href={BOOK_CALL_HREF} className="btn btn-primary">{BOOK_CALL_LABEL}</a>
+                <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
                 <Link href={DIAGNOSTIC_PATH} className="btn btn-ghost">Read the diagnostic scope</Link>
               </div>
             </div>
