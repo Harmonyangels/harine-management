@@ -228,12 +228,10 @@ export default async function PostPage({
         <div className="service-cta-inner">
           <h2>Ready to see what your EHR data can do?</h2>
           <p>
-            Every engagement starts with a 30-minute discovery call — no
-            commitments, just a clear look at what&apos;s possible with your
-            data.
+            Book a 20-minute call at dev@harinemanagement.com. The practice entry offer is a $2,500 diagnostic, finished in under a week.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Schedule a Discovery Call
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">
+            Book a 20-minute call
           </a>
         </div>
       </section>

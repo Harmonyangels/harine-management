@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Practice Intelligence Blog | Harine Management",
+  title: "Practice Intelligence Blog",
   description:
     "Benchmarks, billing analytics, and operational intelligence for medical practice owners and healthcare investors.",
   alternates: { canonical: "/blog" },
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     description:
       "Benchmarks, billing analytics, and operational intelligence for medical practice owners and healthcare investors.",
     url: "https://harinemanagement.com/blog",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 

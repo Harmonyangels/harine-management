@@ -5,11 +5,17 @@ import SiteFooter from "@/components/SiteFooter";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Free Tools for Medical Practices | Harine Management",
+  title: "Free Tools for Medical Practices",
   description:
     "Free calculators and assessments for medical practice owners — benchmark your RCM metrics, calculate revenue leakage, and get your practice health score.",
   alternates: {
     canonical: "https://harinemanagement.com/tools",
+  },
+  openGraph: {
+    title: "Free Tools for Medical Practices | Harine Management",
+    description:
+      "Free calculators and assessments for medical practice owners — RCM benchmarks, revenue leakage, and a practice health check.",
+    url: "https://harinemanagement.com/tools",
   },
 };
 

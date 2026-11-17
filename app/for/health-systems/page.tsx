@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     description:
       "Analytics infrastructure for health systems and MSOs managing physician practice networks — standardized dashboards across every affiliated practice, updated daily.",
     url: "https://harinemanagement.com/for/health-systems",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -234,9 +233,9 @@ export default function ForHealthSystemsPage() {
         <div className="service-cta-inner">
           <h2>Let&apos;s talk about your network.</h2>
           <p>
-            Every engagement starts with a conversation about the network — how many practices, which EHR platforms, and what leadership actually needs to see. We&apos;ll tell you exactly what&apos;s possible before any commitment.
+            Book a 20-minute call. Tell us how many practices, which EHR platforms, and what leadership needs to see. We'll say what a first scope would cover.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Schedule a Discovery Call</a>
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 20-minute call</a>
         </div>
       </section>
 

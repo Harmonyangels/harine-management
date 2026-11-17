@@ -6,18 +6,17 @@ import JsonLd from "@/components/JsonLd";
 import { getServicesByAudience } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Healthcare Data Analytics for Medical Practices",
+  title: "Power BI Dashboards for Medical Practices",
   description:
-    "Daily EHR-to-Power BI dashboards for medical practices — patient volume, revenue cycle, provider productivity, and payer mix. No manual exports. No IT staff needed.",
+    "Power BI dashboards for medical practices, built from athenahealth reporting and eClinicalWorks data. Atlanta healthcare consulting for independent and multi-site groups.",
   alternates: {
     canonical: "/for/practices",
   },
   openGraph: {
-    title: "Healthcare Data Analytics for Medical Practices | Harine Management",
+    title: "Power BI Dashboards for Medical Practices | Harine Management",
     description:
-      "Daily EHR-to-Power BI dashboards for medical practices — patient volume, revenue cycle, provider productivity, and payer mix. No manual exports. No IT staff needed.",
+      "athenahealth reporting and eClinicalWorks data, turned into Power BI dashboards. Medical practice analytics for groups in Atlanta and the Southeast.",
     url: "https://harinemanagement.com/for/practices",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -193,9 +192,9 @@ export default function ForPracticesPage() {
         <div className="service-cta-inner">
           <h2>See what your EHR data can do.</h2>
           <p>
-            Every engagement starts with a 30-minute discovery call. We&apos;ll look at what&apos;s in your EHR and show you exactly what a live dashboard would look like for your practice before any commitment.
+            Book a 20-minute call. If the reporting is the problem, the $2,500 diagnostic is a written findings report and a prioritized fix plan, finished in under a week.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a Discovery Call</a>
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 20-minute call</a>
         </div>
       </section>
 

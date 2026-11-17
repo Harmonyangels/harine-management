@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "RCM Benchmarking Scorecard for Medical Practices | Harine Management",
+  title: "RCM Benchmarking Scorecard for Medical Practices",
   description:
     "Compare your practice billing metrics against MGMA and HFMA benchmarks across 8 key indicators. Free instant scorecard.",
   alternates: {

@@ -42,6 +42,63 @@ export interface Service {
 
 export const services: Service[] = [
   // ─────────────────────────────────────────────────────────────
+  // 0. Practice Operational Diagnostic — entry offer
+  // ─────────────────────────────────────────────────────────────
+  {
+    slug: "practice-operational-diagnostic",
+    title: "Practice Operational Diagnostic",
+    shortTitle: "Operational Diagnostic",
+    metaTitle: "Practice Operational Diagnostic | Harine Management",
+    metaDescription:
+      "A $2,500 Practice Operational Diagnostic for medical practices. Reporting, revenue cycle, and operations data reviewed in under a week, with a written fix plan.",
+    heroHeadline: "A scoped look at the reporting, the billing, and the operations.",
+    heroSubheadline:
+      "Fixed price, $2,500. Finished in under a week. You get a written findings report and a prioritized fix plan — before any dashboard build.",
+    targetAudience: "practices",
+    problemStatement:
+      "Practice managers already know the weekly reporting is slow. What is harder to see is which number is wrong, which denial pattern is worth working, and whether a dashboard is the next step or a distraction. A full analytics build is the wrong first purchase if the underlying reports and workflows have not been looked at.",
+    solutionStatement:
+      "The Practice Operational Diagnostic is a fixed-price review of how the practice reports today, how the revenue cycle is performing in the data you already have, and where operations data is missing or contradictory. Harine Management reads that material and returns a written findings report plus a prioritized fix plan. Work can be done under a business associate agreement, and data access follows a minimum-necessary standard.",
+    deliverables: [
+      "Review of current reporting: what is rebuilt in Excel, and what the EHR already produces",
+      "Revenue cycle review from the reports you have: collections, denials, and AR aging",
+      "Operations review: volume, provider productivity, and where those numbers disagree",
+      "Written findings report",
+      "Prioritized fix plan — what to change first, and what can wait",
+      "A short walkthrough of the findings",
+    ],
+    outcomes: [
+      { value: "$2,500", label: "Fixed price, agreed before the review starts" },
+      { value: "< 1 week", label: "Written findings and a prioritized fix plan" },
+      { value: "3 areas", label: "Reporting, revenue cycle, and operations data" },
+    ],
+    faqItems: [
+      {
+        question: "What is included in the Practice Operational Diagnostic?",
+        answer:
+          "The diagnostic is a scoped review of your reporting, revenue cycle, and operations data. It ends with a written findings report and a prioritized fix plan. It does not include building a Power BI dashboard, submitting claims, or renegotiating payer contracts.",
+      },
+      {
+        question: "How much does it cost and how long does it take?",
+        answer:
+          "The price is $2,500. The review is completed in under a week from the time the agreed data and reports are available.",
+      },
+      {
+        question: "What do you need from the practice?",
+        answer:
+          "The reports you already run, plus read access to the EHR or billing exports that those reports come from. Access is limited to what the review needs. The engagement can be done under a business associate agreement.",
+      },
+      {
+        question: "What happens after the diagnostic?",
+        answer:
+          "You keep the written report either way. If the fix plan calls for a dashboard, a revenue cycle repair, or diligence work, that is a separate scope. Nothing in the diagnostic commits you to a larger engagement.",
+      },
+    ],
+    definitionBlock:
+      "The Practice Operational Diagnostic from Harine Management is a $2,500 review of a medical practice's reporting, revenue cycle, and operations data, completed in under a week, and delivered as a written findings report with a prioritized fix plan.",
+  },
+
+  // ─────────────────────────────────────────────────────────────
   // 1. Practice Analytics System
   // ─────────────────────────────────────────────────────────────
   {
@@ -50,7 +107,7 @@ export const services: Service[] = [
     shortTitle: "Practice Analytics",
     metaTitle: "Practice Analytics System | Harine Management",
     metaDescription:
-      "End-to-end EHR analytics connecting Athenahealth and eClinicalWorks to Power BI executive dashboards — live in 14 days, zero manual exports.",
+      "Power BI dashboards for medical practices, connected to athenahealth and eClinicalWorks. Volume, revenue, and provider views without another Excel export.",
     heroHeadline: "Analytics built for decisions, not just reports.",
     heroSubheadline:
       "We connect your EHR to a dashboard your CMO checks before their first meeting of the day — and keep it running so your team never has to.",
@@ -68,22 +125,22 @@ export const services: Service[] = [
       "Onboarding, user training, and ongoing pipeline maintenance included",
     ],
     outcomes: [
-      { value: "14 days", label: "From signed agreement to first live dashboard" },
-      { value: "0", label: "Manual exports required after go-live" },
-      { value: "94%", label: "Average collection rate visibility across client practices" },
+      { value: "Daily", label: "Dashboard refresh from the EHR, on a schedule" },
+      { value: "Yours", label: "The dashboard lives in your environment" },
+      { value: "Maintained", label: "Pipeline upkeep stays with Harine Management" },
     ],
     faqItems: [
       {
         question:
           "What EHR systems does the Practice Analytics System work with?",
         answer:
-          "The Practice Analytics System has been built and deployed for Athenahealth (athenaOne) and eClinicalWorks; it is also compatible with Kareo, DrChrono, and other platforms that support structured data export, with EHR compatibility confirmed during the discovery call at no obligation.",
+          "The Practice Analytics System is built for athenahealth (athenaOne) and eClinicalWorks. Other platforms that support a structured export can be assessed on the scoping call, with no obligation to continue.",
       },
       {
         question:
           "Does my practice need a data team or IT staff to run this?",
         answer:
-          "No — Harine Management builds and maintains the entire data pipeline, and the practice's only responsibility is opening the dashboard; there is no technical overhead on the client side after the initial 14-day implementation.",
+          "No. Harine Management builds and maintains the data pipeline. After go-live, the practice's job is to open the dashboard. Timing depends on EHR access and the views in scope, and it is set in writing before the build starts.",
       },
       {
         question:
@@ -95,11 +152,11 @@ export const services: Service[] = [
         question:
           "What happens when the EHR pushes an update that breaks the data connection?",
         answer:
-          "Pipeline monitoring is included in every engagement, so Harine Management is alerted before the client is if a refresh fails; EHR updates that break a connection are diagnosed and patched at no additional cost as part of standard ongoing maintenance.",
+          "When pipeline monitoring is part of the engagement, Harine Management is alerted if a refresh fails. EHR updates that break a connection are diagnosed and patched as part of that maintenance.",
       },
     ],
     definitionBlock:
-      "The Harine Management Practice Analytics System is a fully managed EHR-to-dashboard analytics infrastructure that connects medical practice data from platforms like Athenahealth and eClinicalWorks to a daily-updated Power BI executive dashboard, implemented in 14 days and maintained on an ongoing basis with no internal data or IT resources required from the practice.",
+      "The Harine Management Practice Analytics System connects medical practice data from athenahealth and eClinicalWorks to a Power BI dashboard that refreshes on a schedule, and is maintained without an internal data team at the practice.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -129,9 +186,9 @@ export const services: Service[] = [
       "Capacity utilization view by provider and location relative to scheduled capacity",
     ],
     outcomes: [
-      { value: "+18%", label: "Average improvement in volume visibility month-over-month" },
-      { value: "Daily", label: "Data refresh cadence — no more weekly report runs" },
-      { value: "< 5 min", label: "To spot a volume dip before it shows in the income statement" },
+      { value: "Daily", label: "Encounter counts, without a weekly spreadsheet" },
+      { value: "By site", label: "Volume split by provider, location, and visit type" },
+      { value: "Early", label: "A dip shows up before the monthly close" },
     ],
     faqItems: [
       {
@@ -190,9 +247,9 @@ export const services: Service[] = [
       "Role-secured individual provider login with self-service visibility into their own numbers",
     ],
     outcomes: [
-      { value: "MGMA", label: "Percentile ranking shown for every provider, updated quarterly" },
-      { value: "Daily", label: "wRVU production refresh — not quarterly, not monthly" },
-      { value: "< 30 days", label: "Typical time to identify and address an underperformance trend" },
+      { value: "Daily", label: "wRVU view, not a quarterly spreadsheet" },
+      { value: "MGMA", label: "Percentile context from the published report" },
+      { value: "Per provider", label: "Each physician can see their own numbers" },
     ],
     faqItems: [
       {
@@ -239,9 +296,9 @@ export const services: Service[] = [
       "Collection rates, AR aging, denial patterns, and payer mix — surfaced in real time from your EHR billing data so your finance team can act before the shortfall compounds.",
     targetAudience: "practices",
     problemStatement:
-      "Revenue cycle problems are invisible until they are expensive. A collection rate drifting down 2 points per quarter looks fine on a monthly summary until it doesn't. AR aging over 90 days accumulates quietly, denial rates spike and go unaddressed for weeks, and a payer mix shift that compresses margins by 8% takes a full quarter to show in financial statements — by which point the damage is structural and the recovery takes twice as long as the deterioration did.",
+      "Revenue cycle problems are easy to miss in a monthly summary. A collection rate can drift, AR over 90 days can accumulate, and a denial pattern can sit until someone happens to pull the right report. By the time the change shows in the financial statements, the encounters that caused it are already old.",
     solutionStatement:
-      "Revenue Cycle Analytics gives medical practice finance teams a real-time view of the signals that matter — collection rates by payer, AR aging by bucket and provider, denial rates by CPT code, and net revenue per visit — built from EHR billing data and refreshed daily in Power BI. Problems that used to take a quarter to surface now show up in days, when there is still time to correct them.",
+      "Revenue Cycle Analytics puts collection rates by payer, AR aging by bucket and provider, denial rates by CPT code, and net revenue per visit in one Power BI view, refreshed from EHR billing data. The point is to see a pattern while the encounters behind it can still be worked.",
     deliverables: [
       "AR aging dashboard: current, 30, 60, 90, and 120+ day buckets by provider and payer",
       "Collection rate by payer and visit type with month-over-month trend lines",
@@ -251,9 +308,9 @@ export const services: Service[] = [
       "Reimbursement rate variance — actual amount collected vs. contracted rate by payer",
     ],
     outcomes: [
-      { value: "< 30%", label: "Target AR over 90 days Harine dashboards help practices achieve" },
-      { value: "94%", label: "Average collection rate across active Harine Management clients" },
-      { value: "Days", label: "To surface a denial pattern — not months after the quarter closes" },
+      { value: "By payer", label: "Collection rate, denial rate, and AR aging in one view" },
+      { value: "Daily", label: "Billing data refresh from the EHR" },
+      { value: "By code", label: "Denial patterns split by CPT code and payer" },
     ],
     faqItems: [
       {
@@ -278,7 +335,7 @@ export const services: Service[] = [
         question:
           "How does Harine Management access billing data without compromising protected health information?",
         answer:
-          "Billing data is extracted from the EHR through approved, HIPAA-compliant export mechanisms; the data pipeline flows into the client's own cloud environment, Harine Management does not retain copies of billing records or PHI, and all data architecture documentation and flow diagrams are provided as part of every engagement.",
+          "Billing data is pulled through the EHR's approved export path and lands in the client's own environment. Harine Management does not keep a copy of the billing records. Access is limited to what the engagement needs, and the work can be done under a business associate agreement.",
       },
     ],
     definitionBlock:
@@ -294,15 +351,15 @@ export const services: Service[] = [
     shortTitle: "Due Diligence",
     metaTitle: "Healthcare Due Diligence Analytics | Harine Management",
     metaDescription:
-      "EHR-level due diligence for PE firms acquiring medical practices — provider risk, payer mix, revenue integrity, and AR aging. Delivered in 5–10 business days.",
+      "EHR-level due diligence for healthcare investors buying medical practices — provider risk, payer mix, revenue integrity, and AR aging, scoped to the deal calendar.",
     heroHeadline: "Before you close, know if the revenue is real.",
     heroSubheadline:
-      "EHR-level due diligence analytics for private equity firms acquiring medical practices — built from actual encounter data, not management summaries, delivered in 5 to 10 business days.",
+      "EHR-level due diligence analytics for healthcare investors acquiring medical practices — built from encounter data, not management summaries. The timeline is set to the deal calendar.",
     targetAudience: "investors",
     problemStatement:
       "Management-provided financials in a healthcare M&A process show you what leadership wants you to see. They don't show you the physician whose retirement timeline isn't in the data room, the payer mix shift that will compress margins in year one of ownership, or the AR aging that management has been managing with aggressive collection tactics that won't survive new ownership. The gap between what a practice reports and what its EHR encounter data actually shows is where deal risk lives — and standard financial due diligence doesn't reach it.",
     solutionStatement:
-      "Harine Management extracts and analyzes EHR-level data from the target practice — not management summaries, not adjusted financials — and produces a structured due diligence report covering revenue integrity, provider concentration risk, payer mix trajectory, and operational benchmarking against specialty peers. The output is formatted for data rooms and investment committee presentations and delivered in 5 to 10 business days from the date data access is granted.",
+      "Harine Management extracts and analyzes EHR-level data from the target practice — not management summaries, not adjusted financials — and produces a structured due diligence report covering revenue integrity, provider concentration risk, payer mix trajectory, and operational benchmarking against published specialty benchmarks where those exist. The output is formatted for data rooms and investment committee presentations. Timing is agreed when data access is granted, against the deal calendar.",
     deliverables: [
       "Three-year historical volume and revenue trend analysis from raw EHR encounter data",
       "Provider concentration analysis with revenue-at-risk modeling for top 1, 2, and 3 providers",
@@ -312,20 +369,20 @@ export const services: Service[] = [
       "Deliverable-ready PDF report formatted for data rooms and investment committee presentations",
     ],
     outcomes: [
-      { value: "5–10 days", label: "From data access grant to final deliverable" },
-      { value: "EHR-level", label: "Data sourcing — encounter records, not management financials" },
-      { value: "IC-ready", label: "Report format built for investment committee presentations" },
+      { value: "EHR-level", label: "Encounter records, not the management summary" },
+      { value: "Scoped", label: "Timeline set to the diligence window" },
+      { value: "Written", label: "A report you can put in the data room" },
     ],
     faqItems: [
       {
         question: "How long does healthcare due diligence analytics take?",
         answer:
-          "A standard Harine Management healthcare due diligence analytics engagement is delivered within 5 to 10 business days from the date data access is granted to the target practice's EHR and billing systems; for time-sensitive situations — LOI expirations, accelerated closing timelines, or competitive bid processes — expedited engagements with 48 to 72-hour turnarounds are available, with availability confirmed at engagement kickoff.",
+          "Timing is agreed at kickoff, once data access and the deal calendar are known. A rush window is only offered when the data is actually available in time. There is no standing 48-hour guarantee.",
       },
       {
         question: "What EHR systems do you work with?",
         answer:
-          "Harine Management's due diligence analytics engagements are EHR-agnostic — analysis has been conducted on practices running Athenahealth, eClinicalWorks, Epic, Kareo, Greenway Health, and other platforms; the primary requirement is that the EHR support structured data export, which all major ambulatory platforms do, and the specific extraction approach is confirmed during engagement scoping based on the target practice's system.",
+          "The work is built for practices running athenahealth, eClinicalWorks, and other ambulatory platforms that can produce a structured export, including Epic, Kareo, and Greenway Health when the export is usable. The extraction approach is confirmed when the engagement is scoped.",
       },
       {
         question: "What data does the client need to provide?",
@@ -339,7 +396,7 @@ export const services: Service[] = [
       },
     ],
     definitionBlock:
-      "Healthcare Due Diligence Analytics from Harine Management is a pre-close data analysis service for private equity firms and healthcare investors that extracts and analyzes EHR encounter and billing data from target medical practices — validating revenue integrity, quantifying provider concentration risk, assessing payer mix quality, and delivering a structured analytical report in 5 to 10 business days that is ready for data rooms and investment committee review.",
+      "Healthcare Due Diligence Analytics from Harine Management is a pre-close data analysis service for healthcare investors that extracts EHR encounter and billing data from target medical practices — revenue integrity, provider concentration, and payer mix — and delivers a written report for the data room. Timing follows the deal calendar.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -357,20 +414,20 @@ export const services: Service[] = [
       "Practice performance benchmarked across revenue, productivity, billing efficiency, volume, and payer mix — scored against MGMA national standards and regional peers, with a prioritized improvement roadmap.",
     targetAudience: "investors",
     problemStatement:
-      "A practice that does not benchmark only knows its own trend — whether things are getting better or worse relative to yesterday, not relative to the market. A 94% collection rate sounds strong until you discover that practices of your specialty and size in your region average 96.5%. A wRVU per provider that grew 8% year over year looks like progress until MGMA benchmarking places it at the 28th percentile. Without external context, a practice cannot distinguish genuine performance from merely stable mediocrity.",
+      "A practice that does not benchmark only knows its own trend — whether things are getting better or worse relative to last month, not relative to peers. A collection rate or a year-over-year productivity gain can look fine until it is set next to a published specialty benchmark. Without that context, a practice cannot tell a real gap from a stable result.",
     solutionStatement:
-      "Practice Performance Scoring assigns a structured, domain-level score across five operational dimensions — volume, revenue cycle health, provider productivity, billing efficiency, and payer mix quality — benchmarked against MGMA national data and Harine Management's regional client dataset. The output is a scored assessment with domain breakdowns and a prioritized list of improvement opportunities ranked by estimated financial impact.",
+      "Practice Performance Scoring assigns a structured, domain-level score across five operational dimensions — volume, revenue cycle health, provider productivity, billing efficiency, and payer mix quality — set against published standards such as MGMA where a benchmark exists for the specialty. The output is a scored assessment with domain breakdowns and a prioritized list of what to look at first.",
     deliverables: [
       "Five-domain performance score: volume, revenue cycle, provider productivity, billing efficiency, payer mix",
       "MGMA percentile ranking for wRVU per provider and revenue per visit at 25th, 50th, and 75th percentile",
-      "Regional peer benchmarking for collection rate, AR aging, and denial rate",
-      "Payer mix quality score relative to specialty standard and regional mix",
-      "Prioritized improvement opportunity summary with estimated annual financial impact per gap",
+      "Collection rate, AR aging, and denial rate set next to published specialty benchmarks where those benchmarks exist",
+      "Payer mix described against the specialty's usual mix, where a published comparison exists",
+      "Prioritized list of gaps, with the practice's own numbers attached",
       "Quarterly re-score cadence to measure improvement against initial baseline",
     ],
     outcomes: [
       { value: "5 domains", label: "Scored: volume, RCM, productivity, billing, payer mix" },
-      { value: "MGMA + regional", label: "Dual benchmarking against national and local peer data" },
+      { value: "Published", label: "Benchmarks such as MGMA, where one exists for the specialty" },
       { value: "Quarterly", label: "Re-score cadence to track progress against improvement targets" },
     ],
     faqItems: [
@@ -384,7 +441,7 @@ export const services: Service[] = [
         question:
           "How is this different from simply looking at MGMA benchmarking data directly?",
         answer:
-          "MGMA benchmarking covers physician compensation and some productivity metrics but does not assess a practice holistically across revenue cycle health, billing efficiency, and payer mix composition; Harine Management's scoring integrates EHR-derived operational data with MGMA standards and regional peer data to produce a single structured assessment covering the full financial and operational picture in one deliverable.",
+          "MGMA benchmarking covers physician compensation and some productivity metrics but does not assess a practice across revenue cycle health, billing efficiency, and payer mix in one place. Harine Management's scoring puts EHR-derived operational data next to published standards such as MGMA, where a benchmark exists, in a single written assessment.",
       },
       {
         question:
@@ -396,7 +453,7 @@ export const services: Service[] = [
         question:
           "How long does the initial scoring engagement take to deliver?",
         answer:
-          "The initial practice performance score is delivered within 10 business days of data access; for practices that are existing Harine Management analytics clients, the score can be generated from the existing data pipeline in 3 to 5 business days because the underlying data extraction is already in place.",
+          "Timing is set when data access is confirmed. If a pipeline is already in place, the score can be produced from that data without a new extraction. The date is agreed up front, not assumed.",
       },
     ],
     definitionBlock:
@@ -412,17 +469,17 @@ export const services: Service[] = [
     shortTitle: "Post-Acquisition",
     metaTitle: "Post-Acquisition Intelligence | Harine Management",
     metaDescription:
-      "Analytics infrastructure for PE-backed practices post-close — KPI baselines in 30 days, portfolio reporting standardized, early-warning dashboards live.",
+      "Analytics infrastructure for PE-backed practices after close — a KPI baseline, portfolio-style reporting, and a dashboard the operators can actually open.",
     heroHeadline: "You closed the deal. Now build the measurement layer.",
     heroSubheadline:
-      "Post-acquisition analytics infrastructure for PE-backed medical practices — baseline KPIs established in 30 days, reporting standardized to portfolio cadence, and early-warning dashboards running before the first board meeting.",
+      "Post-acquisition analytics for PE-backed medical practices — a KPI baseline, reporting shaped to the portfolio cadence, and a dashboard in place before improvement work is judged.",
     targetAudience: "investors",
     problemStatement:
-      "Most medical practice acquisitions close without functioning analytics infrastructure. The practice has been running on a relationship with its billing company, tribal knowledge, and a practice manager who knows where everything is. Post-close, the PE firm needs operational visibility the practice has never had to provide before — and building that infrastructure while simultaneously managing a new ownership transition and a value creation plan is an operational challenge that derails integration timelines and delays EBITDA improvement by a full quarter or more.",
+      "Most medical practice acquisitions close without functioning analytics infrastructure. The practice has been running on a billing company, tribal knowledge, and a practice manager who knows where everything is. After close, the investor needs operational visibility the practice has never had to provide, and there is no baseline to measure a value-creation plan against.",
     solutionStatement:
-      "Post-Acquisition Intelligence is Harine Management's dedicated service for the 90 days following a healthcare acquisition close — building the EHR data pipeline, establishing baseline KPIs, standardizing reporting to portfolio requirements, and standing up early-warning dashboards before the first board meeting. The goal is to have the measurement infrastructure operational before the first operational improvement initiative begins, so there is a baseline to measure against.",
+      "Post-Acquisition Intelligence builds the EHR data pipeline, establishes baseline KPIs, shapes reporting to portfolio requirements, and stands up a dashboard the operators can check. The point is to have a baseline before improvement work is judged against it.",
     deliverables: [
-      "Post-close EHR data pipeline build, operational within 14 days of data access",
+      "Post-close EHR data pipeline, scoped once data access is granted",
       "Month 1 baseline KPI report: volume, revenue, provider productivity, collection rate, and AR aging",
       "Standardized monthly reporting package aligned with PE portfolio reporting cadence and format",
       "Early-warning KPI monitoring with threshold alerts for metric deterioration in real time",
@@ -430,22 +487,21 @@ export const services: Service[] = [
       "Month 3 and Month 6 milestone reports with variance analysis vs. acquisition-date baseline",
     ],
     outcomes: [
-      { value: "30 days", label: "Target for baseline analytics infrastructure to be operational post-close" },
-      { value: "Month 1", label: "First baseline KPI report delivered after acquisition close" },
-      { value: "Portfolio-ready", label: "Reporting standardized to PE portfolio cadence from day one" },
+      { value: "Baseline", label: "KPI baseline set before improvement work is judged" },
+      { value: "Written", label: "A first baseline report from the new pipeline" },
+      { value: "Same definitions", label: "Reporting shaped to the portfolio cadence" },
     ],
     faqItems: [
       {
-        question:
-          "Why does post-acquisition analytics infrastructure matter in the first 30 days?",
+        question: "Why set up analytics soon after close?",
         answer:
-          "The first 30 days post-close establish the operational baseline that all future performance measurement is compared against; practices that go live with analytics infrastructure in the first month can identify revenue cycle deterioration, provider productivity gaps, and volume declines weeks earlier than those that spend the first quarter building their own reporting — and earlier identification means earlier correction and less EBITDA erosion during the critical ownership transition period.",
+          "The period right after close is when a baseline gets set. Later comparisons need that starting point. The work is a measurement layer — volume, revenue cycle, and provider productivity — so later changes have something to be compared with. It is not a promise that problems will be found or fixed on a set schedule.",
       },
       {
         question:
           "What if the acquired practice has no data infrastructure or reporting history?",
         answer:
-          "The majority of Harine Management's post-acquisition engagements begin with a practice that has no formal analytics infrastructure; the engagement starts with an EHR data assessment and capability review, then builds the extraction pipeline, structures the historical data, and delivers the first baseline report — the practice does not need pre-existing reporting infrastructure for Harine Management to get started.",
+          "These engagements often start with a practice that has no formal analytics infrastructure. The work begins with an EHR data assessment, then builds the extraction pipeline, structures the historical data, and delivers a first baseline report. The practice does not need an existing reporting stack to start.",
       },
       {
         question:
@@ -461,7 +517,7 @@ export const services: Service[] = [
       },
     ],
     definitionBlock:
-      "Post-Acquisition Intelligence from Harine Management is a healthcare analytics service for private equity firms that establishes EHR data pipelines, baseline KPI reporting, and early-warning dashboards for newly acquired medical practices within the first 30 days post-close — providing the operational measurement infrastructure that portfolio management and value creation initiatives require from day one of ownership.",
+      "Post-Acquisition Intelligence from Harine Management is a healthcare analytics service for investors that sets up an EHR data pipeline, a baseline KPI report, and a dashboard for a newly acquired medical practice, so later operating work has a starting point to measure against.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -491,9 +547,9 @@ export const services: Service[] = [
       "Email or Microsoft Teams notification delivery for alert and weekly summary distribution",
     ],
     outcomes: [
-      { value: "< 2 min", label: "Weekly AI summary consumption time for practice leadership" },
-      { value: "Proactive", label: "Alerts fire before the metric crosses a critical threshold" },
-      { value: "Zero", label: "Additional data science or BI resources required from the practice" },
+      { value: "Weekly", label: "A short written note, instead of scanning every chart" },
+      { value: "Thresholds", label: "Alerts use limits you set, on metrics you already track" },
+      { value: "Managed", label: "No data science hire required at the practice" },
     ],
     faqItems: [
       {
@@ -518,7 +574,7 @@ export const services: Service[] = [
         question:
           "How is patient data protected when AI processes practice performance metrics?",
         answer:
-          "The AI Insights Layer analyzes aggregated, de-identified performance metrics — not individual patient records or PHI; the system receives inputs like 'collection rate this week: 91.2%, prior 4-week average: 94.1%' rather than any patient-level information, all processing occurs within HIPAA-compliant architecture, and no PHI touches any external AI service.",
+          "The AI Insights Layer is meant to read aggregated metrics, not patient records. A typical input is a metric and its recent average, not a chart. No protected health information should be sent to an external model. If the engagement needs it, the work is done under a business associate agreement, and access stays limited to the fields the summary needs. Harine Management does not hold a HIPAA certification.",
       },
     ],
     definitionBlock:

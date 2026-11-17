@@ -581,7 +581,7 @@ export default function ScorePage() {
 
     const ctaHeadline = peLead
       ? "You're considering a transaction — let's talk deal readiness."
-      : "Book a free 30-minute practice walkthrough.";
+      : "Book a 20-minute call.";
 
     return (
       <div>
@@ -654,17 +654,16 @@ export default function ScorePage() {
               lineHeight: 1.6,
             }}
           >
-            We&apos;ll walk through your results together and identify your
-            highest-impact opportunities — no commitment required.
+            Email dev@harinemanagement.com. This score is a self-check. The paid diagnostic is $2,500 and finished in under a week.
           </p>
           <Link
-            href="https://calendly.com/dev-harinemanagement/30min"
+            href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
             style={{ fontSize: "15px", padding: "15px 36px" }}
           >
-            Book a Free 30-Min Call
+            Book a 20-minute call
           </Link>
         </div>
       </div>

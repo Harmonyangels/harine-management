@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import { services, getServiceBySlug } from "@/data/services";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL, DIAGNOSTIC_PATH } from "@/lib/contact";
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -20,7 +21,7 @@ export async function generateMetadata({
   if (!service) return {};
 
   return {
-    title: service.metaTitle,
+    title: { absolute: service.metaTitle },
     description: service.metaDescription,
     alternates: {
       canonical: `/services/${slug}`,
@@ -29,7 +30,6 @@ export async function generateMetadata({
       title: service.metaTitle,
       description: service.metaDescription,
       url: `https://harinemanagement.com/services/${slug}`,
-      images: [{ url: "/og-image.jpg" }],
     },
   };
 }
@@ -180,13 +180,17 @@ export default async function ServicePage({
       {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>Ready to see what your EHR data can do?</h2>
+          <h2>{service.slug === "practice-operational-diagnostic" ? "Book the 20-minute call." : "Start with the diagnostic, or book a call."}</h2>
           <p>
-            Every engagement starts with a 30-minute discovery call. No commitments — just a clear look at what&apos;s possible with your data.
+            {service.slug === "practice-operational-diagnostic"
+              ? "The diagnostic is $2,500 and finished in under a week. Email dev@harinemanagement.com and we will confirm scope before any data is shared."
+              : "The Practice Operational Diagnostic is $2,500 and finished in under a week: a written findings report and a prioritized fix plan. Larger work is scoped after that, or on the call."}
           </p>
           <div className="service-cta-actions">
-            <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Schedule a Discovery Call</a>
-            <a href="/score" className="btn btn-score">Check Your Practice Health Score →</a>
+            <a href={BOOK_CALL_HREF} className="btn btn-white">{BOOK_CALL_LABEL}</a>
+            {service.slug !== "practice-operational-diagnostic" && (
+              <Link href={DIAGNOSTIC_PATH} className="btn btn-score">See the diagnostic →</Link>
+            )}
           </div>
         </div>
       </section>

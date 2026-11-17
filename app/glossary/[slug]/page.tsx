@@ -36,7 +36,6 @@ export async function generateMetadata({
       title: `${term.term} — Healthcare Analytics Glossary | Harine Management`,
       description: term.shortDefinition,
       url: `https://harinemanagement.com/glossary/${slug}`,
-      images: [{ url: "/og-image.jpg" }],
     },
   };
 }
@@ -209,10 +208,10 @@ export default async function GlossaryTermPage({
         <div className="service-cta-inner">
           <h2>See these metrics in your own data.</h2>
           <p>
-            Every engagement starts with a 30-minute discovery call — we&apos;ll look at your EHR and show you exactly where the gaps are.
+            Book a 20-minute call at dev@harinemanagement.com.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Schedule a Discovery Call
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">
+            Book a 20-minute call
           </a>
         </div>
       </section>

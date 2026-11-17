@@ -240,12 +240,12 @@ export async function POST(request: Request) {
     <div style="text-align:center;margin-bottom:44px;">
       <p style="color:#c8dde8;font-size:16px;font-weight:600;margin:0 0 10px;">Ready to improve your RCM performance?</p>
       <p style="color:#8aa8bb;font-size:14px;margin:0 0 24px;line-height:1.7;">
-        A free 30-minute Practice Operational Diagnostic will walk through your complete billing picture
-        and identify your highest-impact recovery opportunities — no commitment required.
+        The paid Practice Operational Diagnostic is $2,500 and finished in under a week.
+        Email to book a 20-minute call first. The scorecard above is not that diagnostic.
       </p>
-      <a href="https://calendly.com/dev-harinemanagement/30min"
+      <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call"
          style="display:inline-block;background:#B83030;color:#ffffff;font-weight:700;font-size:16px;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;">
-        Book a Free Discovery Call &rarr;
+        Book a 20-minute call &rarr;
       </a>
     </div>
 

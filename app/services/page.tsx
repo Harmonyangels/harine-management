@@ -6,18 +6,17 @@ import JsonLd from "@/components/JsonLd";
 import { services, getServicesByAudience } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Healthcare Analytics Services",
+  title: "Medical Practice Analytics Services",
   description:
-    "Explore Harine Management's full suite of healthcare data analytics services for medical practices and private equity firms — from EHR pipelines to acquisition due diligence.",
+    "Power BI dashboards for medical practices, athenahealth reporting, revenue cycle analytics, and a $2,500 operational diagnostic. Atlanta healthcare consulting.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Healthcare Analytics Services | Harine Management",
+    title: "Medical Practice Analytics Services | Harine Management",
     description:
-      "EHR analytics, revenue cycle visibility, provider productivity reporting, and PE due diligence — built for medical practices and healthcare investors.",
+      "Power BI dashboards for medical practices, athenahealth reporting, and a $2,500 Practice Operational Diagnostic. Based in Atlanta.",
     url: "https://harinemanagement.com/services",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -43,7 +42,9 @@ const webPageSchema = {
   })),
 };
 
-const practiceServices = getServicesByAudience("practices");
+const practiceServices = getServicesByAudience("practices").filter(
+  (service) => service.slug !== "practice-operational-diagnostic"
+);
 const investorServices = getServicesByAudience("investors");
 
 export default function ServicesPage() {
@@ -58,9 +59,9 @@ export default function ServicesPage() {
             <span className="eyebrow-rule"></span>
             What We Build
           </div>
-          <h1>Healthcare analytics services, end to end.</h1>
+          <h1>Medical practice analytics, starting with a diagnostic.</h1>
           <p>
-            From daily EHR pipelines to pre-close due diligence — every service is designed to give the right people the right data at the right time.
+            Power BI dashboards from athenahealth and eClinicalWorks, revenue cycle analytics, and diligence for healthcare investors. The diagnostic is the first step.
           </p>
         </div>
       </section>
@@ -75,25 +76,25 @@ export default function ServicesPage() {
               <div className="services-index-card">
                 <div className="services-index-card-title">Practice Operational Diagnostic</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '6px 0 14px', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)' }}>$1,500–$3,000 flat</span>
-                  <span style={{ fontSize: '10px', fontWeight: 500, background: 'rgba(184,48,48,0.08)', color: 'var(--crimson)', border: '1px solid rgba(184,48,48,0.15)', borderRadius: '20px', padding: '3px 10px', letterSpacing: '0.06em' }}>3–5 day turnaround</span>
+                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)' }}>$2,500 fixed</span>
+                  <span style={{ fontSize: '10px', fontWeight: 500, background: 'rgba(184,48,48,0.08)', color: 'var(--crimson)', border: '1px solid rgba(184,48,48,0.15)', borderRadius: '20px', padding: '3px 10px', letterSpacing: '0.06em' }}>Under a week</span>
                 </div>
-                <div className="services-index-card-desc">We review your existing reports, identify revenue leakage, flag workflow problems, and hand you a written findings summary with prioritized next steps. No dashboard required.</div>
-                <a href="/score" className="services-index-card-link">Learn more →</a>
+                <div className="services-index-card-desc">A scoped review of reporting, revenue cycle, and operations data. You get a written findings report and a prioritized fix plan. Work can be done under a BAA.</div>
+                <Link href="/services/practice-operational-diagnostic" className="services-index-card-link">See the diagnostic →</Link>
               </div>
 
               <div className="services-index-card">
                 <div className="services-index-card-title">RCM Fix &amp; Revenue Recovery</div>
                 <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$3,000–$8,000</div>
-                <div className="services-index-card-desc">Hands-on denial analysis, credentialing gap review, payer contract assessment, and remediation support. Delivered by billing specialists with direct eClinicalWorks and Athena Health experience.</div>
-                <a href="/score" className="services-index-card-link">Learn more →</a>
+                <div className="services-index-card-desc">Denial review, credentialing gaps, and payer contract questions, worked in eClinicalWorks and athenahealth. Scope and price are confirmed on the call.</div>
+                <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" className="services-index-card-link">Book a 20-minute call →</a>
               </div>
 
               <div className="services-index-card">
                 <div className="services-index-card-title">Turnkey Practice Startup</div>
                 <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>$10,000–$25,000</div>
                 <div className="services-index-card-desc">Full operational launch package for new practices or new locations. Covers EMR configuration, payer credentialing, hiring templates, billing workflow build, and staff training framework.</div>
-                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Learn more →</a>
+                <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Learn more →</a>
               </div>
 
             </div>
@@ -139,9 +140,9 @@ export default function ServicesPage() {
         <div className="service-cta-inner">
           <h2>Not sure which service fits?</h2>
           <p>
-            Most engagements start with a 30-minute discovery call. We&apos;ll look at what&apos;s in your EHR and tell you exactly what&apos;s possible before any commitment.
+            Book a 20-minute call at dev@harinemanagement.com. The diagnostic is $2,500 and finished in under a week.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Schedule a Discovery Call</a>
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 20-minute call</a>
         </div>
       </section>
 

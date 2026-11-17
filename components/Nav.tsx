@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL } from "@/lib/contact";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -53,8 +54,8 @@ export default function Nav() {
             </svg>
           )}
         </button>
-        <Link href="/score" className="nav-score-cta nav-cta-desktop">Practice Health Check</Link>
-        <Link href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="nav-cta nav-cta-desktop">Schedule a Call</Link>
+        <Link href="/services/practice-operational-diagnostic" className="nav-score-cta nav-cta-desktop">$2,500 diagnostic</Link>
+        <Link href={BOOK_CALL_HREF} className="nav-cta nav-cta-desktop">{BOOK_CALL_LABEL}</Link>
       </div>
 
       {/* Mobile dropdown */}
@@ -67,11 +68,11 @@ export default function Nav() {
         <Link href="/blog" className="nav-mobile-link" onClick={closeMenu}>Blog</Link>
         <Link href="/tools" className="nav-mobile-link" onClick={closeMenu}>Free Tools</Link>
         <div className="nav-mobile-ctas">
-          <Link href="/score" className="nav-score-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
-            Practice Health Check
+          <Link href="/services/practice-operational-diagnostic" className="nav-score-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
+            $2,500 diagnostic
           </Link>
-          <Link href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
-            Schedule a Call
+          <Link href={BOOK_CALL_HREF} className="nav-cta" onClick={closeMenu} style={{ display: "block", textAlign: "center" }}>
+            {BOOK_CALL_LABEL}
           </Link>
         </div>
       </div>

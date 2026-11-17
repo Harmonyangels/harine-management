@@ -13,17 +13,16 @@ Harine Management LLC is a healthcare data analytics consultancy headquartered i
 Tagline: "Analytics built for decisions, not just reports."
 
 Key differentiators:
-- Up and running in 14 days, not 14 weeks
-- Works with existing EHR — no system replacement required
-- Zero manual exports after go-live; data refreshes automatically
-- HIPAA-compliant architecture; no PHI stored outside the client environment
-- The firm manages the infrastructure; leadership simply opens the dashboard
+- Works with the EHR the practice already uses — athenahealth and eClinicalWorks
+- Dashboards refresh on a schedule, so the weekly Excel rebuild can stop
+- Engagements can be done under a business associate agreement. Access follows a minimum-necessary standard. No HIPAA certification is claimed.
+- The firm maintains pipelines it builds; leadership opens the dashboard
 
-Performance benchmarks across the client base:
-- 0 manual exports required after going live
-- 14 days to first live dashboard (average)
-- 94% average collection rate across clients
-- +18% average month-over-month improvement in volume visibility
+What can be said about results:
+- For one practice, weekly reporting that took a practice manager 15 to 20 hours now takes minutes. No client name is published. This is not a case study.
+
+Entry offer:
+- Practice Operational Diagnostic: $2,500 fixed, completed in under a week. Written findings report and a prioritized fix plan covering reporting, revenue cycle, and operations data.
 
 Contact: dev@harinemanagement.com | 682-256-3389 | Atlanta, Georgia
 
@@ -58,7 +57,7 @@ Harine Management connects to the client's EHR through approved export pipelines
 
 ### Implementation Timeline
 
-Discovery call → data access and extraction → build and configure → go live and train. Total: 14 days from signed agreement to first live dashboard. Ongoing maintenance is included.
+20-minute call → agree the scope in writing → data access limited to what the work needs → build or review → hand off the output. Timing is set in the scope. It is not a 14-day promise. Ongoing maintenance applies when a pipeline is part of the engagement.
 
 ### Who This Is For
 
@@ -132,7 +131,7 @@ With client authorization, Harine Management accesses the target practice's EHR 
 
 ### Timeline
 
-Typical engagement is 5 to 10 business days from data access to final deliverable, depending on data quality and scope. Rush engagements are available.
+Timing is agreed when data access and the deal calendar are known. There is no standing turnaround guarantee.
 
 ### Who This Is For
 
@@ -187,7 +186,7 @@ EHR Data Integration & Pipeline Development is Harine Management's technical ser
 - Custom ETL (extract, transform, load) pipeline design and build
 - Integration with Athenahealth, eClinicalWorks, and other major EHR platforms
 - Connection to cloud data warehouses (Azure, AWS, Google Cloud) or direct BI tool connection
-- HIPAA-compliant architecture design — PHI handling, encryption, access controls
+- Data access under a business associate agreement when the engagement needs one, limited to the fields the work requires. No HIPAA certification is claimed.
 - Automated scheduling and monitoring with failure alerting
 - Documentation of all data flows and transformation logic
 - Handoff and training for client IT team
@@ -263,7 +262,7 @@ Many PE-backed healthcare acquisitions close without a functioning analytics inf
 
 ### Why This Matters for PE
 
-Post-acquisition EBITDA improvements in healthcare are frequently driven by revenue cycle optimization, provider productivity improvement, and operational benchmarking. All three require accurate, timely data. Practices that go live with analytics infrastructure in the first 30 days post-close consistently outperform those that spend the first 90 days trying to establish baseline reporting.
+Post-acquisition EBITDA improvements in healthcare are frequently driven by revenue cycle optimization, provider productivity improvement, and operational benchmarking. All three require accurate, timely data. A baseline has to exist before later changes can be compared with it. Harine Management does not claim that standing the dashboard up on a particular day improves EBITDA.
 
 ### Who This Is For
 
@@ -279,7 +278,7 @@ Category: Healthcare analytics / operational benchmarking
 
 ### What It Is
 
-Healthcare Financial Benchmarking places a practice's performance in context — comparing its revenue per visit, collection rate, wRVU per provider, AR aging, and payer mix against national benchmarks, regional peers, and specialty-specific standards. Numbers without context are just numbers. Benchmarking tells you whether a 94% collection rate is excellent or average for your specialty and geography.
+Healthcare Financial Benchmarking places a practice's performance in context — comparing its revenue per visit, collection rate, wRVU per provider, AR aging, and payer mix against national benchmarks, regional peers, and specialty-specific standards. Numbers without context are just numbers. Benchmarking is what tells you whether a collection rate is high or ordinary for the specialty. Harine Management does not publish a client-average collection rate.
 
 ### What Is Included
 
@@ -310,7 +309,7 @@ Harine Management follows a four-step engagement process:
 We learn the client's EHR stack, what metrics matter to their leadership, and what decisions the data needs to support. No sales deck — just the right questions. Typical duration: 30 to 45 minutes.
 
 **Step 2 — Data Access & Extraction**
-We connect to the EHR through approved export pipelines. No disruption to clinical operations, no PHI stored in Harine Management's environment. HIPAA-compliant from day one. This step typically takes 2 to 5 business days depending on EHR cooperation and IT access.
+We connect through the EHR's approved export path. Clinical work is not interrupted. Access is limited to what the engagement needs, and the work can be done under a business associate agreement. Harine Management does not claim a HIPAA certification. How long access takes depends on the EHR and the practice's IT process.
 
 **Step 3 — Build & Configure**
 We build the dashboard in the client's environment — typically Power BI, Tableau, or Looker depending on what the client already uses. The client owns the output.
@@ -318,7 +317,7 @@ We build the dashboard in the client's environment — typically Power BI, Table
 **Step 4 — Go Live & Maintain**
 We train the client's team, hand off the dashboard, and maintain the data pipeline. When something breaks or the client needs a new view, they call Harine Management.
 
-Total time from signed agreement to first live dashboard: 14 days (average).
+Time from signed agreement to a live dashboard is set in the scope. There is no 14-day promise.
 
 ---
 
@@ -350,13 +349,13 @@ Primarily Athenahealth (athenaOne) and eClinicalWorks. Also compatible with Kare
 Primarily Microsoft Power BI. Also works in Tableau and Looker if the client has an existing BI environment. The firm's default is Power BI because of its cost-effectiveness and depth of healthcare analytics capability at the price point appropriate for medical groups.
 
 **How long does implementation take?**
-14 days from signed agreement to first live dashboard for the Practice Analytics System. Due diligence engagements are typically 5 to 10 business days from data access to final report.
+The Practice Operational Diagnostic is completed in under a week. Dashboard and diligence timing is written into the scope once data access is known. There is no 14-day or 5-to-10-day guarantee.
 
-**Is this HIPAA compliant?**
-Yes. Harine Management does not store PHI in its own environment. All data processing is conducted within or flows directly to the client's cloud environment. Architecture documentation and data flow diagrams are provided as part of every engagement.
+**How is protected health information handled?**
+Harine Management does not claim a HIPAA certification. Engagements can be done under a business associate agreement, and data access follows a minimum-necessary standard.
 
 **What does Harine Management cost?**
-The firm is priced for multi-site medical groups and PE firms — not for solo practices and not for enterprise health systems. Specific pricing is discussed during the discovery call after scope is established.
+The practice entry offer is a Practice Operational Diagnostic at $2,500, finished in under a week. Other services are priced when they are scoped. The site also lists ranges for RCM repair and practice launch that should be confirmed with Devanshu before they are quoted.
 
 **Who does Harine Management not serve?**
 Solo practices (1 provider) without growth plans, and hospital systems or large IDNs with existing enterprise analytics teams. Harine Management's sweet spot is groups with 3 to 50 providers and PE-backed healthcare businesses.

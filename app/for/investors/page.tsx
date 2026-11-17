@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description:
       "EHR-level due diligence analytics for PE healthcare acquisitions — provider concentration risk, payer mix trajectory, and revenue integrity from actual practice data.",
     url: "https://harinemanagement.com/for/investors",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -66,12 +65,12 @@ const features = [
     desc: "Structured analytical reports built for data rooms and investment committee presentations. Not raw spreadsheets — finished output your deal team can use.",
   },
   {
-    title: "5–10 Business Day Turnaround",
-    desc: "Analysis delivered in compressed timelines that fit M&A process schedules. Rush engagements available for time-sensitive situations.",
+    title: "Scoped to the deal",
+    desc: "The written report is timed to the diligence window. A rush is only offered when the data is actually in hand.",
   },
   {
-    title: "Post-Acquisition Infrastructure",
-    desc: "Analytics infrastructure ready to go live 30 days post-close — baseline KPIs established before the first board meeting, reporting standardized to portfolio cadence.",
+    title: "After close",
+    desc: "A separate engagement can stand up a baseline and a dashboard once you own the practice. Timing is set when data access is granted.",
   },
 ];
 
@@ -129,12 +128,12 @@ export default function ForInvestorsPage() {
           </div>
           <h1>Healthcare due diligence analytics for private equity.</h1>
           <p className="service-subhead">
-            EHR-level data analysis of target medical practices — provider concentration risk, payer mix trajectory, and revenue integrity from actual encounter data. Delivered in 5 to 10 business days.
+            EHR-level data analysis of target medical practices — provider concentration, payer mix trajectory, and revenue integrity from encounter data. Timing follows the deal calendar.
           </p>
 
           <div className="definition-block">
             <p>
-              Harine Management provides private equity firms and healthcare investors with EHR-level data analysis of target medical practices — extracting encounter-level volume, revenue trends, provider concentration risk, payer mix trajectory, and AR aging directly from the practice&apos;s EHR rather than from management-provided summaries. The output is structured for data rooms and investment committee presentations and delivered in 5 to 10 business days.
+              Harine Management provides healthcare investors with EHR-level data analysis of target medical practices — encounter-level volume, revenue trends, provider concentration, payer mix trajectory, and AR aging from the practice&apos;s EHR rather than from management summaries. The written report is structured for the data room. Timing is agreed when data access is granted.
             </p>
           </div>
         </div>
@@ -210,7 +209,7 @@ export default function ForInvestorsPage() {
           </p>
           <br />
           <p>
-            Harine Management offers a dedicated post-acquisition service that builds the EHR data pipeline, establishes baseline KPIs, standardizes reporting to portfolio cadence, and stands up early-warning dashboards — targeting operational within 30 days of close. The measurement layer is in place before the first board meeting, giving the value creation plan a baseline to measure against from day one of ownership.
+            Harine Management can build the EHR data pipeline, set baseline KPIs, and shape reporting to the portfolio cadence after close. The point is a baseline to measure later work against. Timing is set when data access is granted.
           </p>
           <br />
           <p>
@@ -248,9 +247,9 @@ export default function ForInvestorsPage() {
         <div className="service-cta-inner">
           <h2>Running a process? Let&apos;s talk data.</h2>
           <p>
-            Most engagements begin with a 20-minute conversation about the target and the timeline. We will tell you exactly what can be extracted and what the analysis will show before any engagement is confirmed.
+            Email dev@harinemanagement.com to book a 20-minute call about the target and the timeline. We will say what can be extracted from the EHR and what the written report will cover.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Start the Conversation</a>
+          <a href="mailto:dev@harinemanagement.com?subject=Book%20a%2020-minute%20call" target="_blank" rel="noopener noreferrer" className="btn btn-white">Start the Conversation</a>
         </div>
       </section>
 
