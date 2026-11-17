@@ -1,3 +1,5 @@
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL, DIAGNOSTIC_PATH } from "@/lib/contact";
+
 export default function DiscoveryCTA() {
   return (
     <aside
@@ -36,7 +38,7 @@ export default function DiscoveryCTA() {
             marginBottom: "12px",
           }}
         >
-          Discovery Call
+          Practice Operational Diagnostic
         </p>
         <h3
           style={{
@@ -48,7 +50,7 @@ export default function DiscoveryCTA() {
             marginBottom: "12px",
           }}
         >
-          Ready to see what your EHR data can actually do?
+          Start with a written look at the reporting.
         </h3>
         <p
           style={{
@@ -59,16 +61,23 @@ export default function DiscoveryCTA() {
             maxWidth: "480px",
           }}
         >
-          Book a free 30-minute discovery call. We&apos;ll look at your specific EHR setup and show you what a live dashboard would look like for your practice.
+          The diagnostic is $2,500 and finished in under a week. You get a findings report and a prioritized fix plan. Or book a 30-minute call first.
         </p>
         <a
-          href="https://calendly.com/dev-harinemanagement/30min"
+          href={BOOK_CALL_HREF}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-score"
-          style={{ fontSize: "15px", padding: "13px 28px", color: "#ffffff", fontWeight: 600 }}
+          style={{ fontSize: "15px", padding: "13px 28px", color: "#ffffff", fontWeight: 600, marginRight: "12px" }}
         >
-          Book a Free 30-Min Call →
+          {BOOK_CALL_LABEL} →
+        </a>
+        <a
+          href={DIAGNOSTIC_PATH}
+          className="btn btn-score"
+          style={{ fontSize: "15px", padding: "13px 28px", color: "#ffffff", fontWeight: 600, background: "transparent", border: "1px solid rgba(255,255,255,0.7)" }}
+        >
+          See the diagnostic
         </a>
       </div>
     </aside>

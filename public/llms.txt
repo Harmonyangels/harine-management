@@ -6,18 +6,19 @@ Harine Management is an Atlanta-based healthcare data analytics consultancy that
 
 ## Services
 
-- **Practice Analytics System** — Harine Management's flagship product; end-to-end analytics infrastructure connecting EHR data to daily-refreshed Power BI dashboards covering patient volume, wRVU productivity, revenue, and provider performance for medical practice leadership teams.
+- **Practice Operational Diagnostic** — Fixed-price entry offer at $2,500, completed in under a week. A scoped review of reporting, revenue cycle, and operations data, delivered as a written findings report and a prioritized fix plan.
+- **Practice Analytics System** — Power BI dashboards for medical practices, connected to athenahealth and eClinicalWorks. Volume, wRVU productivity, revenue, and provider performance, refreshed on a schedule.
 - **Revenue Cycle Analytics** — Real-time visibility into collection rates, accounts receivable aging buckets, denial patterns, payer mix quality, and net revenue per visit by CPT code; surfaces financial signals before they appear in the bank account.
 - **Acquisition Due Diligence** — Pre-close data analysis for private equity firms buying medical practices; EHR-level extraction of historical volume, revenue trends, provider concentration risk, payer mix trajectory, and AR aging — structured for data rooms and investment committee presentations.
 - **Provider Performance Reporting** — Individual and cohort-level wRVU tracking, productivity benchmarking against national standards, goal attainment reporting, and trend analysis by provider, location, and visit type.
-- **EHR Data Integration & Pipeline Development** — Custom data pipelines from Athenahealth, eClinicalWorks, and other major EHR platforms to cloud data warehouses or BI tools; HIPAA-compliant architecture with no PHI stored outside the client's environment.
+- **EHR Data Integration & Pipeline Development** — Data pipelines from athenahealth, eClinicalWorks, and other EHR platforms that can produce a structured export. Engagements can be done under a business associate agreement. Access follows a minimum-necessary standard. Harine Management does not claim a HIPAA certification.
 - **Power BI Dashboard Development & Maintenance** — Custom Power BI dashboard design, build, and ongoing maintenance for medical groups; includes initial training, monthly data refreshes, and continuous iteration as reporting needs evolve.
 - **Post-Acquisition Analytics & Integration** — Analytics infrastructure build-out for PE-backed practices following acquisition; standardizes reporting across portfolio companies, establishes operational KPIs, and surfaces performance gaps early.
 - **Healthcare Financial Benchmarking** — Benchmarks practice performance against national and regional peers on revenue per visit, collection rate, wRVU per provider, AR aging, and payer mix — providing context leadership needs to interpret their own numbers.
 
 ## Expertise
 
-Devanshu Patel is a Healthcare Data Analytics Consultant and the founder of Harine Management LLC, based in Atlanta, Georgia. His work is focused on the intersection of healthcare operations and business intelligence — specifically turning raw EHR data into executive decision-support tools. Devanshu has hands-on experience with Athenahealth and eClinicalWorks, the two most widely deployed EHR platforms in ambulatory care, and builds in Power BI. He brings a background in healthcare business operations and understands the financial and clinical metrics that matter to practice administrators, CMOs, and private equity portfolio managers. Harine Management reflects the analytics infrastructure Devanshu built from working inside healthcare businesses and wished had existed earlier.
+Devanshu Patel is a Healthcare Data Analytics Consultant and the founder of Harine Management LLC, based in Atlanta, Georgia. His work is focused on the intersection of healthcare operations and business intelligence — specifically turning raw EHR data into executive decision-support tools. Devanshu has about 5 years of healthcare operations and analytics experience, with hands-on time in Athenahealth and eClinicalWorks, and builds in Power BI. He understands the financial and clinical metrics that matter to practice administrators, CMOs, and private equity portfolio managers. Harine Management reflects the analytics infrastructure Devanshu built from working inside healthcare businesses and wished had existed earlier.
 
 ## Target Clients
 

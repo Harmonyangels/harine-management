@@ -33,7 +33,7 @@ export const PAGE_LABELS: Record<string, PageMeta> = {
   "/services/due-diligence-analytics": {
     label: "Due Diligence Analytics",
     description:
-      "EHR-level practice analysis for PE firms acquiring medical practices — revenue integrity, provider concentration, and payer mix in 5–10 business days.",
+      "EHR-level practice analysis for healthcare investors — revenue integrity, provider concentration, and payer mix, scoped to the deal calendar.",
   },
   "/services/revenue-cycle-analytics": {
     label: "Revenue Cycle Analytics",
@@ -43,7 +43,7 @@ export const PAGE_LABELS: Record<string, PageMeta> = {
   "/services/practice-analytics-system": {
     label: "Practice Analytics System",
     description:
-      "End-to-end EHR analytics connecting to a Power BI executive dashboard — live in 14 days, zero manual exports required.",
+      "EHR analytics connected to a Power BI dashboard for medical practices, refreshed on a schedule.",
   },
   "/specialties/multi-location-practice-analytics": {
     label: "Multi-Location Practice Analytics",

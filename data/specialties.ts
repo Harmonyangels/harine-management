@@ -66,7 +66,7 @@ export const specialties: Specialty[] = [
     outcomes: [
       { value: "Daily", label: "Occupancy and volume refresh — not last week, today" },
       { value: "Shift", label: "Granularity for provider productivity — not just monthly totals" },
-      { value: "< 7 days", label: "To surface a payer mix shift before it hits the P&L" },
+      { value: "Daily", label: "Payer mix, before the quarter closes" },
     ],
     faqItems: [
       {
@@ -122,7 +122,7 @@ export const specialties: Specialty[] = [
     outcomes: [
       { value: "AWV", label: "Capture rate visibility updated daily — not at year-end" },
       { value: "Real-time", label: "Quality measure progress against payer-specific thresholds" },
-      { value: "< 14 days", label: "From EHR connection to first live care gap dashboard" },
+      { value: "Daily", label: "Care gap and AWV lists, once the pipeline is running" },
     ],
     faqItems: [
       {
@@ -199,7 +199,7 @@ export const specialties: Specialty[] = [
       {
         question: "How long does it take to connect all locations to the consolidated dashboard?",
         answer:
-          "Implementation timeline scales with the number of locations and EHR platforms involved; a network of two to four locations on a single EHR platform typically goes live in 14 to 21 days, while a network of six to ten locations with mixed EHR environments typically runs 21 to 35 days; Harine Management handles the full data engineering for each location and delivers a phased rollout so the highest-priority locations go live first while remaining sites are connected in sequence.",
+          "Timing depends on how many locations and EHR platforms are in scope, and it is set during scoping. Harine Management does the data engineering for each location and can roll sites out in phases so the highest-priority locations are connected first.",
       },
     ],
     definitionBlock:

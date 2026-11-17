@@ -5,22 +5,22 @@ import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Devanshu Patel | Harine Management",
+  title: { absolute: "Atlanta Healthcare Consulting | Devanshu Patel" },
   description:
-    "Devanshu Patel is the founder of Harine Management, a healthcare data analytics firm that builds EHR-connected analytics systems for medical practices and private equity firms across the United States.",
+    "Devanshu Patel runs Harine Management, an Atlanta healthcare consulting practice for medical practice analytics, athenahealth reporting, and Power BI dashboards.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Devanshu Patel | Harine Management",
+    title: "Atlanta Healthcare Consulting | Devanshu Patel",
     description:
-      "Devanshu Patel is the founder of Harine Management, building EHR analytics systems and due diligence analytics for medical practices and healthcare investors.",
+      "Devanshu Patel, founder of Harine Management in Atlanta. Medical practice analytics, Power BI dashboards, and healthcare investor diligence.",
     url: "https://harinemanagement.com/about",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
 const services = [
+  { slug: "practice-operational-diagnostic", title: "Practice Operational Diagnostic",    audience: "practices" },
   { slug: "practice-analytics-system",       title: "Practice Analytics System",         audience: "practices" },
   { slug: "volume-analytics",                title: "Volume Analytics",                   audience: "practices" },
   { slug: "provider-productivity-analytics", title: "Provider Productivity Analytics",    audience: "practices" },
@@ -210,7 +210,7 @@ export default function AboutPage() {
               Harine Management is based in Atlanta, Georgia, and serves medical practices and
               healthcare investors nationwide. Engagements are conducted remotely, with data
               access established through each client&apos;s EHR platform using approved API
-              connections and HIPAA-compliant export mechanisms.
+              connections. Engagements can be done under a business associate agreement, and access is limited to the fields the work needs. Harine Management does not hold a HIPAA certification.
             </p>
           </div>
         </div>
@@ -221,8 +221,7 @@ export default function AboutPage() {
         <div className="service-section-inner">
           <h2 className="service-section-title">Services offered</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Harine Management provides eight analytics services, divided between medical practice
-            clients and private equity and investor clients.
+            Services are split between medical practices and healthcare investors. The entry offer for practices is a $2,500 operational diagnostic.
           </p>
 
           <div className="about-services-group">
@@ -379,13 +378,12 @@ export default function AboutPage() {
       {/* ── CTA ── */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>Start with a discovery call.</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
-            Every engagement begins with a 30-minute call — no commitments, just a clear
-            look at what your EHR data already contains and what&apos;s possible with it.
+            Email dev@harinemanagement.com. The practice entry offer is a $2,500 diagnostic, finished in under a week.
           </p>
           <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Schedule a Discovery Call
+            Book a 30-minute call
           </a>
         </div>
       </section>

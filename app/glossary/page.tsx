@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description:
       "Plain-language definitions of the healthcare analytics and revenue cycle terms that practice leaders and PE investors search for most.",
     url: "https://harinemanagement.com/glossary",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -117,10 +116,10 @@ export default function GlossaryPage() {
         <div className="service-cta-inner">
           <h2>Put these metrics to work in your practice.</h2>
           <p>
-            Every engagement starts with a 30-minute discovery call — we&apos;ll look at your EHR data and show you exactly where the gaps are.
+            Book a 30-minute call at dev@harinemanagement.com.
           </p>
           <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Schedule a Discovery Call
+            Book a 30-minute call
           </a>
         </div>
       </section>

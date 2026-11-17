@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.frontmatter.title} | Harine Management`,
+    title: post.frontmatter.title,
     description: post.frontmatter.description,
     alternates: {
       canonical: `/blog/${slug}`,
@@ -36,7 +36,6 @@ export async function generateMetadata({
     openGraph: {
       title: `${post.frontmatter.title} | Harine Management`,
       description: post.frontmatter.description,
-      images: [{ url: "/og-image.jpg" }],
     },
   };
 }
@@ -69,7 +68,7 @@ export default async function BlogPostPage({
             borderBottom: "1px solid var(--stone)",
           }}
         >
-          <div style={{ maxWidth: "780px", margin: "0 auto", padding: "64px 48px 48px" }}>
+          <div className="readable-pad" style={{ maxWidth: "780px", margin: "0 auto", padding: "64px 48px 48px" }}>
             <div
               className="eyebrow"
               style={{ marginBottom: "20px" }}
@@ -110,7 +109,7 @@ export default async function BlogPostPage({
         </header>
 
         {/* Article body */}
-        <article style={{ maxWidth: "780px", margin: "0 auto", padding: "48px 48px 0" }}>
+        <article className="readable-pad" style={{ maxWidth: "780px", margin: "0 auto", padding: "48px 48px 0" }}>
           <div className="blog-prose">
             <MDXRemote source={post.content} components={mdxComponents} />
           </div>
@@ -197,8 +196,7 @@ export default async function BlogPostPage({
                 maxWidth: "520px",
               }}
             >
-              Book a free 30-minute discovery call. We&apos;ll look at your specific EHR
-              setup and show you what a live dashboard would look like for your practice.
+              Book a 30-minute call. The practice entry offer is a $2,500 diagnostic, finished in under a week.
             </p>
             <a
               href="https://calendly.com/dev-harinemanagement/30min"
@@ -206,7 +204,7 @@ export default async function BlogPostPage({
               rel="noopener noreferrer"
               className="btn btn-primary"
             >
-              Book a Free 30-Min Call →
+              Book a 30-minute call →
             </a>
           </div>
         </section>

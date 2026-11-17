@@ -765,7 +765,7 @@ export default function RevenueLeakageCalculator() {
             padding: "16px 32px",
           }}
         >
-          Book a Free 15-Min RCM Review →
+          Book a 30-minute call →
         </Link>
       </div>
     );

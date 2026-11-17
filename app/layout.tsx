@@ -29,11 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://harinemanagement.com"),
   title: {
     template: "%s | Harine Management",
-    default:
-      "Healthcare Data Analytics for Medical Practices & Investors | Harine Management",
+    default: "Medical Practice Analytics in Atlanta | Harine Management",
   },
   description:
-    "Harine Management is a healthcare operations and analytics consultancy serving independent practices, practice startups, and PE investors. Deep expertise in eClinicalWorks and Athena Health. Based in Atlanta, serving nationwide.",
+    "Power BI dashboards for medical practices, built from athenahealth and eClinicalWorks data. Atlanta healthcare consulting. Start with a $2,500 operational diagnostic.",
   alternates: {
     canonical: "/",
   },
@@ -41,10 +40,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Harine Management",
-    images: [{ url: "/og-image.jpg" }],
+    title: "Medical Practice Analytics in Atlanta | Harine Management",
+    description:
+      "Power BI dashboards for medical practices, built from athenahealth and eClinicalWorks data. Atlanta healthcare consulting.",
+    url: "https://harinemanagement.com",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Medical Practice Analytics in Atlanta | Harine Management",
+    description:
+      "Power BI dashboards for medical practices. athenahealth reporting and Atlanta healthcare consulting.",
   },
 };
 
@@ -59,7 +64,7 @@ const organizationSchema = {
     url: "https://harinemanagement.com/brand-assets/logo.png",
   },
   description:
-    "Harine Management builds AI-enhanced analytics systems for medical practices and private equity firms doing healthcare due diligence. Based in Atlanta, serving practices nationwide.",
+    "Harine Management LLC is an Atlanta healthcare consulting practice. It builds Power BI dashboards for medical practices from athenahealth and eClinicalWorks data, and advises healthcare investors.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Atlanta",
@@ -72,12 +77,13 @@ const organizationSchema = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
+  "@type": ["ProfessionalService", "LocalBusiness"],
   "@id": "https://harinemanagement.com/#localbusiness",
-  name: "Harine Management",
+  name: "Harine Management LLC",
   url: "https://harinemanagement.com",
+  image: "https://harinemanagement.com/logo.png",
   description:
-    "Harine Management builds AI-enhanced analytics systems for medical practices and private equity firms doing healthcare due diligence.",
+    "Atlanta healthcare consulting for medical practice analytics. Power BI dashboards from athenahealth and eClinicalWorks data, and a fixed-price operational diagnostic.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Atlanta",
@@ -89,13 +95,17 @@ const localBusinessSchema = {
     latitude: 33.749,
     longitude: -84.388,
   },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  priceRange: "$$$$",
+  areaServed: [
+    { "@type": "City", name: "Atlanta" },
+    { "@type": "State", name: "Georgia" },
+    { "@type": "AdministrativeArea", name: "Southeast United States" },
+  ],
   email: "dev@harinemanagement.com",
   telephone: "+1-682-256-3389",
+  priceRange: "$$",
+  founder: {
+    "@id": "https://harinemanagement.com/#devanshu-patel",
+  },
 };
 
 const personSchema = {

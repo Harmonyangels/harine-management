@@ -3,18 +3,17 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Our Team | Harine Management",
+  title: { absolute: "Devanshu Patel | Atlanta Healthcare Consulting" },
   description:
-    "Meet the team behind Harine Management — healthcare operations and analytics consultants serving independent practices and investors nationwide.",
+    "Harine Management is a solo Atlanta healthcare consulting practice. Devanshu Patel does the analytics and operations work.",
   alternates: {
     canonical: "https://harinemanagement.com/team",
   },
   openGraph: {
-    title: "Our Team | Harine Management",
+    title: "Devanshu Patel | Atlanta Healthcare Consulting",
     description:
-      "Meet the team behind Harine Management — healthcare operations and analytics consultants serving independent practices and investors nationwide.",
+      "Solo Atlanta healthcare consulting practice. Devanshu Patel builds Power BI dashboards for medical practices and advises healthcare investors.",
     url: "https://harinemanagement.com/team",
-    images: [{ url: "/og-image.jpg" }],
   },
 };
 
@@ -32,7 +31,7 @@ const teamMembers: TeamMember[] = [
     name: "Devanshu Patel",
     title: "Founder & Principal Consultant",
     initials: "DP",
-    bio: "Devanshu brings a decade of healthcare operations and management experience to every engagement. With deep expertise in eClinicalWorks and Athena Health environments, he has led practice operations, revenue cycle management, and analytics infrastructure builds for independent practices across Georgia. He founded Harine Management to give independent practices access to the operational and analytical firepower that large health systems take for granted.",
+    bio: "Devanshu has about 5 years of healthcare operations and analytics experience. He has worked in eClinicalWorks and athenahealth environments, including practice operations, revenue cycle management, and analytics builds for independent practices. Harine Management is the solo practice he runs from Atlanta. He does the work himself.",
     email: "dev@harinemanagement.com",
     phone: "682-256-3389",
   },
@@ -50,8 +49,8 @@ export default function TeamPage() {
             <span className="eyebrow-rule"></span>
             Harine Management
           </div>
-          <h1>Our Team</h1>
-          <p className="service-subhead">The people behind Harine Management.</p>
+          <h1>Devanshu Patel</h1>
+          <p className="service-subhead">Harine Management is a solo practice in Atlanta. Devanshu does the work.</p>
         </div>
       </section>
 
@@ -59,9 +58,10 @@ export default function TeamPage() {
       <section style={{ padding: "100px 0", background: "var(--white)" }}>
         <div className="container">
           <div
+            className="team-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(360px, 480px))",
+              gridTemplateColumns: "minmax(0, 480px)",
               gap: "32px",
               justifyContent: "center",
             }}
@@ -187,10 +187,9 @@ export default function TeamPage() {
       {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>Work with our team.</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
-            Ready to see what hands-on healthcare operations expertise can do for
-            your practice? Start with a 30-minute discovery call.
+            Email dev@harinemanagement.com. For practices, the usual first step is the $2,500 diagnostic.
           </p>
           <div className="service-cta-actions">
             <a
@@ -199,7 +198,7 @@ export default function TeamPage() {
               rel="noopener noreferrer"
               className="btn btn-white"
             >
-              Book a Discovery Call
+              Book a 30-minute call
             </a>
           </div>
         </div>

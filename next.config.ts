@@ -42,6 +42,13 @@ const nextConfig: NextConfig = {
       // Legacy WordPress entry points — 301 permanent redirect to home
       { source: "/index.php",        destination: "/", statusCode: 301 },
       { source: "/index.php/:path*", destination: "/", statusCode: 301 },
+
+      // Practice launch was removed. These paths were never published as pages;
+      // they redirect so an old or guessed link still lands on the services list.
+      { source: "/services/turnkey-practice-launch", destination: "/services", statusCode: 301 },
+      { source: "/services/turnkey-practice-startup", destination: "/services", statusCode: 301 },
+      { source: "/services/practice-launch", destination: "/services", statusCode: 301 },
+      { source: "/services/practice-startup", destination: "/services", statusCode: 301 },
     ];
   },
 };
