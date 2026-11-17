@@ -355,7 +355,7 @@ The Practice Operational Diagnostic is completed in under a week. Dashboard and 
 Harine Management does not claim a HIPAA certification. Engagements can be done under a business associate agreement, and data access follows a minimum-necessary standard.
 
 **What does Harine Management cost?**
-The practice entry offer is a Practice Operational Diagnostic at $2,500, finished in under a week. RCM repair is a fixed quote after the diagnostic. Other services are priced when they are scoped. Practice launch is not offered on the site right now. Devanshu Patel has about 5 years of healthcare operations and analytics experience.
+The practice entry offer is a Practice Operational Diagnostic at $2,500, finished in under a week. RCM repair is a fixed quote after the diagnostic. Other services are priced when they are scoped. Devanshu Patel has about 5 years of healthcare operations and analytics experience.
 
 **Who does Harine Management not serve?**
 Solo practices (1 provider) without growth plans, and hospital systems or large IDNs with existing enterprise analytics teams. Harine Management's sweet spot is groups with 3 to 50 providers and PE-backed healthcare businesses.
