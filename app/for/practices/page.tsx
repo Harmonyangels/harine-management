@@ -3,19 +3,24 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
-import { getServicesByAudience } from "@/data/services";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL } from "@/lib/contact";
+import {
+  CORE_BUILD_PRICE,
+  CORE_BUILD_PRICE_FIVE_PLUS,
+  DIAGNOSTIC_FOUNDING,
+  DIAGNOSTIC_LIST_PRICE,
+  RETAINER_PRICE,
+} from "@/lib/offer";
 
 export const metadata: Metadata = {
-  title: "Power BI Dashboards for Medical Practices",
+  title: "Power BI Dashboards for Outpatient Practices",
   description:
-    "Power BI dashboards for medical practices, built from athenahealth reporting and eClinicalWorks data. Atlanta healthcare consulting for independent and multi-site groups.",
-  alternates: {
-    canonical: "/for/practices",
-  },
+    "For independent and physician-owned outpatient groups on athenahealth or eClinicalWorks. Export the reports you already run, drop them in SharePoint, and Power BI dashboards refresh.",
+  alternates: { canonical: "/for/practices" },
   openGraph: {
-    title: "Power BI Dashboards for Medical Practices | Harine Management",
+    title: "Power BI Dashboards for Outpatient Practices | Harine Management",
     description:
-      "athenahealth reporting and eClinicalWorks data, turned into Power BI dashboards. Medical practice analytics for groups in Atlanta and the Southeast.",
+      "Three or more locations, especially five or more, on athenahealth or eClinicalWorks. No IT project and no EMR-vendor integration.",
     url: "https://harinemanagement.com/for/practices",
   },
 };
@@ -24,68 +29,39 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://harinemanagement.com/for/practices#service",
-  name: "Healthcare Data Analytics for Medical Practices",
+  name: "Power BI dashboards for outpatient practices",
   description:
-    "Harine Management builds EHR-to-dashboard analytics infrastructure for medical practices — daily-updated Power BI dashboards covering patient volume, revenue cycle, provider productivity, and payer mix without manual exports.",
-  serviceType: "Healthcare Data Analytics",
+    "Harine Management builds Power BI dashboards from unchanged athenahealth or eClinicalWorks report exports dropped into the practice's SharePoint folder. Power Automate refreshes the dashboards when a new file lands.",
+  serviceType: "Healthcare Reporting",
   provider: {
     "@type": "Organization",
     "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
+    name: "Harine Management LLC",
     url: "https://harinemanagement.com",
   },
   audience: {
     "@type": "Audience",
-    audienceType: "Medical Practices",
+    audienceType: "Independent and physician-owned outpatient groups",
   },
   areaServed: {
-    "@type": "Country",
-    name: "United States",
+    "@type": "AdministrativeArea",
+    name: "Southeast United States",
   },
   url: "https://harinemanagement.com/for/practices",
 };
 
-const practiceServices = getServicesByAudience("practices");
-
-const features = [
+const steps = [
   {
-    title: "EHR Data Pipelines",
-    desc: "Direct connections to Athenahealth, eClinicalWorks, and other major EHR platforms — no manual exports, no scheduled report runs.",
+    title: "Export the reports you already run",
+    desc: "Your team downloads the standard reports from athenahealth or eClinicalWorks, the same way you do today. No new fields, no reformatting, no cleanup in Excel.",
   },
   {
-    title: "Daily Power BI Dashboards",
-    desc: "Executive-ready dashboards that refresh every morning before the first meeting of the day — built by Harine Management, maintained ongoing.",
+    title: "Drop the files into a SharePoint folder, as is",
+    desc: "Nothing gets manipulated first. The files go into a folder in your Microsoft 365 environment.",
   },
   {
-    title: "Provider Productivity Tracking",
-    desc: "Individual wRVU production against goal and MGMA benchmarks — daily visibility per provider, not a quarterly surprise at compensation review.",
-  },
-  {
-    title: "Revenue Cycle Monitoring",
-    desc: "AR aging, collection rates, and denial rates by payer and CPT code — surfaced in days, not at month-end when the damage is already done.",
-  },
-  {
-    title: "Payer Mix Intelligence",
-    desc: "Commercial, Medicare, Medicaid, and self-pay split tracked over time — see mix shifts before they compress margin and reach the income statement.",
-  },
-  {
-    title: "Zero IT Overhead",
-    desc: "Harine Management builds and maintains the full data infrastructure. Your team opens the dashboard. That is the entire workflow on the practice side.",
-  },
-];
-
-const clients = [
-  {
-    title: "Multi-location medical groups with 3 or more providers",
-    desc: "Groups across multiple sites who are still reconciling location-level performance from spreadsheets and email reports — and whose leadership is making staffing and scheduling decisions on data that is two to three weeks old.",
-  },
-  {
-    title: "Practices making the move from manual EHR exports",
-    desc: "Practices where one person runs the reports, exports to Excel, and distributes a summary — and where that workflow is the single point of failure for leadership visibility into the business.",
-  },
-  {
-    title: "Practices entering value-based contracts or PE ownership",
-    desc: "Groups whose reimbursement is increasingly tied to quality metrics, provider productivity, and payer mix performance — and who need the data infrastructure to monitor and demonstrate those outcomes.",
+    title: "The dashboards refresh",
+    desc: "Power BI pulls those files, transforms them, and updates the dashboards. Power Automate triggers a refresh whenever a new file lands.",
   },
 ];
 
@@ -95,106 +71,76 @@ export default function ForPracticesPage() {
       <JsonLd schema={serviceSchema} />
       <Nav />
 
-      {/* HERO */}
       <section className="service-hero">
         <div className="service-hero-inner">
           <div className="eyebrow faint">
             <span className="eyebrow-rule"></span>
-            For Medical Practices
+            For outpatient groups
           </div>
-          <h1>Healthcare data analytics built for medical practices.</h1>
+          <h1>The reports are already in athenahealth or eClinicalWorks.</h1>
           <p className="service-subhead">
-            The data already exists in your EHR. We connect it to a dashboard your CMO checks before their first meeting — and keep it running so your team never has to.
+            Export them, drop them into a SharePoint folder, and your Power BI dashboards refresh. No IT project. No EMR-vendor integration.
           </p>
-
           <div className="definition-block">
             <p>
-              Harine Management builds data analytics systems for medical practices that connect directly to EHR platforms — including Athenahealth and eClinicalWorks — and deliver executive dashboards updated daily with patient volume, revenue, provider productivity, and payer mix. Every system is built and maintained by Harine Management, requiring no internal data team or IT resources from the practice.
+              Harine Management is a solo healthcare reporting consultancy in Atlanta. Devanshu Patel does the work for independent and physician-owned outpatient groups, typically three or more locations and especially five or more, on athenahealth or eClinicalWorks.
             </p>
           </div>
         </div>
       </section>
 
-      {/* PROBLEM */}
       <section className="service-section">
         <div className="service-section-inner">
-          <h2 className="service-section-title">The data problem every practice has</h2>
-          <p>
-            Medical practice leadership makes daily operational decisions — scheduling, staffing, capacity planning, provider management — on data that is two to three weeks old, assembled manually by someone who exports from the EHR and pastes it into a spreadsheet. By the time that summary reaches the right desk, the window for corrective action has already closed.
+          <h2 className="service-section-title">Who this is for</h2>
+          <p className="body-copy">
+            Orthopedics, GI, dermatology, cardiology, pediatrics, urgent care, physical therapy, and women&apos;s health are a natural fit when the group is still rebuilding reports in Excel. Groups with three or more locations can use this. The weekly rebuild is usually most painful at five or more.
           </p>
-          <br />
-          <p>
-            The EHR contains everything needed to run the practice intelligently. Patient volume by provider and location. Collection rates by payer. AR aging buckets. Provider wRVU production against goal. Denial rates by CPT code. Every signal that matters is in the system — but native EHR reporting is too fragmented, too slow, and too dependent on a person running a report for the information to surface when it is still actionable.
-          </p>
-          <br />
-          <p>
-            Harine Management solves the extraction and presentation problem. We connect your EHR to a dashboard your leadership actually opens every morning — and we keep it running on an ongoing basis so the data is always current and the workflow never depends on a single person remembering to pull a report.
+          <p className="body-copy" style={{ marginTop: "16px" }}>
+            This is not a pitch to health-system IT. The workflow is one practice&apos;s own report exports, in that practice&apos;s SharePoint.
           </p>
         </div>
       </section>
 
-      {/* CAPABILITIES */}
       <section className="service-section" style={{ background: "var(--stone-light)" }}>
         <div className="service-section-inner">
-          <h2 className="service-section-title">What we build for practices</h2>
+          <h2 className="service-section-title">Export. Drop. The dashboards refresh.</h2>
           <div className="audience-features">
-            {features.map((f, i) => (
-              <div key={i} className="audience-feature">
-                <div className="audience-feature-title">{f.title}</div>
-                <div className="audience-feature-desc">{f.desc}</div>
+            {steps.map((step) => (
+              <div key={step.title} className="audience-feature">
+                <div className="audience-feature-title">{step.title}</div>
+                <div className="audience-feature-desc">{step.desc}</div>
               </div>
             ))}
           </div>
+          <p className="body-copy" style={{ marginTop: "28px" }}>
+            That is the entire workflow on your side. There is no IT project, no integration with the EMR, and no EMR-vendor fee. The dashboards refresh when a new file lands, not on their own overnight.
+          </p>
         </div>
       </section>
 
-      {/* WHO WE WORK WITH */}
       <section className="service-section">
         <div className="service-section-inner">
-          <h2 className="service-section-title">Who we work with</h2>
-          <div className="audience-clients">
-            {clients.map((c, i) => (
-              <div key={i} className="audience-client">
-                <div className="audience-client-title">{c.title}</div>
-                <div className="audience-client-desc">{c.desc}</div>
-              </div>
-            ))}
-          </div>
+          <h2 className="service-section-title">What the build includes</h2>
+          <ul className="deliverables-list">
+            <li>Practice dashboard: patients seen by location and visit type, month-over-month and year-over-year volume, cancellations by reason</li>
+            <li>Provider dashboard: patients seen per day, new patients in the month, work RVUs against the benchmarks you already set</li>
+            <li>Billing dashboard: charges billed, paid, and denied, with denial reasons, charges by billed code, and AR and adjustments. These views are part of the scope and are not described as finished.</li>
+            <li>Core Build {CORE_BUILD_PRICE}, or {CORE_BUILD_PRICE_FIVE_PLUS} for practices with five or more locations</li>
+            <li>Retainer {RETAINER_PRICE} for up to 5 hours of updates, questions, and a review call</li>
+          </ul>
+          <p className="body-copy" style={{ marginTop: "20px" }}>
+            <Link href="/case-study" className="service-link">Read the anonymized case study →</Link>
+          </p>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="related-services">
-        <div className="related-services-inner">
-          <div className="eyebrow">
-            <span className="eyebrow-rule"></span>
-            Practice Services
-          </div>
-          <h2 style={{ marginTop: "16px" }}>Services built for medical practices</h2>
-          <div className="related-services-grid" style={{ marginTop: "28px" }}>
-            {practiceServices.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="related-service-card"
-              >
-                <div className="related-service-card-title">{s.title}</div>
-                <div className="related-service-card-desc">{s.metaDescription}</div>
-                <span className="related-service-card-arrow">Learn more →</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>See what your EHR data can do.</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
-            Book a 30-minute call. If the reporting is the problem, the $2,500 diagnostic is a written findings report and a prioritized fix plan, finished in under a week.
+            Bring the reports you run today. Reporting Diagnostic is {DIAGNOSTIC_LIST_PRICE}. {DIAGNOSTIC_FOUNDING}.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
+          <a href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer" className="btn btn-white">{BOOK_CALL_LABEL}</a>
         </div>
       </section>
 

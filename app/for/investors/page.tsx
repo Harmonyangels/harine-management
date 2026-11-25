@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       "EHR-level due diligence analytics for PE healthcare acquisitions — provider concentration risk, payer mix trajectory, and revenue integrity from actual practice data.",
     url: "https://harinemanagement.com/for/investors",
   },
+  robots: { index: false, follow: true },
 };
 
 const serviceSchema = {
@@ -247,7 +248,7 @@ export default function ForInvestorsPage() {
         <div className="service-cta-inner">
           <h2>Running a process? Let&apos;s talk data.</h2>
           <p>
-            Email dev@harinemanagement.com to book a 30-minute call about the target and the timeline. We will say what can be extracted from the EHR and what the written report will cover.
+            Book a 30-minute call if you want to talk about a target and a timeline. The practice offer on the rest of the site is the current work.
           </p>
           <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
         </div>

@@ -909,7 +909,7 @@ export default function RCMScorecardPage() {
               lineHeight: 1.4,
             }}
           >
-            Get a Full Practice Operational Diagnostic
+            Book a call about the Reporting Diagnostic
           </h3>
           <p
             style={{
@@ -919,9 +919,8 @@ export default function RCMScorecardPage() {
               lineHeight: 1.6,
             }}
           >
-            We&apos;ll walk through your complete RCM performance and identify
-            your highest-impact revenue recovery opportunities — no commitment
-            required.
+            The Reporting Diagnostic is $2,500, and free for our first 10 clients.
+            It reviews the reports you already run. This scorecard is not that review.
           </p>
           <Link
             href="https://calendly.com/dev-harinemanagement/30min"

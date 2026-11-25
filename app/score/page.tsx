@@ -654,7 +654,7 @@ export default function ScorePage() {
               lineHeight: 1.6,
             }}
           >
-            Email dev@harinemanagement.com. This score is a self-check. The paid diagnostic is $2,500 and finished in under a week.
+            This score is a self-check. The Reporting Diagnostic is $2,500, and free for our first 10 clients. Book a 30-minute call to claim it.
           </p>
           <Link
             href="https://calendly.com/dev-harinemanagement/30min"

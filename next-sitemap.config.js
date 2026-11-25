@@ -2,6 +2,14 @@
 module.exports = {
   siteUrl: 'https://harinemanagement.com',
   generateRobotsTxt: true,
+  exclude: [
+    '/for/investors',
+    '/for/health-systems',
+    '/services/due-diligence-analytics',
+    '/services/practice-performance-scoring',
+    '/services/post-acquisition-intelligence',
+    '/services/ai-insights-layer',
+  ],
   changefreq: 'weekly',
   transform: async (config, path) => {
     let priority = 0.7;

@@ -28,7 +28,7 @@ export const PAGE_LABELS: Record<string, PageMeta> = {
   "/services/provider-productivity-analytics": {
     label: "Provider Productivity Analytics",
     description:
-      "Daily wRVU tracking and MGMA benchmarking for every physician — updated from CPT-level EHR data each morning.",
+      "Patients seen per day, new patients, and work RVUs against the benchmarks you already set.",
   },
   "/services/due-diligence-analytics": {
     label: "Due Diligence Analytics",
@@ -38,17 +38,17 @@ export const PAGE_LABELS: Record<string, PageMeta> = {
   "/services/revenue-cycle-analytics": {
     label: "Revenue Cycle Analytics",
     description:
-      "AR aging, denial rates, collection rates, and payer mix dashboards built from EHR billing data — catch problems in days, not quarters.",
+      "Charges, denials, and AR from the billing reports you already export. Part of the Core Build, and not described as finished.",
   },
   "/services/practice-analytics-system": {
-    label: "Practice Analytics System",
+    label: "Core Build",
     description:
-      "EHR analytics connected to a Power BI dashboard for medical practices, refreshed on a schedule.",
+      "Three Power BI dashboards from the athenahealth or eClinicalWorks reports you already export. $8,500, or $9,500 for five or more locations.",
   },
   "/specialties/multi-location-practice-analytics": {
     label: "Multi-Location Practice Analytics",
     description:
-      "Unified performance visibility across all your practice sites — volume, productivity, and revenue cycle compared across locations daily.",
+      "The same SharePoint and Power BI workflow for outpatient groups with more than one location.",
   },
   "/specialties/urgent-care-analytics": {
     label: "Urgent Care Analytics",
@@ -56,8 +56,8 @@ export const PAGE_LABELS: Record<string, PageMeta> = {
       "Throughput, volume, and revenue cycle analytics built for the operational pace of urgent care.",
   },
   "/services/ai-insights-layer": {
-    label: "AI Insights Layer",
+    label: "AI Insights",
     description:
-      "Automated anomaly detection and weekly natural-language performance summaries layered on your existing analytics infrastructure.",
+      "Not a current offer. Harine Management builds Power BI dashboards from the reports a practice already exports.",
   },
 };

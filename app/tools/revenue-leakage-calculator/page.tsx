@@ -746,7 +746,7 @@ export default function RevenueLeakageCalculator() {
           >
             These numbers are estimates based on industry benchmarks. A{" "}
             <strong style={{ color: "var(--ink-mid)" }}>
-              Practice Operational Diagnostic
+              Reporting Diagnostic ($2,500 list price, free for our first 10 clients)
             </strong>{" "}
             will identify the exact sources in your specific reports.
           </p>

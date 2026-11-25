@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BOOK_CALL_HREF, BOOK_CALL_LABEL, CONTACT_EMAIL } from "@/lib/contact";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/contact";
 
 export default function SiteFooter() {
   return (
@@ -18,42 +18,41 @@ export default function SiteFooter() {
               </div>
             </Link>
             <p className="footer-desc">
-              Healthcare operations and analytics consulting for independent practices and the investors who evaluate them. Based in Atlanta.
+              Harine Management LLC is a solo healthcare reporting consultancy in Atlanta. Devanshu Patel builds Power BI dashboards for multi-location outpatient practices on athenahealth or eClinicalWorks.
             </p>
             <p className="footer-hipaa">
-              Engagements can be done under a business associate agreement. Data access follows a minimum-necessary standard. Harine Management does not claim a HIPAA certification.
+              Engagements are done under a signed business associate agreement and a confidentiality agreement. Source files stay in your SharePoint. Access is limited to the reports the work needs.
             </p>
           </div>
 
           <div className="footer-col">
-            <h5>Services</h5>
+            <h5>Offer</h5>
             <ul>
-              <li><Link href="/services">All Services</Link></li>
-              <li><Link href="/services/practice-operational-diagnostic">Operational Diagnostic</Link></li>
-              <li><Link href="/services/practice-analytics-system">Practice Analytics</Link></li>
-              <li><Link href="/services/revenue-cycle-analytics">Revenue Intelligence</Link></li>
-              <li><Link href="/services/due-diligence-analytics">Due Diligence</Link></li>
+              <li><Link href="/services">Services and prices</Link></li>
+              <li><Link href="/services/practice-operational-diagnostic">Reporting Diagnostic</Link></li>
+              <li><Link href="/services/practice-analytics-system">Core Build</Link></li>
+              <li><Link href="/case-study">Case study</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h5>Who We Serve</h5>
+            <h5>Practices</h5>
             <ul>
-              <li><Link href="/#practices">Medical Groups</Link></li>
-              <li><Link href="/#practices">Multi-Site Practices</Link></li>
-              <li><Link href="/#investors">PE &amp; Private Equity</Link></li>
-              <li><Link href="/#investors">Healthcare Investors</Link></li>
+              <li><Link href="/for/practices">For outpatient groups</Link></li>
+              <li><Link href="/#how-it-works">How it works</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/team">Team</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h5>Company</h5>
+            <h5>Contact</h5>
             <ul>
-              <li><Link href="/#how-it-works">How It Works</Link></li>
-              <li><Link href="/#contact">Contact</Link></li>
               <li><a href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a></li>
               <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
-              <li><a href="tel:6822563389">682-256-3389</a></li>
+              <li><a href={CONTACT_PHONE_TEL}>{CONTACT_PHONE_DISPLAY}</a></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/tools">Free tools</Link></li>
             </ul>
           </div>
         </div>
@@ -63,7 +62,9 @@ export default function SiteFooter() {
           <div className="footer-contact">
             <a href="mailto:dev@harinemanagement.com">dev@harinemanagement.com</a>
             &nbsp;·&nbsp;
-            <a href="tel:6822563389">682-256-3389</a>
+            <a href={CONTACT_PHONE_TEL}>{CONTACT_PHONE_DISPLAY}</a>
+            &nbsp;·&nbsp;
+            Monday–Friday, 9 a.m.–6 p.m. ET
           </div>
         </div>
       </div>

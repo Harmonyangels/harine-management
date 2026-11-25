@@ -196,7 +196,7 @@ export default async function BlogPostPage({
                 maxWidth: "520px",
               }}
             >
-              Book a 30-minute call. The practice entry offer is a $2,500 diagnostic, finished in under a week.
+              Book a 30-minute call. The Reporting Diagnostic is $2,500, and free for our first 10 clients.
             </p>
             <a
               href="https://calendly.com/dev-harinemanagement/30min"

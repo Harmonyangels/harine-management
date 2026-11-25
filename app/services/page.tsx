@@ -3,19 +3,27 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
-import { services, getServicesByAudience } from "@/data/services";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL } from "@/lib/contact";
+import {
+  CORE_BUILD_PRICE,
+  CORE_BUILD_PRICE_FIVE_PLUS,
+  DIAGNOSTIC_CREDIT,
+  DIAGNOSTIC_FOUNDING,
+  DIAGNOSTIC_LIST_PRICE,
+  RETAINER_PRICE,
+} from "@/lib/offer";
 
 export const metadata: Metadata = {
-  title: "Medical Practice Analytics Services",
+  title: "Reporting Diagnostic, Core Build, and Retainer",
   description:
-    "Power BI dashboards for medical practices, athenahealth reporting, revenue cycle analytics, and a $2,500 operational diagnostic. Atlanta healthcare consulting.",
+    "Reporting Diagnostic $2,500, free for our first 10 clients. Core Build $8,500, or $9,500 for five or more locations. Retainer $1,000 to $1,250 a month. Book a 30-minute call.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Medical Practice Analytics Services | Harine Management",
+    title: "Reporting Diagnostic, Core Build, and Retainer | Harine Management",
     description:
-      "Power BI dashboards for medical practices, athenahealth reporting, and a $2,500 Practice Operational Diagnostic. Based in Atlanta.",
+      "Fixed prices for Power BI dashboards built from athenahealth or eClinicalWorks report exports. The diagnostic is free for our first 10 clients.",
     url: "https://harinemanagement.com/services",
   },
 };
@@ -24,28 +32,17 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "@id": "https://harinemanagement.com/services#webpage",
-  name: "Healthcare Analytics Services | Harine Management",
+  name: "Services and prices | Harine Management",
   url: "https://harinemanagement.com/services",
   description:
-    "Full suite of healthcare data analytics services for medical practices and private equity firms.",
+    "Reporting Diagnostic, Core Build, and monthly retainer for outpatient practices on athenahealth or eClinicalWorks.",
   inLanguage: "en-US",
   publisher: {
     "@type": "Organization",
     "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
+    name: "Harine Management LLC",
   },
-  hasPart: services.map((s) => ({
-    "@type": "Service",
-    "@id": `https://harinemanagement.com/services/${s.slug}#service`,
-    name: s.title,
-    url: `https://harinemanagement.com/services/${s.slug}`,
-  })),
 };
-
-const practiceServices = getServicesByAudience("practices").filter(
-  (service) => service.slug !== "practice-operational-diagnostic"
-);
-const investorServices = getServicesByAudience("investors");
 
 export default function ServicesPage() {
   return (
@@ -57,73 +54,62 @@ export default function ServicesPage() {
         <div className="services-index-hero-inner">
           <div className="eyebrow faint">
             <span className="eyebrow-rule"></span>
-            What We Build
+            Services
           </div>
-          <h1>Medical practice analytics, starting with a diagnostic.</h1>
+          <h1>One offer. Three prices.</h1>
           <p>
-            Power BI dashboards from athenahealth and eClinicalWorks, revenue cycle analytics, and diligence for healthcare investors. The diagnostic is the first step.
+            Power BI dashboards for outpatient groups on athenahealth or eClinicalWorks. Your team exports the reports you already run and drops them in SharePoint. There is no IT project and no EMR-vendor integration.
           </p>
         </div>
       </section>
 
       <div className="services-index-body">
         <div className="services-index-inner">
+          <div className="offer-grid">
+            <div className="service-card featured">
+              <div className="founding-flag">{DIAGNOSTIC_FOUNDING}</div>
+              <div className="service-tag crimson">Reporting Diagnostic</div>
+              <div className="offer-price">{DIAGNOSTIC_LIST_PRICE}</div>
+              <p className="offer-price-note">List price. {DIAGNOSTIC_FOUNDING}.</p>
+              <p>A five-day review of your reporting workflow: which reports you run, what gets rebuilt in Excel, and what the dashboards should show first. You get written findings and a recommended build plan.</p>
+              <p>{DIAGNOSTIC_CREDIT}</p>
+              <Link href="/services/practice-operational-diagnostic" className="service-link">See the diagnostic →</Link>
+            </div>
 
-          <div className="services-audience-group">
-            <div className="services-audience-label">Operations &amp; Advisory</div>
-            <div className="services-index-grid">
+            <div className="service-card secondary">
+              <div className="service-tag terra">Core Build</div>
+              <div className="offer-price">{CORE_BUILD_PRICE}</div>
+              <p className="offer-price-note">{CORE_BUILD_PRICE_FIVE_PLUS} for practices with five or more locations.</p>
+              <p>The practice, provider, and billing dashboards, set up on your SharePoint folder, with Power Automate refresh and a walkthrough for your team. Fixed price. Built from a reusable model, not a custom data platform.</p>
+              <Link href="/services/practice-analytics-system" className="service-link terra">See the Core Build →</Link>
+            </div>
 
-              <div className="services-index-card">
-                <div className="services-index-card-title">Practice Operational Diagnostic</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '6px 0 14px', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)' }}>$2,500 fixed</span>
-                  <span style={{ fontSize: '10px', fontWeight: 500, background: 'rgba(184,48,48,0.08)', color: 'var(--crimson)', border: '1px solid rgba(184,48,48,0.15)', borderRadius: '20px', padding: '3px 10px', letterSpacing: '0.06em' }}>Under a week</span>
-                </div>
-                <div className="services-index-card-desc">A scoped review of reporting, revenue cycle, and operations data. You get a written findings report and a prioritized fix plan. Work can be done under a BAA.</div>
-                <Link href="/services/practice-operational-diagnostic" className="services-index-card-link">See the diagnostic →</Link>
-              </div>
-
-              <div className="services-index-card">
-                <div className="services-index-card-title">RCM Fix &amp; Revenue Recovery</div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--crimson)', margin: '6px 0 14px' }}>Fixed quote after the diagnostic</div>
-                <div className="services-index-card-desc">Denial review, credentialing gaps, and payer contract questions, worked in eClinicalWorks and athenahealth. Scope and price are confirmed on the call.</div>
-                <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="services-index-card-link">Book a 30-minute call →</a>
-              </div>
-
+            <div className="service-card tertiary">
+              <div className="service-tag ink">Ongoing retainer</div>
+              <div className="offer-price" style={{ fontSize: "32px" }}>{RETAINER_PRICE}</div>
+              <p className="offer-price-note">After the dashboards are up.</p>
+              <p>Up to 5 hours a month for dashboard updates, new views, data-quality checks, and a review call. Additional hours can be scoped if you need more.</p>
             </div>
           </div>
 
-          <div className="services-audience-group">
-            <div className="services-audience-label">For Medical Practices</div>
+          <div className="services-audience-group" style={{ marginTop: "64px" }}>
+            <div className="services-audience-label">The three dashboards</div>
             <div className="services-index-grid">
-              {practiceServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="services-index-card"
-                >
-                  <div className="services-index-card-title">{service.title}</div>
-                  <div className="services-index-card-desc">{service.metaDescription}</div>
-                  <div className="services-index-card-link">Learn more →</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="services-audience-group">
-            <div className="services-audience-label">For PE &amp; Investors</div>
-            <div className="services-index-grid">
-              {investorServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="services-index-card"
-                >
-                  <div className="services-index-card-title">{service.title}</div>
-                  <div className="services-index-card-desc">{service.metaDescription}</div>
-                  <div className="services-index-card-link">Learn more →</div>
-                </Link>
-              ))}
+              <Link href="/services/volume-analytics" className="services-index-card">
+                <div className="services-index-card-title">Practice dashboard</div>
+                <div className="services-index-card-desc">Patients seen by location and by visit type. Month-over-month and year-over-year volume. Cancellations, broken down by reason.</div>
+                <div className="services-index-card-link">See the practice view →</div>
+              </Link>
+              <Link href="/services/provider-productivity-analytics" className="services-index-card">
+                <div className="services-index-card-title">Provider dashboard</div>
+                <div className="services-index-card-desc">Patients seen per day by provider. New patients in the month. Work RVUs against the benchmarks you already set.</div>
+                <div className="services-index-card-link">See the provider view →</div>
+              </Link>
+              <Link href="/services/revenue-cycle-analytics" className="services-index-card">
+                <div className="services-index-card-title">Billing dashboard</div>
+                <div className="services-index-card-desc">Charges billed, paid, and denied, with denial reasons. Charges by billed code. AR and adjustments. These views are part of the build and are not described as finished.</div>
+                <div className="services-index-card-link">See the billing view →</div>
+              </Link>
             </div>
           </div>
         </div>
@@ -131,11 +117,11 @@ export default function ServicesPage() {
 
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>Not sure which service fits?</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
-            Book a 30-minute call at dev@harinemanagement.com. The diagnostic is $2,500 and finished in under a week.
+            That call is how you claim the Reporting Diagnostic. {DIAGNOSTIC_FOUNDING}. List price {DIAGNOSTIC_LIST_PRICE}.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">Book a 30-minute call</a>
+          <a href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer" className="btn btn-white">{BOOK_CALL_LABEL}</a>
         </div>
       </section>
 

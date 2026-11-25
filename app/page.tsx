@@ -3,19 +3,27 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
-import { BOOK_CALL_HREF, BOOK_CALL_LABEL, DIAGNOSTIC_PATH } from "@/lib/contact";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/contact";
+import {
+  CORE_BUILD_PRICE,
+  CORE_BUILD_PRICE_FIVE_PLUS,
+  DIAGNOSTIC_CREDIT,
+  DIAGNOSTIC_FOUNDING,
+  DIAGNOSTIC_LIST_PRICE,
+  RETAINER_PRICE,
+} from "@/lib/offer";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Medical Practice Analytics in Atlanta | Harine Management",
+    absolute: "Power BI Dashboards for Medical Practices | Harine Management",
   },
   description:
-    "Stop rebuilding practice reports in Excel. Power BI dashboards from athenahealth and eClinicalWorks data. Atlanta healthcare consulting. $2,500 diagnostic, done in under a week.",
+    "Stop rebuilding practice reports in Excel. Export athenahealth or eClinicalWorks reports into SharePoint, and Power BI dashboards refresh. Reporting Diagnostic $2,500, free for our first 10 clients. Core Build $8,500.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Medical Practice Analytics in Atlanta | Harine Management",
+    title: "Power BI Dashboards for Medical Practices | Harine Management",
     description:
-      "Power BI dashboards for medical practices, from athenahealth and eClinicalWorks. A $2,500 Practice Operational Diagnostic, finished in under a week.",
+      "Power BI dashboards for multi-location outpatient practices on athenahealth or eClinicalWorks. No IT project. Reporting Diagnostic $2,500, free for our first 10 clients.",
     url: "https://harinemanagement.com",
   },
 };
@@ -24,10 +32,10 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": "https://harinemanagement.com/#webpage",
-  name: "Healthcare Data Analytics for Medical Practices & Investors | Harine Management",
+  name: "Power BI Dashboards for Medical Practices | Harine Management",
   url: "https://harinemanagement.com",
   description:
-    "Medical practice analytics in Atlanta. Power BI dashboards from athenahealth and eClinicalWorks, plus a fixed-price operational diagnostic.",
+    "Power BI dashboards for multi-location outpatient practices on athenahealth or eClinicalWorks. Reports are exported as they are today and dropped into SharePoint.",
   inLanguage: "en-US",
   publisher: {
     "@type": "Organization",
@@ -37,81 +45,55 @@ const webPageSchema = {
   },
 };
 
-const practiceAnalyticsSchema = {
+const offerSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": "https://harinemanagement.com/#service-practice-analytics",
-  name: "Practice Analytics System",
+  "@id": "https://harinemanagement.com/#core-build",
+  name: "Core Build",
   description:
-    "End-to-end analytics infrastructure from your EHR to executive dashboards. Volume, revenue, provider performance, and trend data — in one place, updated daily.",
-  serviceType: "Healthcare Data Analytics",
+    "Three Power BI dashboards for an outpatient practice, set up on the practice's SharePoint folder, with a Power Automate refresh when a new report file lands. Fixed price: $8,500, or $9,500 for practices with five or more locations.",
+  serviceType: "Healthcare Reporting",
   provider: {
     "@type": "Organization",
     "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
+    name: "Harine Management LLC",
     url: "https://harinemanagement.com",
   },
   areaServed: {
-    "@type": "Country",
-    name: "United States",
+    "@type": "AdministrativeArea",
+    name: "Southeast United States",
   },
-  url: "https://harinemanagement.com/#services",
-};
-
-const revenueCycleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://harinemanagement.com/#service-revenue-cycle",
-  name: "Revenue Cycle Analytics",
-  description:
-    "Collection rates, AR aging, denial patterns, and payer mix — all the financial signals that tell you if the revenue is real before you feel it in your bank account.",
-  serviceType: "Healthcare Revenue Cycle Analytics",
-  provider: {
-    "@type": "Organization",
-    "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
-    url: "https://harinemanagement.com",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  url: "https://harinemanagement.com/#services",
-};
-
-const dueDiligenceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://harinemanagement.com/#service-due-diligence",
-  name: "Acquisition Due Diligence",
-  description:
-    "Fast, structured data analysis of target medical practices — EHR-level extraction, provider concentration risk, payer mix quality, and deliverable-ready output for PE data rooms.",
-  serviceType: "Healthcare Due Diligence Analytics",
-  provider: {
-    "@type": "Organization",
-    "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
-    url: "https://harinemanagement.com",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  url: "https://harinemanagement.com/#investors",
+  url: "https://harinemanagement.com/#pricing",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Reporting Diagnostic",
+      price: "2500",
+      priceCurrency: "USD",
+      description:
+        "List price $2,500. Free for our first 10 clients. A five-day review of the reporting workflow, with written findings and a recommended build plan.",
+      url: "https://calendly.com/dev-harinemanagement/30min",
+    },
+    {
+      "@type": "Offer",
+      name: "Core Build",
+      price: "8500",
+      priceCurrency: "USD",
+      description:
+        "$8,500, or $9,500 for practices with five or more locations. Three Power BI dashboards, SharePoint folder, and Power Automate refresh.",
+      url: "https://calendly.com/dev-harinemanagement/30min",
+    },
+  ],
 };
 
 export default function Home() {
   return (
     <>
       <JsonLd schema={webPageSchema} />
-      <JsonLd schema={practiceAnalyticsSchema} />
-      <JsonLd schema={revenueCycleSchema} />
-      <JsonLd schema={dueDiligenceSchema} />
+      <JsonLd schema={offerSchema} />
 
-      {/* NAVIGATION */}
       <Nav />
 
-      {/* HERO */}
       <section className="hero" id="top">
         <div className="hero-blob1"></div>
         <div className="hero-blob2"></div>
@@ -119,20 +101,20 @@ export default function Home() {
           <div>
             <div className="hero-label eyebrow">
               <span className="eyebrow-rule"></span>
-              Medical practice analytics · Atlanta
+              Power BI dashboards · Atlanta
             </div>
             <h1 className="hero-title">
               Stop rebuilding your practice reports in Excel every week.
             </h1>
-            <p className="hero-sub">
-              Get automated Power BI dashboards from your athenahealth or eClinicalWorks data — volume, collections, and provider productivity, without another spreadsheet.
+            <p className="hero-sub wide">
+              If you run three or more locations on athenahealth or eClinicalWorks, you already have the reports. Export them, drop them into a SharePoint folder, and your Power BI dashboards refresh — volume, providers, and billing, without an IT project or an EMR-vendor integration.
             </p>
             <div className="hero-actions">
-              <Link href={DIAGNOSTIC_PATH} className="btn btn-primary">Start with the $2,500 diagnostic</Link>
-              <a href={BOOK_CALL_HREF} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
+              <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
+              <a href="#how-it-works" className="btn btn-secondary">See how the workflow works</a>
             </div>
             <p className="hero-note">
-              The diagnostic is a fixed-price review of your reporting, revenue cycle, and operations data. Written findings and a prioritized fix plan, in under a week.
+              Reporting Diagnostic is {DIAGNOSTIC_LIST_PRICE}. {DIAGNOSTIC_FOUNDING}. Based in Atlanta. Work is done under a signed business associate agreement.
             </p>
           </div>
 
@@ -146,64 +128,51 @@ export default function Home() {
               </div>
               <div className="dash-body">
                 <div className="dash-title-row">
-                  <div className="dash-greeting">Good Morning — Week 17</div>
-                  <div className="dash-heading">Practice Performance</div>
+                  <div className="dash-greeting">Practice dashboard</div>
+                  <div className="dash-heading">Volume by location</div>
                 </div>
                 <div className="kpi-grid">
                   <div className="kpi-card">
-                    <div className="kpi-label">Volume MTD</div>
-                    <div className="kpi-value">2,847</div>
-                    <div className="kpi-delta">Sample</div>
+                    <div className="kpi-label">Visits</div>
+                    <div className="kpi-value">Sample</div>
+                    <div className="kpi-delta neutral">By location</div>
                   </div>
                   <div className="kpi-card">
-                    <div className="kpi-label">wRVU / Provider</div>
-                    <div className="kpi-value">342.6</div>
-                    <div className="kpi-delta">Sample</div>
+                    <div className="kpi-label">wRVU</div>
+                    <div className="kpi-value">Sample</div>
+                    <div className="kpi-delta neutral">By provider</div>
                   </div>
                   <div className="kpi-card">
-                    <div className="kpi-label">Reporting time</div>
-                    <div className="kpi-value">Minutes</div>
-                    <div className="kpi-delta neutral">Was 15–20 hrs</div>
+                    <div className="kpi-label">Billing</div>
+                    <div className="kpi-value">Views</div>
+                    <div className="kpi-delta neutral">From your exports</div>
                   </div>
                 </div>
                 <div className="chart-row">
                   <div className="chart-area">
-                    <div className="chart-lbl">Daily volume — recent days</div>
+                    <div className="chart-lbl">Illustrative volume bars</div>
                     <div className="chart-bars">
-                      <div className="bar" style={{ height: '55%', background: 'var(--terra-mid)', opacity: 0.5 }}></div>
-                      <div className="bar" style={{ height: '70%', background: 'var(--terra)', opacity: 0.6 }}></div>
-                      <div className="bar" style={{ height: '60%', background: 'var(--terra-mid)', opacity: 0.5 }}></div>
-                      <div className="bar" style={{ height: '80%', background: 'var(--crimson)', opacity: 0.75 }}></div>
-                      <div className="bar" style={{ height: '65%', background: 'var(--terra)', opacity: 0.6 }}></div>
-                      <div className="bar" style={{ height: '90%', background: 'var(--crimson)', opacity: 0.85 }}></div>
-                      <div className="bar" style={{ height: '75%', background: 'var(--terra)', opacity: 0.65 }}></div>
-                      <div className="bar" style={{ height: '88%', background: 'var(--crimson)', opacity: 0.8 }}></div>
-                      <div className="bar" style={{ height: '70%', background: 'var(--terra-mid)', opacity: 0.55 }}></div>
-                      <div className="bar" style={{ height: '95%', background: 'var(--crimson)', opacity: 0.9 }}></div>
-                      <div className="bar" style={{ height: '82%', background: 'var(--terra)', opacity: 0.7 }}></div>
-                      <div className="bar" style={{ height: '78%', background: 'var(--terra-mid)', opacity: 0.6 }}></div>
-                      <div className="bar" style={{ height: '100%', background: 'var(--crimson)', opacity: 0.95 }}></div>
-                      <div className="bar" style={{ height: '88%', background: 'var(--terra)', opacity: 0.75 }}></div>
-                    </div>
-                  </div>
-                  <div className="spark-area">
-                    <div className="spark-lbl">AR Aging &lt;30d</div>
-                    <div className="spark-val">78.3%</div>
-                    <div className="spark-sub">Sample figure</div>
-                    <div className="spark-line">
-                      <svg viewBox="0 0 80 30" fill="none" width="100%">
-                        <path d="M0 25 L12 20 L24 22 L36 14 L48 16 L60 8 L72 10 L80 4" stroke="var(--terra-light)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                        <path d="M0 25 L12 20 L24 22 L36 14 L48 16 L60 8 L72 10 L80 4 L80 30 L0 30Z" fill="var(--terra-light)" opacity={0.08} />
-                      </svg>
+                      <div className="bar" style={{ height: "55%", background: "var(--terra-mid)", opacity: 0.5 }}></div>
+                      <div className="bar" style={{ height: "70%", background: "var(--terra)", opacity: 0.6 }}></div>
+                      <div className="bar" style={{ height: "60%", background: "var(--terra-mid)", opacity: 0.5 }}></div>
+                      <div className="bar" style={{ height: "80%", background: "var(--crimson)", opacity: 0.75 }}></div>
+                      <div className="bar" style={{ height: "65%", background: "var(--terra)", opacity: 0.6 }}></div>
+                      <div className="bar" style={{ height: "90%", background: "var(--crimson)", opacity: 0.85 }}></div>
+                      <div className="bar" style={{ height: "75%", background: "var(--terra)", opacity: 0.65 }}></div>
+                      <div className="bar" style={{ height: "88%", background: "var(--crimson)", opacity: 0.8 }}></div>
+                      <div className="bar" style={{ height: "70%", background: "var(--terra-mid)", opacity: 0.55 }}></div>
+                      <div className="bar" style={{ height: "95%", background: "var(--crimson)", opacity: 0.9 }}></div>
+                      <div className="bar" style={{ height: "82%", background: "var(--terra)", opacity: 0.7 }}></div>
+                      <div className="bar" style={{ height: "78%", background: "var(--terra-mid)", opacity: 0.6 }}></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="hero-badge">
-              <div className="badge-icon">⚡</div>
+              <div className="badge-icon">↓</div>
               <div>
-                <div className="badge-text">Scheduled refresh</div>
+                <div className="badge-text">Refreshes when a file lands</div>
                 <div className="badge-sub">Sample layout, not a result</div>
               </div>
             </div>
@@ -211,338 +180,176 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <div className="trust-bar">
-        <div className="trust-inner trust-single">
-          <p className="trust-note">
-            For one practice, weekly reporting that took a practice manager 15 to 20 hours now takes minutes.
-          </p>
-          <p className="trust-note-sub">
-            Power BI, from athenahealth or eClinicalWorks. Based in Atlanta, working with practices across the Southeast.
-          </p>
-        </div>
-      </div>
-
-      {/* CREDIBILITY STRIP */}
       <div className="expertise-strip">
         <div className="expertise-strip-inner">
-          <span className="expertise-strip-label">Works in:</span>
-          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>eClinicalWorks (ECW)</span>
-            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Athena Health / AthenaOne</span>
-            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Power BI</span>
-            <span style={{ fontSize: '12px', fontWeight: 500, color: 'var(--ink-mid)', background: 'var(--white)', border: '1.5px solid var(--stone)', borderRadius: '999px', padding: '6px 16px' }}>Snowflake</span>
+          <span className="expertise-strip-label">Works with:</span>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            {["athenahealth", "eClinicalWorks", "SharePoint", "Power BI", "Power Automate"].map((name) => (
+              <span key={name} style={{ fontSize: "12px", fontWeight: 500, color: "var(--ink-mid)", background: "var(--white)", border: "1.5px solid var(--stone)", borderRadius: "999px", padding: "6px 16px" }}>{name}</span>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* SERVICES */}
-      <section id="services">
+      <section id="problem">
         <div className="container">
           <div className="section-header">
-            <div className="eyebrow"><span className="eyebrow-rule"></span>What we do</div>
-            <h2 className="section-title">Start with a diagnostic.<br /><em>Then decide.</em></h2>
-            <p className="section-sub">The diagnostic is the way in. Dashboards, revenue cycle work, diligence, and RCM repair are still here if the findings call for them.</p>
+            <div className="eyebrow"><span className="eyebrow-rule"></span>The problem</div>
+            <h2 className="section-title">The reports are in the EHR.<br />The work is still in Excel.</h2>
           </div>
-          <div className="services-grid">
-
-            <div className="service-card featured" id="diagnostic">
-              <div className="service-icon crimson">01</div>
-              <div className="service-tag crimson">Start here · $2,500</div>
-              <h3>Practice Operational Diagnostic</h3>
-              <p>A scoped review of your reporting, revenue cycle, and operations data. Written findings and a prioritized fix plan, finished in under a week.</p>
-              <ul className="service-list">
-                <li>Fixed price, $2,500</li>
-                <li>Uses the reports and EHR exports you already have</li>
-                <li>Written findings, not a slide deck</li>
-                <li>A prioritized list of what to fix first</li>
-              </ul>
-              <Link href={DIAGNOSTIC_PATH} className="service-link">See the diagnostic →</Link>
-            </div>
-
-            <div className="service-card secondary">
-              <div className="service-icon terra">02</div>
-              <div className="service-tag terra">Dashboards</div>
-              <h3>Practice Analytics System</h3>
-              <p>Power BI dashboards from your athenahealth or eClinicalWorks data. Volume, revenue, provider productivity, and trends, refreshed on a schedule.</p>
-              <ul className="service-list terra">
-                <li>Daily patient volume by provider, location, and visit type</li>
-                <li>wRVU tracking against the goal you already use</li>
-                <li>Month-over-month and year-over-year trends</li>
-                <li>One view for the Monday meeting</li>
-              </ul>
-              <Link href="/services/practice-analytics-system" className="service-link terra">See the dashboard work →</Link>
-            </div>
-
-            <div className="service-card tertiary">
-              <div className="service-icon ink">03</div>
-              <div className="service-tag ink">Revenue cycle</div>
-              <h3>Revenue Cycle Analytics</h3>
-              <p>Collection rate, AR aging, denial patterns, and payer mix, from the billing data in the EHR, so finance is not waiting on a monthly export.</p>
-              <ul className="service-list">
-                <li>AR aging by provider and payer</li>
-                <li>Payer mix and reimbursement rate tracking</li>
-                <li>Denial patterns by CPT code</li>
-                <li>Net revenue per visit by payer and code</li>
-              </ul>
-              <Link href="/services/revenue-cycle-analytics" className="service-link">See revenue cycle analytics →</Link>
-            </div>
-
-            <div className="service-card featured">
-              <div className="service-icon crimson">04</div>
-              <div className="service-tag crimson">For investors</div>
-              <h3>Acquisition Due Diligence</h3>
-              <p>EHR-level review of a target practice for healthcare investors. Encounter data, not the management summary, written up for the data room.</p>
-              <ul className="service-list">
-                <li>Volume and revenue trends from encounter data</li>
-                <li>Provider concentration and key-person risk</li>
-                <li>Payer mix and reimbursement trajectory</li>
-                <li>Timeline set to the deal calendar</li>
-              </ul>
-              <Link href="/services/due-diligence-analytics" className="service-link">See diligence analytics →</Link>
-            </div>
-
-            <div className="service-card tertiary">
-              <div className="service-icon ink">05</div>
-              <div className="service-tag ink">RCM</div>
-              <h3>RCM Fix &amp; Revenue Recovery</h3>
-              <p>Denials, slow collections, and credentialing gaps. We look for the cause in the eClinicalWorks or athenahealth workflow and work the fix with you. Price is a fixed quote after the diagnostic.</p>
-              <a href={BOOK_CALL_HREF} className="service-link" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL} →</a>
-            </div>
-
+          <div className="prose-narrow body-copy">
+            <p>Most practice and billing managers already know which reports to run. The problem is what happens next. To see volume by location, visit mix, cancellations, provider productivity, or denials, someone has to run several reports, copy the data into Excel, and rebuild the same workbook.</p>
+            <p>In a group with five or more locations, that can take hours every week. By the time the file is ready, the data is already about two weeks behind, and a new week of numbers is waiting.</p>
+            <p>Native EHR report libraries are not the same thing as a dashboard leadership can open on Monday. They were not built to compare locations, track providers against the benchmarks you already use, or show denials and AR without another round of spreadsheets.</p>
+            <p>You should not need a new EMR, a hospital IT team, or a paid interface from the vendor to fix this.</p>
+            <p className="audience-line">Groups with three or more locations can use this. The weekly rebuild is usually most painful at five or more. The Core Build is {CORE_BUILD_PRICE}, or {CORE_BUILD_PRICE_FIVE_PLUS} for practices with five or more locations.</p>
           </div>
         </div>
       </section>
 
-      {/* FOR PRACTICES */}
-      <section className="alt" id="practices">
-        <div className="container">
-          <div className="split">
-            <div>
-              <div className="eyebrow" style={{ marginBottom: '20px' }}>
-                <span className="eyebrow-rule"></span>For Medical Practices
-              </div>
-              <h2 className="section-title">
-                Your leadership deserves<br />a dashboard they<br /><em>actually open.</em>
-              </h2>
-              <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: '1.75', marginBottom: '28px' }}>
-                Most practices are still exporting from the EHR and rebuilding the same workbook every week. The data is already in athenahealth or eClinicalWorks. A dashboard is there so someone can open it instead of rebuilding it.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--crimson)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  Works with your existing EHR — no rip-and-replace
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--crimson)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  athenahealth and eClinicalWorks. No system replacement.
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--crimson)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  We manage it — you open it
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--crimson)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  Priced for independent and multi-site groups, not a health-system IT project
-                </li>
-              </ul>
-              <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
-            </div>
-
-            <div>
-              <div className="practice-visual">
-                <div className="practice-topbar">
-                  <div className="practice-tb-brand">Practice Overview</div>
-                  <div className="practice-tb-tag">Sample layout</div>
-                </div>
-                <div className="practice-body">
-                  <div className="practice-kpi-row">
-                    <div className="p-kpi">
-                      <div className="p-kpi-lbl">Visits This Month</div>
-                      <div className="p-kpi-val">2,847</div>
-                      <div className="p-kpi-del">↑ 12.4% vs prior month</div>
-                    </div>
-                    <div className="p-kpi">
-                      <div className="p-kpi-lbl">Avg wRVU / Day</div>
-                      <div className="p-kpi-val">48.2</div>
-                      <div className="p-kpi-del">↑ 5.1% vs last year</div>
-                    </div>
-                  </div>
-                  <div className="provider-table">
-                    <div className="pt-header">
-                      <span>Provider</span>
-                      <span>Visits</span>
-                      <span>wRVU</span>
-                      <span>vs Goal</span>
-                    </div>
-                    <div className="pt-row">
-                      <span className="name">Provider A</span>
-                      <span>312</span>
-                      <span>387.4</span>
-                      <span className="delta">Sample</span>
-                    </div>
-                    <div className="pt-row">
-                      <span className="name">Provider B</span>
-                      <span>288</span>
-                      <span>342.1</span>
-                      <span className="delta">Sample</span>
-                    </div>
-                    <div className="pt-row">
-                      <span className="name">Provider C</span>
-                      <span>264</span>
-                      <span>298.6</span>
-                      <span style={{ fontSize: '10px', color: 'var(--ink-faint)' }}>Sample</span>
-                    </div>
-                    <div className="pt-row">
-                      <span className="name">Provider D</span>
-                      <span>241</span>
-                      <span>311.8</span>
-                      <span className="delta">Sample</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOR INVESTORS */}
-      <section id="investors">
-        <div className="container">
-          <div className="split reverse">
-            <div>
-              <div className="eyebrow terra" style={{ marginBottom: '20px' }}>
-                <span className="eyebrow-rule"></span>For PE &amp; Investors
-              </div>
-              <h2 className="section-title">
-                Before you close,<br />know if the <em>revenue<br />is real.</em>
-              </h2>
-              <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: '1.75', marginBottom: '28px' }}>
-                Management financials show what the seller prepared. Encounter data shows volume, payer mix, and which providers the revenue depends on. The written report is what goes in the data room.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--terra)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  EHR-level data extraction — not just what management provides
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--terra)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  Provider concentration and single-point-of-failure analysis
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--terra)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  Payer mix quality scoring and reimbursement trend projection
-                </li>
-                <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '14px', color: 'var(--ink-mid)', lineHeight: '1.6' }}>
-                  <span style={{ color: 'var(--terra)', fontWeight: 600, flexShrink: 0, marginTop: '1px' }}>→</span>
-                  Deliverable-ready output that holds up in a data room
-                </li>
-              </ul>
-              <a href={BOOK_CALL_HREF} className="btn btn-terra" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
-            </div>
-
-            <div>
-              <div className="investor-visual">
-                <div className="inv-header">
-                  <div className="inv-eyebrow">Due Diligence Report · Target Practice</div>
-                  <div className="inv-title">Revenue integrity <em>before</em><br />you sign the LOI.</div>
-                </div>
-                <div className="inv-metrics">
-                  <div className="inv-metric">
-                    <span className="inv-metric-name">3-Year Revenue Trend</span>
-                    <span className="inv-metric-val">+22.4%</span>
-                    <span className="inv-metric-flag flag-ok">Healthy</span>
-                  </div>
-                  <div className="inv-metric">
-                    <span className="inv-metric-name">Provider Concentration (Top 1)</span>
-                    <span className="inv-metric-val">41%</span>
-                    <span className="inv-metric-flag flag-warn">Review</span>
-                  </div>
-                  <div className="inv-metric">
-                    <span className="inv-metric-name">Medicare/Medicaid Mix</span>
-                    <span className="inv-metric-val">68%</span>
-                    <span className="inv-metric-flag flag-ok">Acceptable</span>
-                  </div>
-                  <div className="inv-metric">
-                    <span className="inv-metric-name">AR Aging &gt;90 Days</span>
-                    <span className="inv-metric-val">18.3%</span>
-                    <span className="inv-metric-flag flag-risk">Elevated</span>
-                  </div>
-                  <div className="inv-metric">
-                    <span className="inv-metric-name">Avg Net Revenue / Visit</span>
-                    <span className="inv-metric-val">$214</span>
-                    <span className="inv-metric-flag flag-ok">At Market</span>
-                  </div>
-                </div>
-                <div className="inv-footer">Illustrative sample · not a client engagement</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
       <section className="alt" id="how-it-works">
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>
-              <span className="eyebrow-rule"></span>The Process<span className="eyebrow-rule"></span>
+          <div className="section-header" style={{ textAlign: "center", maxWidth: "640px", marginLeft: "auto", marginRight: "auto" }}>
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <span className="eyebrow-rule"></span>How it works<span className="eyebrow-rule"></span>
             </div>
-            <h2 className="section-title">From the call<br />to a <em>written scope.</em></h2>
+            <h2 className="section-title">Export. Drop.<br />The dashboards refresh.</h2>
           </div>
-          <div className="steps">
+          <div className="steps steps-3">
             <div className="step">
               <div className="step-num">01</div>
-              <h4>30-minute call</h4>
-              <p>Which EHR you use, what gets rebuilt in Excel, and which decision is stuck. If a diagnostic is the wrong first step, we&apos;ll say so.</p>
+              <h4>Export the reports you already run</h4>
+              <p>Your team downloads the standard reports from athenahealth or eClinicalWorks, the same way you do today. No new fields, no reformatting, no cleanup in Excel.</p>
             </div>
             <div className="step">
               <div className="step-num">02</div>
-              <h4>Minimum-necessary access</h4>
-              <p>We ask only for the fields the work needs. Engagements can be done under a business associate agreement. Clinical work is not interrupted.</p>
+              <h4>Drop the files into SharePoint, as is</h4>
+              <p>Nothing gets manipulated first. The files go into a folder in your Microsoft 365 environment.</p>
             </div>
             <div className="step">
               <div className="step-num">03</div>
-              <h4>The scoped work</h4>
-              <p>A diagnostic, a Power BI dashboard, or a diligence memo. The deliverable and the timing are written down before the work starts. Default tool is Power BI.</p>
+              <h4>The dashboards refresh</h4>
+              <p>Power BI pulls those files, transforms them, and updates the dashboards. Power Automate triggers a refresh whenever a new file lands.</p>
             </div>
-            <div className="step">
-              <div className="step-num">04</div>
-              <h4>You keep the output</h4>
-              <p>A written report, or a dashboard in your environment. If we build a pipeline, we maintain it. If you need another view, you call.</p>
+          </div>
+          <p className="body-copy" style={{ textAlign: "center", maxWidth: "640px", margin: "48px auto 0" }}>
+            That is the entire workflow on your side. There is no IT project, no integration with the EMR, and no EMR-vendor fee.
+          </p>
+        </div>
+      </section>
+
+      <section id="dashboards">
+        <div className="container">
+          <div className="section-header">
+            <div className="eyebrow"><span className="eyebrow-rule"></span>What you get</div>
+            <h2 className="section-title">Three dashboards.<br />One place to look.</h2>
+            <p className="section-sub">Built in Power BI, using the reports you already export.</p>
+          </div>
+          <div className="dash-grid">
+            <div className="service-card featured">
+              <div className="service-tag crimson">Practice</div>
+              <h3>Practice dashboard</h3>
+              <p>Patients seen by location and by visit type. Month-over-month and year-over-year volume. Cancellations, broken down by reason.</p>
             </div>
+            <div className="service-card secondary">
+              <div className="service-tag terra">Provider</div>
+              <h3>Provider dashboard</h3>
+              <p>Patients seen per day by provider. New patients in the month. Work RVUs against the benchmarks you already set.</p>
+            </div>
+            <div className="service-card tertiary">
+              <div className="service-tag ink">Billing</div>
+              <h3>Billing dashboard</h3>
+              <p>Charges billed, paid, and denied, with denial reasons. Charges by billed code. AR and adjustments. These views are part of the build. They are not described here as a finished product.</p>
+            </div>
+          </div>
+          <p className="body-copy" style={{ maxWidth: "720px", marginTop: "36px" }}>
+            The first engagement maps the reports you already use, builds the data model, and stands up these three views. After that, a monthly retainer covers updates, questions, and a regular review.
+          </p>
+        </div>
+      </section>
+
+      <section className="alt" id="proof">
+        <div className="container">
+          <div className="section-header">
+            <div className="eyebrow"><span className="eyebrow-rule"></span>Proof</div>
+            <h2 className="section-title">What this looked like<br />for one practice.</h2>
+          </div>
+          <div className="prose-narrow body-copy">
+            <p>For a multi-location outpatient practice on athenahealth, weekly reporting that took a practice manager 15 to 20 hours now takes about 5 minutes: export the usual reports, drop them in the folder, and open the dashboards. That practice now uses a volume dashboard (visits by provider, location, and visit type, with daily, weekly, and monthly trends) and a work RVU dashboard for provider productivity, including wRVU per provider. Additional billing views from the same engagement — charges, collections, and the remaining financial comparisons — are still being built.</p>
+            <p>
+              <Link href="/case-study" className="service-link">Read the anonymized case study →</Link>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* QUOTE */}
-      <div className="quote-section">
-        <div className="quote-blob"></div>
-        <div className="quote-blob2"></div>
-        <div className="quote-inner">
-          <p className="quote-text">For one practice, weekly reporting that took a practice manager 15 to 20 hours now takes minutes.</p>
-          <div className="quote-attr">After the weekly Excel rebuild was replaced with a dashboard.</div>
-        </div>
-      </div>
+      <section id="pricing">
+        <div className="container">
+          <div className="section-header">
+            <div className="eyebrow"><span className="eyebrow-rule"></span>The offer</div>
+            <h2 className="section-title">Start with a diagnostic.<br /><em>Free for our first 10 clients.</em></h2>
+            <p className="section-sub">Three fixed prices. The diagnostic list price stays {DIAGNOSTIC_LIST_PRICE}. The first 10 clients do not pay it. Book a 30-minute call to claim that.</p>
+          </div>
+          <div className="offer-grid">
+            <div className="service-card featured">
+              <div className="founding-flag">{DIAGNOSTIC_FOUNDING}</div>
+              <div className="service-tag crimson">Reporting Diagnostic</div>
+              <div className="offer-price">{DIAGNOSTIC_LIST_PRICE}</div>
+              <p className="offer-price-note">List price. {DIAGNOSTIC_FOUNDING}.</p>
+              <p>A five-day review of your reporting workflow: which reports you run, what gets rebuilt in Excel, and what the dashboards should show first. You get written findings and a recommended build plan.</p>
+              <p>{DIAGNOSTIC_CREDIT}</p>
+              <a href={BOOK_CALL_HREF} className="service-link" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL} →</a>
+            </div>
 
-      {/* CTA */}
+            <div className="service-card secondary">
+              <div className="service-tag terra">Core Build</div>
+              <div className="offer-price">{CORE_BUILD_PRICE}</div>
+              <p className="offer-price-note">{CORE_BUILD_PRICE_FIVE_PLUS} for practices with five or more locations.</p>
+              <p>The three Power BI dashboards above, set up on your SharePoint folder, with Power Automate refresh and a walkthrough for your team. Fixed price. Built from a reusable model, not a custom data platform.</p>
+              <Link href="/services/practice-analytics-system" className="service-link terra">See the Core Build →</Link>
+            </div>
+
+            <div className="service-card tertiary">
+              <div className="service-tag ink">Ongoing retainer</div>
+              <div className="offer-price" style={{ fontSize: "32px" }}>{RETAINER_PRICE}</div>
+              <p className="offer-price-note">After the dashboards are up.</p>
+              <p>Up to 5 hours a month for dashboard updates, new views, data-quality checks, and a review call. Additional hours can be scoped if you need more.</p>
+              <a href={BOOK_CALL_HREF} className="service-link" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL} →</a>
+            </div>
+          </div>
+          <div style={{ marginTop: "36px" }}>
+            <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="alt" id="privacy">
+        <div className="container">
+          <div className="section-header">
+            <div className="eyebrow"><span className="eyebrow-rule"></span>Your files</div>
+            <h2 className="section-title">Your files stay<br />in your SharePoint.</h2>
+          </div>
+          <div className="prose-narrow body-copy">
+            <p>Engagements are done under a signed business associate agreement and a confidentiality agreement. We ask only for the reports and fields the work needs. The source files remain in your Microsoft 365 / SharePoint environment. This is not a clinical system change, and it does not interrupt patient care.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section" id="contact">
         <div className="container">
           <div className="cta-inner">
             <div className="cta-left">
-              <div className="eyebrow" style={{ marginBottom: '20px' }}>
-                <span className="eyebrow-rule"></span>Let&apos;s Talk
+              <div className="eyebrow" style={{ marginBottom: "20px" }}>
+                <span className="eyebrow-rule"></span>Let&apos;s look at the files
               </div>
               <h2 className="cta-title">
-                Book a 30-minute call.<br />Or start with the<br /><em>$2,500 diagnostic.</em>
+                If Excel is still the reporting system, let&apos;s look at the files you already export.
               </h2>
               <p className="cta-sub">
-                Tell us how reporting works today. The diagnostic covers reporting, revenue cycle, and operations data, and ends with a written findings report and a prioritized fix plan, in under a week.
+                A 30-minute call is enough to see whether the diagnostic is the right first step. Bring the reports you run today. If it is not a fit, we will say so. {DIAGNOSTIC_FOUNDING}. List price {DIAGNOSTIC_LIST_PRICE}.
               </p>
               <div className="cta-actions">
                 <a href={BOOK_CALL_HREF} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
-                <Link href={DIAGNOSTIC_PATH} className="btn btn-ghost">Read the diagnostic scope</Link>
               </div>
             </div>
 
@@ -552,23 +359,23 @@ export default function Home() {
                 <div>
                   <div className="contact-label">Email</div>
                   <a href="mailto:dev@harinemanagement.com" className="contact-value">dev@harinemanagement.com</a>
-                  <div className="contact-note">Replies within one business day</div>
+                  <div className="contact-note">Harine Management LLC</div>
                 </div>
               </div>
               <div className="contact-card">
                 <div className="contact-icon terra">📞</div>
                 <div>
                   <div className="contact-label">Phone</div>
-                  <a href="tel:6822563389" className="contact-value">682-256-3389</a>
-                  <div className="contact-note">Available Mon–Fri, 9am–6pm ET</div>
+                  <a href={CONTACT_PHONE_TEL} className="contact-value">{CONTACT_PHONE_DISPLAY}</a>
+                  <div className="contact-note">Monday–Friday, 9 a.m.–6 p.m. ET</div>
                 </div>
               </div>
               <div className="contact-card">
                 <div className="contact-icon crimson">📍</div>
                 <div>
                   <div className="contact-label">Location</div>
-                  <div className="contact-value" style={{ fontSize: '14px' }}>Atlanta, Georgia</div>
-                  <div className="contact-note">Serving practices across the Southeast</div>
+                  <div className="contact-value" style={{ fontSize: "14px" }}>Atlanta, Georgia</div>
+                  <div className="contact-note">A solo practice. Devanshu Patel does the work.</div>
                 </div>
               </div>
             </div>
@@ -576,7 +383,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <SiteFooter />
     </>
   );

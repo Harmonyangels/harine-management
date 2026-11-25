@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: { absolute: "Devanshu Patel | Atlanta Healthcare Consulting" },
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Devanshu Patel | Atlanta Healthcare Consulting",
     description:
-      "Solo Atlanta healthcare consulting practice. Devanshu Patel builds Power BI dashboards for medical practices and advises healthcare investors.",
+      "Solo Atlanta healthcare reporting practice. Devanshu Patel builds Power BI dashboards for outpatient groups on athenahealth or eClinicalWorks.",
     url: "https://harinemanagement.com/team",
   },
 };
@@ -33,7 +34,7 @@ const teamMembers: TeamMember[] = [
     initials: "DP",
     bio: "Devanshu has about 5 years of healthcare operations and analytics experience. He has worked in eClinicalWorks and athenahealth environments, including practice operations, revenue cycle management, and analytics builds for independent practices. Harine Management is the solo practice he runs from Atlanta. He does the work himself.",
     email: "dev@harinemanagement.com",
-    phone: "682-256-3389",
+    phone: CONTACT_PHONE_DISPLAY,
   },
 ];
 
@@ -163,7 +164,7 @@ export default function TeamPage() {
                     {member.email}
                   </a>
                   <a
-                    href={`tel:${member.phone.replace(/-/g, "")}`}
+                    href={CONTACT_PHONE_TEL}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -189,7 +190,7 @@ export default function TeamPage() {
         <div className="service-cta-inner">
           <h2>Book a 30-minute call.</h2>
           <p>
-            Email dev@harinemanagement.com. For practices, the usual first step is the $2,500 diagnostic.
+            Reporting Diagnostic is $2,500, and free for our first 10 clients. The call is how you claim it.
           </p>
           <div className="service-cta-actions">
             <a

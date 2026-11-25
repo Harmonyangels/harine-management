@@ -38,6 +38,8 @@ export interface Service {
   ];
   /** 1–2 sentence plain-English definition written to be quoted directly by AI answer engines. */
   definitionBlock: string;
+  /** When false, the URL stays up but the page is left out of the services index and search. */
+  listed?: boolean;
 }
 
 export const services: Service[] = [
@@ -46,56 +48,56 @@ export const services: Service[] = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: "practice-operational-diagnostic",
-    title: "Practice Operational Diagnostic",
-    shortTitle: "Operational Diagnostic",
-    metaTitle: "Practice Operational Diagnostic | Harine Management",
+    title: "Reporting Diagnostic",
+    shortTitle: "Reporting Diagnostic",
+    metaTitle: "Reporting Diagnostic | Harine Management",
     metaDescription:
-      "A $2,500 Practice Operational Diagnostic for medical practices. Reporting, revenue cycle, and operations data reviewed in under a week, with a written fix plan.",
-    heroHeadline: "A scoped look at the reporting, the billing, and the operations.",
+      "Reporting Diagnostic list price $2,500. Free for our first 10 clients. A five-day review of the reports you already run, with written findings and a build plan.",
+    heroHeadline: "A five-day look at the reports you already run.",
     heroSubheadline:
-      "Fixed price, $2,500. Finished in under a week. You get a written findings report and a prioritized fix plan — before any dashboard build.",
+      "List price $2,500. Free for our first 10 clients. You get written findings and a recommended build plan. Book a 30-minute call to claim it.",
     targetAudience: "practices",
     problemStatement:
-      "Practice managers already know the weekly reporting is slow. What is harder to see is which number is wrong, which denial pattern is worth working, and whether a dashboard is the next step or a distraction. A full analytics build is the wrong first purchase if the underlying reports and workflows have not been looked at.",
+      "Practice and billing managers already know which reports to run. The slow part is copying them into Excel and rebuilding the same workbook. A dashboard build is the wrong first purchase if nobody has looked at which reports you already export and what leadership actually needs to see.",
     solutionStatement:
-      "The Practice Operational Diagnostic is a fixed-price review of how the practice reports today, how the revenue cycle is performing in the data you already have, and where operations data is missing or contradictory. Harine Management reads that material and returns a written findings report plus a prioritized fix plan. Work can be done under a business associate agreement, and data access follows a minimum-necessary standard.",
+      "The Reporting Diagnostic is a five-day review of your reporting workflow: which reports you run, what gets rebuilt in Excel, and what the dashboards should show first. You get written findings and a recommended build plan. The list price is $2,500, and it is free for our first 10 clients. After those first 10, the diagnostic is $2,500. If you sign the Core Build within 14 days of that paid diagnostic, the $2,500 is credited in full toward the build. The credit does not apply to the free founding diagnostics. Work is done under a signed business associate agreement.",
     deliverables: [
-      "Review of current reporting: what is rebuilt in Excel, and what the EHR already produces",
-      "Revenue cycle review from the reports you have: collections, denials, and AR aging",
-      "Operations review: volume, provider productivity, and where those numbers disagree",
-      "Written findings report",
-      "Prioritized fix plan — what to change first, and what can wait",
+      "Review of which reports you already run in athenahealth or eClinicalWorks",
+      "A map of what gets rebuilt in Excel, and how long that takes",
+      "A recommendation for what the practice, provider, and billing views should show first",
+      "Written findings",
+      "A recommended build plan",
       "A short walkthrough of the findings",
     ],
     outcomes: [
-      { value: "$2,500", label: "Fixed price, agreed before the review starts" },
-      { value: "< 1 week", label: "Written findings and a prioritized fix plan" },
-      { value: "3 areas", label: "Reporting, revenue cycle, and operations data" },
+      { value: "$2,500", label: "List price. Free for our first 10 clients." },
+      { value: "5 days", label: "Written findings and a recommended build plan" },
+      { value: "Your reports", label: "The exports you already run. No new EMR fields." },
     ],
     faqItems: [
       {
-        question: "What is included in the Practice Operational Diagnostic?",
+        question: "What is included in the Reporting Diagnostic?",
         answer:
-          "The diagnostic is a scoped review of your reporting, revenue cycle, and operations data. It ends with a written findings report and a prioritized fix plan. It does not include building a Power BI dashboard, submitting claims, or renegotiating payer contracts.",
+          "A five-day review of your reporting workflow: which reports you run, what gets rebuilt in Excel, and what the dashboards should show first. You get written findings and a recommended build plan. It does not include building the Power BI dashboards.",
       },
       {
-        question: "How much does it cost and how long does it take?",
+        question: "How much does the Reporting Diagnostic cost?",
         answer:
-          "The price is $2,500. The review is completed in under a week from the time the agreed data and reports are available.",
+          "The list price is $2,500. It is free for our first 10 clients. Book a 30-minute call to claim that. After the first 10, the diagnostic is $2,500, and if you sign the Core Build within 14 days of that paid diagnostic, the $2,500 is credited in full toward the build.",
       },
       {
         question: "What do you need from the practice?",
         answer:
-          "The reports you already run, plus read access to the EHR or billing exports that those reports come from. Access is limited to what the review needs. The engagement can be done under a business associate agreement.",
+          "The reports you already run from athenahealth or eClinicalWorks. Nothing is reformatted first. Access is limited to what the review needs. Engagements are done under a signed business associate agreement and a confidentiality agreement. The files stay in your SharePoint.",
       },
       {
-        question: "What happens after the diagnostic?",
+        question: "Does the free diagnostic reduce the Core Build price?",
         answer:
-          "You keep the written report either way. If the fix plan calls for a dashboard, a revenue cycle repair, or diligence work, that is a separate scope. Nothing in the diagnostic commits you to a larger engagement.",
+          "No. The founding diagnostics are free, and the 14-day credit applies only when a diagnostic is paid. After the first 10, a $2,500 diagnostic is credited in full toward a Core Build signed within 14 days. The Core Build remains $8,500, or $9,500 for practices with five or more locations.",
       },
     ],
     definitionBlock:
-      "The Practice Operational Diagnostic from Harine Management is a $2,500 review of a medical practice's reporting, revenue cycle, and operations data, completed in under a week, and delivered as a written findings report with a prioritized fix plan.",
+      "The Reporting Diagnostic from Harine Management is a five-day review of an outpatient practice's reporting workflow. The list price is $2,500, and it is free for the first 10 clients. Paid diagnostics after that are credited in full toward a Core Build signed within 14 days.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -103,243 +105,224 @@ export const services: Service[] = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: "practice-analytics-system",
-    title: "Practice Analytics System",
-    shortTitle: "Practice Analytics",
-    metaTitle: "Practice Analytics System | Harine Management",
+    title: "Core Build",
+    shortTitle: "Core Build",
+    metaTitle: "Core Build | Harine Management",
     metaDescription:
-      "Power BI dashboards for medical practices, connected to athenahealth and eClinicalWorks. Volume, revenue, and provider views without another Excel export.",
-    heroHeadline: "Analytics built for decisions, not just reports.",
+      "Core Build is $8,500, or $9,500 for five or more locations. Three Power BI dashboards on your SharePoint folder, refreshed by Power Automate when a new file lands.",
+    heroHeadline: "Three Power BI dashboards. Fixed price.",
     heroSubheadline:
-      "We connect your EHR to a dashboard your CMO checks before their first meeting of the day — and keep it running so your team never has to.",
+      "$8,500, or $9,500 for practices with five or more locations. Set up on your SharePoint folder, with Power Automate refresh and a walkthrough for your team.",
     targetAudience: "practices",
     problemStatement:
-      "Medical practice leadership makes daily decisions on data that is two to three weeks old, assembled manually by someone who exports from the EHR and pastes it into a spreadsheet. The EHR contains everything needed to run the practice intelligently, but its native reporting is too slow, too fragmented, and too dependent on a person running a report for the information to reach the right desk in time to act on it.",
+      "The reports are already in athenahealth or eClinicalWorks. Leadership still waits on someone to export them and rebuild the workbook. Native report libraries were not built to compare locations, track providers against the benchmarks you already use, or show denials and AR without another spreadsheet.",
     solutionStatement:
-      "The Practice Analytics System is a fully managed analytics infrastructure that connects directly to your EHR and delivers a Power BI dashboard that updates every morning without human intervention. Volume, revenue, provider performance, and trend data are surfaced in a single executive view — maintained by Harine Management so your leadership simply opens it.",
+      "The Core Build maps the reports you already use, builds the data model, and stands up a practice dashboard, a provider dashboard, and billing views in Power BI. Your team exports those reports unchanged and drops them in a SharePoint folder. Power Automate triggers a refresh whenever a new file lands. There is no IT project, no integration with the EMR, and no EMR-vendor fee. The billing views — charges, payments, denials, and AR — are part of the scope and are not described as a finished product.",
     deliverables: [
-      "Daily patient volume dashboard by provider, location, and visit type",
-      "wRVU production tracking with month-over-month and year-over-year trend lines",
-      "Revenue and collection rate summary with live payer mix breakdown",
-      "Executive summary view designed for 60-second morning consumption",
-      "Automated EHR data pipeline with daily refresh and failure alerting",
-      "Onboarding, user training, and ongoing pipeline maintenance included",
+      "Practice dashboard: visits by location and visit type, month-over-month and year-over-year volume, cancellations by reason",
+      "Provider dashboard: patients seen per day, new patients in the month, work RVUs against the benchmarks you already set",
+      "Billing views from the billing reports you export: charges billed, paid, and denied, charges by billed code, AR and adjustments",
+      "SharePoint folder in your Microsoft 365 environment, with files dropped in as exported",
+      "Power Automate refresh when a new file lands",
+      "A walkthrough for your team",
     ],
     outcomes: [
-      { value: "Daily", label: "Dashboard refresh from the EHR, on a schedule" },
-      { value: "Yours", label: "The dashboard lives in your environment" },
-      { value: "Maintained", label: "Pipeline upkeep stays with Harine Management" },
+      { value: "$8,500", label: "$9,500 when the practice has five or more locations" },
+      { value: "Your folder", label: "Source files stay in your SharePoint" },
+      { value: "On drop", label: "Power Automate refreshes when a new file lands" },
     ],
     faqItems: [
       {
-        question:
-          "What EHR systems does the Practice Analytics System work with?",
+        question: "Which EMRs does the Core Build use?",
         answer:
-          "The Practice Analytics System is built for athenahealth (athenaOne) and eClinicalWorks. Other platforms that support a structured export can be assessed on the scoping call, with no obligation to continue.",
+          "athenahealth (athenaOne) and eClinicalWorks. The workflow is the standard report export you already run. Harine Management does not list other EMR platforms as a current capability.",
       },
       {
-        question:
-          "Does my practice need a data team or IT staff to run this?",
+        question: "Does the practice need an IT project?",
         answer:
-          "No. Harine Management builds and maintains the data pipeline. After go-live, the practice's job is to open the dashboard. Timing depends on EHR access and the views in scope, and it is set in writing before the build starts.",
+          "No. Someone on your team exports the reports the way you do today and drops the files into a SharePoint folder. Power BI transforms them. Power Automate refreshes the dashboards when a new file lands. There is no EMR integration and no vendor interface fee.",
       },
       {
-        question:
-          "Who owns the dashboard and the underlying data?",
+        question: "Where do the files live?",
         answer:
-          "The client owns everything — the Power BI dashboard is deployed inside your Microsoft 365 or cloud environment, and all underlying data flows into your own storage; Harine Management does not retain copies of your practice data.",
+          "In your Microsoft 365 / SharePoint environment. Engagements are done under a signed business associate agreement and a confidentiality agreement. Access is limited to the reports and fields the work needs.",
       },
       {
-        question:
-          "What happens when the EHR pushes an update that breaks the data connection?",
+        question: "Are the billing dashboards finished?",
         answer:
-          "When pipeline monitoring is part of the engagement, Harine Management is alerted if a refresh fails. EHR updates that break a connection are diagnosed and patched as part of that maintenance.",
+          "Billing views are part of the Core Build scope: charges billed, paid, and denied, charges by billed code, and AR and adjustments, from the billing reports you already export. They should not be described as a finished product. On the anonymized athenahealth engagement, the volume dashboard and the work RVU dashboard are in use, and the charges and collections views are still being built.",
       },
     ],
     definitionBlock:
-      "The Harine Management Practice Analytics System connects medical practice data from athenahealth and eClinicalWorks to a Power BI dashboard that refreshes on a schedule, and is maintained without an internal data team at the practice.",
+      "The Harine Management Core Build is a fixed-price setup of three Power BI dashboards for an outpatient practice. Unchanged athenahealth or eClinicalWorks report exports are dropped into the practice's SharePoint folder, and Power Automate refreshes the dashboards when a new file lands. The price is $8,500, or $9,500 for practices with five or more locations.",
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 2. Volume Analytics
+  // 2. Practice dashboard (volume)
   // ─────────────────────────────────────────────────────────────
   {
     slug: "volume-analytics",
-    title: "Volume Analytics",
-    shortTitle: "Volume Analytics",
-    metaTitle: "Volume Analytics for Medical Practices | Harine Management",
+    title: "Practice Dashboard",
+    shortTitle: "Practice Dashboard",
+    metaTitle: "Practice Dashboard | Harine Management",
     metaDescription:
-      "Real-time patient volume tracking by provider, location, and visit type — built on your EHR data and delivered daily in Power BI without manual exports.",
-    heroHeadline: "Know exactly how busy you are — and where, and why.",
+      "Patients seen by location and visit type, month-over-month and year-over-year volume, and cancellations by reason. Built from the reports you already export.",
+    heroHeadline: "Volume by location, without rebuilding the workbook.",
     heroSubheadline:
-      "Patient encounter volume by provider, location, visit type, and payer — updated daily from your EHR without a single manual export or scheduled report run.",
+      "Patients seen by location and by visit type. Month-over-month and year-over-year volume. Cancellations, broken down by reason. The dashboard updates when a new export lands in SharePoint.",
     targetAudience: "practices",
     problemStatement:
-      "Most practices know their total monthly visit count eventually — but they don't know which locations are running below capacity today, which providers have unfilled time this week, or which visit types are trending down before the revenue impact shows up in the P&L. Volume problems are invisible until they are expensive, and by the time a monthly report surfaces a dip, the window for corrective action has already closed.",
+      "To see volume by location, visit mix, or cancellations, someone runs several reports, copies them into Excel, and rebuilds the same workbook. In a group with five or more locations that can take hours, and the file is already behind by the time it is ready.",
     solutionStatement:
-      "Harine Management's Volume Analytics service builds a real-time patient encounter dashboard connected directly to your EHR, giving leadership daily visibility into encounter counts segmented by provider, location, visit type, payer, and time period. Trend lines surface changes early enough to act on them — capacity decisions are made with data rather than intuition and end-of-month surprises.",
+      "The practice dashboard is one of the three views in the Core Build. Your team exports the standard athenahealth or eClinicalWorks reports, unchanged, and drops them in a SharePoint folder. Power BI transforms those files. Power Automate refreshes the dashboard when a new file lands. There is no IT project and no EMR integration.",
     deliverables: [
-      "Daily patient encounter volume by provider and location",
-      "Visit type breakdown — new patients, established, follow-up, telehealth, and procedure visits",
-      "Payer mix by volume: commercial, Medicare, Medicaid, and self-pay split",
-      "Week-over-week and month-over-month trend visualization with variance highlighting",
-      "No-show and cancellation rate tracking where EHR data supports it",
-      "Capacity utilization view by provider and location relative to scheduled capacity",
+      "Patients seen by location and by visit type",
+      "Month-over-month and year-over-year volume",
+      "Cancellations, broken down by reason",
+      "Daily, weekly, and monthly trends when the exported reports include those dates",
+      "The same SharePoint drop used for the provider and billing views",
     ],
     outcomes: [
-      { value: "Daily", label: "Encounter counts, without a weekly spreadsheet" },
-      { value: "By site", label: "Volume split by provider, location, and visit type" },
-      { value: "Early", label: "A dip shows up before the monthly close" },
+      { value: "On drop", label: "Refreshes when a new export lands in SharePoint" },
+      { value: "By site", label: "Volume by location and visit type" },
+      { value: "Your reports", label: "No new fields and no reformatting" },
     ],
     faqItems: [
       {
-        question:
-          "Can volume analytics track telehealth visits separately from in-person encounters?",
+        question: "Does someone still export the volume reports?",
         answer:
-          "Yes — where the EHR records visit type or modality at the encounter level, Harine Management's volume dashboard segments telehealth separately from in-person visits, with independent trend lines and payer mix breakdowns for each visit modality.",
+          "Yes. That export is the workflow. Your team downloads the standard reports the same way you do today and drops the files into SharePoint as they are. Power BI does the rebuild that used to happen in Excel.",
       },
       {
-        question:
-          "How granular can the location-level breakdown be?",
+        question: "Does the dashboard update overnight on its own?",
         answer:
-          "Volume can be segmented by any location or facility identifier stored in the EHR, down to individual exam rooms if that data is captured at the encounter level; most multi-site practices use the provider-and-location combination as their standard view, with a roll-up to practice total.",
+          "No. Power Automate triggers a refresh when a new file lands in the SharePoint folder. If nobody exported a file, the dashboard does not invent a newer number.",
       },
       {
-        question:
-          "Can individual providers see only their own volume data without seeing colleagues' numbers?",
+        question: "Which EMRs does this use?",
         answer:
-          "Yes — Power BI row-level security allows Harine Management to configure provider-specific login views so individual physicians see only their own encounter data, while administrators and leadership retain access to the full cross-provider and cross-location view.",
+          "athenahealth and eClinicalWorks. The practice dashboard is part of the Core Build, priced at $8,500, or $9,500 for practices with five or more locations.",
       },
       {
-        question:
-          "Does volume analytics include scheduled appointment data or only completed encounters?",
+        question: "Can each provider be limited to their own numbers?",
         answer:
-          "The standard configuration uses completed encounter data from the EHR; where the EHR supports structured appointment export and the client wants forward-looking visibility, scheduled appointment data can be layered in alongside completed encounters to show the coming week's projected volume.",
+          "If the engagement needs separate views, that is scoped with the build. The standard leadership view compares locations and visit types in one Power BI report.",
       },
     ],
     definitionBlock:
-      "Volume Analytics from Harine Management is a healthcare practice intelligence service that delivers daily-updated patient encounter counts segmented by provider, location, visit type, and payer — extracted directly from EHR systems like Athenahealth and eClinicalWorks and surfaced in a Power BI dashboard without any manual reporting work, enabling practice leadership to identify volume trends and capacity gaps in real time.",
+      "The practice dashboard from Harine Management shows patients seen by location and visit type, volume trends, and cancellations by reason. It is built in Power BI from unchanged athenahealth or eClinicalWorks report exports dropped into the practice's SharePoint folder.",
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 3. Provider Productivity Analytics
+  // 3. Provider dashboard
   // ─────────────────────────────────────────────────────────────
   {
     slug: "provider-productivity-analytics",
-    title: "Provider Productivity Analytics",
-    shortTitle: "Provider Productivity",
-    metaTitle: "Provider Productivity Analytics | Harine Management",
+    title: "Provider Dashboard",
+    shortTitle: "Provider Dashboard",
+    metaTitle: "Provider Dashboard | Harine Management",
     metaDescription:
-      "Daily wRVU tracking, MGMA benchmarking, and goal attainment dashboards for medical practices — built from CPT-level EHR data, updated every morning.",
-    heroHeadline: "Every provider. Every wRVU. Every day.",
+      "Patients seen per day by provider, new patients in the month, and work RVUs against the benchmarks you already set. Refreshes when a new export is dropped in SharePoint.",
+    heroHeadline: "Work RVUs against the benchmarks you already set.",
     heroSubheadline:
-      "Individual productivity tracking built from CPT-level EHR data — benchmarked against MGMA national standards and updated daily in Power BI with role-level access for every provider.",
+      "Patients seen per day by provider. New patients in the month. Work RVUs, including wRVU per provider, from the reports you already export.",
     targetAudience: "practices",
     problemStatement:
-      "Physician compensation is increasingly tied to wRVU production, but most practices have no reliable way to see real-time productivity at the individual provider level. Quarterly spreadsheets arrive too late to course-correct, and providers who are underperforming against goal have no visibility into their own numbers until the annual compensation reconciliation — by which point the organization has already absorbed months of shortfall with no opportunity to intervene.",
+      "Provider productivity often lives in a spreadsheet that someone rebuilds after exporting several EHR reports. By the time leadership can compare providers, the week has moved on.",
     solutionStatement:
-      "Provider Productivity Analytics gives each provider and their leadership a daily view of wRVU production against goal, benchmarked against MGMA specialty-specific standards, with trend lines that surface underperformance weeks before it becomes a compensation conversation. Harine Management builds and maintains the dashboard from CPT-level EHR data, with role-level access so individual providers see their own numbers and department heads see the full cohort.",
+      "The provider dashboard is part of the Core Build. It uses the same SharePoint drop as the practice dashboard. Power BI calculates work RVUs from the exported reports and lines them up against the benchmarks the practice already uses. It refreshes when a new file lands. It is not a live feed from the EMR.",
     deliverables: [
-      "Individual wRVU production by month, rolling quarter, and rolling 12 months",
-      "Goal attainment tracking with variance highlighted — over, at, or under target",
-      "MGMA national benchmarking at the 25th, 50th, 75th, and 90th percentile by specialty",
-      "Visit volume by provider, visit type, and location with new-to-established patient ratio",
-      "Provider performance cohort view for department heads and CMOs",
-      "Role-secured individual provider login with self-service visibility into their own numbers",
+      "Patients seen per day by provider",
+      "New patients in the month",
+      "Work RVUs",
+      "wRVU per provider, so leadership can compare provider productivity side by side",
+      "Benchmarks the practice already set, not a new benchmark product",
     ],
     outcomes: [
-      { value: "Daily", label: "wRVU view, not a quarterly spreadsheet" },
-      { value: "MGMA", label: "Percentile context from the published report" },
-      { value: "Per provider", label: "Each physician can see their own numbers" },
+      { value: "wRVU", label: "Per provider, from the reports you export" },
+      { value: "Side by side", label: "Providers compared on the same definitions" },
+      { value: "On drop", label: "Refresh when a new file lands in SharePoint" },
     ],
     faqItems: [
       {
-        question:
-          "What is a wRVU and why is it the right metric for measuring physician productivity?",
+        question: "How are work RVUs calculated?",
         answer:
-          "A work relative value unit (wRVU) is the standard measure of physician productivity in ambulatory care — it quantifies clinical effort per encounter based on CPT code, is independent of payer reimbursement rates, and is the basis for physician compensation in the majority of productivity-based compensation models; tracking wRVUs at the individual provider level is the foundation of fair, transparent provider management because it measures effort rather than collections.",
+          "From the CPT detail in the reports the practice already exports. Harine Management applies the wRVU values those reports need and shows wRVU per provider. The practice does not reformat the file first.",
       },
       {
-        question:
-          "How does Harine Management calculate wRVU data from the EHR?",
+        question: "Do you publish MGMA percentiles as part of the dashboard?",
         answer:
-          "wRVU values are derived from the CPT codes recorded at each encounter in the EHR; Harine Management's data pipeline extracts encounter-level CPT data and applies the current CMS wRVU schedule to calculate production by provider and by day — without any manual compilation, and with automatic updates when CMS revises wRVU values annually.",
+          "The dashboard uses the benchmarks the practice already set. Harine Management does not sell a separate national-percentile product.",
       },
       {
-        question:
-          "Can providers access their own productivity dashboard without seeing colleagues' data?",
+        question: "Is this a separate purchase from the Core Build?",
         answer:
-          "Yes — Power BI row-level security is configured so each provider logs in and sees only their own wRVU production, goal attainment, and MGMA benchmarking, while department heads and CMOs retain an unrestricted view of the full provider cohort; individual provider access is included in the standard engagement at no additional cost.",
+          "No. The provider dashboard is one of the three views in the Core Build: $8,500, or $9,500 for practices with five or more locations.",
       },
       {
-        question:
-          "How current is the MGMA benchmarking data used for percentile rankings?",
+        question: "Is the work RVU view finished for the anonymized practice?",
         answer:
-          "Harine Management uses the most recent MGMA Physician Compensation and Production Report for benchmarking; the dataset is updated annually when the new MGMA report is published, and clients are proactively notified if their MGMA percentile rank changes materially when the new benchmarks are applied.",
+          "Yes. That engagement uses a volume dashboard and a work RVU dashboard, including wRVU per provider. Charges, collections, and the remaining financial comparisons from that engagement are still being built.",
       },
     ],
     definitionBlock:
-      "Provider Productivity Analytics from Harine Management is a daily-updated wRVU tracking and MGMA benchmarking service for medical practices that surfaces individual physician production against goal and against national specialty percentiles — built from CPT-level EHR encounter data and delivered in a role-secured Power BI dashboard that gives each provider self-service visibility into their own numbers.",
+      "The provider dashboard from Harine Management shows patients seen per day, new patients in the month, and work RVUs against the benchmarks a practice already set. It is built from athenahealth or eClinicalWorks report exports dropped into SharePoint.",
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 4. Revenue Cycle Analytics
+  // 4. Billing dashboard
   // ─────────────────────────────────────────────────────────────
   {
     slug: "revenue-cycle-analytics",
-    title: "Revenue Cycle Analytics",
-    shortTitle: "Revenue Cycle",
-    metaTitle: "Revenue Cycle Analytics | Harine Management",
+    title: "Billing Dashboard",
+    shortTitle: "Billing Dashboard",
+    metaTitle: "Billing Dashboard | Harine Management",
     metaDescription:
-      "AR aging, denial rates, collection rates, and payer mix dashboards built from EHR billing data — catch revenue cycle problems in days, not quarters.",
-    heroHeadline: "Know if the revenue is real before it reaches your bank account.",
+      "Charges billed, paid, and denied, with denial reasons, charges by billed code, and AR and adjustments. Part of the Core Build. Not described as a finished product.",
+    heroHeadline: "Billing views from the reports you already export.",
     heroSubheadline:
-      "Collection rates, AR aging, denial patterns, and payer mix — surfaced in real time from your EHR billing data so your finance team can act before the shortfall compounds.",
+      "Charges billed, paid, and denied, with denial reasons. Charges by billed code. AR and adjustments. These views are part of the build and are not described as finished.",
     targetAudience: "practices",
     problemStatement:
-      "Revenue cycle problems are easy to miss in a monthly summary. A collection rate can drift, AR over 90 days can accumulate, and a denial pattern can sit until someone happens to pull the right report. By the time the change shows in the financial statements, the encounters that caused it are already old.",
+      "Denials, charges, and AR usually take another set of exports and another Excel file. Leadership should not need a second workbook to see what the billing reports already contain.",
     solutionStatement:
-      "Revenue Cycle Analytics puts collection rates by payer, AR aging by bucket and provider, denial rates by CPT code, and net revenue per visit in one Power BI view, refreshed from EHR billing data. The point is to see a pattern while the encounters behind it can still be worked.",
+      "Billing views are the third part of the Core Build. They are built from the billing reports the practice already exports, dropped into the same SharePoint folder, and refreshed when a new file lands. The scope is charges billed, paid, and denied, with denial reasons; charges by billed code; and AR and adjustments. On the anonymized engagement, the volume and work RVU dashboards are in use, and the charges and collections views are still being built. Do not read this page as a claim that those views are finished.",
     deliverables: [
-      "AR aging dashboard: current, 30, 60, 90, and 120+ day buckets by provider and payer",
-      "Collection rate by payer and visit type with month-over-month trend lines",
-      "Denial rate by CPT code and payer with encounter volume and dollar impact quantified",
-      "Payer mix dashboard: commercial / Medicare / Medicaid / self-pay split tracked over time",
-      "Net revenue per visit by payer and CPT code",
-      "Reimbursement rate variance — actual amount collected vs. contracted rate by payer",
+      "Charges billed, paid, and denied, with denial reasons",
+      "Charges by billed code",
+      "AR and adjustments",
+      "The same SharePoint drop and Power Automate refresh as the other two dashboards",
+      "A scope confirmed against the reports the practice already runs",
     ],
     outcomes: [
-      { value: "By payer", label: "Collection rate, denial rate, and AR aging in one view" },
-      { value: "Daily", label: "Billing data refresh from the EHR" },
-      { value: "By code", label: "Denial patterns split by CPT code and payer" },
+      { value: "In scope", label: "Charges, denials, and AR from your billing exports" },
+      { value: "Modest", label: "Not described as a finished billing product" },
+      { value: "On drop", label: "Updates when a new billing file lands" },
     ],
     faqItems: [
       {
-        question:
-          "What is accounts receivable aging and why does it matter for a medical practice?",
+        question: "Are the billing dashboards finished?",
         answer:
-          "Accounts receivable aging is a breakdown of unpaid claims by how long they have been outstanding — typically segmented into current (0–30 days), 30–60, 60–90, and 90+ day buckets — and it is one of the most reliable indicators of billing health; AR that is heavily concentrated in the 90+ day bucket signals collection failures, payer adjudication problems, or billing workflow breakdowns that, if left unaddressed, typically result in permanent write-offs at a fraction of the billed amount.",
+          "They are part of the Core Build scope. They are not described as a finished product. For the anonymized multi-location practice on athenahealth, charges, collections, and the remaining financial comparisons are still being built. The volume dashboard and the work RVU dashboard from that engagement are in use.",
       },
       {
-        question:
-          "Can revenue cycle analytics identify which payers are paying slowly or reimbursing below contract?",
+        question: "Does this replace a billing company?",
         answer:
-          "Yes — Harine Management's payer-level analysis shows average days-to-payment by payer, actual collection rate vs. contracted rate, and denial frequency by payer and CPT code, which together identify whether a payer is systematically slow-paying, denying specific procedure codes at anomalous rates, or reimbursing below the negotiated fee schedule.",
+          "No. The billing dashboard reads the reports you already export. It does not submit claims, work denials, or renegotiate payer contracts.",
       },
       {
-        question:
-          "Does this replace a revenue cycle management company or billing team?",
+        question: "Where do the billing files go?",
         answer:
-          "No — Revenue Cycle Analytics is the measurement layer that tells you whether your RCM partner or internal billing team is performing and where the gaps are; it does not submit claims, manage denials, or renegotiate payer contracts, but it gives you the data to hold your RCM partner accountable with specificity rather than relying solely on the reports the RCM company produces about its own performance.",
+          "Into your SharePoint folder, unchanged. Engagements are done under a signed business associate agreement and a confidentiality agreement. Access is limited to the reports the work needs.",
       },
       {
-        question:
-          "How does Harine Management access billing data without compromising protected health information?",
+        question: "What does the billing view cost?",
         answer:
-          "Billing data is pulled through the EHR's approved export path and lands in the client's own environment. Harine Management does not keep a copy of the billing records. Access is limited to what the engagement needs, and the work can be done under a business associate agreement.",
+          "It is included in the Core Build: $8,500, or $9,500 for practices with five or more locations. It is not a separate integration.",
       },
     ],
     definitionBlock:
-      "Revenue Cycle Analytics from Harine Management is a real-time financial performance intelligence service for medical practices that surfaces accounts receivable aging, collection rates, denial patterns, and payer mix from EHR billing data in a daily-updated Power BI dashboard — enabling finance teams to identify and address revenue cycle problems days after they emerge rather than a quarter after they compound.",
+      "The billing dashboard from Harine Management is a Power BI view of charges, payments, denials, and AR, built from the billing reports a practice already exports into SharePoint. It is part of the Core Build and is not described as a finished product.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -356,6 +339,7 @@ export const services: Service[] = [
     heroSubheadline:
       "EHR-level due diligence analytics for healthcare investors acquiring medical practices — built from encounter data, not management summaries. The timeline is set to the deal calendar.",
     targetAudience: "investors",
+    listed: false,
     problemStatement:
       "Management-provided financials in a healthcare M&A process show you what leadership wants you to see. They don't show you the physician whose retirement timeline isn't in the data room, the payer mix shift that will compress margins in year one of ownership, or the AR aging that management has been managing with aggressive collection tactics that won't survive new ownership. The gap between what a practice reports and what its EHR encounter data actually shows is where deal risk lives — and standard financial due diligence doesn't reach it.",
     solutionStatement:
@@ -382,7 +366,7 @@ export const services: Service[] = [
       {
         question: "What EHR systems do you work with?",
         answer:
-          "The work is built for practices running athenahealth, eClinicalWorks, and other ambulatory platforms that can produce a structured export, including Epic, Kareo, and Greenway Health when the export is usable. The extraction approach is confirmed when the engagement is scoped.",
+          "Confirmed experience is athenahealth and eClinicalWorks. Other platforms are not a current capability.",
       },
       {
         question: "What data does the client need to provide?",
@@ -413,6 +397,7 @@ export const services: Service[] = [
     heroSubheadline:
       "Practice performance benchmarked across revenue, productivity, billing efficiency, volume, and payer mix — scored against MGMA national standards and regional peers, with a prioritized improvement roadmap.",
     targetAudience: "investors",
+    listed: false,
     problemStatement:
       "A practice that does not benchmark only knows its own trend — whether things are getting better or worse relative to last month, not relative to peers. A collection rate or a year-over-year productivity gain can look fine until it is set next to a published specialty benchmark. Without that context, a practice cannot tell a real gap from a stable result.",
     solutionStatement:
@@ -474,6 +459,7 @@ export const services: Service[] = [
     heroSubheadline:
       "Post-acquisition analytics for PE-backed medical practices — a KPI baseline, reporting shaped to the portfolio cadence, and a dashboard in place before improvement work is judged.",
     targetAudience: "investors",
+    listed: false,
     problemStatement:
       "Most medical practice acquisitions close without functioning analytics infrastructure. The practice has been running on a billing company, tribal knowledge, and a practice manager who knows where everything is. After close, the investor needs operational visibility the practice has never had to provide, and there is no baseline to measure a value-creation plan against.",
     solutionStatement:
@@ -482,7 +468,7 @@ export const services: Service[] = [
       "Post-close EHR data pipeline, scoped once data access is granted",
       "Month 1 baseline KPI report: volume, revenue, provider productivity, collection rate, and AR aging",
       "Standardized monthly reporting package aligned with PE portfolio reporting cadence and format",
-      "Early-warning KPI monitoring with threshold alerts for metric deterioration in real time",
+      "KPI monitoring against thresholds the engagement agrees in writing",
       "Multi-practice portfolio dashboard for firms with more than one healthcare holding",
       "Month 3 and Month 6 milestone reports with variance analysis vs. acquisition-date baseline",
     ],
@@ -521,64 +507,58 @@ export const services: Service[] = [
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 8. AI Insights Layer
+  // 8. AI Insights — not a current offer. URL kept so older links resolve.
   // ─────────────────────────────────────────────────────────────
   {
     slug: "ai-insights-layer",
-    title: "AI Insights Layer",
+    title: "AI Insights",
     shortTitle: "AI Insights",
-    metaTitle: "AI Insights Layer for Medical Practices | Harine Management",
+    metaTitle: "AI Insights | Harine Management",
     metaDescription:
-      "Anomaly detection, weekly natural language performance summaries, and predictive threshold alerts layered on your Harine Management analytics infrastructure.",
-    heroHeadline: "The dashboard shows you the data. The AI layer tells you what it means.",
+      "Harine Management does not sell an AI insights layer. The current offer is Power BI dashboards from the reports you already export.",
+    heroHeadline: "AI Insights is not a current offer.",
     heroSubheadline:
-      "Automated anomaly detection, natural language weekly performance narratives, and predictive threshold alerts built on top of your existing analytics infrastructure — no data science team required.",
+      "Harine Management does not sell anomaly detection, natural-language summaries, or predictive alerts. The work is Power BI dashboards from the reports you already export.",
     targetAudience: "practices",
+    listed: false,
     problemStatement:
-      "A dashboard that shows you the numbers is valuable. A dashboard that tells you something is wrong before you notice it is transformative. Most practice leadership teams do not have the bandwidth to monitor every KPI every day — they open the dashboard when they remember to, spot the metrics that look obviously off, and miss the subtle trends that compound into expensive problems because no one was watching when the pattern started.",
+      "An AI insights layer is not part of the offer. Selling one would describe a product that is not shipped.",
     solutionStatement:
-      "The AI Insights Layer sits on top of your existing Harine Management analytics infrastructure and adds three capabilities: automated statistical anomaly detection that flags metric deviations before they become visible to the naked eye, a weekly natural language summary that translates dashboard data into a readable performance narrative, and predictive threshold alerts that fire before a KPI crosses a critical boundary — not after.",
+      "The current offer is a Reporting Diagnostic, a Core Build of three Power BI dashboards, and a monthly retainer. Your team exports athenahealth or eClinicalWorks reports and drops them in SharePoint. Power Automate refreshes the dashboards when a new file lands.",
     deliverables: [
-      "Automated anomaly detection across volume, revenue, productivity, and billing KPIs",
-      "Weekly natural language performance summary — readable leadership briefing in under 2 minutes",
-      "Predictive threshold alerts: fires before AR aging, collection rate, or volume crosses a defined limit",
-      "Month-over-month and year-over-year variance commentary generated automatically from dashboard data",
-      "Insight prioritization — surfaces the 2 to 3 metrics most deserving attention each week",
-      "Email or Microsoft Teams notification delivery for alert and weekly summary distribution",
+      "This page is kept so older links still open",
+      "It is not a product you can buy",
+      "Book a 30-minute call if you want the Reporting Diagnostic or the Core Build",
     ],
     outcomes: [
-      { value: "Weekly", label: "A short written note, instead of scanning every chart" },
-      { value: "Thresholds", label: "Alerts use limits you set, on metrics you already track" },
-      { value: "Managed", label: "No data science hire required at the practice" },
+      { value: "Not offered", label: "No AI insights product" },
+      { value: "Power BI", label: "Dashboards from the reports you export" },
+      { value: "SharePoint", label: "Files stay in your tenant" },
     ],
     faqItems: [
       {
-        question:
-          "What AI technology does the AI Insights Layer use?",
+        question: "Do you sell an AI insights layer?",
         answer:
-          "The AI Insights Layer uses large language model APIs to generate natural language trend summaries and performance narratives from structured dashboard data, and statistical threshold modeling on the underlying time-series data for anomaly detection; no proprietary patient data is sent to any external AI system — only aggregated, de-identified metric values such as collection rate, wRVU totals, and encounter counts.",
+          "No. Harine Management does not sell anomaly detection, natural-language performance summaries, or predictive alerts.",
       },
       {
-        question:
-          "Does a practice need an AI subscription or internal data science team to use this?",
+        question: "What do you sell instead?",
         answer:
-          "No — the AI Insights Layer is a fully managed add-on to Harine Management's existing analytics infrastructure; Harine Management handles all configuration, model calibration, threshold tuning, and narrative generation; the practice receives finished weekly summaries and real-time alerts without any internal technical resources.",
+          "A Reporting Diagnostic (list price $2,500, free for our first 10 clients), a Core Build at $8,500 or $9,500 for five or more locations, and a retainer of $1,000 to $1,250 a month.",
       },
       {
-        question:
-          "What kinds of anomalies does the AI layer detect and surface?",
+        question: "How do the dashboards get their data?",
         answer:
-          "The AI layer detects deviations from expected patterns across all tracked KPIs — a collection rate that drops more than two standard deviations from its trailing 4-week average, a provider's wRVU that falls significantly below their historical baseline, an AR aging bucket that grows faster than the trend, or a payer mix shift that exceeds a defined threshold — all ranked by estimated financial impact before being surfaced to leadership.",
+          "Someone exports the reports the practice already runs and drops the files into SharePoint. Power BI transforms them. Power Automate refreshes when a new file lands.",
       },
       {
-        question:
-          "How is patient data protected when AI processes practice performance metrics?",
+        question: "How is practice data handled?",
         answer:
-          "The AI Insights Layer is meant to read aggregated metrics, not patient records. A typical input is a metric and its recent average, not a chart. No protected health information should be sent to an external model. If the engagement needs it, the work is done under a business associate agreement, and access stays limited to the fields the summary needs. Harine Management does not hold a HIPAA certification.",
+          "Engagements are done under a signed business associate agreement and a confidentiality agreement. Source files stay in the client's SharePoint. Access is limited to the reports the work needs.",
       },
     ],
     definitionBlock:
-      "The AI Insights Layer from Harine Management is an automated analytics enhancement that adds statistical anomaly detection, weekly natural language performance summaries, and predictive threshold alerts on top of an existing practice analytics infrastructure — enabling medical practice leadership to receive proactive notification of metric deviations and readable weekly performance briefings without monitoring dashboards manually or employing internal data science resources.",
+      "Harine Management does not offer an AI insights layer. The current work is Power BI dashboards built from athenahealth or eClinicalWorks report exports dropped into the client's SharePoint folder.",
   },
 ];
 
@@ -588,4 +568,8 @@ export function getServiceBySlug(slug: string): Service | undefined {
 
 export function getServicesByAudience(audience: TargetAudience): Service[] {
   return services.filter((s) => s.targetAudience === audience);
+}
+
+export function isListedService(service: Service): boolean {
+  return service.listed !== false;
 }

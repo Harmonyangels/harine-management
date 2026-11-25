@@ -3,33 +3,28 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_SCHEMA, CONTACT_PHONE_TEL } from "@/lib/contact";
+import {
+  CORE_BUILD_PRICE,
+  CORE_BUILD_PRICE_FIVE_PLUS,
+  DIAGNOSTIC_CREDIT,
+  DIAGNOSTIC_FOUNDING,
+  DIAGNOSTIC_LIST_PRICE,
+  RETAINER_PRICE,
+} from "@/lib/offer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Atlanta Healthcare Consulting | Devanshu Patel" },
+  title: { absolute: "About Harine Management | Devanshu Patel" },
   description:
-    "Devanshu Patel runs Harine Management, an Atlanta healthcare consulting practice for medical practice analytics, athenahealth reporting, and Power BI dashboards.",
-  alternates: {
-    canonical: "/about",
-  },
+    "Harine Management LLC is a solo healthcare reporting consultancy in Atlanta. Devanshu Patel builds Power BI dashboards for outpatient practices on athenahealth or eClinicalWorks.",
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "Atlanta Healthcare Consulting | Devanshu Patel",
+    title: "About Harine Management | Devanshu Patel",
     description:
-      "Devanshu Patel, founder of Harine Management in Atlanta. Medical practice analytics, Power BI dashboards, and healthcare investor diligence.",
+      "Devanshu Patel does the work. Atlanta. Business associate agreements are signed. Monday–Friday, 9 a.m.–6 p.m. ET.",
     url: "https://harinemanagement.com/about",
   },
 };
-
-const services = [
-  { slug: "practice-operational-diagnostic", title: "Practice Operational Diagnostic",    audience: "practices" },
-  { slug: "practice-analytics-system",       title: "Practice Analytics System",         audience: "practices" },
-  { slug: "volume-analytics",                title: "Volume Analytics",                   audience: "practices" },
-  { slug: "provider-productivity-analytics", title: "Provider Productivity Analytics",    audience: "practices" },
-  { slug: "revenue-cycle-analytics",         title: "Revenue Cycle Analytics",            audience: "practices" },
-  { slug: "ai-insights-layer",               title: "AI Insights Layer",                  audience: "practices" },
-  { slug: "due-diligence-analytics",         title: "Due Diligence Analytics",            audience: "investors" },
-  { slug: "practice-performance-scoring",    title: "Practice Performance Scoring",       audience: "investors" },
-  { slug: "post-acquisition-intelligence",   title: "Post-Acquisition Intelligence",      audience: "investors" },
-];
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -37,61 +32,23 @@ const personSchema = {
   "@id": "https://harinemanagement.com/#devanshu-patel",
   name: "Devanshu Patel",
   url: "https://harinemanagement.com/about",
-  jobTitle: "Healthcare Data Analytics Consultant",
+  jobTitle: "Founder, Harine Management LLC",
   description:
-    "Devanshu Patel is the founder of Harine Management, a healthcare data analytics firm that builds EHR-connected analytics systems for medical practices and private equity firms. He specializes in extracting, structuring, and visualizing clinical and billing data from electronic health record systems — translating raw EHR encounter data into operational dashboards and investment-grade analytics that practice leadership and healthcare investors use to make daily decisions.",
+    "Devanshu Patel is the founder of Harine Management LLC, a solo healthcare reporting consultancy in Atlanta. He builds Power BI dashboards for multi-location outpatient practices on athenahealth or eClinicalWorks from the report exports those practices already run.",
   worksFor: {
     "@type": "Organization",
     "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
+    name: "Harine Management LLC",
     url: "https://harinemanagement.com",
   },
-  founder: {
-    "@type": "Organization",
-    "@id": "https://harinemanagement.com/#organization",
-    name: "Harine Management",
-  },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "University of Texas at Arlington",
-    url: "https://www.uta.edu",
-  },
   knowsAbout: [
-    "Healthcare data analytics",
-    "EHR data extraction and pipeline engineering",
-    "Revenue cycle management analytics",
-    "wRVU physician productivity tracking",
-    "MGMA benchmarking",
-    "Healthcare private equity due diligence",
-    "Practice performance analytics",
-    "Power BI for healthcare operations",
-    "Medical practice financial operations",
-    "Payer mix analysis",
-    "Accounts receivable aging analysis",
-    "Healthcare M&A analytics",
-    "AI-assisted clinical documentation",
-    "Athenahealth and eClinicalWorks data integration",
-    "Provider concentration risk modeling",
-    "Post-acquisition analytics infrastructure",
+    "Power BI for medical practices",
+    "athenahealth reporting",
+    "eClinicalWorks reporting",
+    "SharePoint and Power Automate refresh",
+    "wRVU provider productivity",
+    "Outpatient practice reporting",
   ],
-  hasOccupation: {
-    "@type": "Occupation",
-    name: "Healthcare Data Analytics Consultant",
-    occupationLocation: {
-      "@type": "City",
-      name: "Atlanta",
-    },
-    description:
-      "Building EHR-connected analytics systems, provider productivity dashboards, revenue cycle intelligence, and due diligence analytics for medical practices and private equity firms acquiring healthcare companies.",
-    skills: [
-      "EHR data extraction (Athenahealth, eClinicalWorks, Epic)",
-      "Power BI dashboard development",
-      "Revenue cycle analytics",
-      "wRVU productivity tracking",
-      "Healthcare due diligence analytics",
-      "AI-enhanced practice intelligence",
-    ],
-  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Atlanta",
@@ -99,7 +56,7 @@ const personSchema = {
     addressCountry: "US",
   },
   email: "dev@harinemanagement.com",
-  telephone: "+1-682-256-3389",
+  telephone: CONTACT_PHONE_SCHEMA,
   sameAs: [
     "https://www.linkedin.com/in/devanshu-patel",
     "https://harinemanagement.com",
@@ -112,49 +69,21 @@ const webPageSchema = {
   "@id": "https://harinemanagement.com/about#webpage",
   name: "About Devanshu Patel | Harine Management",
   description:
-    "Authoritative entity page for Devanshu Patel, founder of Harine Management, and information about the firm's healthcare data analytics services.",
+    "About Devanshu Patel and Harine Management LLC, a solo healthcare reporting consultancy in Atlanta.",
   url: "https://harinemanagement.com/about",
   inLanguage: "en-US",
-  about: {
-    "@id": "https://harinemanagement.com/#devanshu-patel",
-  },
-  publisher: {
-    "@id": "https://harinemanagement.com/#organization",
-  },
-  speakable: {
-    "@type": "SpeakableSpecification",
-    cssSelector: [".about-entity-description", ".about-background-body"],
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://harinemanagement.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: "https://harinemanagement.com/about",
-      },
-    ],
-  },
+  about: { "@id": "https://harinemanagement.com/#devanshu-patel" },
+  publisher: { "@id": "https://harinemanagement.com/#organization" },
 };
 
 export default function AboutPage() {
   return (
     <>
-      {/* React 19 hoists this <link> to <head> — used by AI engines to verify entity identity */}
       <link rel="me" href="https://www.linkedin.com/in/devanshu-patel" />
-
       <JsonLd schema={personSchema} />
       <JsonLd schema={webPageSchema} />
       <Nav />
 
-      {/* ── HERO ── */}
       <section className="service-hero">
         <div className="service-hero-inner">
           <div className="eyebrow faint">
@@ -163,189 +92,75 @@ export default function AboutPage() {
           </div>
           <h1>Devanshu Patel</h1>
           <p className="service-subhead">
-            Founder, Harine Management · Healthcare Data Analytics Consultant · Atlanta, GA
+            Founder, Harine Management LLC · Atlanta, Georgia
           </p>
-
           <div className="definition-block about-entity-description">
             <p>
-              Devanshu Patel is the founder of Harine Management, a healthcare data analytics
-              firm that builds EHR-connected analytics systems for medical practices and private
-              equity firms across the United States. He specializes in extracting, structuring,
-              and visualizing clinical and billing data from electronic health record systems —
-              translating raw EHR encounter data into the operational dashboards and
-              investment-grade analytics that practice leadership and healthcare investors use to
-              make daily decisions.
+              Harine Management LLC is a solo healthcare reporting consultancy in Atlanta. Devanshu Patel does the work. The offer is Power BI dashboards for independent and physician-owned outpatient groups on athenahealth or eClinicalWorks that are still rebuilding reports in Excel.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── BACKGROUND ── */}
       <section className="service-section">
-        <div className="service-section-inner">
-          <h2 className="service-section-title">Background</h2>
-          <div className="about-background-body">
-            <p style={{ marginBottom: "1.5rem" }}>
-              Devanshu Patel holds an engineering degree from the University of Texas at
-              Arlington, where he developed the systems-design and data-modeling foundations
-              that underpin Harine Management&apos;s technical approach. His transition from
-              engineering into healthcare began with direct work in medical practice
-              operations and revenue cycle management — roles that gave him ground-level
-              visibility into how practices actually run, where EHR data lives, and why
-              the native reporting built into those systems consistently falls short of what
-              practice leadership actually needs to make decisions.
-            </p>
-            <p style={{ marginBottom: "1.5rem" }}>
-              That intersection — engineering rigor applied to healthcare operations problems — is
-              the foundation of Harine Management. Most healthcare analytics projects fail not
-              because the data isn&apos;t there, but because the technical infrastructure to extract,
-              normalize, and surface it automatically is never built. Devanshu builds that
-              infrastructure: EHR data pipelines that run nightly without human intervention,
-              Power BI dashboards calibrated for how a CMO actually reviews information before
-              their first meeting of the day, and due diligence analytics that give PE firms
-              what financial statements alone cannot show — the clinical and operational truth
-              beneath reported earnings.
-            </p>
-            <p>
-              Harine Management is based in Atlanta, Georgia, and serves medical practices and
-              healthcare investors nationwide. Engagements are conducted remotely, with data
-              access established through each client&apos;s EHR platform using approved API
-              connections. Engagements can be done under a business associate agreement, and access is limited to the fields the work needs. Harine Management does not hold a HIPAA certification.
-            </p>
-          </div>
+        <div className="service-section-inner about-background-body">
+          <h2 className="service-section-title">The work</h2>
+          <p className="body-copy" style={{ marginBottom: "1.25rem" }}>
+            A client drops unchanged report exports from athenahealth or eClinicalWorks into a SharePoint folder. Power BI transforms those files into a practice dashboard, a provider dashboard (including work RVUs), and billing views. Power Automate refreshes the dashboards when a new file lands. There is no IT project and no EMR-vendor integration.
+          </p>
+          <p className="body-copy" style={{ marginBottom: "1.25rem" }}>
+            Confirmed EMR experience is athenahealth (athenaOne) and eClinicalWorks. The practice is based in Atlanta and serves outpatient groups in the Southeast. Hours are Monday–Friday, 9 a.m.–6 p.m. ET.
+          </p>
+          <p className="body-copy">
+            Engagements are done under a signed business associate agreement and a confidentiality agreement. We ask only for the reports and fields the work needs. The source files remain in the client&apos;s Microsoft 365 / SharePoint environment.
+          </p>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
       <section className="service-section" style={{ background: "var(--stone-light)" }}>
         <div className="service-section-inner">
-          <h2 className="service-section-title">Services offered</h2>
-          <p style={{ marginBottom: "2rem" }}>
-            Services are split between medical practices and healthcare investors. The entry offer for practices is a $2,500 operational diagnostic.
+          <h2 className="service-section-title">Who it is for</h2>
+          <p className="body-copy" style={{ marginBottom: "1.25rem" }}>
+            Independent and physician-owned outpatient groups, typically three or more locations, especially five or more. Orthopedics, GI, dermatology, cardiology, pediatrics, urgent care, physical therapy, and women&apos;s health are a natural fit.
           </p>
-
-          <div className="about-services-group">
-            <div className="about-services-label">For Medical Practices</div>
-            <ul className="deliverables-list">
-              {services
-                .filter((s) => s.audience === "practices")
-                .map((s) => (
-                  <li key={s.slug}>
-                    <Link href={`/services/${s.slug}`} className="about-service-link">
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-
-          <div className="about-services-group" style={{ marginTop: "2rem" }}>
-            <div className="about-services-label">For PE &amp; Healthcare Investors</div>
-            <ul className="deliverables-list">
-              {services
-                .filter((s) => s.audience === "investors")
-                .map((s) => (
-                  <li key={s.slug}>
-                    <Link href={`/services/${s.slug}`} className="about-service-link">
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ── EXPERTISE ── */}
-      <section className="service-section">
-        <div className="service-section-inner">
-          <h2 className="service-section-title">Areas of expertise</h2>
-          <p style={{ marginBottom: "2rem" }}>
-            Harine Management&apos;s work spans the intersection of EHR data engineering,
-            healthcare financial operations, and private equity analytics.
-          </p>
-          <div className="about-expertise-grid">
-            {[
-              {
-                topic: "EHR Data Extraction",
-                desc: "API and export-based pipelines from Athenahealth, eClinicalWorks, Epic, Kareo, and Greenway Health.",
-              },
-              {
-                topic: "Revenue Cycle Analytics",
-                desc: "AR aging, denial rate, collection rate, and payer mix dashboards built from EHR billing data.",
-              },
-              {
-                topic: "Provider Productivity Tracking",
-                desc: "Daily wRVU production by provider, benchmarked against MGMA specialty percentiles.",
-              },
-              {
-                topic: "Healthcare Due Diligence",
-                desc: "EHR-level pre-close analytics for PE firms — provider concentration, payer mix trajectory, revenue integrity.",
-              },
-              {
-                topic: "Post-Acquisition Analytics",
-                desc: "Baseline KPI infrastructure and portfolio-standard reporting for newly acquired practices.",
-              },
-              {
-                topic: "AI-Enhanced Insights",
-                desc: "Automated anomaly detection and natural-language weekly performance summaries layered on existing infrastructure.",
-              },
-            ].map(({ topic, desc }) => (
-              <div key={topic} className="audience-feature">
-                <div className="audience-feature-title">{topic}</div>
-                <div className="audience-feature-desc">{desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRIES ── */}
-      <section className="service-section" style={{ background: "var(--stone-light)" }}>
-        <div className="service-section-inner">
-          <h2 className="service-section-title">Industries and client types served</h2>
-          <ul className="deliverables-list" style={{ marginTop: "1.5rem" }}>
-            {[
-              "Independent medical practices — primary care, specialty, and multi-location groups",
-              "Private equity firms and healthcare-focused investment funds acquiring physician practices",
-              "PE-backed physician groups requiring post-acquisition analytics infrastructure",
-              "Urgent care operators managing volume, throughput, and revenue cycle at scale",
-              "Health system–affiliated practices and hospital-owned physician groups",
-              "Healthcare investors conducting pre-LOI and pre-close due diligence on ambulatory targets",
-            ].map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+          <ul className="deliverables-list">
+            <li>
+              <Link href="/services/practice-operational-diagnostic" className="about-service-link">
+                Reporting Diagnostic — {DIAGNOSTIC_LIST_PRICE}. {DIAGNOSTIC_FOUNDING}.
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/practice-analytics-system" className="about-service-link">
+                Core Build — {CORE_BUILD_PRICE}, or {CORE_BUILD_PRICE_FIVE_PLUS} for five or more locations
+              </Link>
+            </li>
+            <li>Retainer — {RETAINER_PRICE}</li>
+            <li>
+              <Link href="/case-study" className="about-service-link">Anonymized case study</Link>
+            </li>
           </ul>
+          <p className="body-copy" style={{ marginTop: "1.25rem" }}>{DIAGNOSTIC_CREDIT}</p>
         </div>
       </section>
 
-      {/* ── CONTACT & LOCATION ── */}
       <section className="service-section">
         <div className="service-section-inner">
-          <h2 className="service-section-title">Location &amp; contact</h2>
-          <p style={{ marginBottom: "2rem" }}>
-            Harine Management is based in Atlanta, Georgia. All engagements are conducted
-            remotely, serving medical practices and healthcare investors across the United States.
-          </p>
+          <h2 className="service-section-title">Location and contact</h2>
           <div className="about-contact-grid">
             <div className="contact-card">
               <div className="contact-icon crimson" aria-hidden="true">✉</div>
               <div>
                 <div className="contact-label">Email</div>
-                <a href="mailto:dev@harinemanagement.com" className="contact-value">
-                  dev@harinemanagement.com
-                </a>
-                <div className="contact-note">Typically responds within one business day</div>
+                <a href="mailto:dev@harinemanagement.com" className="contact-value">dev@harinemanagement.com</a>
+                <div className="contact-note">Harine Management LLC</div>
               </div>
             </div>
             <div className="contact-card">
               <div className="contact-icon crimson" aria-hidden="true">☎</div>
               <div>
                 <div className="contact-label">Phone</div>
-                <a href="tel:+16822563389" className="contact-value">
-                  +1 (682) 256-3389
-                </a>
-                <div className="contact-note">Central time zone</div>
+                <a href={CONTACT_PHONE_TEL} className="contact-value">{CONTACT_PHONE_DISPLAY}</a>
+                <div className="contact-note">Monday–Friday, 9 a.m.–6 p.m. ET</div>
               </div>
             </div>
             <div className="contact-card">
@@ -353,37 +168,31 @@ export default function AboutPage() {
               <div>
                 <div className="contact-label">Location</div>
                 <span className="contact-value">Atlanta, Georgia</span>
-                <div className="contact-note">Serving practices nationwide, remotely</div>
+                <div className="contact-note">Serving outpatient groups in the Southeast</div>
               </div>
             </div>
             <div className="contact-card">
               <div className="contact-icon crimson" aria-hidden="true">in</div>
               <div>
                 <div className="contact-label">LinkedIn</div>
-                <a
-                  href="https://www.linkedin.com/in/devanshu-patel"
-                  className="contact-value"
-                  rel="me noopener noreferrer"
-                  target="_blank"
-                >
+                <a href="https://www.linkedin.com/in/devanshu-patel" className="contact-value" rel="me noopener noreferrer" target="_blank">
                   linkedin.com/in/devanshu-patel
                 </a>
-                <div className="contact-note">Professional profile and updates</div>
+                <div className="contact-note">Devanshu Patel</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section className="service-cta">
         <div className="service-cta-inner">
           <h2>Book a 30-minute call.</h2>
           <p>
-            Email dev@harinemanagement.com. The practice entry offer is a $2,500 diagnostic, finished in under a week.
+            {DIAGNOSTIC_FOUNDING}. List price {DIAGNOSTIC_LIST_PRICE}. The call is how you claim it.
           </p>
-          <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
-            Book a 30-minute call
+          <a href={BOOK_CALL_HREF} target="_blank" rel="noopener noreferrer" className="btn btn-white">
+            {BOOK_CALL_LABEL}
           </a>
         </div>
       </section>

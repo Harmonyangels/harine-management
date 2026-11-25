@@ -51,7 +51,7 @@ The quieter failure is reputational. After enough instances of a report that sho
 
 This is not irrational behavior. EHR reports have edge cases. Filters exclude encounters they shouldn't. Date ranges sometimes include or exclude claims based on submission date vs. service date vs. payment date in ways that aren't obvious. Numbers that look wrong often are wrong, and anyone who has spent time debugging an EHR report knows this.
 
-The [AI-assisted analytics layer](https://harinemanagement.com/services/ai-insights-layer) that Harine Management builds includes anomaly detection specifically because of this trust problem. When a metric moves outside its expected range, the system surfaces it proactively — which means the analytics layer is constantly self-auditing and surfacing data quality issues before they create decisions based on bad numbers.
+Harine Management does not sell an AI layer on top of the dashboard. The practical fix is a dashboard leadership will actually open, built from the reports the practice already exports.
 
 ## What a Leadership-Calibrated Analytics Layer Looks Like
 
@@ -65,7 +65,7 @@ That means:
 
 The goal is to make the daily review take two minutes for leadership and produce a clear answer to "are we on track?" — and to make the detailed investigation, when something is off, take another three minutes rather than an afternoon of report-running.
 
-[Harine Management's practice analytics implementation](https://harinemanagement.com/services/practice-analytics-system) is built on this design principle. The pipeline runs on a schedule, so the practice is not rebuilding the same report by hand. Leadership opens the dashboard; the refresh is not a Friday task.
+[The Core Build](https://harinemanagement.com/services/practice-analytics-system) is built on that idea. Someone still exports the reports. They drop the files in SharePoint, Power BI does the rebuild, and Power Automate refreshes the dashboards when a new file lands.
 
 **Tired of waiting for reports that don't answer the right questions?** [Schedule a discovery call](https://harinemanagement.com/#contact) to see what a properly instrumented practice analytics layer looks like.
 

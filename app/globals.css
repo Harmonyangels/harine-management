@@ -181,6 +181,7 @@ nav {
   max-width: 480px;
   margin-bottom: 40px;
 }
+.hero-sub.wide { max-width: 560px; }
 .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .hero-note {
   margin-top: 18px;
@@ -602,6 +603,8 @@ section.alt { background: var(--stone-light); }
 
 /* ── HOW IT WORKS ── */
 .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+.steps.steps-3 { grid-template-columns: repeat(3, 1fr); }
+.steps.steps-3::before { left: 16.66%; right: 16.66%; }
 .steps::before {
   content: '';
   position: absolute;
@@ -808,7 +811,9 @@ footer {
   .hero-visual { display: none; }
   .trust-inner { padding: 0 24px; }
   .expertise-strip-inner { padding: 0 24px; }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid, .offer-grid, .dash-grid { grid-template-columns: 1fr; }
+  .steps.steps-3 { grid-template-columns: 1fr; }
+  .steps.steps-3::before { display: none; }
   .split, .split.reverse { grid-template-columns: 1fr; direction: ltr; }
   .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
   .steps::before { display: none; }
@@ -1458,3 +1463,49 @@ footer {
 .score-report a:hover { color: var(--crimson-dark); }
 .score-report blockquote { border-left: 3px solid var(--crimson); padding-left: 1.25rem; margin: 1.5rem 0; color: var(--ink-mid); font-style: italic; }
 .score-report hr { border: none; border-top: 1px solid var(--stone); margin: 2rem 0; }
+
+/* ── OFFER LADDER ── */
+.prose-narrow { max-width: 720px; }
+.prose-narrow p + p,
+.body-copy + .body-copy { margin-top: 16px; }
+.body-copy {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.75;
+}
+.audience-line {
+  margin-top: 28px;
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+.offer-grid, .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.offer-price {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin: 8px 0 8px;
+}
+.service-card .offer-price-note {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--crimson);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+.founding-flag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  background: rgba(184,48,48,0.08);
+  border: 1px solid rgba(184,48,48,0.15);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
