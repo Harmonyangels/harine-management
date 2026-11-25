@@ -116,7 +116,7 @@ export default function GlossaryPage() {
         <div className="service-cta-inner">
           <h2>Put these metrics to work in your practice.</h2>
           <p>
-            Book a 30-minute call at dev@harinemanagement.com.
+            Book a 30-minute call. The Reporting Diagnostic is $2,500, and free for our first 10 clients.
           </p>
           <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
             Book a 30-minute call

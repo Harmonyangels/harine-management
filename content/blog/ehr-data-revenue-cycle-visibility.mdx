@@ -39,18 +39,9 @@ When we build a revenue cycle analytics layer for a practice, the first thing we
 
 **Referral completion rates.** How often does a referral order placed in your EHR result in a completed downstream visit? Low completion rates matter for quality metrics (especially in value-based contracts) and can signal care coordination gaps that affect both outcomes and revenue.
 
-## Building the Pipeline
+## How the files actually move
 
-Getting this data out of an EHR is not trivial. Most systems expose some combination of APIs, report exports, and (regrettably) manual extracts. The goal is to move from a monthly report pull to a near-real-time data layer that your team can actually query.
-
-The architecture we've built for practices on Epic looks roughly like this:
-
-1. FHIR R4 API pull for encounter and claim-adjacent data
-2. Nightly flat-file export for financial transaction records
-3. A lightweight transformation layer that joins encounters to claims at the visit level
-4. A dashboard layer (we typically use Looker or a practice-managed BI tool) that surfaces the metrics above
-
-For smaller practices on athenahealth or eClinicalWorks, the API surface is narrower but the core join is still achievable. The data model just looks different.
+Harine Management does not build an API or a nightly interface into the EMR. For athenahealth and eClinicalWorks, the workflow is the export the practice already runs. Those files go into a SharePoint folder unchanged. Power BI transforms them, and Power Automate refreshes the dashboards when a new file lands. Epic is not a current capability, and neither is a separate data-platform tool.
 
 ## The Metrics That Matter
 
@@ -69,4 +60,4 @@ If your current analytics setup can't produce these three numbers by provider in
 - **Documentation lag is a leading indicator**: the gap between encounter date and note finalization predicts denial rate weeks before a claim hits a payer.
 - **The critical join**: connecting encounter-level EHR data to claims data at the visit level reveals patterns invisible to billing platforms — provider documentation habits, CPT code drift, and referral completion rates.
 - **Three metrics every practice should track from the EHR**: documentation lag by provider, E/M code distribution vs. specialty benchmark, and auth-to-service interval.
-- **The pipeline isn't optional**: moving from monthly report pulls to a queryable, near-real-time data layer is the prerequisite for all of the above — and achievable on any major EHR platform.
+- **The export is still the starting point**: the dashboards refresh when a new report file lands in SharePoint. They do not update on their own.

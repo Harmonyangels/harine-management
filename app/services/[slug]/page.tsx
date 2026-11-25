@@ -5,7 +5,8 @@ import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import { services, getServiceBySlug } from "@/data/services";
-import { BOOK_CALL_HREF, BOOK_CALL_LABEL, DIAGNOSTIC_PATH } from "@/lib/contact";
+import { BOOK_CALL_HREF, BOOK_CALL_LABEL } from "@/lib/contact";
+import { DIAGNOSTIC_FOUNDING, DIAGNOSTIC_LIST_PRICE } from "@/lib/offer";
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -31,6 +32,7 @@ export async function generateMetadata({
       description: service.metaDescription,
       url: `https://harinemanagement.com/services/${slug}`,
     },
+    robots: service.listed === false ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -74,14 +76,10 @@ function buildFaqSchema(slug: string, service: ReturnType<typeof getServiceBySlu
   };
 }
 
-function getRelatedServices(currentSlug: string, currentAudience: string) {
-  const sameAudience = services.filter(
-    (s) => s.slug !== currentSlug && s.targetAudience === currentAudience
-  );
-  const otherAudience = services.filter(
-    (s) => s.slug !== currentSlug && s.targetAudience !== currentAudience
-  );
-  return [...sameAudience, ...otherAudience].slice(0, 3);
+function getRelatedServices(currentSlug: string) {
+  return services
+    .filter((s) => s.slug !== currentSlug && s.listed !== false)
+    .slice(0, 3);
 }
 
 export default async function ServicePage({
@@ -96,7 +94,7 @@ export default async function ServicePage({
 
   const serviceSchema = buildServiceSchema(slug, service);
   const faqSchema = buildFaqSchema(slug, service);
-  const related = getRelatedServices(slug, service.targetAudience);
+  const related = getRelatedServices(slug);
 
   return (
     <>
@@ -180,17 +178,12 @@ export default async function ServicePage({
       {/* CTA */}
       <section className="service-cta">
         <div className="service-cta-inner">
-          <h2>{service.slug === "practice-operational-diagnostic" ? "Book the 30-minute call." : "Start with the diagnostic, or book a call."}</h2>
+          <h2>Book a 30-minute call.</h2>
           <p>
-            {service.slug === "practice-operational-diagnostic"
-              ? "The diagnostic is $2,500 and finished in under a week. Email dev@harinemanagement.com and we will confirm scope before any data is shared."
-              : "The Practice Operational Diagnostic is $2,500 and finished in under a week: a written findings report and a prioritized fix plan. Larger work is scoped after that, or on the call."}
+            That call is how you claim the Reporting Diagnostic. {DIAGNOSTIC_FOUNDING}. List price {DIAGNOSTIC_LIST_PRICE}.
           </p>
           <div className="service-cta-actions">
             <a href={BOOK_CALL_HREF} className="btn btn-white" target="_blank" rel="noopener noreferrer">{BOOK_CALL_LABEL}</a>
-            {service.slug !== "practice-operational-diagnostic" && (
-              <Link href={DIAGNOSTIC_PATH} className="btn btn-score">See the diagnostic →</Link>
-            )}
           </div>
         </div>
       </section>

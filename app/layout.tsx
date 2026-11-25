@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://harinemanagement.com"),
   title: {
     template: "%s | Harine Management",
-    default: "Medical Practice Analytics in Atlanta | Harine Management",
+    default: "Power BI Dashboards for Medical Practices | Harine Management",
   },
   description:
-    "Power BI dashboards for medical practices, built from athenahealth and eClinicalWorks data. Atlanta healthcare consulting. Start with a $2,500 operational diagnostic.",
+    "Power BI dashboards for outpatient practices on athenahealth or eClinicalWorks. Reporting Diagnostic $2,500, free for our first 10 clients. Core Build $8,500. Atlanta.",
   alternates: {
     canonical: "/",
   },
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Harine Management",
-    title: "Medical Practice Analytics in Atlanta | Harine Management",
+    title: "Power BI Dashboards for Medical Practices | Harine Management",
     description:
-      "Power BI dashboards for medical practices, built from athenahealth and eClinicalWorks data. Atlanta healthcare consulting.",
+      "Power BI dashboards for outpatient practices. Export athenahealth or eClinicalWorks reports into SharePoint. Reporting Diagnostic $2,500, free for our first 10 clients.",
     url: "https://harinemanagement.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medical Practice Analytics in Atlanta | Harine Management",
+    title: "Power BI Dashboards for Medical Practices | Harine Management",
     description:
-      "Power BI dashboards for medical practices. athenahealth reporting and Atlanta healthcare consulting.",
+      "Power BI dashboards for outpatient practices on athenahealth or eClinicalWorks. Atlanta.",
   },
 };
 
@@ -64,7 +64,7 @@ const organizationSchema = {
     url: "https://harinemanagement.com/brand-assets/logo.png",
   },
   description:
-    "Harine Management LLC is an Atlanta healthcare consulting practice. It builds Power BI dashboards for medical practices from athenahealth and eClinicalWorks data, and advises healthcare investors.",
+    "Harine Management LLC is a solo healthcare reporting consultancy in Atlanta. Devanshu Patel builds Power BI dashboards for outpatient practices on athenahealth or eClinicalWorks from the report exports those practices already run.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Atlanta",
@@ -72,7 +72,7 @@ const organizationSchema = {
     addressCountry: "US",
   },
   email: "dev@harinemanagement.com",
-  telephone: "+1-682-256-3389",
+  telephone: "+1-470-231-7674",
 };
 
 const localBusinessSchema = {
@@ -83,7 +83,7 @@ const localBusinessSchema = {
   url: "https://harinemanagement.com",
   image: "https://harinemanagement.com/logo.png",
   description:
-    "Atlanta healthcare consulting for medical practice analytics. Power BI dashboards from athenahealth and eClinicalWorks data, and a fixed-price operational diagnostic.",
+    "Solo healthcare reporting consultancy in Atlanta. Power BI dashboards from athenahealth or eClinicalWorks report exports dropped into the client's SharePoint folder.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Atlanta",
@@ -101,7 +101,7 @@ const localBusinessSchema = {
     { "@type": "AdministrativeArea", name: "Southeast United States" },
   ],
   email: "dev@harinemanagement.com",
-  telephone: "+1-682-256-3389",
+  telephone: "+1-470-231-7674",
   priceRange: "$$",
   founder: {
     "@id": "https://harinemanagement.com/#devanshu-patel",

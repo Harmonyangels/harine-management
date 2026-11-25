@@ -9,7 +9,7 @@ import {
   getTermBySlug,
   getRelatedGlossaryTerms,
 } from "@/data/glossary";
-import { getServiceBySlug } from "@/data/services";
+import { getServiceBySlug, isListedService } from "@/data/services";
 
 export const dynamicParams = false;
 
@@ -50,9 +50,10 @@ export default async function GlossaryTermPage({
   if (!term) notFound();
 
   const relatedTerms = getRelatedGlossaryTerms(term.relatedTerms);
-  const relatedServices = term.relatedServices
-    .map((s) => getServiceBySlug(s))
-    .filter(Boolean) as NonNullable<ReturnType<typeof getServiceBySlug>>[];
+  const relatedServices = term.relatedServices.flatMap((slugName) => {
+    const service = getServiceBySlug(slugName);
+    return service && isListedService(service) ? [service] : [];
+  });
 
   const definedTermSchema = {
     "@context": "https://schema.org",
@@ -208,7 +209,7 @@ export default async function GlossaryTermPage({
         <div className="service-cta-inner">
           <h2>See these metrics in your own data.</h2>
           <p>
-            Book a 30-minute call at dev@harinemanagement.com.
+            Book a 30-minute call. The Reporting Diagnostic is $2,500, and free for our first 10 clients.
           </p>
           <a href="https://calendly.com/dev-harinemanagement/30min" target="_blank" rel="noopener noreferrer" className="btn btn-white">
             Book a 30-minute call

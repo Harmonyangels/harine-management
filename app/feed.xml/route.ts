@@ -36,7 +36,7 @@ function buildRSS(): string {
   <channel>
     <title>Harine Management</title>
     <link>${SITE_URL}</link>
-    <description>Practical perspectives on healthcare data analytics, revenue cycle management, PE due diligence, and AI in clinical operations.</description>
+    <description>Notes on outpatient practice reporting, athenahealth and eClinicalWorks exports, and Power BI dashboards.</description>
     <language>en-US</language>
     <managingEditor>dev@harinemanagement.com (Devanshu Patel)</managingEditor>
     <webMaster>dev@harinemanagement.com (Devanshu Patel)</webMaster>

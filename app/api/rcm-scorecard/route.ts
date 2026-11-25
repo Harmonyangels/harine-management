@@ -240,8 +240,8 @@ export async function POST(request: Request) {
     <div style="text-align:center;margin-bottom:44px;">
       <p style="color:#c8dde8;font-size:16px;font-weight:600;margin:0 0 10px;">Ready to improve your RCM performance?</p>
       <p style="color:#8aa8bb;font-size:14px;margin:0 0 24px;line-height:1.7;">
-        The paid Practice Operational Diagnostic is $2,500 and finished in under a week.
-        Book a 30-minute call first. The scorecard above is not that diagnostic.
+        The Reporting Diagnostic is $2,500, and free for our first 10 clients.
+        Book a 30-minute call to claim it. The scorecard above is not that diagnostic.
       </p>
       <a href="https://calendly.com/dev-harinemanagement/30min"
          style="display:inline-block;background:#B83030;color:#ffffff;font-weight:700;font-size:16px;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:0.3px;">

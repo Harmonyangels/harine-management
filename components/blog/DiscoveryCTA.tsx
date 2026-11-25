@@ -38,7 +38,7 @@ export default function DiscoveryCTA() {
             marginBottom: "12px",
           }}
         >
-          Practice Operational Diagnostic
+          Reporting Diagnostic
         </p>
         <h3
           style={{
@@ -61,7 +61,7 @@ export default function DiscoveryCTA() {
             maxWidth: "480px",
           }}
         >
-          The diagnostic is $2,500 and finished in under a week. You get a findings report and a prioritized fix plan. Or book a 30-minute call first.
+          List price $2,500. Free for our first 10 clients. A five-day review of the reports you already run. Book a 30-minute call to claim it.
         </p>
         <a
           href={BOOK_CALL_HREF}

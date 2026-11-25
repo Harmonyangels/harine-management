@@ -55,7 +55,7 @@ Data extraction is the process of pulling structured data from the EHR into a fo
 
 **Manual extracts** — someone logs into the EHR, runs a report, downloads it, and places it in a shared location. This is the approach most practices are using today. It works, but it's dependent on a person, runs on whatever cadence that person manages, and fails whenever the person is absent. It is not a scalable analytics infrastructure.
 
-The goal is to eliminate manual extracts entirely. [The analytics infrastructure Harine Management builds](https://harinemanagement.com/services/practice-analytics-system) runs automatically every night — no one runs the reports, no one downloads the files. The data is there when leadership opens the dashboard in the morning.
+The workflow Harine Management actually runs still starts with an export. [The Core Build](https://harinemanagement.com/services/practice-analytics-system) uses the reports the practice already downloads. Those files go into SharePoint unchanged. Power BI transforms them, and Power Automate refreshes the dashboards when a new file lands. Nobody has to rebuild the Excel workbook.
 
 ### Layer 2: Transformation (Making the Data Analytical)
 
@@ -73,7 +73,7 @@ The third layer is the business intelligence tool — Power BI, Tableau, Looker,
 
 Show the most important metrics immediately, without navigation. Use trend lines, not point-in-time numbers. Highlight variance from expected ranges visually. Make the daily review consumable in under four minutes. Give each role the view appropriate to their decision-making authority — [individual providers see their own numbers](https://harinemanagement.com/services/provider-productivity-analytics), department heads see their cohort, CMOs and administrators see the full practice.
 
-The [AI Insights Layer](https://harinemanagement.com/services/ai-insights-layer) that Harine Management offers as an add-on goes one step further: it generates a weekly natural language summary of the dashboard — two paragraphs describing the week's key metrics, what changed, and what deserves attention — so leadership gets a readable briefing alongside the visual dashboard.
+Harine Management does not sell an AI summary add-on. The readable view is the Power BI dashboard itself.
 
 ## Where to Start
 

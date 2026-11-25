@@ -111,7 +111,7 @@ Specialty matters here. Orthopedic and surgical groups tracking wRVU productivit
 
 4. **Set benchmark alerts, not just views.** Power BI supports conditional formatting and alert thresholds. Configure your A/R over 90-days view to flag red when it crosses HFMA's 15% threshold. Visibility without alerting still requires someone to notice the problem.
 
-5. **Automate the refresh cycle.** If your dashboard requires a manual export from athena to stay current, it will fall behind within two weeks. Build a scheduled data pipeline — via athena's API or a structured flat-file export — so dashboards update on a daily cadence without human intervention. Your [athenahealth dashboard](/services/practice-analytics-system) should work for you, not the other way around.
+5. **Refresh when a new file lands.** The dashboard still starts with the athenahealth reports you already export. Drop those files in SharePoint as they are. [The Core Build](/services/practice-analytics-system) uses Power Automate to refresh Power BI when a new file arrives. It is not an API connection, and it does not update if nobody exported a file.
 
 ## The Analytics Angle: Turning athena Data Into Financial Intelligence
 
